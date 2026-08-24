@@ -1,49 +1,63 @@
-# Chatbot Application — Manual QA Testing
+# AI Chatbot — Manual QA Testing
 
 ## Project Overview
 
-Manual QA testing project for a chatbot application.
+This project demonstrates my manual and exploratory testing of an AI-powered chatbot used in an e-commerce environment.
 
-The project focuses on testing chatbot functionality, user interactions, message handling, and other relevant application flows.
+The chatbot allows users to search for products, ask about prices and specifications, compare products, receive recommendations, ask about purchasing options, and communicate with human operators.
 
-> **Confidentiality:** The original application name and company-related information are not disclosed. The documentation in this portfolio has been anonymized for confidentiality.
+The main goal of testing was to verify the chatbot's functionality, conversation context, product information accuracy, error handling, and overall user experience.
 
-## Testing Scope
+## Testing Approach
 
-The testing covered relevant chatbot functionality, including:
+The project was tested mainly through manual and exploratory testing.
 
-- Chat interface
-- User input
-- Message sending
-- Message responses
-- Conversation flow
-- Input validation
+I tested the chatbot from a real user's perspective and used different types of inputs, including normal questions, follow-up questions, multiple requirements, invalid inputs, mixed-language messages, and changes of topic.
+
+## Main Areas Tested
+
+- Product search
+- Product information
+- Product prices
+- Product specifications
+- Product recommendations
+- Product comparison
+- Conversation context
+- Purchase intent
+- Operator flow
+- Chat state
 - Error handling
-- Other relevant chatbot functionality
+- Negative testing
+- Multilingual input
+- Desktop and mobile behavior
 
 ## QA Activities
 
-During testing, I:
+- Test planning
+- Test scenario design
+- Test case design
+- Manual functional testing
+- Exploratory testing
+- Negative testing
+- State and context testing
+- Data consistency testing
+- Usability testing
+- Bug reporting
 
-- Created manual test cases.
-- Created high-level test scenarios.
-- Created functional testing checklists.
-- Executed manual tests.
-- Identified and documented defects.
-- Created bug reports with reproduction steps.
-- Compared expected and actual results.
+## Project Documentation
 
-## Test Documentation
+The repository contains:
 
-The project documentation includes:
-
-- Test Cases
-- Test Scenarios
-- Checklists
-- Bug Reports
 - Project Overview
-- Case Study
+- Test Plan
+- Test Scenarios
+- Test Cases
+- Exploratory Testing Sessions
+- Bug Reports
+- Test Summary
 
-## Confidentiality
+## Disclaimer
+
+This project is presented for QA portfolio purposes.
 
 The original application name, company information, screenshots, and other confidential project materials are not included in this public portfolio.
