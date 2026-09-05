@@ -1,328 +1,1245 @@
-# Test Cases
+# Test Cases — E-commerce Web Application
 
-Manual test cases created for the e-commerce web application.
+## Test Case Overview
 
-## Test Case Structure
+This document contains detailed manual test cases for the e-commerce web application.
 
-Each test case contains:
+The test cases are derived from the high-level test scenarios and cover positive, negative, functional, validation, UI, and user-flow testing.
 
-- Test Case ID
-- Title
-- Priority
-- Preconditions
-- Test Data
-- Test Steps
-- Expected Result
-- Status
+### Test Case Status
 
-## Login
+All test cases are initially marked as **Not Executed** because test execution will be performed separately.
 
-### TC-001 — Verify login with valid credentials
+---
 
-**Priority:** High
+# 1. Login
 
-**Preconditions:**  
-User has a registered account and is on the Login page.
+## TC-001 — Login with Valid Credentials
 
-**Test Data:**  
-Valid email and password.
+| Field                | Details                                                          |
+| -------------------- | ---------------------------------------------------------------- |
+| **Test Case ID**     | TC-001                                                           |
+| **Title**            | Verify that a user can log in with valid credentials             |
+| **Related Scenario** | TS-001, TS-002                                                   |
+| **Test Type**        | Functional / Positive                                            |
+| **Priority**         | High                                                             |
+| **Preconditions**    | The login page is accessible and the user has valid credentials. |
+| **Test Data**        | Valid username and valid password                                |
+| **Status**           | Not Executed                                                     |
 
-**Test Steps:**
-1. Enter a valid email.
-2. Enter a valid password.
-3. Click **Login**.
+### Test Steps
 
-**Expected Result:**  
-User is successfully logged in and redirected to the appropriate page.
+1. Open the application login page.
+2. Enter a valid username.
+3. Enter a valid password.
+4. Click the **Login** button.
 
-**Status:** Not Executed
+### Expected Result
 
-### TC-002 — Verify login with an incorrect password
+The user should be successfully authenticated and redirected to the appropriate application page.
 
-**Priority:** High
+### Actual Result
 
-**Preconditions:**  
-User has a registered account and is on the Login page.
+Not Executed.
 
-**Test Data:**  
-Valid email and incorrect password.
+---
 
-**Test Steps:**
-1. Enter a valid email.
-2. Enter an incorrect password.
-3. Click **Login**.
+## TC-002 — Login with Invalid Username
 
-**Expected Result:**  
-An appropriate error message is displayed and the user is not logged in.
+| Field                | Details                                          |
+| -------------------- | ------------------------------------------------ |
+| **Test Case ID**     | TC-002                                           |
+| **Title**            | Verify that login fails with an invalid username |
+| **Related Scenario** | TS-002                                           |
+| **Test Type**        | Functional / Negative                            |
+| **Priority**         | High                                             |
+| **Preconditions**    | The login page is accessible.                    |
+| **Test Data**        | Invalid username and valid password              |
+| **Status**           | Not Executed                                     |
 
-**Status:** Not Executed
-### TC-003 — Verify login with empty required fields
+### Test Steps
 
-**Priority:** High
+1. Open the login page.
+2. Enter an invalid username.
+3. Enter a valid password.
+4. Click **Login**.
 
-**Preconditions:**  
-User is on the Login page.
+### Expected Result
 
-**Test Data:**  
-Empty email and password fields.
+The user should not be authenticated and an appropriate error message should be displayed.
 
-**Test Steps:**
+### Actual Result
 
-1. Leave the email field empty.
-2. Leave the password field empty.
-3. Click **Login**.
+Not Executed.
 
-**Expected Result:**  
-Validation messages are displayed for the required fields.
+---
 
-**Status:** Not Executed
+## TC-003 — Login with Invalid Password
 
-### TC-004 — Verify product search with a valid keyword
+| Field                | Details                                          |
+| -------------------- | ------------------------------------------------ |
+| **Test Case ID**     | TC-003                                           |
+| **Title**            | Verify that login fails with an invalid password |
+| **Related Scenario** | TS-002                                           |
+| **Test Type**        | Functional / Negative                            |
+| **Priority**         | High                                             |
+| **Preconditions**    | The login page is accessible.                    |
+| **Test Data**        | Valid username and invalid password              |
+| **Status**           | Not Executed                                     |
 
-**Priority:** High
+### Test Steps
 
-**Preconditions:**  
-User is on the homepage.
+1. Open the login page.
+2. Enter a valid username.
+3. Enter an invalid password.
+4. Click **Login**.
 
-**Test Data:**  
-Search keyword: "dress".
+### Expected Result
 
-**Test Steps:**
+The user should not be authenticated and an appropriate error message should be displayed.
 
-1. Open the website.
-2. Enter "dress" in the search field.
-3. Click the search icon/button.
+### Actual Result
 
-**Expected Result:**  
-Relevant products matching the search keyword are displayed.
+Not Executed.
 
-**Status:** Not Executed
+---
 
-### TC-005 — Verify product search with a non-existing keyword
+## TC-004 — Login with Empty Username
 
-**Priority:** Medium
+| Field                | Details                                            |
+| -------------------- | -------------------------------------------------- |
+| **Test Case ID**     | TC-004                                             |
+| **Title**            | Verify validation when the username field is empty |
+| **Related Scenario** | TS-003                                             |
+| **Test Type**        | Functional / Negative / Validation                 |
+| **Priority**         | High                                               |
+| **Preconditions**    | The login page is accessible.                      |
+| **Test Data**        | Empty username and valid password                  |
+| **Status**           | Not Executed                                       |
 
-**Preconditions:**  
-User is on the homepage.
+### Test Steps
 
-**Test Data:**  
-Search keyword: "xyz123".
+1. Open the login page.
+2. Leave the username field empty.
+3. Enter a valid password.
+4. Click **Login**.
 
-**Test Steps:**
+### Expected Result
 
-1. Enter "xyz123" in the search field.
-2. Start the search.
+The user should not be authenticated and a validation message should indicate that the username is required.
 
-**Expected Result:**  
-A clear message indicating that no results were found is displayed.
+### Actual Result
 
-**Status:** Not Executed
+Not Executed.
 
-### TC-006 — Verify product search with an empty field
+---
 
-**Priority:** Medium
+## TC-005 — Login with Empty Password
 
-**Preconditions:**  
-User is on the homepage.
+| Field                | Details                                            |
+| -------------------- | -------------------------------------------------- |
+| **Test Case ID**     | TC-005                                             |
+| **Title**            | Verify validation when the password field is empty |
+| **Related Scenario** | TS-003                                             |
+| **Test Type**        | Functional / Negative / Validation                 |
+| **Priority**         | High                                               |
+| **Preconditions**    | The login page is accessible.                      |
+| **Test Data**        | Valid username and empty password                  |
+| **Status**           | Not Executed                                       |
 
-**Test Data:**  
-Empty search field.
+### Test Steps
 
-**Test Steps:**
+1. Open the login page.
+2. Enter a valid username.
+3. Leave the password field empty.
+4. Click **Login**.
 
-1. Leave the search field empty.
-2. Click the search icon/button.
+### Expected Result
 
-**Expected Result:**  
-The system handles the empty search appropriately and does not produce an error.
+The user should not be authenticated and a validation message should indicate that the password is required.
 
-**Status:** Not Executed
+### Actual Result
 
-### TC-007 — Verify that the user can select a product size
+Not Executed.
 
-**Priority:** High
+---
 
-**Preconditions:**  
-User is logged in and a product with available sizes is displayed.
+## TC-006 — Login with Empty Username and Password
 
-**Test Data:**  
-Product: T-shirt; Size: M.
+| Field                | Details                                            |
+| -------------------- | -------------------------------------------------- |
+| **Test Case ID**     | TC-006                                             |
+| **Title**            | Verify validation when both login fields are empty |
+| **Related Scenario** | TS-003                                             |
+| **Test Type**        | Functional / Negative / Validation                 |
+| **Priority**         | High                                               |
+| **Preconditions**    | The login page is accessible.                      |
+| **Test Data**        | Empty username and empty password                  |
+| **Status**           | Not Executed                                       |
 
-**Test Steps:**
+### Test Steps
 
-1. Open the website.
-2. Select a product, e.g. a T-shirt.
-3. Open the size dropdown.
-4. Select size M.
+1. Open the login page.
+2. Leave the username field empty.
+3. Leave the password field empty.
+4. Click **Login**.
 
-**Expected Result:**  
-Size M is successfully selected and displayed on the product page.
+### Expected Result
 
-**Status:** Passed
+The user should not be authenticated and appropriate validation messages should be displayed.
 
-### TC-008 — Verify that the selected product size is retained after adding the product to the cart
+### Actual Result
 
-**Priority:** High
+Not Executed.
 
-**Preconditions:**  
-User is logged in and a product with available sizes is displayed.
+---
 
-**Test Data:**  
-Product: T-shirt; Size: M.
+## TC-007 — Logout
 
-**Test Steps:**
+| Field                | Details                                               |
+| -------------------- | ----------------------------------------------------- |
+| **Test Case ID**     | TC-007                                                |
+| **Title**            | Verify that a logged-in user can log out successfully |
+| **Related Scenario** | TS-004                                                |
+| **Test Type**        | Functional / Positive                                 |
+| **Priority**         | Medium                                                |
+| **Preconditions**    | The user is successfully logged in.                   |
+| **Test Data**        | Valid logged-in user session                          |
+| **Status**           | Not Executed                                          |
 
-1. Select a product.
-2. Select size M.
+### Test Steps
+
+1. Log in with valid credentials.
+2. Locate the **Logout** option.
+3. Click **Logout**.
+
+### Expected Result
+
+The user should be logged out and redirected to the appropriate login or public page.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+# 2. Product Search
+
+## TC-008 — Search for an Existing Product
+
+| Field                | Details                                     |
+| -------------------- | ------------------------------------------- |
+| **Test Case ID**     | TC-008                                      |
+| **Title**            | Verify product search using a valid keyword |
+| **Related Scenario** | TS-005, TS-006                              |
+| **Test Type**        | Functional / Positive                       |
+| **Priority**         | High                                        |
+| **Preconditions**    | The application is accessible.              |
+| **Test Data**        | Valid product name or keyword               |
+| **Status**           | Not Executed                                |
+
+### Test Steps
+
+1. Open the application.
+2. Locate the search field.
+3. Enter a valid product keyword.
+4. Submit the search.
+
+### Expected Result
+
+Products relevant to the entered keyword should be displayed.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-009 — Search with Invalid Keyword
+
+| Field                | Details                                                               |
+| -------------------- | --------------------------------------------------------------------- |
+| **Test Case ID**     | TC-009                                                                |
+| **Title**            | Verify search behavior with a keyword that does not match any product |
+| **Related Scenario** | TS-006                                                                |
+| **Test Type**        | Functional / Negative                                                 |
+| **Priority**         | High                                                                  |
+| **Preconditions**    | The application is accessible.                                        |
+| **Test Data**        | Non-existing product keyword                                          |
+| **Status**           | Not Executed                                                          |
+
+### Test Steps
+
+1. Open the application.
+2. Enter a non-existing product keyword.
+3. Submit the search.
+
+### Expected Result
+
+The application should display an appropriate no-results message or an empty result state.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-010 — Search with Empty Search Field
+
+| Field                | Details                                               |
+| -------------------- | ----------------------------------------------------- |
+| **Test Case ID**     | TC-010                                                |
+| **Title**            | Verify search behavior when the search field is empty |
+| **Related Scenario** | TS-007                                                |
+| **Test Type**        | Functional / Negative / Validation                    |
+| **Priority**         | Medium                                                |
+| **Preconditions**    | The application is accessible.                        |
+| **Test Data**        | Empty search field                                    |
+| **Status**           | Not Executed                                          |
+
+### Test Steps
+
+1. Open the application.
+2. Leave the search field empty.
+3. Submit the search.
+
+### Expected Result
+
+The application should handle the empty search appropriately without errors.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-011 — Verify Search Result Relevance
+
+| Field                | Details                                                        |
+| -------------------- | -------------------------------------------------------------- |
+| **Test Case ID**     | TC-011                                                         |
+| **Title**            | Verify that search results are relevant to the entered keyword |
+| **Related Scenario** | TS-008                                                         |
+| **Test Type**        | Functional                                                     |
+| **Priority**         | High                                                           |
+| **Preconditions**    | The application contains products matching the test keyword.   |
+| **Test Data**        | Valid product keyword                                          |
+| **Status**           | Not Executed                                                   |
+
+### Test Steps
+
+1. Enter a valid product keyword.
+2. Submit the search.
+3. Review the returned products.
+
+### Expected Result
+
+Displayed products should be relevant to the entered search keyword.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-012 — Search Using Partial Product Name
+
+| Field                | Details                                                       |
+| -------------------- | ------------------------------------------------------------- |
+| **Test Case ID**     | TC-012                                                        |
+| **Title**            | Verify search behavior when a partial product name is entered |
+| **Related Scenario** | TS-006, TS-008                                                |
+| **Test Type**        | Functional                                                    |
+| **Priority**         | Medium                                                        |
+| **Preconditions**    | The application is accessible.                                |
+| **Test Data**        | Partial product name                                          |
+| **Status**           | Not Executed                                                  |
+
+### Test Steps
+
+1. Enter part of an existing product name.
+2. Submit the search.
+3. Review the search results.
+
+### Expected Result
+
+The application should return relevant results if partial keyword searching is supported.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-013 — Search Result Navigation
+
+| Field                | Details                                                   |
+| -------------------- | --------------------------------------------------------- |
+| **Test Case ID**     | TC-013                                                    |
+| **Title**            | Verify that a user can open a product from search results |
+| **Related Scenario** | TS-005, TS-008                                            |
+| **Test Type**        | Functional / Positive                                     |
+| **Priority**         | High                                                      |
+| **Preconditions**    | Search results are displayed.                             |
+| **Test Data**        | Existing product from search results                      |
+| **Status**           | Not Executed                                              |
+
+### Test Steps
+
+1. Perform a valid product search.
+2. Select a product from the results.
+3. Click the product.
+
+### Expected Result
+
+The selected product's details page should open.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+# 3. Product Page and Size Selection
+
+## TC-014 — Verify Product Information
+
+| Field                | Details                                                  |
+| -------------------- | -------------------------------------------------------- |
+| **Test Case ID**     | TC-014                                                   |
+| **Title**            | Verify product information displayed on the product page |
+| **Related Scenario** | TS-009                                                   |
+| **Test Type**        | Functional / UI                                          |
+| **Priority**         | High                                                     |
+| **Preconditions**    | A product details page is accessible.                    |
+| **Test Data**        | Existing product                                         |
+| **Status**           | Not Executed                                             |
+
+### Test Steps
+
+1. Open a product details page.
+2. Review the product name.
+3. Review the product image.
+4. Review the product price.
+5. Review available product information.
+
+### Expected Result
+
+All relevant product information should be displayed correctly and consistently.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-015 — Select Available Product Size
+
+| Field                | Details                                               |
+| -------------------- | ----------------------------------------------------- |
+| **Test Case ID**     | TC-015                                                |
+| **Title**            | Verify that an available product size can be selected |
+| **Related Scenario** | TS-010                                                |
+| **Test Type**        | Functional / Positive                                 |
+| **Priority**         | High                                                  |
+| **Preconditions**    | A product with available sizes is displayed.          |
+| **Test Data**        | Available product size                                |
+| **Status**           | Not Executed                                          |
+
+### Test Steps
+
+1. Open a product details page.
+2. Locate the size selector.
+3. Select an available size.
+
+### Expected Result
+
+The selected size should be visually indicated and associated with the product selection.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-016 — Verify Unavailable Product Size
+
+| Field                | Details                                            |
+| -------------------- | -------------------------------------------------- |
+| **Test Case ID**     | TC-016                                             |
+| **Title**            | Verify behavior when a product size is unavailable |
+| **Related Scenario** | TS-011                                             |
+| **Test Type**        | Functional / Negative                              |
+| **Priority**         | High                                               |
+| **Preconditions**    | A product with unavailable sizes is displayed.     |
+| **Test Data**        | Unavailable product size                           |
+| **Status**           | Not Executed                                       |
+
+### Test Steps
+
+1. Open a product details page.
+2. Locate an unavailable size.
+3. Attempt to select the unavailable size.
+
+### Expected Result
+
+The unavailable size should be clearly identified and should not be selectable for purchase.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-017 — Verify Selected Size is Retained
+
+| Field                | Details                                                                               |
+| -------------------- | ------------------------------------------------------------------------------------- |
+| **Test Case ID**     | TC-017                                                                                |
+| **Title**            | Verify that the selected product size is retained when adding the product to the cart |
+| **Related Scenario** | TS-012                                                                                |
+| **Test Type**        | Functional                                                                            |
+| **Priority**         | High                                                                                  |
+| **Preconditions**    | A product with available sizes is displayed.                                          |
+| **Test Data**        | Available product and selected size                                                   |
+| **Status**           | Not Executed                                                                          |
+
+### Test Steps
+
+1. Open a product details page.
+2. Select an available size.
+3. Add the product to the cart.
+4. Open the shopping cart.
+
+### Expected Result
+
+The selected product size should be displayed correctly in the shopping cart.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-018 — Add Product Without Selecting Required Size
+
+| Field                | Details                                                           |
+| -------------------- | ----------------------------------------------------------------- |
+| **Test Case ID**     | TC-018                                                            |
+| **Title**            | Verify validation when a required product size is not selected    |
+| **Related Scenario** | TS-010, TS-012                                                    |
+| **Test Type**        | Functional / Negative / Validation                                |
+| **Priority**         | High                                                              |
+| **Preconditions**    | The product requires size selection before adding it to the cart. |
+| **Test Data**        | Product with no selected size                                     |
+| **Status**           | Not Executed                                                      |
+
+### Test Steps
+
+1. Open a product details page.
+2. Do not select a size.
+3. Click **Add to Cart**.
+
+### Expected Result
+
+The product should not be added without a required size selection and an appropriate validation message should be displayed.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-019 — Verify Product Image and Price
+
+| Field                | Details                                                |
+| -------------------- | ------------------------------------------------------ |
+| **Test Case ID**     | TC-019                                                 |
+| **Title**            | Verify product image and price are displayed correctly |
+| **Related Scenario** | TS-009                                                 |
+| **Test Type**        | UI / Functional                                        |
+| **Priority**         | Medium                                                 |
+| **Preconditions**    | A product details page is accessible.                  |
+| **Test Data**        | Existing product                                       |
+| **Status**           | Not Executed                                           |
+
+### Test Steps
+
+1. Open a product details page.
+2. Check the product image.
+3. Check the displayed price.
+4. Compare the information with the corresponding product information.
+
+### Expected Result
+
+The correct product image and price should be displayed without visual or content-related errors.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+# 4. Shopping Cart
+
+## TC-020 — Add Product to Cart
+
+| Field                | Details                                                 |
+| -------------------- | ------------------------------------------------------- |
+| **Test Case ID**     | TC-020                                                  |
+| **Title**            | Verify that a product can be added to the shopping cart |
+| **Related Scenario** | TS-013                                                  |
+| **Test Type**        | Functional / Positive                                   |
+| **Priority**         | High                                                    |
+| **Preconditions**    | A valid product is available for purchase.              |
+| **Test Data**        | Available product                                       |
+| **Status**           | Not Executed                                            |
+
+### Test Steps
+
+1. Open a product details page.
+2. Select required product options.
 3. Click **Add to Cart**.
 4. Open the shopping cart.
 
-**Expected Result:**  
-The product is added to the cart and size M is correctly displayed.
+### Expected Result
 
-**Status:** Passed
+The selected product should be added to the shopping cart with the correct information.
 
-### TC-009 — Verify that a product can be added to the shopping cart
+### Actual Result
 
-**Priority:** High
+Not Executed.
 
-**Preconditions:**  
-User is on a product page and the product is available.
+---
 
-**Test Data:**  
-Product: T-shirt.
+## TC-021 — Verify Product Information in Cart
 
-**Test Steps:**
+| Field                | Details                                                   |
+| -------------------- | --------------------------------------------------------- |
+| **Test Case ID**     | TC-021                                                    |
+| **Title**            | Verify product information displayed in the shopping cart |
+| **Related Scenario** | TS-014                                                    |
+| **Test Type**        | Functional / UI                                           |
+| **Priority**         | High                                                      |
+| **Preconditions**    | At least one product has been added to the cart.          |
+| **Test Data**        | Product added to cart                                     |
+| **Status**           | Not Executed                                              |
 
-1. Open a product page.
-2. Select a required size.
-3. Click **Add to Cart**.
-4. Open the cart.
-
-**Expected Result:**  
-The selected product is successfully added to the cart.
-
-**Status:** Not Executed
-
-### TC-010 — Verify that the cart displays correct product information
-
-**Priority:** High
-
-**Preconditions:**  
-A product has been added to the cart.
-
-**Test Data:**  
-Product: T-shirt; Size: M.
-
-**Test Steps:**
+### Test Steps
 
 1. Add a product to the cart.
 2. Open the shopping cart.
+3. Review product name, image, price, size, and quantity where applicable.
 
-**Expected Result:**  
-Product name, selected size, quantity, and price are displayed correctly.
+### Expected Result
 
-**Status:** Not Executed
+The cart should display accurate product information.
 
-### TC-011 — Verify that a product can be removed from the cart
+### Actual Result
 
-**Priority:** High
+Not Executed.
 
-**Preconditions:**  
-The shopping cart contains at least one product.
+---
 
-**Test Data:**  
-Product: T-shirt.
+## TC-022 — Increase Product Quantity
 
-**Test Steps:**
+| Field                | Details                                                   |
+| -------------------- | --------------------------------------------------------- |
+| **Test Case ID**     | TC-022                                                    |
+| **Title**            | Verify that product quantity can be increased in the cart |
+| **Related Scenario** | TS-015                                                    |
+| **Test Type**        | Functional / Positive                                     |
+| **Priority**         | High                                                      |
+| **Preconditions**    | The cart contains at least one product.                   |
+| **Test Data**        | Product quantity increased from 1 to 2                    |
+| **Status**           | Not Executed                                              |
+
+### Test Steps
 
 1. Open the shopping cart.
-2. Click **Remove** for the selected product.
+2. Increase the product quantity.
+3. Observe the updated quantity.
+4. Observe the updated total price.
 
-**Expected Result:**  
-The product is removed from the cart.
+### Expected Result
 
-**Status:** Not Executed
+The product quantity should increase correctly and the total price should be recalculated accordingly.
 
-### TC-012 — Verify that the cart total is calculated correctly
+### Actual Result
 
-**Priority:** High
+Not Executed.
 
-**Preconditions:**  
-The shopping cart contains at least one product.
+---
 
-**Test Data:**  
-Product price and quantity.
+## TC-023 — Decrease Product Quantity
 
-**Test Steps:**
+| Field                | Details                                                     |
+| -------------------- | ----------------------------------------------------------- |
+| **Test Case ID**     | TC-023                                                      |
+| **Title**            | Verify that product quantity can be decreased in the cart   |
+| **Related Scenario** | TS-015                                                      |
+| **Test Type**        | Functional                                                  |
+| **Priority**         | High                                                        |
+| **Preconditions**    | The cart contains a product with quantity greater than one. |
+| **Test Data**        | Product quantity decreased from 2 to 1                      |
+| **Status**           | Not Executed                                                |
+
+### Test Steps
+
+1. Open the shopping cart.
+2. Decrease the product quantity.
+3. Observe the updated quantity.
+4. Observe the updated total price.
+
+### Expected Result
+
+The quantity should decrease correctly and the total price should be recalculated accordingly.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-024 — Verify Cart Total Calculation
+
+| Field                | Details                                                     |
+| -------------------- | ----------------------------------------------------------- |
+| **Test Case ID**     | TC-024                                                      |
+| **Title**            | Verify that the shopping cart total is calculated correctly |
+| **Related Scenario** | TS-016                                                      |
+| **Test Type**        | Functional                                                  |
+| **Priority**         | High                                                        |
+| **Preconditions**    | The cart contains at least one product.                     |
+| **Test Data**        | Product price and quantity                                  |
+| **Status**           | Not Executed                                                |
+
+### Test Steps
+
+1. Add a product to the cart.
+2. Note the product price.
+3. Note the selected quantity.
+4. Calculate the expected total manually.
+5. Compare it with the displayed cart total.
+
+### Expected Result
+
+The displayed cart total should match the expected calculation based on product price and quantity.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-025 — Remove Product from Cart
+
+| Field                | Details                                                     |
+| -------------------- | ----------------------------------------------------------- |
+| **Test Case ID**     | TC-025                                                      |
+| **Title**            | Verify that a product can be removed from the shopping cart |
+| **Related Scenario** | TS-017                                                      |
+| **Test Type**        | Functional / Positive                                       |
+| **Priority**         | High                                                        |
+| **Preconditions**    | The cart contains at least one product.                     |
+| **Test Data**        | Existing cart product                                       |
+| **Status**           | Not Executed                                                |
+
+### Test Steps
+
+1. Open the shopping cart.
+2. Locate the product.
+3. Click the **Remove** option.
+4. Review the cart.
+
+### Expected Result
+
+The selected product should be removed from the cart and the cart information should be updated.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-026 — Verify Empty Shopping Cart
+
+| Field                | Details                                       |
+| -------------------- | --------------------------------------------- |
+| **Test Case ID**     | TC-026                                        |
+| **Title**            | Verify the behavior of an empty shopping cart |
+| **Related Scenario** | TS-018                                        |
+| **Test Type**        | Functional / UI                               |
+| **Priority**         | Medium                                        |
+| **Preconditions**    | The shopping cart is empty.                   |
+| **Test Data**        | Empty cart                                    |
+| **Status**           | Not Executed                                  |
+
+### Test Steps
+
+1. Open the shopping cart.
+2. Review the displayed content.
+
+### Expected Result
+
+The application should clearly indicate that the cart is empty and should not display incorrect product or total information.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+# 5. Checkout
+
+## TC-027 — Navigate from Cart to Checkout
+
+| Field                | Details                                              |
+| -------------------- | ---------------------------------------------------- |
+| **Test Case ID**     | TC-027                                               |
+| **Title**            | Verify navigation from the shopping cart to checkout |
+| **Related Scenario** | TS-019                                               |
+| **Test Type**        | Functional / Positive                                |
+| **Priority**         | High                                                 |
+| **Preconditions**    | The cart contains at least one valid product.        |
+| **Test Data**        | Product in cart                                      |
+| **Status**           | Not Executed                                         |
+
+### Test Steps
 
 1. Add a product to the cart.
 2. Open the cart.
-3. Check the displayed total.
+3. Click the checkout button.
 
-**Expected Result:**  
-The cart total is calculated correctly based on product price and quantity.
+### Expected Result
 
-**Status:** Not Executed
+The user should be successfully navigated to the checkout page.
 
-### TC-013 — Verify that product details are displayed correctly
+### Actual Result
 
-**Priority:** High
+Not Executed.
 
-**Preconditions:**  
-User is on a product page.
+---
 
-**Test Data:**  
-Available product.
+## TC-028 — Checkout with Valid Information
 
-**Test Steps:**
+| Field                | Details                                                                |
+| -------------------- | ---------------------------------------------------------------------- |
+| **Test Case ID**     | TC-028                                                                 |
+| **Title**            | Verify checkout with valid customer information                        |
+| **Related Scenario** | TS-020                                                                 |
+| **Test Type**        | Functional / Positive                                                  |
+| **Priority**         | High                                                                   |
+| **Preconditions**    | The cart contains a product and checkout is accessible.                |
+| **Test Data**        | Valid name, address, city, postal code, and other required information |
+| **Status**           | Not Executed                                                           |
 
-1. Open a product page.
-2. Review the product information.
+### Test Steps
 
-**Expected Result:**  
-Product name, image, price, available sizes, and other relevant information are displayed correctly.
+1. Proceed to checkout.
+2. Enter valid customer information.
+3. Complete all required fields.
+4. Continue to the next checkout step.
 
-**Status:** Not Executed
+### Expected Result
 
-### TC-014 — Verify that an unavailable product size cannot be selected
+The information should be accepted and the user should be allowed to continue the checkout process.
 
-**Priority:** High
+### Actual Result
 
-**Preconditions:**  
-User is on a product page with at least one unavailable size.
+Not Executed.
 
-**Test Data:**  
-Product with an unavailable size.
+---
 
-**Test Steps:**
+## TC-029 — Checkout with Missing Required Information
 
-1. Open a product page.
-2. Open the size selection.
-3. Try to select an unavailable size.
+| Field                | Details                                                         |
+| -------------------- | --------------------------------------------------------------- |
+| **Test Case ID**     | TC-029                                                          |
+| **Title**            | Verify checkout validation when required information is missing |
+| **Related Scenario** | TS-020, TS-027                                                  |
+| **Test Type**        | Functional / Negative / Validation                              |
+| **Priority**         | High                                                            |
+| **Preconditions**    | Checkout page is accessible.                                    |
+| **Test Data**        | One or more required fields left empty                          |
+| **Status**           | Not Executed                                                    |
 
-**Expected Result:**  
-The unavailable size cannot be selected or is clearly marked as unavailable.
+### Test Steps
 
-**Status:** Not Executed
+1. Proceed to checkout.
+2. Leave one or more required fields empty.
+3. Click the button to continue.
 
-### TC-015 — Verify that the user can proceed to checkout
+### Expected Result
 
-**Priority:** High
+The user should not be allowed to continue until required information is provided. Appropriate validation messages should be displayed.
 
-**Preconditions:**  
-User has a product in the shopping cart.
+### Actual Result
 
-**Test Data:**  
-Product: T-shirt.
+Not Executed.
 
-**Test Steps:**
+---
 
-1. Add a product to the cart.
-2. Open the cart.
-3. Click **Checkout**.
+## TC-030 — Checkout with Invalid Input Data
 
-**Expected Result:**  
-User is successfully redirected to the checkout process.
+| Field                | Details                                                      |
+| -------------------- | ------------------------------------------------------------ |
+| **Test Case ID**     | TC-030                                                       |
+| **Title**            | Verify checkout validation with invalid customer information |
+| **Related Scenario** | TS-020, TS-028                                               |
+| **Test Type**        | Functional / Negative / Validation                           |
+| **Priority**         | High                                                         |
+| **Preconditions**    | Checkout page is accessible.                                 |
+| **Test Data**        | Invalid input in one or more checkout fields                 |
+| **Status**           | Not Executed                                                 |
 
-**Status:** Not Executed
+### Test Steps
+
+1. Proceed to checkout.
+2. Enter invalid data into a relevant field.
+3. Attempt to continue.
+
+### Expected Result
+
+The application should validate the entered data and display an appropriate error message when invalid information is submitted.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-031 — Verify Delivery Information
+
+| Field                | Details                                                 |
+| -------------------- | ------------------------------------------------------- |
+| **Test Case ID**     | TC-031                                                  |
+| **Title**            | Verify delivery or shipping information during checkout |
+| **Related Scenario** | TS-021                                                  |
+| **Test Type**        | Functional                                              |
+| **Priority**         | High                                                    |
+| **Preconditions**    | Checkout is accessible.                                 |
+| **Test Data**        | Valid delivery information                              |
+| **Status**           | Not Executed                                            |
+
+### Test Steps
+
+1. Proceed to checkout.
+2. Enter valid delivery information.
+3. Review the entered information.
+4. Continue to the next step.
+
+### Expected Result
+
+The delivery information should be accepted and displayed correctly.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-032 — Verify Payment Method
+
+| Field                | Details                                            |
+| -------------------- | -------------------------------------------------- |
+| **Test Case ID**     | TC-032                                             |
+| **Title**            | Verify available payment method options            |
+| **Related Scenario** | TS-022                                             |
+| **Test Type**        | Functional / UI                                    |
+| **Priority**         | High                                               |
+| **Preconditions**    | The checkout process has reached the payment step. |
+| **Test Data**        | Available payment method                           |
+| **Status**           | Not Executed                                       |
+
+### Test Steps
+
+1. Proceed through checkout to the payment step.
+2. Review the available payment methods.
+3. Select an available payment method where applicable.
+
+### Expected Result
+
+Available payment methods should be displayed correctly and selectable according to the application's requirements.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-033 — Verify Order Summary and Total
+
+| Field                | Details                                                      |
+| -------------------- | ------------------------------------------------------------ |
+| **Test Case ID**     | TC-033                                                       |
+| **Title**            | Verify order summary and total amount before order placement |
+| **Related Scenario** | TS-023                                                       |
+| **Test Type**        | Functional                                                   |
+| **Priority**         | High                                                         |
+| **Preconditions**    | The user has reached the order summary step.                 |
+| **Test Data**        | Product, quantity, price, and applicable charges             |
+| **Status**           | Not Executed                                                 |
+
+### Test Steps
+
+1. Proceed to the order summary.
+2. Review product information.
+3. Review quantity.
+4. Review product price.
+5. Review the final total amount.
+
+### Expected Result
+
+The order summary should accurately reflect the selected products, quantities, prices, and final total.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-034 — Successful Order Placement
+
+| Field                | Details                                                                                 |
+| -------------------- | --------------------------------------------------------------------------------------- |
+| **Test Case ID**     | TC-034                                                                                  |
+| **Title**            | Verify that an order can be placed successfully                                         |
+| **Related Scenario** | TS-024                                                                                  |
+| **Test Type**        | Functional / Positive                                                                   |
+| **Priority**         | High                                                                                    |
+| **Preconditions**    | A valid product is in the cart and all required checkout information has been provided. |
+| **Test Data**        | Valid checkout information                                                              |
+| **Status**           | Not Executed                                                                            |
+
+### Test Steps
+
+1. Complete the checkout process with valid information.
+2. Review the order summary.
+3. Submit/place the order.
+
+### Expected Result
+
+The order should be successfully submitted and an appropriate confirmation message or confirmation page should be displayed.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+# 6. Localization
+
+## TC-035 — Change Website Language
+
+| Field                | Details                                         |
+| -------------------- | ----------------------------------------------- |
+| **Test Case ID**     | TC-035                                          |
+| **Title**            | Verify website language selection functionality |
+| **Related Scenario** | TS-025                                          |
+| **Test Type**        | Functional / UI                                 |
+| **Priority**         | Medium                                          |
+| **Preconditions**    | The application supports multiple languages.    |
+| **Test Data**        | Supported alternative language                  |
+| **Status**           | Not Executed                                    |
+
+### Test Steps
+
+1. Open the application.
+2. Locate the language selector.
+3. Select a supported alternative language.
+4. Observe the application content.
+
+### Expected Result
+
+The selected language should be applied according to the application's localization functionality.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-036 — Verify Content in Selected Language
+
+| Field                | Details                                                           |
+| -------------------- | ----------------------------------------------------------------- |
+| **Test Case ID**     | TC-036                                                            |
+| **Title**            | Verify that website content is displayed in the selected language |
+| **Related Scenario** | TS-026                                                            |
+| **Test Type**        | Functional / UI                                                   |
+| **Priority**         | High                                                              |
+| **Preconditions**    | A supported alternative language has been selected.               |
+| **Test Data**        | Selected supported language                                       |
+| **Status**           | Not Executed                                                      |
+
+### Test Steps
+
+1. Change the application language.
+2. Navigate through several application pages.
+3. Review page titles, navigation labels, buttons, and relevant content.
+
+### Expected Result
+
+Application content should be displayed consistently in the selected language.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-037 — Verify Language Consistency Across Pages
+
+| Field                | Details                                                                            |
+| -------------------- | ---------------------------------------------------------------------------------- |
+| **Test Case ID**     | TC-037                                                                             |
+| **Title**            | Verify that the selected language remains consistent when navigating between pages |
+| **Related Scenario** | TS-026                                                                             |
+| **Test Type**        | Functional / UI                                                                    |
+| **Priority**         | Medium                                                                             |
+| **Preconditions**    | A supported language has been selected.                                            |
+| **Test Data**        | Selected alternative language                                                      |
+| **Status**           | Not Executed                                                                       |
+
+### Test Steps
+
+1. Select an alternative language.
+2. Navigate to the product page.
+3. Navigate to the shopping cart.
+4. Navigate to checkout.
+5. Review the displayed text.
+
+### Expected Result
+
+The selected language should remain consistent across supported application pages.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+# 7. UI and Navigation
+
+## TC-038 — Verify Main Navigation
+
+| Field                | Details                                          |
+| -------------------- | ------------------------------------------------ |
+| **Test Case ID**     | TC-038                                           |
+| **Title**            | Verify navigation between main application pages |
+| **Related Scenario** | TS-029                                           |
+| **Test Type**        | UI / Functional                                  |
+| **Priority**         | Medium                                           |
+| **Preconditions**    | The application is accessible.                   |
+| **Test Data**        | Main navigation options                          |
+| **Status**           | Not Executed                                     |
+
+### Test Steps
+
+1. Open the application.
+2. Identify the main navigation options.
+3. Click each relevant navigation option.
+4. Observe the destination page.
+
+### Expected Result
+
+Each navigation option should direct the user to the correct page without broken links or unexpected behavior.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-039 — Verify Visibility of Major UI Elements
+
+| Field                | Details                                            |
+| -------------------- | -------------------------------------------------- |
+| **Test Case ID**     | TC-039                                             |
+| **Title**            | Verify visibility of major user interface elements |
+| **Related Scenario** | TS-030                                             |
+| **Test Type**        | UI                                                 |
+| **Priority**         | Medium                                             |
+| **Preconditions**    | The application page is loaded successfully.       |
+| **Test Data**        | Main application page                              |
+| **Status**           | Not Executed                                       |
+
+### Test Steps
+
+1. Open the application.
+2. Review the header.
+3. Review navigation elements.
+4. Review buttons and forms.
+5. Review product cards or other major content elements.
+
+### Expected Result
+
+Major UI elements should be visible, properly positioned, readable, and accessible to the user.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-040 — Verify Interactive UI Elements
+
+| Field                | Details                                        |
+| -------------------- | ---------------------------------------------- |
+| **Test Case ID**     | TC-040                                         |
+| **Title**            | Verify that interactive UI elements are usable |
+| **Related Scenario** | TS-031                                         |
+| **Test Type**        | UI / Functional                                |
+| **Priority**         | Medium                                         |
+| **Preconditions**    | The application is loaded successfully.        |
+| **Test Data**        | Buttons, links, selectors, and form controls   |
+| **Status**           | Not Executed                                   |
+
+### Test Steps
+
+1. Open the application.
+2. Identify interactive UI elements.
+3. Click relevant buttons and links.
+4. Interact with available selectors and form controls.
+5. Observe the application response.
+
+### Expected Result
+
+Interactive UI elements should respond correctly to user actions and provide the expected functionality.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+# Test Case Summary
+
+| Category                      | Test Cases |
+| ----------------------------- | ---------: |
+| Login                         |          7 |
+| Product Search                |          6 |
+| Product Page & Size Selection |          6 |
+| Shopping Cart                 |          7 |
+| Checkout                      |          8 |
+| Localization                  |          3 |
+| UI & Navigation               |          3 |
+| **Total**                     |     **40** |
+
+## Test Case Types Covered
+
+* Positive Testing
+* Negative Testing
+* Functional Testing
+* UI Testing
+* Validation Testing
+* User Flow Testing
+
+## Execution Status
+
+All test cases are currently marked as:
+
+**Not Executed**
+
+Test execution results, actual results, Pass/Fail status, and defect references will be added during the Test Execution phase.
