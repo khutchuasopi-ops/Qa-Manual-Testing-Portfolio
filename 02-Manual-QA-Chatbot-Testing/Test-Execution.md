@@ -1,130 +1,156 @@
-# Test Execution Report — AI E-commerce Chatbot
+# Test Execution Report — AI-Powered E-commerce Chatbot
 
-## Overview
+## 1. Overview
 
-I performed manual and exploratory testing of an AI-powered e-commerce
-chatbot.
+I performed manual and exploratory testing of an AI-powered e-commerce chatbot.
 
-The testing was based on realistic customer conversations rather than only
-happy-path questions.
+The testing focused on realistic customer conversations rather than only happy-path questions.
 
-I tested product search, product information, recommendations, product
-comparison, purchase intent, operator handoff, conversation state, language
-switching, and more complex user requests.
+The main areas tested included:
 
----
+* Product search
+* Product information
+* Product recommendations
+* Product comparison
+* Purchase intent
+* Operator handoff
+* Conversation state
+* Language switching
+* Complex and ambiguous user requests
 
-## Test Environment
-
-- Application: AI E-commerce Chatbot
-- Testing type: Manual / Exploratory Testing
-- Platform: Web
-- Main languages tested: English and Georgian
-- Product categories tested: Laptops and Smartphones
+> **Confidentiality Note:** Specific application, organization, website, product, and business information has been generalized or excluded from this portfolio.
 
 ---
 
-## What I Tested
+## 2. Test Environment
 
-| Area | Result |
-|---|---|
-| Laptop product search | Tested |
-| Cheapest product search | Tested |
-| Price questions | Tested |
-| RAM questions | Tested |
-| Color questions | Tested |
-| Gaming requirements | Tested |
-| Complex product requirements | Defect found |
-| Product comparison | Defect found |
-| Product price consistency | Defect found |
-| Product links | Tested |
-| Purchase intent | Improvement / defect observed |
-| Payment questions | Tested |
-| Pickup / availability questions | Tested |
-| Operator handoff | Tested |
-| Returning from operator mode | Defect found |
-| Minimize and reopen chat | Defect found |
-| Conversation context | Tested |
-| Topic switching | Tested |
-| Mixed-language input | Tested |
-| Store information | Requirement concern found |
-| System maintenance behavior | Observed |
-| Product material questions | Tested |
-| Ambiguous questions | Tested |
+* **Application:** Confidential AI-Powered E-commerce Chatbot
+* **Testing Type:** Manual / Exploratory Testing
+* **Platform:** Web
+* **Languages Tested:** English and Georgian
+* **Product Categories:** Laptops and Smartphones
 
 ---
 
-# Detailed Execution Results
+## 3. Test Execution Summary
 
-## 1. Laptop Search
+| Area                            | Result                        |
+| ------------------------------- | ----------------------------- |
+| Laptop product search           | Tested                        |
+| Cheapest product search         | Tested                        |
+| Price questions                 | Tested                        |
+| RAM questions                   | Tested                        |
+| Color questions                 | Tested                        |
+| Gaming requirements             | Tested                        |
+| Complex product requirements    | Defect found                  |
+| Product comparison              | Defect found                  |
+| Product price consistency       | Defect found                  |
+| Product links                   | Tested                        |
+| Purchase intent                 | Improvement / defect observed |
+| Payment questions               | Tested                        |
+| Pickup / availability questions | Tested                        |
+| Operator handoff                | Tested                        |
+| Returning from operator mode    | Defect found                  |
+| Minimize and reopen chat        | Defect found                  |
+| Conversation context            | Tested                        |
+| Topic switching                 | Tested                        |
+| Mixed-language input            | Tested                        |
+| Store information               | Requirement concern found     |
+| System maintenance behavior     | Observed                      |
+| Product material questions      | Tested                        |
+| Ambiguous questions             | Tested                        |
 
-**Test:**  
+---
+
+# 4. Detailed Execution Results
+
+## 4.1 Laptop Search
+
+**Test:**
+
 `I want a laptop under 1200 GEL`
 
-**Observed result:**  
-The chatbot provided laptop brands and asked about preferred brand or screen
-size.
+**Observed Result:**
 
-**Result:** Pass / No defect observed during this test.
+The chatbot provided laptop recommendations and asked about preferred brand or screen size.
+
+**Result:** Pass
+
+No defect was observed during this test.
 
 ---
 
-## 2. Cheapest Laptop
+## 4.2 Cheapest Laptop
 
-**Test:**  
+**Test:**
+
 `Which one is the cheapest?`
 
-**Observed result:**  
+**Observed Result:**
+
 The chatbot provided a cheapest laptop recommendation and price.
 
-**Result:** Pass / No defect confirmed during this test.
+**Result:** Pass
+
+No defect was confirmed during this test.
 
 ---
 
-## 3. RAM Information
+## 4.3 RAM Information
 
-**Test:**  
+**Test:**
+
 `How much RAM does it have?`
 
-**Observed result:**  
+**Observed Result:**
+
 The chatbot provided RAM information for the discussed laptops.
 
-**Result:** Pass / No defect confirmed during this test.
+**Result:** Pass
+
+No defect was confirmed during this test.
 
 ---
 
-## 4. Laptop Colors
+## 4.4 Laptop Colors
 
-**Test:**  
+**Test:**
+
 `What colors does it come in?`
 
-**Observed result:**  
+**Observed Result:**
+
 The chatbot provided available color options.
 
-**Result:** Pass / No defect confirmed during this test.
+**Result:** Pass
+
+No defect was confirmed during this test.
 
 ---
 
-## 5. Gaming Requirement
+## 4.5 Gaming Requirement
 
-**Test:**  
+**Test:**
+
 `I need a laptop for gaming`
 
-**Observed result:**  
-The chatbot recognized the gaming requirement and suggested gaming laptop
-brands.
+**Observed Result:**
 
-**Result:** Pass / No defect confirmed during this test.
+The chatbot recognized the gaming requirement and suggested appropriate laptop options.
+
+**Result:** Pass
+
+No defect was confirmed during this test.
 
 ---
 
-## 6. Complex Product Requirements
+## 4.6 Complex Product Requirements
 
 **Test:**
 
 `color RAM price design material battery warranty gaming office`
 
-**Observed result:**
+**Observed Result:**
 
 The chatbot focused mainly on RAM and asked:
 
@@ -134,11 +160,11 @@ The other requirements were not properly addressed.
 
 **Result:** Fail
 
-**Related bug:** BUG-005
+**Related Bug:** BUG-005
 
 ---
 
-## 7. Conflicting Requirements
+## 4.7 Conflicting Requirements
 
 **Test:**
 
@@ -148,92 +174,85 @@ Then:
 
 `cheap but gaming laptop`
 
-**Observed result:**
+**Observed Result:**
 
-The chatbot could not provide a clear matching product and suggested
-operator assistance.
+The chatbot could not provide a clear matching product and suggested operator assistance.
 
-**Result:** Needs improvement
+**Result:** Needs Improvement
 
-This behavior was useful for exploratory testing, but I did not classify it
-as a confirmed defect without a clear product/business requirement.
+This behavior was useful for exploratory testing, but it was not classified as a confirmed defect without a clearly defined product or business requirement.
 
 ---
 
-## 8. Product Comparison
+## 4.8 Product Comparison
 
 **Test:**
 
-`Compare iPhone 16 and Samsung S24`
+`Compare Product A and Product B`
 
-**Observed result:**
+**Observed Result:**
 
-The chatbot compared iPhone 16 with Samsung Galaxy S26 instead of the
-requested Samsung S24.
+The chatbot compared the requested first product with a different second product instead of the product specified by the user.
 
 **Result:** Fail
 
-**Related bug:** BUG-004
+**Related Bug:** BUG-004
+
+> Specific real product names have been generalized for portfolio confidentiality.
 
 ---
 
-## 9. Camera Comparison
+## 4.9 Follow-up Comparison Question
 
 **Test:**
 
 `Which one has a better camera?`
 
-**Observed result:**
+**Observed Result:**
 
-The chatbot continued the comparison using iPhone 16 and Samsung Galaxy S26.
-
-Because the previous comparison had already replaced S24 with S26, the
-response continued with the incorrect product context.
+The chatbot continued the comparison using the incorrect product context established during the previous response.
 
 **Result:** Fail
 
-**Related bug:** BUG-004
+**Related Bug:** BUG-004
 
 ---
 
-## 10. Product Price
+## 4.10 Product Price
 
 **Test:**
 
 `What is the price?`
 
-**Observed result:**
+**Observed Result:**
 
-The chatbot stated that the selected Asus Vivobook model cost 1999 GEL.
-
-The provided product link was opened and the product page showed 2099 GEL.
+The chatbot provided a product price that differed from the price displayed on the corresponding product page.
 
 **Result:** Fail
 
-**Related bug:** BUG-001
+**Related Bug:** BUG-001
 
 ---
 
-## 11. Product Link
+## 4.11 Product Link
 
 **Test:**
 
 Asked the chatbot to provide a link for the selected product.
 
-**Observed result:**
+**Observed Result:**
 
-The chatbot provided a product link that opened the product page.
+The chatbot provided a product link that opened the corresponding product page.
 
-However, the price on the page did not match the price provided by the
-chatbot.
+However, the price displayed on the product page did not match the price provided by the chatbot.
 
 **Result:** Partial / Fail
 
-**Related bug:** BUG-001
+**Related Bug:** BUG-001
 
 ---
 
-## 12. Purchase Intent
+## 4.12 Purchase Intent
 
 **Test:**
 
@@ -243,71 +262,67 @@ and:
 
 `I want to buy it`
 
-**Observed result:**
+**Observed Result:**
 
-The chatbot recognized the purchase intent and explained that the user could
-use the product page, cart, or online installment options.
+The chatbot recognized the purchase intent and explained that the user could continue through the product page, cart, or available payment options.
 
-However, it did not move into a structured checkout flow with a clear product
-summary and confirmation.
+However, it did not move into a structured checkout flow with a clear product summary and confirmation.
 
-**Result:** Needs improvement
+**Result:** Needs Improvement
 
-This was documented as a UX / recommendation rather than a confirmed
-functional defect.
+This was documented as a UX / recommendation rather than a confirmed functional defect.
 
 ---
 
-## 13. Payment Method
+## 4.13 Payment Method
 
 **Test:**
 
 `Can I pay cash?`
 
-**Observed result:**
+**Observed Result:**
 
-The chatbot explained that cash payment was available in physical stores and
-described online payment options.
+The chatbot explained the available payment options.
 
-**Result:** Pass / No defect confirmed.
+**Result:** Pass
+
+No defect was confirmed during this test.
 
 ---
 
-## 14. Pickup
+## 4.14 Pickup / Availability
 
 **Test:**
 
 `Can I pick it up tomorrow?`
 
-**Observed result:**
+**Observed Result:**
 
-The chatbot said pickup could be possible if the product was in stock and
-asked which branch the user preferred.
+The chatbot indicated that pickup could depend on product availability and asked for additional information.
 
-**Result:** Needs verification
+**Result:** Needs Verification
 
-The chatbot did not actually verify a specific product's real-time stock
-during this conversation.
+The chatbot did not verify real-time stock availability during this conversation.
 
 ---
 
-## 15. Operator Handoff
+## 4.15 Operator Handoff
 
 **Test:**
 
 `Connect me to operator`
 
-**Observed result:**
+**Observed Result:**
 
-The system confirmed:
+The system confirmed that the request had been sent to an operator.
 
-`Your request has been sent to an operator.`
+**Result:** Pass
 
-**Result:** Pass for operator request submission.
+The operator request was successfully submitted.
 
 ---
 
-## 16. Return to AI After Operator Request
+## 4.16 Return to AI After Operator Request
 
 **Test:**
 
@@ -315,41 +330,40 @@ After requesting an operator:
 
 `Never mind. Can you return to chatbot?`
 
-**Observed result:**
+**Observed Result:**
 
-The system responded that an operator had already been requested.
+The system indicated that an operator had already been requested.
 
 The user could not return to the AI chatbot through the conversation.
 
 **Result:** Fail
 
-**Related bug:** BUG-002
+**Related Bug:** BUG-002
 
 ---
 
-## 17. Minimize and Reopen Chat
+## 4.17 Minimize and Reopen Chat
 
 **Test:**
 
 1. Request an operator.
 2. Minimize the chatbot.
-3. Reopen it.
+3. Reopen the chatbot.
 4. Continue the conversation.
 
-**Observed result:**
+**Observed Result:**
 
 The chatbot remained in the previous operator state.
 
-Refreshing the page changed the behavior, but simply minimizing and reopening
-the chat did not.
+Refreshing the page changed the behavior, but minimizing and reopening the chat did not reset the conversation state.
 
 **Result:** Fail
 
-**Related bug:** BUG-003
+**Related Bug:** BUG-003
 
 ---
 
-## 18. Topic Switching
+## 4.18 Topic Switching
 
 **Test:**
 
@@ -359,184 +373,194 @@ Then:
 
 `Actually show me phones`
 
-**Observed result:**
+**Observed Result:**
 
 The chatbot switched from laptops to phones.
 
-**Result:** Pass / No defect confirmed.
+**Result:** Pass
+
+No defect was confirmed during this test.
 
 ---
 
-## 19. Multiple Topics in One Conversation
+## 4.19 Multiple Topics in One Conversation
 
 **Test:**
 
-Laptop questions → phone comparison → laptop → phones → store information →
-purchase.
+Laptop questions → phone comparison → laptop → phones → store information → purchase.
 
-**Observed result:**
+**Observed Result:**
 
-The chatbot was able to continue the conversation, but longer conversations
-created situations where context and product selection needed closer
-verification.
+The chatbot was able to continue the conversation, but longer conversations created situations where context and product selection required closer verification.
 
-**Result:** Exploratory observation
+**Result:** Exploratory Observation
 
 ---
 
-## 20. Store Information
+## 4.20 Store Information
 
 **Test:**
 
 `Where is your store?`
 
-**Observed result:**
+**Observed Result:**
 
-The chatbot provided specific store addresses and locations.
+The chatbot provided specific store information.
 
-**Result:** Requirement concern
+**Result:** Requirement Concern
 
-Based on the project requirement that the chatbot does not have an official
-Alta website integration, providing specific branch addresses should be
-reviewed.
+The expected behavior for store information should be verified against the defined chatbot capabilities and available integrations.
 
-This was treated as a requirement/business-rule issue rather than a confirmed
-technical defect until the expected behavior is confirmed.
+This was treated as a requirement/business-rule concern rather than a confirmed technical defect.
 
 ---
 
-## 21. Material Question
+## 4.21 Material Question
 
 **Test:**
 
 `silver material?`
 
-**Observed result:**
+**Observed Result:**
 
-The chatbot correctly distinguished between a silver color and actual silver
-material and explained that laptops were made from materials such as aluminum
-or plastic.
+The chatbot distinguished between color and material and explained that laptops could use materials such as aluminum or plastic.
 
-**Result:** Pass / No defect confirmed.
+**Result:** Pass
+
+No defect was confirmed during this test.
 
 ---
 
-## 22. Multiple Attribute Question
+## 4.22 Multiple Attribute Question
 
 **Test:**
 
 `silver material? design? color? RAM? price?`
 
-**Observed result:**
+**Observed Result:**
 
-The chatbot provided information about silver laptops, aluminum bodies,
-RAM, design, and price range, then asked which brand was preferred.
+The chatbot provided information about several requested attributes and then asked which brand was preferred.
 
-**Result:** No confirmed defect from this specific test.
+**Result:** No Confirmed Defect
 
 ---
 
-## 23. Product Memory
+## 4.23 Product Memory
 
 **Test:**
 
-After discussing an Asus Vivobook:
+After discussing a specific laptop:
 
 `What I chose?`
 
-**Observed result:**
+**Observed Result:**
 
-The chatbot identified the Asus Vivobook configuration discussed earlier.
+The chatbot identified the product configuration discussed earlier in the conversation.
 
-**Result:** Pass / No defect confirmed.
+**Result:** Pass
+
+No defect was confirmed during this test.
 
 ---
 
-## 24. Mixed Language
+## 4.24 Mixed Language
 
 **Test:**
 
 The conversation was switched between English and Georgian.
 
-**Observed result:**
+**Observed Result:**
 
 The chatbot continued responding and understood the general conversation.
 
-**Result:** Pass / No confirmed defect.
+**Result:** Pass
+
+No confirmed defect was observed.
 
 ---
 
-## 25. System Maintenance
+## 4.25 System Maintenance
 
 **Test:**
 
-During some messages, the chatbot displayed:
+During some messages, the chatbot displayed a system maintenance message.
 
-`System is under maintenance, please try again in a few minutes.`
+**Observed Result:**
 
-**Observed result:**
-
-The message appeared during testing and later the chatbot became available
-again.
+The maintenance message appeared during testing and the chatbot became available again later.
 
 **Result:** Observed
 
-This should not automatically be reported as a chatbot defect because the
-system may genuinely have been unavailable at that moment.
+This was not automatically classified as a chatbot defect because the system may genuinely have been temporarily unavailable.
 
 ---
 
-# Confirmed / Documented Bugs
+# 5. Confirmed / Documented Bugs
 
-The following issues were strong enough to document as separate bugs:
+The following issues were documented as separate bug reports:
 
-| Bug ID | Issue | Result |
-|---|---|---|
-| BUG-001 | Chatbot price differs from product page | Fail |
-| BUG-002 | User cannot clearly return from operator mode | Fail |
-| BUG-003 | Operator state remains after minimize/reopen | Fail |
-| BUG-004 | Requested Samsung S24 is replaced with S26 | Fail |
-| BUG-005 | Multiple product requirements are not properly handled | Fail |
+| Bug ID  | Issue                                                                    | Result |
+| ------- | ------------------------------------------------------------------------ | ------ |
+| BUG-001 | Chatbot price differs from product page                                  | Fail   |
+| BUG-002 | User cannot clearly return from operator mode                            | Fail   |
+| BUG-003 | Operator state remains after minimize/reopen                             | Fail   |
+| BUG-004 | Requested product is replaced with a different product during comparison | Fail   |
+| BUG-005 | Multiple product requirements are not properly handled                   | Fail   |
 
----
-
-# Recommendations / Improvements
-
-During testing, I also identified areas that may require product or UX
-improvements but were not necessarily confirmed defects.
-
-### Purchase flow
-
-The chatbot recognizes purchase intent but could provide a more structured
-path to checkout.
-
-### Complex requests
-
-The chatbot could improve how it handles several requirements in one message.
-
-### Store information
-
-The expected behavior for store addresses should be confirmed based on the
-available integrations and business requirements.
-
-### Pickup availability
-
-The chatbot should only provide availability information if it has access to
-current stock data.
+Detailed reproduction steps, expected results, actual results, and severity/priority information are available in the `Bug-Reports` folder.
 
 ---
 
-# QA Conclusion
+# 6. Recommendations / Improvements
 
-The chatbot handled many basic product questions successfully.
+During testing, several areas were identified that may require product or UX improvements.
 
-The most important issues found during exploratory testing were related to
-data consistency, product identity, conversation state, operator handoff, and
-complex user intent.
+## Purchase Flow
 
-The testing also showed that an AI chatbot needs to be tested beyond simple
-question-and-answer scenarios.
+The chatbot recognizes purchase intent but could provide a more structured path toward checkout.
 
-Long conversations, changing requirements, product comparisons, purchase
-intent, and transitions between AI and human support can expose problems that
-are not visible during basic functional testing.
+## Complex Requests
+
+The chatbot could improve how it processes multiple requirements within a single user message.
+
+## Store Information
+
+The expected behavior for store information should be confirmed based on available integrations and business requirements.
+
+## Pickup Availability
+
+The chatbot should provide availability information only when current stock data is available.
+
+---
+
+# 7. QA Conclusion
+
+The chatbot successfully handled many basic product-related questions.
+
+The most important issues identified during exploratory testing were related to:
+
+* Data consistency
+* Product identity
+* Conversation state
+* Operator handoff
+* Complex user intent
+* Product comparison
+* Price consistency
+
+The testing also demonstrated that AI-powered conversational systems require testing beyond simple question-and-answer scenarios.
+
+Long conversations, changing requirements, product comparisons, purchase intent, and transitions between AI and human support can expose issues that may not be visible during basic functional testing.
+
+This project demonstrates practical skills in:
+
+* Manual Testing
+* Exploratory Testing
+* Functional Testing
+* Negative Testing
+* Conversational Testing
+* Context and State Testing
+* Defect Identification
+* Bug Reporting
+* Requirement-based thinking
+* QA Documentation
+
