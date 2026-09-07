@@ -2,97 +2,88 @@
 
 ## 1. Project Overview
 
-This project was created as a practical manual QA testing portfolio project for a confidential e-commerce web application.
+This case study describes a practical manual QA testing project performed on an e-commerce web application.
 
-The main goal was to practice a structured manual testing process and demonstrate the ability to design test scenarios, write test cases, execute available test cases, identify defects, and document testing results.
+The main purpose of the project was to practice a structured manual testing process, from test design and execution to defect reporting and test result documentation.
 
-**Testing Role:** Junior Manual QA Tester
+**QA Role:** Junior Manual QA Tester
 **Testing Type:** Manual Testing
-**Application Type:** Web Application
+**Application Type:** E-commerce Web Application
 
 ---
 
 ## 2. Testing Objective
 
-The main objectives of the testing activity were to:
+The main objective was to verify important user-facing functionality and identify defects that could negatively affect the user experience.
 
-* Verify important user flows.
-* Check expected application behavior.
-* Identify functional and UI issues.
-* Create clear and reproducible test cases.
-* Document defects with steps to reproduce.
-* Compare expected and actual results.
-* Prepare a clear test summary.
+The testing focused on:
+
+* Login and authentication
+* Product search
+* Product details
+* Product size selection
+* Shopping cart
+* Product quantity management
+* Checkout
+* Localization
+* UI and navigation
 
 ---
 
 ## 3. Testing Scope
 
-The main areas covered in the project were:
+The project included the creation of:
 
-* Login and authentication
-* Product search
-* Product selection
-* Product size selection
-* Product quantity
-* Shopping cart
-* Cart price calculation
-* Checkout
-* Delivery information
-* Payment information
-* Order summary
-* Language and localization
-* Navigation and basic UI checks
+* 34 Test Scenarios
+* 40 Detailed Test Cases
+* Functional and negative test coverage
+* UI checks
+* Validation checks
+* Bug Reports
+* Test Execution Report
+* Test Summary Report
+* Testing Checklists
+
+The main user flows were reviewed from an end-user perspective.
 
 ---
 
 ## 4. Testing Approach
 
-The testing process followed a basic manual QA workflow.
+The testing process followed a basic manual QA workflow:
 
-### Step 1 — Identify Functional Areas
+**Test Scenario Design → Test Case Design → Manual Test Execution → Defect Identification → Bug Reporting → Test Summary**
 
-The application was divided into important functional areas such as Login, Search, Product, Cart, Checkout, and Localization.
+### Test Scenario Design
 
-### Step 2 — Create Test Scenarios
+High-level scenarios were created to identify the main areas and user flows that required testing.
 
-High-level test scenarios were created to describe the functionality that needed to be checked.
+### Test Case Design
 
-The project contains **34 documented test scenarios**.
+Detailed test cases were created from the scenarios.
 
-### Step 3 — Create Test Cases
+The test cases included:
 
-Detailed test cases were created based on the identified scenarios.
+* Preconditions
+* Test data
+* Test steps
+* Expected results
+* Actual results
+* Execution status
+* Related test scenarios
 
-The project contains **40 documented test cases** representing the historical test execution set.
+### Manual Execution
 
-### Step 4 — Manual Test Execution
+A subset of the available test cases was executed and the results were documented separately.
 
-Available historical execution results were reviewed and documented.
-
-The execution report contains:
+The recorded execution included:
 
 * 2 Passed
 * 3 Failed
 * 0 Blocked
 * 35 Not Recorded
 
-Results that were not available were intentionally marked as **NOT RECORDED** instead of being recreated.
-
-### Step 5 — Defect Reporting
-
-Issues found during testing were documented as individual bug reports.
-
-Each report includes:
-
-* Bug title
-* Severity
-* Priority
-* Description
-* Steps to reproduce
-* Expected result
-* Actual result
-* Related test case
+The 35 test cases marked as **Not Recorded** were not treated as failed tests.
 
 ---
 
@@ -100,178 +91,215 @@ Each report includes:
 
 ### Login
 
-Login functionality was checked using valid and invalid input.
+Login functionality was checked using valid and invalid input combinations.
 
-The testing included:
+Negative testing included:
 
-* Valid login
-* Invalid username/email
+* Invalid username
 * Invalid password
-* Empty required fields
-* Logout
-
-One defect was identified where an invalid email was accepted during login.
-
-**Related Bug:** BUG-003
-
----
+* Empty username
+* Empty password
+* Empty login fields
+* Invalid email format
 
 ### Product Search
 
-Search functionality was checked using different search inputs.
-
-The testing included:
-
-* Valid search
-* Invalid search
-* Empty search
-* Partial product names
-* Search result relevance
-* Navigation from search results
-
----
+Search functionality was reviewed using valid, invalid, empty, and partial search input.
 
 ### Product Details
 
-Product information and selection behavior were checked.
-
-The testing included:
-
-* Product information
-* Product image and price
-* Available sizes
-* Unavailable sizes
-* Selected size behavior
-* Adding a product without selecting a required size
-
----
+Product information and available size selection were checked.
 
 ### Shopping Cart
 
-The shopping cart was checked after adding products.
-
-The testing included:
+The cart was tested for:
 
 * Adding products
-* Product information in the cart
-* Increasing quantity
-* Decreasing quantity
-* Cart total calculation
+* Product information
+* Quantity changes
 * Removing products
 * Empty cart behavior
-
-One defect was identified where the cart total did not update correctly after changing the quantity.
-
-**Related Bug:** BUG-002
-
----
+* Total price calculation
 
 ### Checkout
 
-The checkout flow was reviewed from the cart through the order summary.
+The checkout flow was reviewed for:
 
-The documented coverage included:
-
-* Navigation to checkout
-* Checkout information
-* Required field validation
+* Navigation from cart to checkout
+* Required information
+* Invalid input
 * Delivery information
-* Payment information
+* Payment method
 * Order summary
-* Successful order flow
-* Invalid and missing input
-
----
+* Order placement
 
 ### Localization
 
-Language selection and visible page content were checked.
+Language selection and consistency of displayed content were checked.
 
-One defect was identified where the website content remained in English after another language was selected.
+### UI and Navigation
 
-**Related Bug:** BUG-001
+Main navigation and important interactive UI elements were reviewed from a usability perspective.
 
 ---
 
 ## 6. Defects Identified
 
-Three defects were documented during the testing activity.
+Three defects were identified during the recorded test execution.
 
-| Bug ID  | Area                   | Severity | Priority |
-| ------- | ---------------------- | -------- | -------- |
-| BUG-001 | Localization           | Medium   | Medium   |
-| BUG-002 | Shopping Cart          | High     | High     |
-| BUG-003 | Login / Authentication | Medium   | High     |
+### BUG-001 — Website Content Remains in English After Changing Language
 
-Detailed information about each issue is available in the `Bug-Reports` folder.
+**Severity:** Medium
+**Priority:** Medium
 
----
+The application continued to display some content in English after another language was selected.
 
-## 7. Challenges
+**Impact:**
+Users may see inconsistent language content while using the application.
 
-One of the main challenges was maintaining sufficient coverage across several different e-commerce user flows.
-
-To address this, the application was divided into functional areas and separate scenarios, test cases, and checklists were created for each area.
-
-Another challenge was working with incomplete historical execution information.
-
-Instead of assuming missing results, unavailable results were marked as **NOT RECORDED**.
+**Related Test Case:** TC-036
 
 ---
 
-## 8. Key Learnings
+### BUG-002 — Cart Total is Calculated Incorrectly
 
-This project helped strengthen my understanding of:
+**Severity:** High
+**Priority:** High
 
-* Writing structured test scenarios
-* Writing detailed test cases
-* Creating testing checklists
-* Performing positive and negative testing
-* Identifying functional defects
-* Writing clear bug reports
-* Creating reproducible steps
-* Understanding expected vs. actual results
-* Using severity and priority
-* Following basic manual QA workflow
-* Documenting testing results
-* Thinking from the end-user perspective
+The shopping cart displayed an incorrect total amount for the selected product quantity.
+
+**Impact:**
+Incorrect pricing can affect the purchasing process and may lead to incorrect order information.
+
+**Related Test Case:** TC-024
 
 ---
 
-## 9. Junior QA Perspective
+### BUG-003 — Invalid Email Accepted During Login
 
-This project represents my practical learning and portfolio work as a **Junior Manual QA Tester**.
+**Severity:** Medium
+**Priority:** High
 
-The purpose of the project is to demonstrate foundational manual testing and documentation skills rather than advanced or production-level QA experience.
+The login functionality accepted an invalid email format instead of displaying the expected validation.
 
-The project demonstrates my ability to approach a web application systematically, organize test coverage, document defects, and communicate testing results clearly.
+**Impact:**
+This may result in incorrect validation behavior during the login process.
 
----
-
-## 10. Areas for Further Testing
-
-Based on the documented testing activity, additional testing could include:
-
-* More negative login scenarios
-* Additional checkout validation
-* More cart calculation scenarios
-* Additional localization checks
-* Verification of reported defects after fixes
-* Regression testing after changes
-* Cross-browser verification
-* Additional UI and responsive checks
-
-These items represent recommended future testing and are not claimed as completed execution results.
+**Related Test Case:** TC-002
 
 ---
 
-## 11. Conclusion
+## 7. Defect Prioritization
 
-The project provided practical experience in applying a structured manual QA process to an e-commerce web application.
+Defects were prioritized based on their potential impact on the user and the affected functionality.
 
-During the project, I created test scenarios, detailed test cases, checklists, execution documentation, and bug reports.
+The cart calculation defect was classified as **High severity and High priority** because incorrect price information can directly affect the purchasing flow.
 
-The testing activity identified issues related to login validation, shopping cart calculations, and localization.
+The login validation issue was classified as **Medium severity and High priority** because it affects authentication-related input validation.
 
-Overall, this case study demonstrates my current foundation in **Manual QA Testing** and my ability to create clear, organized, and useful QA documentation.
+The localization issue was classified as **Medium severity and Medium priority** because it affects consistency of the user interface but does not prevent the main application flow.
 
+---
+
+## 8. Traceability
+
+Traceability was maintained between test cases and identified defects.
+
+| Test Case | Defect  |
+| --------- | ------- |
+| TC-002    | BUG-003 |
+| TC-024    | BUG-002 |
+| TC-036    | BUG-001 |
+
+This relationship makes it easier to understand which test case identified each defect.
+
+---
+
+## 9. Challenges
+
+One of the main challenges was identifying negative and boundary-related scenarios beyond the basic happy path.
+
+Additional attention was given to:
+
+* Empty fields
+* Invalid input
+* Product quantity changes
+* Required checkout information
+* Language consistency
+* Incorrect calculation results
+
+Another challenge was maintaining consistency between test scenarios, detailed test cases, execution results, and bug reports.
+
+---
+
+## 10. Key Learnings
+
+This project helped develop practical understanding of:
+
+* How to break application functionality into test scenarios
+* How to create detailed test cases
+* How to write clear test steps
+* How to define expected results
+* How to perform positive and negative testing
+* How to identify and document defects
+* How to assign severity and priority
+* How to maintain traceability
+* How to summarize test execution results
+* How to organize QA documentation in GitHub
+
+The project also reinforced the importance of clear and reproducible bug reports.
+
+---
+
+## 11. Junior QA Perspective
+
+As a Junior Manual QA Tester, the main focus of this project was to demonstrate a structured approach to manual testing rather than advanced automation or specialized testing techniques.
+
+The project provided practical experience with the basic QA workflow and helped strengthen skills in:
+
+* Test design
+* Manual test execution
+* Functional testing
+* Negative testing
+* UI testing
+* Validation testing
+* Defect reporting
+* Test documentation
+
+The project also highlighted areas where further practical experience would be valuable.
+
+---
+
+## 12. Areas for Further Testing
+
+Additional testing could be performed in the following areas:
+
+1. Execute the remaining test cases that currently have no recorded result.
+2. Re-test reported defects after fixes become available.
+3. Perform additional responsive layout checks.
+4. Perform broader browser compatibility checks.
+5. Perform regression testing after significant application changes.
+6. Expand negative and boundary-value testing.
+7. Verify additional checkout and order scenarios.
+
+These areas are identified as **further testing opportunities** and are not presented as completed testing activities.
+
+---
+
+## 13. Confidentiality
+
+Application-specific credentials, private test data, and other confidential information are intentionally excluded from this public portfolio.
+
+The case study contains only non-sensitive testing information necessary to demonstrate the QA process.
+
+---
+
+## 14. Conclusion
+
+This project demonstrates a practical approach to manual QA testing of an e-commerce web application.
+
+The project includes **34 test scenarios**, **40 detailed test cases**, and **3 documented defects**.
+
+The testing focused on important user-facing functionality including authentication, product search, product selection, shopping cart, checkout, localization, and UI/navigation.
+
+The project demonstrates Junior Manual QA skills in test design, manual execution, defect identification, bug reporting, prioritization, traceability, and QA documentation.
