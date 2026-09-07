@@ -4,11 +4,18 @@
 
 This document contains detailed manual test cases for the e-commerce web application.
 
-The test cases are derived from the high-level test scenarios and cover positive, negative, functional, validation, UI, and user-flow testing.
+The test cases are derived from the high-level test scenarios and cover:
+
+* Positive Testing
+* Negative Testing
+* Functional Testing
+* UI Testing
+* Validation Testing
+* User Flow Testing
 
 ### Test Case Status
 
-All test cases are initially marked as Not Executed because test execution will be performed separately.
+All test cases are initially marked as **Not Executed** because test execution is documented separately.
 
 ---
 
@@ -857,7 +864,7 @@ Not Executed.
 | ---------------- | --------------------------------------------------------------- |
 | Test Case ID     | TC-029                                                          |
 | Title            | Verify checkout validation when required information is missing |
-| Related Scenario | **TS-020, TS-025**                                              |
+| Related Scenario | TS-020, TS-025                                                  |
 | Test Type        | Functional / Negative / Validation                              |
 | Priority         | High                                                            |
 | Preconditions    | Checkout page is accessible.                                    |
@@ -886,7 +893,7 @@ Not Executed.
 | ---------------- | ------------------------------------------------------------ |
 | Test Case ID     | TC-030                                                       |
 | Title            | Verify checkout validation with invalid customer information |
-| Related Scenario | **TS-020, TS-026**                                           |
+| Related Scenario | TS-020, TS-026                                               |
 | Test Type        | Functional / Negative / Validation                           |
 | Priority         | High                                                         |
 | Preconditions    | Checkout page is accessible.                                 |
@@ -1036,7 +1043,7 @@ Not Executed.
 | ---------------- | ----------------------------------------------- |
 | Test Case ID     | TC-035                                          |
 | Title            | Verify website language selection functionality |
-| Related Scenario | **TS-027**                                      |
+| Related Scenario | TS-027                                          |
 | Test Type        | Functional / UI                                 |
 | Priority         | Medium                                          |
 | Preconditions    | The application supports multiple languages.    |
@@ -1066,7 +1073,7 @@ Not Executed.
 | ---------------- | ----------------------------------------------------------------- |
 | Test Case ID     | TC-036                                                            |
 | Title            | Verify that website content is displayed in the selected language |
-| Related Scenario | **TS-028**                                                        |
+| Related Scenario | TS-028                                                            |
 | Test Type        | Functional / UI                                                   |
 | Priority         | High                                                              |
 | Preconditions    | A supported alternative language has been selected.               |
@@ -1095,7 +1102,7 @@ Not Executed.
 | ---------------- | ---------------------------------------------------------------------------------- |
 | Test Case ID     | TC-037                                                                             |
 | Title            | Verify that the selected language remains consistent when navigating between pages |
-| Related Scenario | **TS-028**                                                                         |
+| Related Scenario | TS-028                                                                             |
 | Test Type        | Functional / UI                                                                    |
 | Priority         | Medium                                                                             |
 | Preconditions    | A supported language has been selected.                                            |
@@ -1242,6 +1249,4 @@ All test cases are currently marked as:
 
 **Not Executed**
 
-Test execution results, actual results, Pass/Fail status, and defect references will be added during the Test Execution phase.
-
-
+Test execution results, actual results, Pass/Fail status, and defect references are documented separately in the Test Execution documentation.
