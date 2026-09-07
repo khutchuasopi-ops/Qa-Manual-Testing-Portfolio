@@ -1,128 +1,193 @@
 # Test Scenarios — E-commerce Web Application
 
-## Overview
+## 1. Login and Authentication
 
-This document contains high-level test scenarios for the confidential e-commerce web application.
+### TS-001 — User Login
 
-Test scenarios define the main areas of the application to be tested before detailed test cases are created.
+Verify that a user can log in with valid credentials.
 
-The scenarios focus on the main user journeys and core functional areas of the application.
+### TS-002 — Login with Valid and Invalid Credentials
 
----
+Verify login behavior with valid and invalid credentials.
 
-# 1. Login and Authentication
+### TS-003 — Required Login Fields
 
-| Scenario ID | Test Scenario                                   | Priority |
-| ----------- | ----------------------------------------------- | -------- |
-| TS-001      | Verify user login functionality                 | High     |
-| TS-002      | Verify login with valid and invalid credentials | High     |
-| TS-003      | Verify validation of required login fields      | High     |
-| TS-004      | Verify logout functionality                     | Medium   |
+Verify validation when required login fields are empty.
 
----
+### TS-004 — User Logout
 
-# 2. Product Search
-
-| Scenario ID | Test Scenario                                                  | Priority |
-| ----------- | -------------------------------------------------------------- | -------- |
-| TS-005      | Verify product search functionality                            | High     |
-| TS-006      | Verify search with valid and invalid keywords                  | High     |
-| TS-007      | Verify search behavior with an empty search field              | Medium   |
-| TS-008      | Verify that search results are relevant to the entered keyword | High     |
+Verify that a logged-in user can log out successfully.
 
 ---
 
-# 3. Product Page and Size Selection
+## 2. Product Search
 
-| Scenario ID | Test Scenario                                                                       | Priority |
-| ----------- | ----------------------------------------------------------------------------------- | -------- |
-| TS-009      | Verify product information displayed on the product page                            | High     |
-| TS-010      | Verify product size selection functionality                                         | High     |
-| TS-011      | Verify behavior when a product size is unavailable                                  | High     |
-| TS-012      | Verify that the selected product size is retained when adding a product to the cart | High     |
+### TS-005 — Product Search
 
----
+Verify that users can search for products.
 
-# 4. Shopping Cart
+### TS-006 — Valid and Invalid Search Keywords
 
-| Scenario ID | Test Scenario                                             | Priority |
-| ----------- | --------------------------------------------------------- | -------- |
-| TS-013      | Verify adding products to the shopping cart               | High     |
-| TS-014      | Verify product information displayed in the shopping cart | High     |
-| TS-015      | Verify changing product quantity in the shopping cart     | High     |
-| TS-016      | Verify cart total calculation                             | High     |
-| TS-017      | Verify removing products from the shopping cart           | High     |
-| TS-018      | Verify behavior of an empty shopping cart                 | Medium   |
+Verify search behavior with valid, invalid, and partial keywords.
+
+### TS-007 — Empty Search
+
+Verify the application behavior when search is submitted without a keyword.
+
+### TS-008 — Search Result Relevance
+
+Verify that search results are relevant to the entered keyword.
 
 ---
 
-# 5. Checkout
+## 3. Product Details and Selection
 
-| Scenario ID | Test Scenario                                                 | Priority |
-| ----------- | ------------------------------------------------------------- | -------- |
-| TS-019      | Verify navigation from the shopping cart to checkout          | High     |
-| TS-020      | Verify checkout information and validation                    | High     |
-| TS-021      | Verify delivery and shipping information                      | High     |
-| TS-022      | Verify available payment methods                              | High     |
-| TS-023      | Verify order summary and total amount                         | High     |
-| TS-024      | Verify successful order placement                             | High     |
-| TS-025      | Verify checkout behavior when required information is missing | High     |
-| TS-026      | Verify checkout behavior with invalid input data              | High     |
+### TS-009 — Product Information
 
----
+Verify that product information is displayed correctly.
 
-# 6. Localization
+### TS-010 — Product Size Selection
 
-| Scenario ID | Test Scenario                                                     | Priority |
-| ----------- | ----------------------------------------------------------------- | -------- |
-| TS-027      | Verify website language selection functionality                   | Medium   |
-| TS-028      | Verify that website content is displayed in the selected language | High     |
+Verify that an available product size can be selected.
+
+### TS-011 — Unavailable Product Size
+
+Verify that an unavailable size cannot be selected incorrectly.
+
+### TS-012 — Selected Size Retention
+
+Verify that the selected product size remains selected when expected.
 
 ---
 
-# 7. UI and Navigation
+## 4. Shopping Cart
 
-| Scenario ID | Test Scenario                                    | Priority |
-| ----------- | ------------------------------------------------ | -------- |
-| TS-029      | Verify navigation between main application pages | Medium   |
-| TS-030      | Verify visibility of major UI elements           | Medium   |
-| TS-031      | Verify that interactive UI elements are usable   | Medium   |
+### TS-013 — Add Product to Cart
+
+Verify that a selected product can be added to the shopping cart.
+
+### TS-014 — Cart Product Information
+
+Verify that product information is displayed correctly in the cart.
+
+### TS-015 — Change Product Quantity
+
+Verify that product quantity can be increased and decreased.
+
+### TS-016 — Cart Total Calculation
+
+Verify that the cart total is calculated correctly.
+
+### TS-017 — Remove Product from Cart
+
+Verify that a product can be removed from the cart.
+
+### TS-018 — Empty Shopping Cart
+
+Verify that the empty cart state is displayed correctly.
 
 ---
 
-# 8. Product Quantity
+## 5. Checkout
 
-| Scenario ID | Test Scenario                                                   | Priority |
-| ----------- | --------------------------------------------------------------- | -------- |
-| TS-032      | Verify product quantity selection functionality                 | High     |
-| TS-033      | Verify behavior when increasing and decreasing product quantity | High     |
-| TS-034      | Verify quantity limits and invalid quantity values              | Medium   |
+### TS-019 — Navigate from Cart to Checkout
+
+Verify that the user can proceed from the shopping cart to checkout.
+
+### TS-020 — Checkout Information and Validation
+
+Verify checkout information fields and their basic validation.
+
+### TS-021 — Delivery Information
+
+Verify that delivery information can be entered and validated.
+
+### TS-022 — Payment Information
+
+Verify that payment information fields are available and handled correctly.
+
+### TS-023 — Order Summary and Total
+
+Verify that the order summary displays the correct product, quantity, price, and total information.
+
+### TS-024 — Successful Order Flow
+
+Verify that a user can complete the order flow with valid information.
+
+### TS-025 — Missing Required Checkout Information
+
+Verify that required checkout fields are validated when information is missing.
+
+### TS-026 — Invalid Checkout Input
+
+Verify checkout behavior when invalid information is entered.
 
 ---
 
-## Scenario Coverage Summary
+## 6. Localization
 
-| Area                            | Scenario Range      |  Count |
-| ------------------------------- | ------------------- | -----: |
-| Login and Authentication        | TS-001 – TS-004     |      4 |
-| Product Search                  | TS-005 – TS-008     |      4 |
-| Product Page and Size Selection | TS-009 – TS-012     |      4 |
-| Shopping Cart                   | TS-013 – TS-018     |      6 |
-| Checkout                        | TS-019 – TS-026     |      8 |
-| Localization                    | TS-027 – TS-028     |      2 |
-| UI and Navigation               | TS-029 – TS-031     |      3 |
-| Product Quantity                | TS-032 – TS-034     |      3 |
-| **Total**                       | **TS-001 – TS-034** | **34** |
+### TS-027 — Language Selection
 
-## Priority Definitions
+Verify that the user can select another available language.
 
-* **High** — Important functionality that may directly affect the main user journey or core application behavior.
-* **Medium** — Functionality that should be tested but has lower impact on the main user journey.
+### TS-028 — Selected Language Content
+
+Verify that visible application content changes according to the selected language.
+
+---
+
+## 7. UI and Navigation
+
+### TS-029 — Main Navigation
+
+Verify that the main navigation and important links work correctly.
+
+### TS-030 — UI Element Visibility
+
+Verify that important UI elements are visible and understandable.
+
+### TS-031 — Interactive UI Elements
+
+Verify that buttons, links, and other interactive elements can be used as expected.
+
+---
+
+## 8. Product Quantity
+
+### TS-032 — Product Quantity Selection
+
+Verify that the user can select or enter a valid product quantity.
+
+### TS-033 — Increase and Decrease Quantity
+
+Verify that product quantity can be increased and decreased correctly.
+
+### TS-034 — Quantity Limits and Invalid Quantity
+
+Verify that invalid quantities and quantity limits are handled correctly.
+
+---
+
+## Scenario Summary
+
+| Area                          | Scenarios |
+| ----------------------------- | --------: |
+| Login and Authentication      |         4 |
+| Product Search                |         4 |
+| Product Details and Selection |         4 |
+| Shopping Cart                 |         6 |
+| Checkout                      |         8 |
+| Localization                  |         2 |
+| UI and Navigation             |         3 |
+| Product Quantity              |         3 |
+| **Total**                     |    **34** |
+
+---
 
 ## Notes
 
-* These are high-level test scenarios. Detailed test steps are documented separately in `Test-Cases.md`.
-* Test execution results are documented separately in `Test-Execution/Test-Execution-Report.md`.
-* The application and related test information are confidential.
-* No confidential application, organization, user, credential, or business information is included in this portfolio.
+These scenarios describe the documented functional coverage of the project.
 
+They represent test scenarios and should not be interpreted as proof that every scenario was executed.
+
+Historical execution results are documented separately in the `Test-Execution` folder.
