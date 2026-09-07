@@ -1,0 +1,273 @@
+# AI Writing Workspace — Manual QA Testing
+
+## Project Overview
+
+This project documents manual QA testing performed on a staging/preview environment of an AI-powered writing and planning workspace.
+
+The goal of the testing was to evaluate core user workflows, identify functional issues, verify data persistence, test AI-assisted features, and document usability improvements.
+
+> **Note:** The product name has been anonymized for portfolio purposes.
+
+---
+
+## Testing Scope
+
+The following areas were tested:
+
+* Board
+* Draft
+* Plan
+* AI Chat
+* Library
+* Templates
+* Split View
+* Project / Manuscript management
+* Poster / Cover management
+* Navigation
+* UI and UX behavior
+* Data persistence
+* AI Assistant workflows
+
+---
+
+## Test Environment
+
+**Environment:** Staging / Preview
+**Testing Type:** Manual QA
+**Testing Approach:** Exploratory + Functional Testing
+**Production:** Not tested
+
+---
+
+## Testing Objectives
+
+The main objectives of this testing were to:
+
+* Verify core user workflows
+* Identify functional bugs
+* Reproduce reported issues
+* Verify data persistence after page refresh
+* Test AI Assistant functionality
+* Verify Draft editing and content saving
+* Test navigation between different sections
+* Verify drag & drop functionality
+* Test Split View behavior
+* Test Template interactions
+* Verify poster upload and saving
+* Test new conversations and context isolation
+* Identify UI/UX issues
+* Collect evidence for reproducible issues
+* Document bugs with clear reproduction steps
+
+---
+
+## Testing Approach
+
+Testing was performed using realistic end-user workflows rather than testing individual UI elements in isolation.
+
+The application was tested across different states and user actions, including:
+
+* Opening and navigating Projects / Manuscripts
+* Switching between Draft and Plan
+* Creating and editing Draft content
+* Refreshing pages to verify persistence
+* Using the AI Assistant
+* Testing AI-generated content
+* Dragging and moving Board items
+* Working with Templates
+* Opening the same Draft in Split View
+* Uploading and saving poster images
+* Deleting Projects and checking related AI Chat state
+* Starting new conversations
+* Checking whether previous conversation context was retained
+* Verifying UI feedback after user actions
+
+Additional attention was given to state consistency after:
+
+* Page refresh
+* Navigation
+* Reopening content
+* Deletion
+* Switching views
+* Starting a new conversation
+* Performing the same action in different UI states
+
+---
+
+## Areas Tested
+
+### Board
+
+Tested:
+
+* Item drag & drop
+* Moving items between sections
+* Position persistence
+* Item deletion
+* Deleted item behavior after refresh
+
+### Draft
+
+Tested:
+
+* Opening a Draft
+* Initial Draft loading
+* AI Assistant interaction
+* Draft Editor text entry
+* Text persistence after refresh
+* AI-generated Draft content
+* New Draft context
+* Conversation context isolation
+
+### Plan
+
+Tested:
+
+* Opening Plan
+* Assistant-based planning
+* AI-generated planning options
+* Plan content after refresh
+
+### AI Chat
+
+Tested:
+
+* AI Assistant interaction
+* New Chat behavior
+* Conversation state
+* Context isolation
+* Project-related conversations
+
+### Library
+
+Tested:
+
+* Opening Projects / Manuscripts
+* Project details
+* Navigation
+* Details panel behavior
+
+### Templates
+
+Tested:
+
+* Template interaction
+* Draggable elements
+* Cursor behavior
+* Horizontal content navigation
+
+### Poster / Cover
+
+Tested:
+
+* Uploading a new image
+* Saving poster changes
+* Poster update behavior
+* Upload dialog state after changing the poster
+
+### Split View
+
+Tested:
+
+* Opening the same Draft in Split View
+* Pagination behavior
+* Page break consistency between panes
+
+---
+
+## Key Findings
+
+During testing, several issues were identified across the application.
+
+The main findings included:
+
+* Deleted Board items remained visible after deletion and refresh.
+* Draft content was not preserved after page refresh.
+* Draft initially failed to load correctly in some cases.
+* Draft Editor entered lowercase text as uppercase.
+* AI Assistant was unable to reliably create or write content into an editable Draft.
+* A new Draft could retain context from a previous independent conversation.
+* AI-generated Plan content was not reflected on the Plan page.
+* Poster changes were not applied immediately after saving.
+* The poster upload dialog could display a previously uploaded image instead of the current poster.
+* New Chat could temporarily display the previous conversation.
+* Pagination/page breaks were duplicated or reset when the same Draft was opened in Split View.
+
+---
+
+## UX Recommendations
+
+In addition to functional bugs, usability improvements were identified.
+
+Examples include:
+
+* Adding a visible Close (X) button to the Project / Manuscript details panel.
+* Adding a grab/hand cursor to draggable Template elements.
+
+These items were documented separately from functional defects because the current functionality still works, but the user experience could be clearer.
+
+---
+
+## QA Skills Demonstrated
+
+* Manual Functional Testing
+* Exploratory Testing
+* End-to-End User Flow Testing
+* Bug Reproduction
+* Bug Documentation
+* Regression Testing
+* UI/UX Testing
+* Data Persistence Testing
+* State and Refresh Testing
+* AI Feature Testing
+* Rich-Text Editor Testing
+* Drag & Drop Testing
+* Split View Testing
+* Navigation Testing
+* Evidence Collection
+* Context and State Isolation Testing
+* Distinguishing Functional Bugs from UX Improvements
+
+---
+
+## Project Structure
+
+```text
+05-AI-Writing-Workspace-QA/
+│
+├── README.md
+├── Project-Overview.md
+├── Test-Scenarios.md
+├── Test-Cases.md
+├── Checklists.md
+│
+├── Bug-Reports/
+│   ├── BUG-001.md
+│   ├── BUG-002.md
+│   ├── BUG-003.md
+│   └── ...
+│
+├── UX-Recommendations/
+│   ├── UX-001.md
+│   └── UX-002.md
+│
+└── Evidence/
+    ├── Board/
+    ├── Draft/
+    ├── Plan/
+    ├── AI-Chat/
+    ├── Library/
+    ├── Poster/
+    └── Split-View/
+```
+
+---
+
+## Testing Summary
+
+This project demonstrates a practical manual QA approach focused on real user workflows, application state, data persistence, AI-assisted functionality, and cross-feature behavior.
+
+The testing process included exploratory testing, functional verification, regression checks, bug reproduction, UX evaluation, and evidence collection.
+
+The findings were documented with reproducible steps, expected and actual results, and supporting evidence where available.
+
