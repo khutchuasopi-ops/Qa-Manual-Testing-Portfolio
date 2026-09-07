@@ -2,395 +2,350 @@
 
 ## 1. Purpose
 
-This checklist is used to support manual testing of the main functionality and user flows of the e-commerce web application.
+This document contains manual QA checklists for reviewing the main functionality and user-facing areas of the e-commerce web application.
 
-It can be used for:
+The checklist is intended to support structured manual testing and help ensure that important areas are considered during test execution.
 
-* Smoke Testing
-* Functional Testing
-* UI Checks
-* Negative Testing
-* Localization Checks
-* Shopping Cart and Checkout Checks
-* Regression / Retesting
-
-### Status
-
-* `[ ]` Not Checked
-* `[x]` Passed
-* `[F]` Failed
-* `[B]` Blocked
-* `[N/A]` Not Applicable
+> **Note:** A checklist item should only be marked as completed when that check has actually been performed.
 
 ---
 
-# 2. Smoke Testing Checklist
+# 2. Login & Authentication Checklist
 
-## Application Access
-
-* [ ] Application opens successfully
-* [ ] Main page loads correctly
-* [ ] Main navigation is visible
-* [ ] Main page does not show obvious errors
-
-## Login
-
-* [ ] Login page opens
-* [ ] Username/email field is available
-* [ ] Password field is available
-* [ ] Valid login can be attempted
-* [ ] Invalid login can be attempted
-* [ ] Logout option is available after login
-
-## Product
-
-* [ ] Product list is visible
-* [ ] Product details can be opened
-* [ ] Product price is visible
-* [ ] Product size can be selected when required
-* [ ] Product can be added to cart
-
-## Shopping Cart
-
-* [ ] Cart can be opened
-* [ ] Added product is displayed
-* [ ] Product quantity is displayed
-* [ ] Product price is displayed
-* [ ] Cart total is displayed
-* [ ] Product can be removed
-
-## Checkout
-
-* [ ] Checkout can be opened
-* [ ] Required checkout fields are available
-* [ ] Delivery information can be entered
-* [ ] Payment section is available
-* [ ] Order summary is displayed
-
----
-
-# 3. Login and Authentication Checklist
-
-## Valid Login
-
-* [ ] Login with valid credentials
-* [ ] User is redirected to the expected page
-* [ ] Logged-in state is displayed correctly
-
-## Invalid Login
-
-* [ ] Invalid email/username is rejected
-* [ ] Invalid password is rejected
-* [ ] Invalid credentials show an appropriate message
-* [ ] User is not incorrectly logged in
-
-## Required Fields
-
-* [ ] Empty username/email is handled correctly
-* [ ] Empty password is handled correctly
-* [ ] Both fields empty are handled correctly
-* [ ] Required field validation is clear
-
-## Logout
-
-* [ ] Logout option is available
+* [ ] Login page loads correctly
+* [ ] Username field is visible
+* [ ] Password field is visible
+* [ ] Login button is visible and usable
+* [ ] User can log in with valid credentials
+* [ ] Login fails with invalid username
+* [ ] Login fails with invalid password
+* [ ] Login validation works when username is empty
+* [ ] Login validation works when password is empty
+* [ ] Login validation works when both fields are empty
+* [ ] Invalid email format is handled correctly
+* [ ] Appropriate error messages are displayed
+* [ ] Password input is visually protected
+* [ ] Logout option is available after successful login
 * [ ] User can log out successfully
-* [ ] User is returned to the expected state/page
 
 ---
 
-# 4. Product Search Checklist
+# 3. Product Search Checklist
 
 * [ ] Search field is visible
-* [ ] Search can be submitted
-* [ ] Valid product name returns results
-* [ ] Partial product name can be searched
-* [ ] Invalid search term is handled correctly
-* [ ] Empty search is handled correctly
-* [ ] Search results are relevant
-* [ ] Search result can be opened
-* [ ] Product details open correctly from search results
+* [ ] Search field accepts text input
+* [ ] Search works with a valid product keyword
+* [ ] Relevant products are displayed
+* [ ] Search handles a non-existing keyword
+* [ ] Appropriate no-results behavior is displayed
+* [ ] Empty search input is handled correctly
+* [ ] Partial product name is handled correctly if supported
+* [ ] Search results contain relevant products
+* [ ] User can open a product from search results
+* [ ] Search results do not display unexpected errors
 
 ---
 
-# 5. Product Details Checklist
+# 4. Product Details Checklist
 
+* [ ] Product details page loads correctly
 * [ ] Product name is displayed
 * [ ] Product image is displayed
 * [ ] Product price is displayed
-* [ ] Product information is visible
-* [ ] Available sizes are displayed
-* [ ] Size can be selected
-* [ ] Unavailable size cannot be selected incorrectly
-* [ ] Selected size remains selected when expected
+* [ ] Product information is readable
+* [ ] Available product sizes are displayed
+* [ ] Available size can be selected
+* [ ] Selected size is visually indicated
+* [ ] Unavailable size is clearly identified
+* [ ] Unavailable size cannot be selected for purchase
 * [ ] Required product options are validated
-* [ ] Product can be added to cart
+* [ ] Product can be added to the cart when required options are selected
+* [ ] Product cannot be added when required options are missing
 
 ---
 
-# 6. Shopping Cart Checklist
+# 5. Shopping Cart Checklist
 
-## Cart Content
-
-* [ ] Added product appears in cart
+* [ ] Cart page loads correctly
+* [ ] Product can be added to the cart
+* [ ] Added product is displayed in the cart
 * [ ] Product name is correct
+* [ ] Product image is correct
 * [ ] Product price is correct
-* [ ] Selected size is displayed when applicable
-* [ ] Quantity is displayed correctly
-
-## Quantity
-
+* [ ] Selected size is displayed correctly
+* [ ] Product quantity is displayed correctly
 * [ ] Quantity can be increased
 * [ ] Quantity can be decreased
-* [ ] Quantity cannot become invalid
-* [ ] Quantity limits are handled correctly
-
-## Price Calculation
-
-* [ ] Product price is correct
-* [ ] Quantity change updates the expected values
+* [ ] Total updates after quantity changes
+* [ ] Product can be removed from the cart
+* [ ] Cart updates after product removal
+* [ ] Empty cart state is displayed correctly
+* [ ] Empty cart does not display incorrect product information
+* [ ] Empty cart does not display an incorrect total
 * [ ] Cart total is calculated correctly
-* [ ] Cart total updates after quantity change
-
-## Cart Actions
-
-* [ ] Product can be removed
-* [ ] Empty cart is displayed correctly
-* [ ] User can continue from cart to checkout
 
 ---
 
-# 7. Checkout Checklist
+# 6. Checkout Checklist
 
-## Checkout Access
-
-* [ ] Checkout can be opened from the cart
+* [ ] User can navigate from cart to checkout
 * [ ] Checkout page loads correctly
-* [ ] Order information is visible
-
-## Customer Information
-
-* [ ] Required fields are visible
-* [ ] Valid information can be entered
-* [ ] Empty required fields are handled correctly
+* [ ] Required customer information fields are visible
+* [ ] Valid customer information is accepted
+* [ ] Required fields are validated
+* [ ] Checkout does not continue when required information is missing
+* [ ] Appropriate validation messages are displayed
 * [ ] Invalid input is handled correctly
-
-## Delivery
-
-* [ ] Delivery information can be entered
-* [ ] Required delivery fields are validated
-* [ ] Delivery information appears correctly in the order summary
-
-## Payment
-
-* [ ] Payment section is available
-* [ ] Required payment fields are displayed
-* [ ] Invalid or missing payment information is handled correctly
-
-## Order Summary
-
-* [ ] Product information is correct
-* [ ] Quantity is correct
-* [ ] Price is correct
-* [ ] Total is correct
-* [ ] Entered information is displayed correctly
-
-## Order Completion
-
-* [ ] Order can be submitted when valid information is provided
-* [ ] Successful order result is displayed correctly
-* [ ] User receives appropriate confirmation
+* [ ] Delivery/shipping information can be entered
+* [ ] Delivery/shipping information is displayed correctly
+* [ ] Available payment methods are displayed
+* [ ] Payment method can be selected where applicable
+* [ ] Order summary is displayed
+* [ ] Product information in the order summary is correct
+* [ ] Product quantity in the order summary is correct
+* [ ] Product price in the order summary is correct
+* [ ] Final total is displayed
+* [ ] Final total matches the expected amount
+* [ ] User can place an order with valid information
+* [ ] Appropriate order confirmation is displayed after successful order placement
 
 ---
 
-# 8. Localization Checklist
+# 7. Localization Checklist
 
-* [ ] Language selection is available
-* [ ] User can select another language
-* [ ] Selected language is reflected in the interface
-* [ ] Main page content changes to the selected language
-* [ ] Navigation content changes to the selected language
-* [ ] Product-related content changes to the selected language
-* [ ] Checkout-related content changes to the selected language
+* [ ] Language selector is visible
+* [ ] Supported language options are displayed
+* [ ] User can select another supported language
+* [ ] Selected language is applied correctly
+* [ ] Navigation labels are displayed in the selected language
+* [ ] Buttons are displayed in the selected language
+* [ ] Page titles are displayed in the selected language
+* [ ] Product-related content is displayed consistently
+* [ ] Cart content is displayed consistently
+* [ ] Checkout content is displayed consistently
+* [ ] Selected language remains consistent when navigating between supported pages
 * [ ] No unexpected mixed-language content is displayed
 
 ---
 
-# 9. UI and Navigation Checklist
+# 8. UI & Navigation Checklist
 
-## Navigation
-
+* [ ] Main page loads without obvious UI errors
+* [ ] Header is visible
 * [ ] Main navigation is visible
-* [ ] Navigation links work
-* [ ] Important pages are accessible
-* [ ] Back/navigation actions work as expected
-
-## UI Elements
-
+* [ ] Navigation links are readable
+* [ ] Navigation links lead to the expected pages
 * [ ] Buttons are visible
-* [ ] Buttons can be used
-* [ ] Input fields are visible
-* [ ] Labels are understandable
-* [ ] Important information is visible
-* [ ] No obvious overlapping elements are present
-* [ ] No obvious broken UI elements are present
+* [ ] Buttons are readable
+* [ ] Interactive elements respond to user actions
+* [ ] Forms are readable
+* [ ] Important content is not overlapping
+* [ ] Major elements are properly positioned
+* [ ] Product cards or main content elements are displayed correctly
+* [ ] No obvious broken links are present
+* [ ] No obvious layout issues are present
 
 ---
 
-# 10. Responsive Testing Checklist
+# 9. Negative Testing Checklist
 
-Where supported, check the main user flows on different screen sizes.
+* [ ] Invalid login username is handled correctly
+* [ ] Invalid login password is handled correctly
+* [ ] Empty login fields are handled correctly
+* [ ] Invalid email format is handled correctly
+* [ ] Invalid search input is handled correctly
+* [ ] Empty search input is handled correctly
+* [ ] Required product options are validated
+* [ ] Unavailable product options cannot be selected
+* [ ] Required checkout fields are validated
+* [ ] Invalid checkout input is handled correctly
+* [ ] Incorrect or unexpected input does not cause an obvious application error
+* [ ] Appropriate validation or error messages are displayed
 
-* [ ] Main page remains usable
+---
+
+# 10. Validation Checklist
+
+* [ ] Required fields are identified
+* [ ] Empty required fields are rejected
+* [ ] Invalid input is rejected where validation is expected
+* [ ] Validation messages are understandable
+* [ ] Validation messages appear near the relevant field where applicable
+* [ ] User can correct invalid input
+* [ ] Valid input is accepted
+* [ ] Form submission does not proceed when required validation fails
+
+---
+
+# 11. User Flow Checklist
+
+## Login Flow
+
+* [ ] Open application
+* [ ] Navigate to login
+* [ ] Enter credentials
+* [ ] Submit login
+* [ ] Verify login result
+* [ ] Logout successfully
+
+## Product Purchase Flow
+
+* [ ] Open application
+* [ ] Search for a product
+* [ ] Open product details
+* [ ] Select required product options
+* [ ] Add product to cart
+* [ ] Open cart
+* [ ] Verify product information
+* [ ] Verify quantity
+* [ ] Verify total
+* [ ] Continue to checkout
+* [ ] Enter required information
+* [ ] Review order summary
+* [ ] Place order where applicable
+* [ ] Verify confirmation
+
+---
+
+# 12. Responsive Layout Checklist
+
+These checks are included as **additional testing opportunities** and should only be marked as completed when responsive behavior has actually been tested.
+
+* [ ] Main page displays correctly on a smaller screen
+* [ ] Header remains usable
 * [ ] Navigation remains accessible
-* [ ] Product information remains readable
-* [ ] Product images display correctly
-* [ ] Search remains usable
-* [ ] Cart remains usable
-* [ ] Checkout remains usable
-* [ ] Buttons remain accessible
-* [ ] Input fields remain usable
+* [ ] Product content remains readable
+* [ ] Product images fit within the available screen area
+* [ ] Buttons remain visible and usable
+* [ ] Forms remain usable
+* [ ] Shopping cart content remains readable
+* [ ] Checkout content remains usable
 * [ ] No obvious horizontal overflow is present
-
-> Responsive checks are documented as additional coverage and should only be marked as executed when actually tested.
+* [ ] No major element overlap is present
 
 ---
 
-# 11. Cross-Browser Checklist
+# 13. Cross-Browser Checklist
 
-Where supported, verify the main flows in supported browsers.
+These checks are included as **additional testing opportunities**.
 
-* [ ] Application opens correctly
-* [ ] Login works as expected
-* [ ] Search works as expected
+They should only be marked as completed when the application has actually been tested in the relevant browsers.
+
+* [ ] Application loads correctly
+* [ ] Login works correctly
+* [ ] Product search works correctly
 * [ ] Product details display correctly
-* [ ] Add to cart works as expected
-* [ ] Cart calculations display correctly
+* [ ] Shopping cart works correctly
 * [ ] Checkout pages display correctly
-* [ ] Navigation works correctly
-* [ ] No obvious browser-specific UI issue is observed
-
-> Cross-browser items are coverage checks. They should not be reported as executed results unless they were actually tested.
-
----
-
-# 12. Negative Testing Checklist
-
-## Login
-
-* [ ] Invalid email/username
-* [ ] Invalid password
-* [ ] Empty email/username
-* [ ] Empty password
-* [ ] Both fields empty
-
-## Search
-
-* [ ] Invalid search term
-* [ ] Empty search
-* [ ] Partial search term
-* [ ] Special characters where applicable
-
-## Product
-
-* [ ] Attempt to continue without selecting a required size
-* [ ] Unavailable size selection
-
-## Cart
-
-* [ ] Invalid quantity
-* [ ] Minimum quantity
-* [ ] Maximum quantity
-* [ ] Removing the only product
-
-## Checkout
-
-* [ ] Empty required fields
-* [ ] Invalid input
-* [ ] Incomplete delivery information
-* [ ] Incomplete payment information
+* [ ] Main navigation works correctly
+* [ ] Important UI elements display correctly
+* [ ] No major browser-specific UI issue is observed
 
 ---
 
-# 13. Regression / Retesting Checklist
+# 14. Regression Testing Checklist
 
-Use this checklist after a defect is reported as fixed.
+Regression checks are included for use **after a relevant application change or defect fix**.
 
-## Defect Verification
+They should not be considered completed unless regression testing has actually been performed.
 
-* [ ] Reproduce the original issue
-* [ ] Apply or verify the reported fix
-* [ ] Repeat the original steps
-* [ ] Confirm the expected result
-* [ ] Check related functionality
-* [ ] Record the new result
-
-## Related Areas
-
-* [ ] Login changes do not affect normal login
-* [ ] Cart changes do not affect product selection
-* [ ] Quantity changes do not cause incorrect totals
-* [ ] Localization changes do not cause unexpected mixed-language content
-* [ ] Checkout changes do not affect order information
-
-> Retesting and regression checks should only be marked as completed when they are actually performed.
+* [ ] Previously affected functionality was checked after the change
+* [ ] Related user flow was checked
+* [ ] Main login flow still works
+* [ ] Product search still works
+* [ ] Product selection still works
+* [ ] Shopping cart still works
+* [ ] Cart total still calculates correctly
+* [ ] Checkout still works
+* [ ] Localization still works
+* [ ] Main navigation still works
+* [ ] No obvious new issue was introduced
 
 ---
 
-# 14. Defect Verification
+# 15. Defect Verification Checklist
 
-Known defects in this project:
+Use this checklist when a reported defect has been fixed and is ready for verification.
 
-* [ ] BUG-001 — Localization
-* [ ] BUG-002 — Shopping Cart
-* [ ] BUG-003 — Login / Authentication
+* [ ] Original defect report is available
+* [ ] Original reproduction steps are understood
+* [ ] Fix is available for testing
+* [ ] Original defect can no longer be reproduced
+* [ ] Expected behavior is now observed
+* [ ] Related functionality still works
+* [ ] Related user flow was checked
+* [ ] No obvious new issue was introduced
+* [ ] Verification result is documented
 
-For each defect:
-
-* [ ] Original issue can be reproduced
-* [ ] Steps are documented
-* [ ] Expected result is clear
-* [ ] Actual result is recorded
-* [ ] Fix can be verified when available
-* [ ] Final retest result is recorded
-
----
-
-# 15. Evidence Checklist
-
-When evidence is safe to include:
-
-* [ ] Screenshot captured
-* [ ] Screenshot does not contain confidential information
-* [ ] Screenshot does not contain real credentials
-* [ ] Screenshot does not contain sensitive user information
-* [ ] Screenshot clearly shows the issue
-* [ ] Evidence is connected to the relevant bug report
+> **Note:** Defect verification should only be marked as completed when the fix has actually been tested.
 
 ---
 
-# 16. Final QA Checklist
+# 16. Evidence Checklist
 
-* [ ] Main functionality reviewed
-* [ ] Test scenarios documented
-* [ ] Test cases documented
-* [ ] Available test execution results recorded
-* [ ] Missing historical results marked as NOT RECORDED
-* [ ] Defects documented
-* [ ] Severity assigned
-* [ ] Priority assigned
-* [ ] Expected and actual results documented
-* [ ] Related test cases identified
-* [ ] Test summary prepared
-* [ ] Confidential information removed
-* [ ] Final documentation reviewed
+When evidence is required for a test result or defect:
+
+* [ ] Screenshot captured where useful
+* [ ] Relevant application page is visible
+* [ ] Error message is visible where applicable
+* [ ] Important test data is visible where appropriate
+* [ ] Evidence is connected to the relevant test case or bug report
+* [ ] Confidential information is removed or protected
+* [ ] Evidence is clear enough to support the reported result
 
 ---
 
-# 17. Notes
+# 17. Final QA Review Checklist
 
-This checklist is part of a Junior Manual QA portfolio project.
+* [ ] Main application pages were reviewed
+* [ ] Important user flows were considered
+* [ ] Positive scenarios were considered
+* [ ] Negative scenarios were considered
+* [ ] Validation scenarios were considered
+* [ ] UI issues were considered
+* [ ] Localization was considered
+* [ ] Identified defects were documented
+* [ ] Severity was assigned to reported defects
+* [ ] Priority was assigned to reported defects
+* [ ] Test cases are linked to relevant scenarios
+* [ ] Defects are linked to relevant test cases
+* [ ] Test execution results are documented separately
+* [ ] Unexecuted or unrecorded tests are clearly identified
+* [ ] Confidential information is excluded from the public portfolio
 
-It represents practical manual testing coverage and documentation.
+---
 
-Checklist items should only be marked as completed when the corresponding check has actually been performed.
+# 18. Checklist Usage Notes
+
+This checklist is a supporting QA document and does not replace detailed test cases.
+
+Detailed execution results should be recorded in the **Test Execution Report**.
+
+Defects identified during testing should be documented in the **Bug Reports** section.
+
+Responsive testing, cross-browser testing, regression testing, and defect verification are included as reusable checklist areas and should only be marked as executed when those activities have actually been performed.
+
+---
+
+## Summary
+
+The checklist covers the main areas of the e-commerce application:
+
+* Authentication
+* Product Search
+* Product Details
+* Shopping Cart
+* Checkout
+* Localization
+* UI and Navigation
+* Negative Testing
+* Validation
+* User Flows
+* Responsive Checks
+* Cross-Browser Checks
+* Regression Checks
+* Defect Verification
+* Evidence
+* Final QA Review
+
+The checklist is designed to support a structured **Junior Manual QA Testing** workflow while keeping completed and potential testing activities clearly separated.
