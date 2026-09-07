@@ -2,454 +2,270 @@
 
 ## 1. Project Information
 
-| Field                 | Details                                                  |
-| --------------------- | -------------------------------------------------------- |
-| Project               | E-commerce Web Application                               |
-| Testing Type          | Manual Software Testing                                  |
-| QA Role               | Junior Manual QA Tester                                  |
-| Test Approach         | Functional, UI, Positive, Negative, Boundary, Regression |
-| Execution Environment | Web Browser                                              |
-| Test Suite            | 60 Test Cases                                            |
-| Defects Identified    | 3                                                        |
+| Field          | Details                      |
+| -------------- | ---------------------------- |
+| Project        | E-commerce Web Application   |
+| Project Type   | Web Application              |
+| Testing Type   | Manual Testing               |
+| Testing Role   | Junior Manual QA Tester      |
+| Application    | Confidential                 |
+| Test Execution | Historical execution results |
 
 ---
 
-# 2. Testing Objective
+## 2. Testing Objective
 
-The objective of this testing activity was to evaluate the core functionality and usability of an e-commerce web application.
+The main objective of this testing activity was to verify the main functionality and user flows of the e-commerce web application through manual testing.
 
-Testing focused on the main customer journey:
-
-```text
-Login
-  ↓
-Product Search
-  ↓
-Product Selection
-  ↓
-Size / Quantity Selection
-  ↓
-Shopping Cart
-  ↓
-Checkout
-  ↓
-Order Completion
-```
-
-Additional attention was given to localization, input validation, session behavior, UI, and cart price calculations.
+The testing focused on identifying functional and UI issues and documenting the results in a clear and structured way.
 
 ---
 
-# 3. Test Scope
+## 3. Testing Scope
 
-## In Scope
+The following areas were covered in the documented test scenarios and test cases:
 
-* User authentication
-* Login validation
-* Logout functionality
-* Session behavior
-* Product search
-* Product details
-* Product size selection
-* Product quantity
-* Shopping cart
-* Cart calculations
-* Cart state
-* Checkout
+* User Login
+* Authentication validation
+* Product Search
+* Product Selection
+* Product Size Selection
+* Product Quantity
+* Shopping Cart
+* Cart Price Calculation
+* Checkout Flow
+* Delivery Information
+* Payment Information
+* Order Summary
+* Language / Localization
+* Navigation
+* Basic UI checks
+
+### Out of Scope
+
+The following areas were not part of this manual testing activity:
+
+* Performance Testing
+* Load Testing
+* Security Testing
+* Automated Testing
+* Backend Code Testing
+* Database Testing
+
+---
+
+## 4. Test Coverage
+
+The project contains:
+
+* **34 Test Scenarios**
+* **40 Detailed Test Cases**
+* **3 Documented Defects**
+
+The test scenarios describe the areas that should be tested, while the 40 test cases represent the documented historical test execution set.
+
+Not all historical execution results were preserved. Therefore, test cases without confirmed historical results are marked as **NOT RECORDED**.
+
+---
+
+## 5. Test Execution Summary
+
+| Result           | Count |
+| ---------------- | ----: |
+| Total Test Cases |    40 |
+| Passed           |     2 |
+| Failed           |     3 |
+| Blocked          |     0 |
+| Not Recorded     |    35 |
+
+### Execution Result Notes
+
+* **PASS** — The actual result matched the expected result.
+* **FAIL** — The actual result did not match the expected result.
+* **BLOCKED** — Testing could not be completed because of a blocker or dependency.
+* **NOT RECORDED** — The original execution result was not available and was not recreated.
+
+No result has been marked as passed or failed unless there was a recorded result for the historical execution.
+
+---
+
+## 6. Recorded Test Results
+
+The following test cases have confirmed historical execution results:
+
+| Test Case | Result | Summary                                                   |
+| --------- | ------ | --------------------------------------------------------- |
+| TC-001    | PASS   | Valid login completed successfully                        |
+| TC-002    | FAIL   | Invalid email was accepted during login                   |
+| TC-003    | PASS   | Invalid password was rejected                             |
+| TC-024    | FAIL   | Cart total did not update correctly after quantity change |
+| TC-036    | FAIL   | Page content remained in English after changing language  |
+
+---
+
+## 7. Defect Summary
+
+Three defects were identified and documented during the testing activity.
+
+| Bug ID  | Area                   | Severity | Priority | Status   |
+| ------- | ---------------------- | -------- | -------- | -------- |
+| BUG-001 | Localization           | Medium   | Medium   | Reported |
+| BUG-002 | Shopping Cart          | High     | High     | Reported |
+| BUG-003 | Login / Authentication | Medium   | High     | Open     |
+
+---
+
+## 8. Key Findings
+
+### BUG-001 — Localization
+
+After selecting another language, the website content remained in English.
+
+**Related Test Case:** TC-036
+
+This indicates that the language selection did not correctly update the visible website content.
+
+---
+
+### BUG-002 — Shopping Cart
+
+The cart total price did not update correctly after changing the product quantity.
+
+**Related Test Case:** TC-024
+
+This can result in an incorrect total being displayed to the user.
+
+---
+
+### BUG-003 — Login
+
+An invalid email was accepted during login and the user was redirected to the home page.
+
+**Related Test Case:** TC-002
+
+This indicates an issue with validation of the email input during the login flow.
+
+---
+
+## 9. Testing Approach
+
+The testing activity followed a basic manual QA workflow:
+
+1. Review the main application functionality.
+2. Identify important user flows.
+3. Create test scenarios.
+4. Create detailed test cases.
+5. Perform manual testing where execution results were available.
+6. Compare actual results with expected results.
+7. Document identified defects.
+8. Assign severity and priority.
+9. Prepare a test summary.
+
+---
+
+## 10. Test Documentation
+
+The project includes the following QA documentation:
+
+* Test Scenarios
+* Test Cases
+* Test Execution Report
+* Test Summary Report
+* Checklists
+* Bug Reports
+* Case Study
+* Project Overview
+
+These documents demonstrate the process of organizing test coverage and documenting manual testing results.
+
+---
+
+## 11. Recommendations
+
+Based on the recorded results, the following areas should receive additional verification:
+
+* Login validation, especially invalid email formats
+* Shopping cart quantity and total price calculations
+* Localization after changing the selected language
 * Checkout validation
-* Delivery information
-* Payment method selection
-* Order summary
-* Localization
-* UI and navigation
-* Negative and boundary scenarios
+* Negative testing for required fields
+* Verification of fixes for reported defects
+* Regression checks after defect fixes
+* UI and navigation checks across supported browsers
 
-## Out of Scope
-
-The following areas were not included in the manual test execution:
-
-* Performance testing
-* Load testing
-* Stress testing
-* Automated testing
-* Source code review
-* Database testing
-* Full security penetration testing
-* Production monitoring
-* Infrastructure testing
+These recommendations represent suggested follow-up testing and are not additional executed results.
 
 ---
 
-# 4. Test Execution Summary
+## 12. Limitations
 
-| Status           |  Count |
-| ---------------- | -----: |
-| Total Test Cases | **60** |
-| Passed           |  **2** |
-| Failed           |  **3** |
-| Blocked          |  **0** |
-| Not Recorded     | **35** |
-| Not Executed     | **20** |
+The original execution history was not fully preserved.
 
-### Recorded Execution Coverage
+For this reason:
 
-The historical execution contains reliable results for **5 of the original 40 test cases**.
+* 35 test cases are marked **NOT RECORDED**.
+* Missing results were not recreated.
+* No additional PASS or FAIL results were invented.
+* The report represents the available historical execution information.
 
-**Recorded execution rate: 12.5%**
-
-The remaining historical cases are marked `NOT RECORDED`.
-
-The additional 20 test cases added during the test suite expansion are marked `NOT EXECUTED`.
-
-> No test result has been fabricated to increase the apparent test coverage or pass rate.
+The documented test cases and scenarios demonstrate planned and documented coverage, but they should not be interpreted as proof that every documented test was executed.
 
 ---
 
-# 5. Passed Test Cases
+## 13. Confidentiality
 
-## TC-001 — Login with Valid Credentials
+The application used for this testing activity is confidential.
 
-**Result:** PASS
+The following information has intentionally not been included in this portfolio:
 
-The application successfully authenticated the user when valid credentials were provided.
+* Application name
+* Organization name
+* Application URL
+* Real credentials
+* Confidential business information
+* Confidential user information
+* Sensitive screenshots or data
 
----
-
-## TC-003 — Login with Invalid Password
-
-**Result:** PASS
-
-The application rejected the login attempt when an invalid password was provided.
-
----
-
-# 6. Failed Test Cases
-
-## TC-002 — Login with Invalid Email
-
-**Result:** FAIL
-
-### Expected
-
-Invalid email credentials should be rejected and the user should remain unauthenticated.
-
-### Actual
-
-The invalid email credentials were accepted and the user was redirected to the home page.
-
-### Related Defect
-
-**BUG-003 — Invalid Email Accepted During Login**
-
-**Severity:** Medium
-**Priority:** High
-**Status:** Open
+The portfolio contains only the information necessary to demonstrate the QA testing process and documentation skills.
 
 ---
 
-## TC-024 — Cart Total Calculation
+## 14. Junior QA Perspective
 
-**Result:** FAIL
+This project was completed as a practical manual QA portfolio project to demonstrate foundational testing skills.
 
-### Expected
+The main skills demonstrated include:
 
-The cart total should be recalculated whenever the product quantity changes.
+* Manual Functional Testing
+* Positive and Negative Testing
+* UI Testing
+* Test Scenario Design
+* Test Case Design
+* Test Execution
+* Defect Reporting
+* Severity and Priority
+* Test Documentation
+* Basic Regression / Retesting Concepts
+* GitHub Documentation
 
-### Actual
-
-The cart total did not update correctly after the product quantity was changed.
-
-### Related Defect
-
-**BUG-002 — Cart Total Price Does Not Change When Product Quantity Is Updated**
-
-**Severity:** High
-**Priority:** High
-**Status:** Reported
-
----
-
-## TC-036 — Selected Language Content
-
-**Result:** FAIL
-
-### Expected
-
-Application content should be displayed in the language selected by the user.
-
-### Actual
-
-The website content remained in English after another language was selected.
-
-### Related Defect
-
-**BUG-001 — Website Content Remains in English After Changing Language**
-
-**Severity:** Medium
-**Priority:** Medium
-**Status:** Reported
+The project does not claim production-level or advanced QA experience. It demonstrates a structured approach to learning and applying manual QA testing practices.
 
 ---
 
-# 7. Defect Summary
+## 15. Final Assessment
 
-| Bug ID  | Area           | Severity | Priority | Status   | Related Test Case |
-| ------- | -------------- | -------- | -------- | -------- | ----------------- |
-| BUG-001 | Localization   | Medium   | Medium   | Reported | TC-036            |
-| BUG-002 | Shopping Cart  | High     | High     | Reported | TC-024            |
-| BUG-003 | Authentication | Medium   | High     | Open     | TC-002            |
+The testing activity identified functional issues in important parts of the application, including login validation, shopping cart calculations, and localization.
 
----
+The project demonstrates the ability to:
 
-# 8. Defect Distribution by Area
+* Break an application into testable areas
+* Create structured test scenarios
+* Write detailed test cases
+* Record available execution results
+* Identify and document defects
+* Distinguish severity and priority
+* Maintain QA documentation
+* Communicate testing results clearly
 
-| Area            | Defects |
-| --------------- | ------: |
-| Authentication  |       1 |
-| Shopping Cart   |       1 |
-| Localization    |       1 |
-| Product Search  |       0 |
-| Product Details |       0 |
-| Checkout        |       0 |
-| UI / Navigation |       0 |
+Overall, this project demonstrates a practical foundation in **Junior Manual QA Testing**.
 
-### Observation
-
-The currently recorded failures are distributed across three different functional areas.
-
-The most business-critical recorded defect is the shopping cart calculation issue because incorrect pricing can directly affect the customer's purchase decision and order value.
-
----
-
-# 9. Risk Assessment
-
-## High Risk
-
-### Shopping Cart Price Calculation
-
-Incorrect cart totals represent a high business risk because pricing is a critical part of an e-commerce transaction.
-
-**Related defect:** BUG-002
-
-Recommended action:
-
-* Fix calculation logic.
-* Retest quantity changes.
-* Test multiple products.
-* Test minimum and maximum quantities.
-* Verify cart-to-checkout total consistency.
-
----
-
-## High Risk
-
-### Authentication Validation
-
-Accepting invalid email credentials can create unexpected authentication behavior and potentially expose an access-control weakness.
-
-**Related defect:** BUG-003
-
-Recommended action:
-
-* Validate email format.
-* Verify invalid credentials are rejected.
-* Test malformed email values.
-* Test protected pages after logout.
-* Execute regression testing after the fix.
-
----
-
-## Medium Risk
-
-### Localization
-
-Failure to display content in the selected language negatively affects usability and international users.
-
-**Related defect:** BUG-001
-
-Recommended action:
-
-* Verify navigation labels.
-* Verify buttons and UI text.
-* Verify validation messages.
-* Verify product information.
-* Check for mixed-language content.
-
----
-
-# 10. Regression Testing Recommendations
-
-After defects are fixed, the following tests should be executed.
-
-| Defect  | Retest | Regression Tests       |
-| ------- | ------ | ---------------------- |
-| BUG-001 | TC-036 | TC-059, TC-060         |
-| BUG-002 | TC-024 | TC-052, TC-051, TC-058 |
-| BUG-003 | TC-002 | TC-044, TC-042         |
-
-The purpose of regression testing is to confirm that the defect fix works and that related functionality has not been negatively affected.
-
----
-
-# 11. Test Coverage Improvements
-
-The expanded test suite improves coverage in the following areas:
-
-### Authentication
-
-* Invalid credentials
-* Empty fields
-* Malformed email
-* Whitespace handling
-* Session persistence
-* Protected-page access after logout
-
-### Search
-
-* Empty search
-* Whitespace-only input
-* Invalid keywords
-* Partial product names
-* Case sensitivity
-* Special characters
-
-### Shopping Cart
-
-* Quantity boundaries
-* Invalid quantities
-* Multiple-product calculations
-* Cart persistence
-* Total recalculation
-
-### Checkout
-
-* Invalid email
-* Invalid phone number
-* Missing required information
-* Duplicate submission
-* Cart-to-checkout total consistency
-
-### Localization
-
-* Validation messages
-* UI labels
-* Product information
-* Mixed-language content
-
----
-
-# 12. Test Quality Assessment
-
-The current test suite demonstrates a structured manual QA approach.
-
-### Strengths
-
-* Clear test case identification
-* Positive and negative testing
-* Functional testing of core user journeys
-* Explicit expected results
-* Defect traceability
-* Separate bug reports
-* Regression test planning
-* Boundary and edge-case coverage
-* Transparent reporting of unrecorded results
-
-### Areas for Further Improvement
-
-The next execution cycle should provide evidence for the currently unexecuted test cases.
-
-Recommended improvements:
-
-1. Execute the expanded test suite.
-2. Record exact Actual Results.
-3. Capture evidence for failed tests.
-4. Link every failure to a Bug ID.
-5. Perform retesting after fixes.
-6. Perform regression testing around fixed defects.
-7. Add browser and responsive execution evidence.
-8. Update the final metrics after execution.
-
----
-
-# 13. Release Readiness Assessment
-
-Based on the currently recorded execution results, the application should **not be considered fully validated for release based solely on this test cycle**.
-
-Reasons include:
-
-* 3 recorded failures
-* 20 newly added test cases not yet executed
-* 35 historical test cases without reliable recorded results
-* A High Severity cart calculation defect
-* An open authentication-related defect
-* A localization defect
-
-This assessment is based on the available test evidence and does not represent an official production release decision.
-
----
-
-# 14. QA Recommendation
-
-### Current Recommendation: **Further Testing Required**
-
-Before considering the application sufficiently validated, the following should be completed:
-
-* Fix and retest BUG-001.
-* Fix and retest BUG-002.
-* Investigate and retest BUG-003.
-* Execute all critical-path test cases.
-* Execute checkout validation tests.
-* Execute cart boundary tests.
-* Execute session-related tests.
-* Execute localization regression tests.
-* Perform cross-browser/responsive checks where applicable.
-* Update the final test metrics.
-
----
-
-# 15. Final QA Summary
-
-The manual testing activity identified functional issues in three important areas:
-
-1. **Authentication**
-2. **Shopping Cart**
-3. **Localization**
-
-The testing process demonstrates the following QA workflow:
-
-```text
-Requirement Analysis
-        ↓
-Test Scenario Design
-        ↓
-Test Case Design
-        ↓
-Manual Test Execution
-        ↓
-Defect Identification
-        ↓
-Bug Reporting
-        ↓
-Retesting
-        ↓
-Regression Testing
-        ↓
-Test Summary
-```
-
-The portfolio intentionally reports incomplete historical execution data rather than presenting assumed or fabricated results.
-
-The expanded test suite provides a stronger foundation for a future execution cycle, with additional coverage for validation, boundaries, sessions, cart calculations, checkout, localization, and regression testing.
-
----
-
-## Final Metrics
-
-**Test Cases:** 60
-**PASS:** 2
-**FAIL:** 3
-**BLOCKED:** 0
-**NOT RECORDED:** 35
-**NOT EXECUTED:** 20
-**Defects Identified:** 3
-**Current QA Recommendation:** **Further Testing Required**
