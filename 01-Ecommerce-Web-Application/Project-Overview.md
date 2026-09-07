@@ -1,21 +1,27 @@
-# Project Overview
+# E-commerce Web Application — QA Project Overview
 
 ## 1. Project Information
 
-**Project Name:** E-commerce Web Application
-**Project Type:** Web-based E-commerce Application
-**Testing Role:** Junior Manual QA Tester
-**Testing Type:** Manual Software Testing
+| Field              | Details                                 |
+| ------------------ | --------------------------------------- |
+| Project            | E-commerce Web Application              |
+| Testing Type       | Manual Software Testing                 |
+| Testing Level      | Functional / UI / User Flow             |
+| Role               | Junior Manual QA Tester                 |
+| Application        | Confidential E-commerce Web Application |
+| Test Documentation | GitHub / Markdown                       |
+
+> **Confidentiality Note:** The application name, organization name, URL, credentials, and confidential business or user information are intentionally excluded from this portfolio.
 
 ---
 
 ## 2. Project Description
 
-This project focuses on the manual testing of a web-based e-commerce application.
+This project demonstrates a structured manual QA approach to testing a web-based e-commerce application from an end-user perspective.
 
-The main goal of the testing was to verify that core user journeys and e-commerce functionalities work as expected and provide a consistent user experience.
+The primary goal was to validate critical customer journeys, identify functional and usability issues, and document defects using structured QA documentation.
 
-The testing was performed from an end-user perspective, with a focus on identifying functional, UI, usability, and data-related issues.
+The testing focused on the complete customer journey from authentication and product discovery through product selection, shopping cart management, checkout, and localization.
 
 ---
 
@@ -23,16 +29,21 @@ The testing was performed from an end-user perspective, with a focus on identify
 
 The main testing objectives were:
 
-* Verify that users can successfully log in.
-* Verify product search and product selection functionality.
-* Verify product size and quantity selection.
-* Verify shopping cart functionality.
-* Verify cart quantity and price calculations.
-* Verify the checkout process.
-* Verify language/localization functionality.
-* Identify functional and UI defects.
-* Document defects using professional bug reports.
-* Provide clear and reproducible test results.
+* Verify successful and unsuccessful user authentication.
+* Verify validation of required login fields.
+* Verify product search and search result behavior.
+* Verify product information and product selection.
+* Verify product size selection and validation.
+* Verify adding and removing products from the shopping cart.
+* Verify product quantity management.
+* Verify shopping cart price calculation.
+* Verify checkout navigation and required-field validation.
+* Verify delivery and payment-related flows where applicable.
+* Verify language selection and localized content.
+* Verify main navigation and important UI elements.
+* Identify and document functional defects.
+* Provide reproducible defect reports.
+* Maintain traceability between test cases and identified defects.
 
 ---
 
@@ -40,125 +51,207 @@ The main testing objectives were:
 
 ### In Scope
 
-The following application areas were included in testing:
+The following areas were included in the testing scope:
 
 * User Login
+* Authentication Validation
 * Product Search
-* Product Selection
+* Search Result Relevance
+* Product Details
 * Product Size Selection
 * Product Quantity
 * Shopping Cart
 * Cart Price Calculation
-* Checkout Flow
-* Language / Localization
-* UI Elements and Navigation
+* Product Removal
+* Checkout Navigation
+* Checkout Input Validation
+* Delivery Information
+* Payment Method Selection
+* Order Summary
+* Localization
+* Main Navigation
+* UI Element Visibility
 * Basic User Flow Validation
+* Positive and Negative Testing
+* Exploratory Testing
 
 ### Out of Scope
 
-The following areas were not included in the current testing scope:
+The following areas were not included in the current documented execution scope:
 
-* Performance Testing
-* Load Testing
-* Security Testing
+* Performance and Load Testing
 * Automated Testing
-* Backend Code Testing
-* Database Testing
+* Source Code Testing
+* Backend Unit Testing
+* Database Validation
+* Penetration Testing
+* Production Monitoring
 
-These areas were excluded because the project focuses primarily on Junior-level Manual QA testing.
-
----
-
-## 5. QA Activities
-
-The following QA activities were performed during the project:
-
-* Analyzed the main application functionality.
-* Defined high-level test scenarios.
-* Designed detailed manual test cases.
-* Created functional testing checklists.
-* Executed positive and negative test cases.
-* Performed UI and functional testing.
-* Tested important e-commerce user flows.
-* Identified and documented software defects.
-* Created reproducible bug reports.
-* Verified expected and actual application behavior.
-* Performed defect retesting where applicable.
+These areas may require separate test environments, technical access, or dedicated testing tools.
 
 ---
 
-## 6. Test Types
+## 5. Testing Approach
 
-The project includes the following testing activities:
+The project follows a risk-based manual testing approach.
 
-* Functional Testing
-* UI Testing
-* Positive Testing
-* Negative Testing
-* Smoke Testing
-* Regression Testing
-* Cross-Browser Testing
-* Basic API Testing
+Testing activities included:
 
----
-
-## 7. Key User Flows
-
-The main user journeys covered by the testing process include:
-
-### Login Flow
-
-User opens the application → enters credentials → submits the login form → verifies successful authentication.
-
-### Product Selection Flow
-
-User searches for a product → opens the product details → selects required options → adds the product to the cart.
-
-### Shopping Cart Flow
-
-User opens the cart → verifies product information → changes quantity → verifies price calculation → continues to checkout.
-
-### Checkout Flow
-
-User proceeds to checkout → enters required information → submits the order → verifies the expected result.
+1. Requirement and functionality understanding
+2. Test scenario identification
+3. Test case design
+4. Positive testing
+5. Negative testing
+6. Validation testing
+7. User-flow testing
+8. Exploratory testing
+9. Manual test execution
+10. Defect identification
+11. Defect documentation
+12. Retesting where applicable
+13. Test summary reporting
 
 ---
 
-## 8. Defects Identified
+## 6. Test Design Techniques
 
-During testing, several defects were identified and documented.
+The following test design principles were applied or considered during test case creation:
 
-Examples include:
+### Equivalence Partitioning
 
-1. Website content remained in English after selecting another language.
-2. Cart total price did not change when the product quantity was updated.
+Input data was divided into representative valid and invalid groups.
 
-Each identified defect was documented using a structured bug report containing reproduction steps, expected result, actual result, severity, priority, and status.
+Examples:
+
+* Valid credentials
+* Invalid credentials
+* Empty credentials
+* Existing product search
+* Non-existing product search
+
+### Boundary Value Analysis
+
+Boundary conditions were considered for areas such as:
+
+* Product quantity
+* Required fields
+* Search input
+* Checkout input
+
+### Negative Testing
+
+Invalid and incomplete user actions were tested to verify that the application handles unexpected or incorrect input appropriately.
+
+### State-Based Testing
+
+Important user states were considered, including:
+
+* Logged out
+* Logged in
+* Product selected
+* Product added to cart
+* Checkout started
+* Order submission
 
 ---
 
-## 9. Test Documentation
+## 7. Key User Journeys
 
-The project documentation includes:
+### Login Journey
+
+Login Page → Enter Credentials → Submit → Authentication Result
+
+### Product Discovery Journey
+
+Search → Search Results → Product Details → Product Selection
+
+### Shopping Cart Journey
+
+Product Selection → Add to Cart → Cart Review → Quantity Update → Price Verification
+
+### Checkout Journey
+
+Cart → Checkout → Customer Information → Delivery Information → Payment → Order Summary → Order Submission
+
+### Localization Journey
+
+Language Selection → Page Content → Navigation → Verify Selected Language
+
+---
+
+## 8. Defect Areas Identified
+
+During manual testing, defects were identified in the following areas:
+
+* Authentication validation
+* Shopping cart price calculation
+* Localization/content translation
+
+Each documented defect contains reproduction steps, expected result, actual result, severity, priority, and status.
+
+---
+
+## 9. QA Deliverables
+
+The project includes the following QA artifacts:
 
 * Project Overview
-* Testing Scope
 * Test Scenarios
 * Test Cases
-* Functional Checklists
-* Bug Reports
-* Test Execution Results
-* Smoke Testing
-* Regression Testing
-* Cross-Browser Testing
-* API Testing
+* Test Execution Report
 * Test Summary Report
+* Functional QA Checklists
+* Bug Reports
+* QA Case Study
 
 ---
 
-## 10. Expected Outcome
+## 10. Quality Risks Identified
 
-The purpose of this project is to demonstrate practical knowledge of the Manual QA testing process, including test planning, test design, test execution, defect reporting, retesting, and test reporting.
+The main quality risks identified during testing include:
 
-The project is structured as a portfolio example of how a Junior Manual QA Tester can approach testing a web-based e-commerce application in a professional and organized manner.
+### High-Risk Areas
 
+* Authentication and access control
+* Shopping cart calculation
+* Checkout validation
+* Order total accuracy
+
+### Medium-Risk Areas
+
+* Localization consistency
+* Search behavior
+* UI navigation
+* Product information consistency
+
+These areas should receive additional regression coverage after defect fixes or application changes.
+
+---
+
+## 11. Expected QA Outcome
+
+The expected outcome of this testing activity is to provide evidence that the application's critical customer journeys behave according to the expected functional requirements.
+
+Any deviation from the expected behavior should be documented as a reproducible defect and linked to the relevant test case.
+
+---
+
+## 12. Portfolio Purpose
+
+This project demonstrates practical Manual QA skills, including:
+
+* Test planning
+* Test scenario design
+* Test case design
+* Positive and negative testing
+* Functional testing
+* UI testing
+* Exploratory testing
+* Defect reporting
+* Severity and priority assessment
+* Test execution
+* Retesting
+* QA documentation
+* Test-to-defect traceability
+
+> **Portfolio Note:** This project is presented for professional portfolio purposes. Confidential application, organization, user, and business information has intentionally been excluded.
