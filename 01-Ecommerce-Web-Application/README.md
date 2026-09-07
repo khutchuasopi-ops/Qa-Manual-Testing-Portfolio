@@ -4,7 +4,7 @@
 
 This project is a practical **Manual QA Testing portfolio project** for a confidential e-commerce web application.
 
-The project demonstrates my approach to testing a web application by creating test scenarios, detailed test cases, checklists, documenting available execution results, and reporting identified defects.
+The project demonstrates my approach to testing a web application through test scenarios, detailed test cases, checklists, documented execution results, and defect reports.
 
 **Testing Role:** Junior Manual QA Tester
 **Testing Type:** Manual Testing
@@ -44,20 +44,18 @@ The main areas covered in this project are:
 
 ## QA Activities
 
-The project includes the following manual QA activities:
+The project includes:
 
 * Test Scenario Design
 * Test Case Design
+* Functional Testing
 * Positive Testing
 * Negative Testing
-* Functional Testing
 * UI Testing
-* Exploratory Testing
 * Manual Test Execution
 * Defect Identification
 * Bug Reporting
 * Severity and Priority Assignment
-* Retesting / Defect Verification Concepts
 * Test Summary Reporting
 
 ---
@@ -79,7 +77,7 @@ The project includes the following manual QA activities:
 
 ## Test Coverage
 
-The project currently contains:
+The project contains:
 
 * **34 Test Scenarios**
 * **40 Detailed Test Cases**
@@ -133,7 +131,7 @@ Detailed bug reports are available in the `Bug-Reports` folder.
 
 ---
 
-## Example User Flows Tested
+## Example User Flows
 
 ### Login Flow
 
@@ -159,11 +157,11 @@ Select Language → Review Visible Page Content
 
 ## Testing Approach
 
-The testing process followed a basic manual QA workflow:
+The testing process was organized around the following basic QA workflow:
 
 **Functional Areas → Test Scenarios → Test Cases → Manual Execution → Defect Reporting → Test Summary**
 
-Testing focused on comparing the application's actual behavior with the expected behavior described in the test cases.
+Testing focused on comparing actual application behavior with the expected behavior described in the test cases.
 
 ---
 
@@ -182,16 +180,13 @@ Testing focused on comparing the application's actual behavior with the expected
 ## QA Skills Demonstrated
 
 * Functional Testing
-* Positive Testing
-* Negative Testing
+* Positive and Negative Testing
 * UI Testing
-* Exploratory Testing
 * Test Scenario Design
 * Test Case Design
 * Manual Test Execution
 * Bug Reporting
 * Severity and Priority
-* Retesting Concepts
 * QA Documentation
 * GitHub Repository Management
 
@@ -246,3 +241,4 @@ This project represents my practical learning and portfolio work as a **Junior M
 It demonstrates foundational manual testing, test documentation, defect reporting, and structured QA thinking.
 
 The project does not claim advanced or production-level QA experience.
+
