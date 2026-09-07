@@ -1,383 +1,316 @@
-# 👋 QA Manual Tester | Software Quality & Testing
+# QA Manual Testing Portfolio
 
-Welcome to my **QA Manual Testing Portfolio**.
+Welcome to my QA Manual Testing Portfolio.
 
-I am a **Junior QA Manual Tester** focused on web application testing, functional testing, test case design, exploratory testing, defect reporting, API testing, and SQL validation.
+This repository contains practical examples of my work as a **Junior Manual QA Tester**, including test scenarios, test cases, manual test execution, bug reports, checklists, and test summary documentation.
 
-This repository contains practical QA projects demonstrating how I approach software testing, document test results, identify defects, and evaluate user-facing functionality.
+The portfolio focuses on demonstrating a structured and practical approach to software testing.
 
 ---
 
-## 🧪 QA Skills
+## About Me
 
-### Testing
+I am a **Junior Manual QA Tester** focused on developing strong fundamentals in software testing and quality assurance.
+
+My current focus areas include:
 
 * Manual Testing
 * Functional Testing
-* Smoke Testing
-* Regression Testing
-* Exploratory Testing
-* UI Testing
-* User Flow Testing
+* Positive Testing
 * Negative Testing
-* Boundary & Edge Case Testing
-* Localization Testing
+* UI Testing
+* Test Scenario Design
+* Test Case Design
+* Manual Test Execution
+* Defect Identification
+* Bug Reporting
+* Severity and Priority Assignment
+* Test Documentation
+* Test Summary Reporting
 
-### QA Documentation
-
-* Test Cases
-* Test Scenarios
-* Checklists
-* Bug Reports
-* Test Plans
-* Test Summary Reports
-* QA Case Studies
-
-### Tools & Technologies
-
-* Jira
-* ClickUp
-* Postman
-* Swagger
-* SQL
-* GitHub
-* Chrome DevTools
+I am continuously developing my QA knowledge and expanding my practical testing skills.
 
 ---
 
-# 🚀 QA Projects
+## Portfolio Goals
 
-## 🛒 01 — E-commerce Web Application
+The goal of this portfolio is to demonstrate my ability to:
 
-**Status:** ✅ Completed
+* Understand application requirements and user flows
+* Identify testable scenarios
+* Create structured test cases
+* Execute manual tests
+* Identify and document defects
+* Assign appropriate severity and priority
+* Maintain traceability between scenarios, test cases, and defects
+* Summarize test results clearly
+* Communicate testing findings in a professional way
 
-Manual testing of an e-commerce web application covering important customer journeys and business functionality.
+---
 
-**Testing focus:**
+# Projects
+
+## Project 01 — E-commerce Web Application
+
+A manual testing project focused on an e-commerce web application.
+
+### Testing Scope
+
+The project covers major user flows including:
 
 * Login
-* Product search
-* Product selection
-* Shopping cart
-* Quantity and price calculation
+* Product Search
+* Product Details
+* Size Selection
+* Shopping Cart
 * Checkout
 * Localization
+* UI and Navigation
 
-**QA activities:**
+### QA Activities
 
-* Test case design
-* Test scenario creation
-* Checklist creation
-* Functional testing
-* Exploratory testing
-* Defect identification
-* Bug reporting
+The project includes:
 
-🔗 **[View E-commerce QA Project](./01-Ecommerce-Web-Application/)**
+* Test Scenario Design
+* Test Case Design
+* Functional Testing
+* Positive Testing
+* Negative Testing
+* UI Testing
+* Manual Test Execution
+* Defect Identification
+* Bug Reporting
+* Severity and Priority Assignment
+* Test Summary Reporting
 
----
+### Project Documentation
 
-## 🤖 02 — Manual QA Chatbot Testing
+* [Project Overview](01-Ecommerce-Web-Application/Project-Overview.md)
+* [Test Scenarios](01-Ecommerce-Web-Application/Test-Scenarios.md)
+* [Test Cases](01-Ecommerce-Web-Application/Test-Cases.md)
+* [Checklists](01-Ecommerce-Web-Application/Checklists.md)
+* [Case Study](01-Ecommerce-Web-Application/Case-Study.md)
+* [Test Execution Report](01-Ecommerce-Web-Application/Test-Execution/Test-Execution-Report.md)
+* [Test Summary Report](01-Ecommerce-Web-Application/Test-Summary-Report.md)
 
-**Status:** ✅ Completed
+### Defect Reports
 
-Manual testing of a chatbot application with a focus on functionality, response behavior, edge cases, and user interactions.
-
-**Testing focus:**
-
-* Functional behavior
-* User input validation
-* Unexpected inputs
-* Edge cases
-* Conversation flows
-* Response accuracy
-
-**QA activities:**
-
-* Exploratory testing
-* Test case design
-* Scenario-based testing
-* Negative testing
-* Defect reporting
-
-🔗 **[View Chatbot QA Project](./02-Manual-QA-Chatbot-Testing/)**
+* [BUG-001](01-Ecommerce-Web-Application/Bug-Reports/BUG-001.md)
+* [BUG-002](01-Ecommerce-Web-Application/Bug-Reports/BUG-002.md)
+* [BUG-003](01-Ecommerce-Web-Application/Bug-Reports/BUG-003.md)
 
 ---
 
-## ⚖️ 03 — Legal Platform QA
+## Test Execution Summary
 
-**Status:** ✅ Completed
+The current project contains **40 detailed test cases**.
 
-Manual QA testing of a legal platform, focusing on functional workflows, forms, user interactions, and business requirements.
+| Result       |  Count |
+| ------------ | -----: |
+| PASS         |      2 |
+| FAIL         |      3 |
+| BLOCKED      |      0 |
+| Not Recorded |     35 |
+| **Total**    | **40** |
 
-**Testing focus:**
+Three defects were documented based on the recorded testing results.
 
-* Functional workflows
-* Forms and validation
-* User interactions
-* Business rules
-* Error handling
-
-**QA activities:**
-
-* Test scenario design
-* Test case execution
-* Functional testing
-* Exploratory testing
-* Bug reporting
-* Expected vs. actual result analysis
-
-🔗 **[View Legal Platform QA Project](./03-Legal-Platform-QA/)**
+The execution report intentionally distinguishes between tests that were actually recorded and tests that were not executed or not recorded.
 
 ---
 
-## 🌐 04 — Ongoing QA Project
+## Recorded Test Results
 
-**Status:** 🟡 Ongoing
+| Test Case | Result |
+| --------- | ------ |
+| TC-001    | PASS   |
+| TC-002    | FAIL   |
+| TC-003    | PASS   |
+| TC-024    | FAIL   |
+| TC-036    | FAIL   |
 
-Manual testing is currently in progress.
-
-**Current activities:**
-
-* Requirement analysis
-* Test scenario creation
-* Test case design
-* Functional testing
-* Exploratory testing
-* Defect identification and reporting
-
-🔗 **[View Project](./04-Ongoing-Project/)**
+Detailed execution information is available in the [Test Execution Report](01-Ecommerce-Web-Application/Test-Execution/Test-Execution-Report.md).
 
 ---
 
-## 🔍 05 — Ongoing QA Project
+## Defect Summary
 
-**Status:** 🟡 Ongoing
+| Bug ID  | Severity | Priority | Status   |
+| ------- | -------- | -------- | -------- |
+| BUG-001 | Medium   | Medium   | Reported |
+| BUG-002 | High     | High     | Reported |
+| BUG-003 | Medium   | High     | Open     |
 
-This project is currently under active testing and documentation.
+The bug reports demonstrate structured defect documentation including:
 
-**Current activities:**
-
-* Test planning
-* Functional testing
-* Test case execution
-* Exploratory testing
-* Defect reporting
-* Regression testing
-
-🔗 **[View Project](./05-Ongoing-Project/)**
-
----
-
-# 🔌 API Testing
-
-Practical API testing using **Postman** and **Swagger**.
-
-Testing activities include:
-
-* GET / POST / PUT / DELETE requests
-* Status code validation
-* Response validation
-* Request and response analysis
-* Negative testing
-* Basic API test scripts
-
-🔗 **[View API Testing](./API-Testing/)**
+* Bug description
+* Steps to reproduce
+* Expected result
+* Actual result
+* Impact
+* Severity
+* Priority
+* Related test case
+* Related test scenario
 
 ---
 
-# 🗄️ SQL Testing
+# Testing Approach
 
-SQL practice focused on database validation and QA-related data verification.
+My testing approach in this portfolio is based on practical manual QA fundamentals.
 
-Examples include:
+### 1. Test Scenario Design
 
-* SELECT queries
-* Filtering data
-* Sorting
-* JOIN operations
-* COUNT and aggregation
-* Data validation
+I identify important application areas and user flows that should be tested.
 
-🔗 **[View SQL Practice](./SQL/)**
+### 2. Test Case Design
 
----
+I create positive and negative test cases covering expected and invalid user behavior.
 
-# 📋 QA Documentation
+### 3. Manual Test Execution
 
-My portfolio includes examples of:
+I execute selected test cases and record the observed results.
 
-| Documentation          | Purpose                                |
-| ---------------------- | -------------------------------------- |
-| 🧪 Test Cases          | Detailed verification of functionality |
-| 🎯 Test Scenarios      | High-level testing coverage            |
-| ✅ Checklists           | Quick and structured testing           |
-| 🐞 Bug Reports         | Clear defect documentation             |
-| 🔎 Exploratory Testing | Investigation of unexpected behavior   |
-| 📊 Test Plans          | Testing strategy and scope             |
-| 📝 Case Studies        | Detailed QA approach and findings      |
-| 📈 Test Summaries      | Testing results and conclusions        |
+### 4. Defect Reporting
+
+When unexpected behavior is identified, I document it using structured bug reports.
+
+### 5. Test Reporting
+
+I summarize the testing results, identified defects, limitations, and recommendations.
 
 ---
 
-# 🧠 My Testing Approach
+# Traceability
 
-My testing process generally follows:
+The portfolio demonstrates traceability between:
 
-**Understand → Analyze → Plan → Design → Execute → Report → Retest → Summarize**
+**Test Scenario → Test Case → Test Execution → Bug Report**
 
-I focus on:
+Example:
 
-* Understanding requirements and user flows
-* Identifying positive and negative scenarios
-* Thinking about edge cases
-* Testing from the user's perspective
-* Reproducing defects consistently
-* Clearly documenting expected and actual behavior
-* Assessing the impact and priority of defects
-* Verifying fixes through retesting and regression testing
+`TS-002 → TC-002 → FAIL → BUG-003`
+
+This helps demonstrate how a reported defect can be connected to the original testing objective.
 
 ---
 
-# 📚 Continuous Learning
+# Documentation
 
-I am continuously developing my QA skills through practical projects and hands-on testing.
+The portfolio contains the following QA documentation:
 
-Current areas of development include:
+* Project Overview
+* Test Scenarios
+* Test Cases
+* Checklists
+* Test Execution Report
+* Bug Reports
+* Test Summary Report
+* Case Study
 
-* Advanced API testing
-* SQL and database validation
-* Exploratory testing
-* Test design techniques
-* Agile QA practices
-* Web application testing
-
----
-
-# 📫 Contact
-
-**GitHub:** [@khutchuasopi-ops](https://github.com/khutchuasopi-ops)
-
-**LinkedIn:** *Add your LinkedIn profile*
-
-**Email:** *Add your professional email*
+These documents are organized to demonstrate a clear and structured manual testing workflow.
 
 ---
 
-⭐ Thank you for visiting my QA Manual Testing Portfolio.
+# Tools
 
-- Login
-- Product search
-- Product selection
-- Product size selection
-- Shopping cart
-- Product quantity
-- Cart price calculation
-- Checkout
-- Language/localization
+Tools and technologies currently used in this portfolio include:
 
-## QA Activities
+* GitHub
+* Markdown
+* Google Chrome
+* Chrome DevTools
 
-During the project, I:
+Additional QA tools and technologies are areas of ongoing learning and development.
 
-- Created manual test cases.
-- Created high-level test scenarios.
-- Created functional testing checklists.
-- Executed functional tests.
-- Identified and documented defects.
-- Wrote bug reports with reproduction steps.
-- Compared expected and actual results.
-- Tested important e-commerce user journeys.
+---
 
-## Test Documentation
+# Skills
 
-### Test Cases
+### Manual Testing
 
-Detailed test cases covering the main functional areas.
+* Functional Testing
+* Positive Testing
+* Negative Testing
+* UI Testing
+* User Flow Testing
+* Localization Testing
 
-[View Test Cases](./Test-Cases.md)
+### Test Documentation
 
-### Test Scenarios
+* Test Scenarios
+* Test Cases
+* Checklists
+* Bug Reports
+* Test Execution Reports
+* Test Summary Reports
+* Case Study Documentation
 
-High-level scenarios used to define the testing scope.
+### Defect Management
 
-[View Test Scenarios](./Test-Scenarios.md)
+* Defect Identification
+* Bug Documentation
+* Severity Assignment
+* Priority Assignment
+* Defect Traceability
 
-### Checklists
+---
 
-Functional checklists covering:
+# Current Learning Areas
 
-- Login
-- Search
-- Product and size selection
-- Shopping cart
-- Checkout
+As a Junior QA Tester, I am continuing to develop my skills in areas such as:
 
-[View Checklists](./Checklists.md)
+* API Testing
+* SQL and Database Testing
+* Regression Testing
+* Smoke Testing
+* Exploratory Testing
+* Cross-Browser Testing
+* Responsive Testing
+* Test Management Tools
 
-### Bug Reports
+These areas are presented as **learning and development goals**, not as completed project experience.
 
-Examples of defects identified during testing:
+---
 
-- [BUG-001 — Website content remains in English after changing language](./Bug-Reports/BUG-001.md)
-- [BUG-002 — Cart total price does not change when product quantity is updated](./Bug-Reports/BUG-002.md)
+# Portfolio Limitations
 
-### Project Overview
+This portfolio represents a practical learning project and should not be considered production-level QA experience.
 
-[View Project Overview](./Project-Overview.md)
+Some testing areas may require additional execution, environments, tools, or test data before they can be considered fully covered.
 
-### QA Case Study
+The portfolio therefore distinguishes between:
 
-[View Case Study](./Case-Study.md)
+* Testing that was actually performed and recorded
+* Testing documentation prepared for the project
+* Areas identified for future testing and learning
 
-## Key Defects Identified
+---
 
-### BUG-001 — Localization Issue
+# Confidentiality
 
-After changing the website language, the website content remained in English instead of being displayed in the selected language.
+Application-specific credentials, private test data, and other confidential information are intentionally excluded from this public portfolio.
 
-### BUG-002 — Shopping Cart Total Calculation
+Only non-sensitive testing documentation and examples are included.
 
-When the product quantity was changed in the shopping cart, the total price did not update correctly.
+---
 
-## Testing Approach
+# Junior QA Perspective
 
-The testing process included:
+This portfolio reflects my current level as a **Junior Manual QA Tester**.
 
-1. Identifying key functional areas.
-2. Defining high-level test scenarios.
-3. Creating detailed test cases.
-4. Creating functional checklists.
-5. Executing tests.
-6. Identifying defects.
-7. Documenting defects with clear reproduction steps.
-8. Comparing actual and expected results.
+My goal is to demonstrate strong testing fundamentals, structured thinking, attention to detail, clear defect reporting, and continuous improvement.
 
-## Key Learning Outcomes
+I am continuing to build practical experience and expand my knowledge of software testing tools and techniques.
 
-This project helped develop practical experience in:
+---
 
-- Manual functional testing
-- Test case design
-- Test scenario creation
-- Checklist creation
-- Defect reporting
-- E-commerce testing
-- User-flow testing
-- Expected vs. actual result analysis
+# Conclusion
 
-## Project Structure
+This portfolio demonstrates my current practical knowledge of manual software testing through a structured e-commerce testing project.
 
-```text
-01-Ecommerce-Web-Application/
-│
-├── README.md
-├── Project-Overview.md
-├── Test-Cases.md
-├── Test-Scenarios.md
-├── Checklists.md
-├── Case-Study.md
-│
-└── Bug-Reports/
-    ├── BUG-001.md
-    └── BUG-002.md
+It shows my approach to:
+
+**Planning → Test Design → Manual Execution → Defect Reporting → Test Summary**
+
+I am continuing to improve my testing skills through hands-on practice and further learning.
