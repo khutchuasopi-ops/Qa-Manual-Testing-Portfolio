@@ -2,43 +2,34 @@
 
 ## Project Overview
 
-This project demonstrates a practical **Junior Manual QA Testing** workflow for an e-commerce web application.
+This project demonstrates practical **Manual QA Testing** of an e-commerce web application.
 
-The portfolio project focuses on test design, manual functional testing, negative testing, UI checks, defect identification, bug reporting, and test documentation.
+The goal of the project is to practice and demonstrate core software testing activities, including test design, manual execution, exploratory testing, smoke testing, regression testing, defect identification, bug reporting, and test reporting.
 
----
-
-## QA Role
-
-**Junior Manual QA Tester**
-
----
-
-## Testing Type
-
-**Manual Testing**
+**QA Role:** Junior Manual QA Tester
+**Testing Type:** Manual Testing
+**Application Type:** E-commerce Web Application
 
 ---
 
 ## Testing Scope
 
-The testing covered the following main application areas:
+The main application areas covered in this project are:
 
-* Login and authentication
-* Product search
-* Product details
-* Product size selection
-* Shopping cart
-* Product quantity management
+* Login and Authentication
+* Product Search
+* Product Details
+* Size Selection
+* Shopping Cart
 * Checkout
 * Localization
-* UI and navigation
+* UI and Navigation
 
 ---
 
 ## QA Activities
 
-The project includes the following QA activities:
+The project includes the following testing activities:
 
 * Test Scenario Design
 * Test Case Design
@@ -46,7 +37,9 @@ The project includes the following QA activities:
 * Positive Testing
 * Negative Testing
 * UI Testing
-* Validation Testing
+* Exploratory Testing
+* Smoke Testing
+* Regression Testing
 * Manual Test Execution
 * Defect Identification
 * Bug Reporting
@@ -55,163 +48,209 @@ The project includes the following QA activities:
 
 ---
 
-## Test Documentation
+## Test Design
 
 The project contains:
 
-* [Test Scenarios](Test-Scenarios.md)
-* [Test Cases](Test-Cases.md)
-* [Checklists](Checklists.md)
-* [Test Execution Report](Test-Execution/Test-Execution-Report.md)
-* [Test Summary Report](Test-Summary-Report.md)
-* [Case Study](Case-Study.md)
-* [Bug Reports](Bug-Reports/)
-
----
-
-## Test Design
-
-A total of:
-
 * **34 Test Scenarios**
 * **40 Detailed Test Cases**
+* Positive and negative test coverage
+* User-flow based testing
+* Localization testing
+* UI and navigation checks
 
-were prepared for the project.
-
-The test cases include:
-
-* Preconditions
-* Test Data
-* Test Steps
-* Expected Results
-* Actual Results
-* Execution Status
-* Related Test Scenarios
+The test cases are documented separately from execution results so that test design and test execution can be clearly distinguished.
 
 ---
 
-## Test Execution
+## Test Execution Summary
 
-The current test execution documentation contains recorded results for a limited subset of the available test cases.
+The current execution record contains **40 test cases**.
 
-| Result             | Count |
-| ------------------ | ----: |
-| Total Test Cases   |    40 |
-| Passed             |     2 |
-| Failed             |     3 |
-| Blocked            |     0 |
-| Not Recorded       |    35 |
-| Defects Identified |     3 |
+| Result       |  Count |
+| ------------ | -----: |
+| PASS         |      2 |
+| FAIL         |      3 |
+| BLOCKED      |      0 |
+| Not Recorded |     35 |
+| **Total**    | **40** |
 
-### Recorded Results
+### Recorded Test Cases
 
-| Test Case | Result | Defect  |
-| --------- | ------ | ------- |
-| TC-001    | PASS   | —       |
-| TC-002    | FAIL   | BUG-003 |
-| TC-003    | PASS   | —       |
-| TC-024    | FAIL   | BUG-002 |
-| TC-036    | FAIL   | BUG-001 |
+| Test Case | Result |
+| --------- | ------ |
+| TC-001    | PASS   |
+| TC-002    | FAIL   |
+| TC-003    | PASS   |
+| TC-024    | FAIL   |
+| TC-036    | FAIL   |
 
-> The 35 test cases marked as **Not Recorded** do not represent failed tests. No execution result was recorded for those cases in the current execution report.
+The remaining test cases are marked as **Not Recorded** because no execution result was recorded for them.
+
+This distinction is maintained to avoid presenting unexecuted or undocumented tests as completed testing results.
 
 ---
 
 ## Defects Identified
 
-Three defects were documented during the recorded testing activity:
+Three defects are documented in the project.
 
-| Bug ID  | Summary                                                    | Severity | Priority | Status   |
-| ------- | ---------------------------------------------------------- | -------- | -------- | -------- |
-| BUG-001 | Website content remains in English after changing language | Medium   | Medium   | Reported |
-| BUG-002 | Cart total is calculated incorrectly                       | High     | High     | Reported |
-| BUG-003 | Invalid email is accepted during login                     | Medium   | High     | Open     |
+| Bug ID  | Severity | Priority | Status   |
+| ------- | -------- | -------- | -------- |
+| BUG-001 | Medium   | Medium   | Reported |
+| BUG-002 | High     | High     | Reported |
+| BUG-003 | Medium   | High     | Open     |
 
-Detailed defect information is available in the [Bug Reports](Bug-Reports/) section.
+### Defect Areas
+
+The documented defects relate to:
+
+* Localization
+* Shopping Cart
+* Login / Authentication
+
+Each defect report contains:
+
+* Bug description
+* Steps to reproduce
+* Expected result
+* Actual result
+* Impact
+* Severity
+* Priority
+* Related test case
+* Related test scenario
 
 ---
 
 ## Testing Approach
 
-The testing approach included:
+### Functional Testing
 
-1. Reviewing the main application functionality
-2. Creating high-level test scenarios
-3. Creating detailed test cases
-4. Performing manual testing
-5. Checking positive and negative user flows
-6. Identifying defects
-7. Documenting defects with bug reports
-8. Assigning severity and priority
-9. Recording test execution results
-10. Preparing a test summary
+The main application functions and user flows were checked to identify whether they behaved as expected.
+
+### Positive Testing
+
+Valid input and expected user actions were used to verify normal application behavior.
+
+### Negative Testing
+
+Invalid input and unexpected user actions were considered to identify validation and error-handling issues.
+
+### Exploratory Testing
+
+The application was explored beyond predefined test cases to identify additional unexpected behavior and usability issues.
+
+### Smoke Testing
+
+Basic checks of important application functionality were performed to verify that the main flows were available for testing.
+
+### Regression Testing
+
+Relevant functionality was re-checked to verify that existing behavior continued to work as expected.
+
+### UI Testing
+
+Important interface elements, navigation, visibility, and user interaction were checked manually.
 
 ---
 
 ## Traceability
 
-Traceability was maintained between test scenarios, test cases, and identified defects.
+The project demonstrates traceability between testing artifacts:
 
-Examples:
+**Test Scenario → Test Case → Test Execution → Bug Report**
 
-* `TC-002` → `BUG-003`
-* `TC-024` → `BUG-002`
-* `TC-036` → `BUG-001`
+Example:
 
-This structure helps connect test execution results with the defects identified during testing.
+`TS-002 → TC-002 → FAIL → BUG-003`
+
+This structure helps connect identified defects to the related testing scenario and test case.
+
+---
+
+## Project Documentation
+
+### Test Planning & Design
+
+* [Project Overview](Project-Overview.md)
+* [Test Scenarios](Test-Scenarios.md)
+* [Test Cases](Test-Cases.md)
+* [Checklists](Checklists.md)
+
+### Test Execution & Reporting
+
+* [Test Execution Report](Test-Execution/Test-Execution-Report.md)
+* [Test Summary Report](Test-Summary-Report.md)
+
+### Defect Reports
+
+* [BUG-001](Bug-Reports/BUG-001.md)
+* [BUG-002](Bug-Reports/BUG-002.md)
+* [BUG-003](Bug-Reports/BUG-003.md)
+
+### Case Study
+
+* [Case Study](Case-Study.md)
 
 ---
 
 ## Tools
 
-The project documentation was created and maintained using:
+Tools used for this project include:
 
 * GitHub
 * Markdown
 * Google Chrome
 * Chrome DevTools
 
-Additional QA tools and technologies may be explored as part of future learning and testing practice.
-
 ---
 
 ## Skills Demonstrated
 
-This project demonstrates practical knowledge of:
+### Test Design
 
-* Manual Testing
-* Functional Testing
-* Positive Testing
-* Negative Testing
-* UI Testing
-* Validation Testing
 * Test Scenario Design
 * Test Case Design
+* Positive Test Design
+* Negative Test Design
+* User Flow Coverage
+
+### Manual Testing
+
+* Functional Testing
+* Exploratory Testing
+* Smoke Testing
+* Regression Testing
+* UI Testing
+* Localization Testing
+
+### Defect Management
+
+* Defect Identification
 * Bug Reporting
-* Severity and Priority Assignment
-* Test Execution Documentation
-* Test Summary Reporting
-* Basic QA Traceability
-* GitHub-based QA Documentation
+* Severity Assignment
+* Priority Assignment
+* Defect Traceability
+
+### Documentation
+
+* Test Cases
+* Test Scenarios
+* Checklists
+* Test Execution Reports
+* Test Summary Reports
+* Case Study Documentation
 
 ---
 
-## Project Limitations
+## Limitations
 
-The current project contains recorded execution results for only **5 of the 40 test cases**.
+This project represents a practical learning portfolio project and should not be considered production-level QA experience.
 
-Therefore, the execution results should not be interpreted as complete coverage of the entire test case set.
+The execution report contains only recorded results. Test cases without recorded results are intentionally shown as **Not Recorded**.
 
-Additional testing could include:
-
-* Execution of the remaining test cases
-* Broader responsive testing
-* Cross-browser compatibility testing
-* Regression testing after application changes
-* Re-testing after defect fixes
-* Additional negative and boundary testing
-
-These are identified as areas for further testing and are not presented as completed activities.
+Additional testing areas such as API testing, database testing, cross-browser testing, and responsive testing may require separate environments, tools, or test data.
 
 ---
 
@@ -219,59 +258,14 @@ These are identified as areas for further testing and are not presented as compl
 
 Application-specific credentials, private test data, and other confidential information are intentionally excluded from this public portfolio.
 
-Only non-sensitive testing information and documentation are presented.
-
----
-
-## Project Structure
-
-```text
-01-Ecommerce-Web-Application/
-│
-├── Bug-Reports/
-│   ├── BUG-001/
-│   ├── BUG-002/
-│   └── BUG-003/
-│
-├── Test-Execution/
-│   └── Test-Execution-Report.md
-│
-├── Case-Study.md
-├── Checklists.md
-├── Project-Overview.md
-├── README.md
-├── Test-Cases.md
-├── Test-Scenarios.md
-└── Test-Summary-Report.md
-```
+Only non-sensitive testing documentation and examples are included.
 
 ---
 
 ## Junior QA Perspective
 
-This project was created as practical portfolio work for a **Junior Manual QA Tester**.
+This project reflects my current level as a **Junior Manual QA Tester**.
 
-The main goal was to demonstrate the ability to:
+It demonstrates my ability to structure testing activities, design test cases, perform manual testing, explore application behavior, document defects, and communicate testing results clearly.
 
-* Understand application functionality
-* Design test scenarios
-* Write detailed test cases
-* Perform manual functional testing
-* Perform positive and negative testing
-* Identify and report defects
-* Assign severity and priority
-* Maintain basic traceability
-* Document test execution
-* Summarize testing results
-
-The project also demonstrates an organized approach to maintaining QA documentation in GitHub.
-
----
-
-## Conclusion
-
-This project demonstrates a structured manual QA workflow applied to an e-commerce web application.
-
-It includes **34 test scenarios**, **40 detailed test cases**, recorded execution results, and **3 documented defects**.
-
-The project focuses on practical Junior Manual QA skills and provides a clear example of how testing activities and QA documentation can be organized in a GitHub portfolio.
+My goal is to continue improving my practical QA skills through hands-on testing and further learning.
