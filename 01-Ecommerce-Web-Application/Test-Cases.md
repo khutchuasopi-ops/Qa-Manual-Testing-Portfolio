@@ -1243,3 +1243,618 @@ All test cases are currently marked as:
 **Not Executed**
 
 Test execution results, actual results, Pass/Fail status, and defect references will be added during the Test Execution phase.
+# 8. Additional Authentication and Session Test Cases
+
+## TC-041 — Session Persistence After Page Refresh
+
+| Field            | Details                                                                   |
+| ---------------- | ------------------------------------------------------------------------- |
+| Test Case ID     | TC-041                                                                    |
+| Title            | Verify that an authenticated session behaves correctly after page refresh |
+| Related Scenario | TS-011                                                                    |
+| Test Type        | Functional / Session                                                      |
+| Priority         | High                                                                      |
+| Preconditions    | User is successfully logged in                                            |
+| Test Data        | Valid authenticated user session                                          |
+| Status           | Not Executed                                                              |
+
+### Test Steps
+
+1. Log in with valid credentials.
+2. Navigate to an authenticated page.
+3. Refresh the browser page.
+4. Observe the user's authentication state.
+
+### Expected Result
+
+The application should maintain the expected authentication state after refresh and should not unexpectedly log the user out.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-042 — Access Protected Page After Logout
+
+| Field            | Details                                                       |
+| ---------------- | ------------------------------------------------------------- |
+| Test Case ID     | TC-042                                                        |
+| Title            | Verify that a logged-out user cannot access protected content |
+| Related Scenario | TS-012                                                        |
+| Test Type        | Functional / Security-related                                 |
+| Priority         | High                                                          |
+| Preconditions    | User is logged in and can access a protected page             |
+| Test Data        | Previously authenticated session                              |
+| Status           | Not Executed                                                  |
+
+### Test Steps
+
+1. Log in successfully.
+2. Open an authenticated/protected page.
+3. Log out.
+4. Use browser Back navigation or directly revisit the protected page.
+
+### Expected Result
+
+The user should not regain access to protected content after logout and should be redirected to an appropriate public/login page if required.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-043 — Login with Leading and Trailing Spaces
+
+| Field            | Details                                                                   |
+| ---------------- | ------------------------------------------------------------------------- |
+| Test Case ID     | TC-043                                                                    |
+| Title            | Verify login behavior when credentials contain leading or trailing spaces |
+| Related Scenario | TS-009                                                                    |
+| Test Type        | Negative / Validation                                                     |
+| Priority         | Medium                                                                    |
+| Preconditions    | Login page is accessible                                                  |
+| Test Data        | Valid credential values with leading/trailing spaces                      |
+| Status           | Not Executed                                                              |
+
+### Test Steps
+
+1. Open the login page.
+2. Enter a valid username/email with leading or trailing spaces.
+3. Enter a valid password.
+4. Submit the login form.
+
+### Expected Result
+
+The application should handle whitespace consistently according to the defined validation rules and should not create unexpected authentication behavior.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-044 — Login with Malformed Email
+
+| Field            | Details                                                           |
+| ---------------- | ----------------------------------------------------------------- |
+| Test Case ID     | TC-044                                                            |
+| Title            | Verify validation for malformed email format                      |
+| Related Scenario | TS-008                                                            |
+| Test Type        | Negative / Validation                                             |
+| Priority         | High                                                              |
+| Preconditions    | Login page is accessible and email format validation is supported |
+| Test Data        | `user@`, `user.com`, `user@@example.com`                          |
+| Status           | Not Executed                                                      |
+
+### Test Steps
+
+1. Open the login page.
+2. Enter a malformed email address.
+3. Enter any password.
+4. Submit the form.
+
+### Expected Result
+
+The application should reject the malformed email and display an appropriate validation or authentication message.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+# 9. Additional Product Search Test Cases
+
+## TC-045 — Search Using Whitespace Only
+
+| Field            | Details                                                |
+| ---------------- | ------------------------------------------------------ |
+| Test Case ID     | TC-045                                                 |
+| Title            | Verify search behavior when only whitespace is entered |
+| Related Scenario | TS-016                                                 |
+| Test Type        | Negative / Validation                                  |
+| Priority         | Medium                                                 |
+| Preconditions    | Search functionality is available                      |
+| Test Data        | Spaces only                                            |
+| Status           | Not Executed                                           |
+
+### Test Steps
+
+1. Open the application.
+2. Enter only whitespace into the search field.
+3. Submit the search.
+
+### Expected Result
+
+The application should handle the input gracefully and should not return unexpected results or an application error.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-046 — Search Case Sensitivity
+
+| Field            | Details                                              |
+| ---------------- | ---------------------------------------------------- |
+| Test Case ID     | TC-046                                               |
+| Title            | Verify search behavior with different letter casing  |
+| Related Scenario | TS-019                                               |
+| Test Type        | Functional                                           |
+| Priority         | Medium                                               |
+| Preconditions    | At least one searchable product exists               |
+| Test Data        | Same keyword in lowercase, uppercase, and mixed case |
+| Status           | Not Executed                                         |
+
+### Test Steps
+
+1. Search using a lowercase keyword.
+2. Record the results.
+3. Search using the same keyword in uppercase.
+4. Compare the results.
+
+### Expected Result
+
+Search behavior should be consistent with the application's defined case-sensitivity rules.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-047 — Search Using Special Characters
+
+| Field            | Details                                        |
+| ---------------- | ---------------------------------------------- |
+| Test Case ID     | TC-047                                         |
+| Title            | Verify search behavior with special characters |
+| Related Scenario | TS-020                                         |
+| Test Type        | Negative / Robustness                          |
+| Priority         | Medium                                         |
+| Preconditions    | Search functionality is available              |
+| Test Data        | `@#$%^&*` and other special characters         |
+| Status           | Not Executed                                   |
+
+### Test Steps
+
+1. Open the search field.
+2. Enter special characters.
+3. Submit the search.
+4. Observe the application behavior.
+
+### Expected Result
+
+The application should handle the input safely without UI errors, crashes, or unexpected behavior.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+# 10. Additional Shopping Cart Test Cases
+
+## TC-048 — Minimum Allowed Quantity
+
+| Field            | Details                                     |
+| ---------------- | ------------------------------------------- |
+| Test Case ID     | TC-048                                      |
+| Title            | Verify the minimum allowed product quantity |
+| Related Scenario | TS-035                                      |
+| Test Type        | Functional / Boundary                       |
+| Priority         | High                                        |
+| Preconditions    | Product exists in the cart                  |
+| Test Data        | Minimum quantity value, normally 1          |
+| Status           | Not Executed                                |
+
+### Test Steps
+
+1. Add a product to the cart.
+2. Set quantity to the minimum allowed value.
+3. Attempt to decrease the quantity below the minimum.
+
+### Expected Result
+
+The application should prevent an invalid quantity below the defined minimum.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-049 — Maximum Allowed Quantity
+
+| Field            | Details                                                    |
+| ---------------- | ---------------------------------------------------------- |
+| Test Case ID     | TC-049                                                     |
+| Title            | Verify the maximum allowed product quantity                |
+| Related Scenario | TS-036                                                     |
+| Test Type        | Functional / Boundary                                      |
+| Priority         | High                                                       |
+| Preconditions    | Product exists in the cart and quantity limits are defined |
+| Test Data        | Maximum supported quantity                                 |
+| Status           | Not Executed                                               |
+
+### Test Steps
+
+1. Add a product to the cart.
+2. Increase the quantity repeatedly.
+3. Reach the maximum allowed quantity.
+4. Attempt to increase the quantity further.
+
+### Expected Result
+
+The application should prevent the quantity from exceeding the defined maximum.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-050 — Invalid Quantity Input
+
+| Field            | Details                                                    |
+| ---------------- | ---------------------------------------------------------- |
+| Test Case ID     | TC-050                                                     |
+| Title            | Verify cart behavior with invalid quantity input           |
+| Related Scenario | TS-037                                                     |
+| Test Type        | Negative / Validation                                      |
+| Priority         | High                                                       |
+| Preconditions    | Product exists in the cart                                 |
+| Test Data        | `0`, negative value, text, decimal value where unsupported |
+| Status           | Not Executed                                               |
+
+### Test Steps
+
+1. Open the cart.
+2. Attempt to enter an invalid quantity.
+3. Confirm or submit the value.
+
+### Expected Result
+
+The application should reject invalid quantity values and preserve a valid cart state.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-051 — Total Calculation for Multiple Products
+
+| Field            | Details                                                         |
+| ---------------- | --------------------------------------------------------------- |
+| Test Case ID     | TC-051                                                          |
+| Title            | Verify total calculation when multiple products are in the cart |
+| Related Scenario | TS-039                                                          |
+| Test Type        | Functional / Calculation                                        |
+| Priority         | High                                                            |
+| Preconditions    | At least two products can be added to the cart                  |
+| Test Data        | Product A + Product B with known prices and quantities          |
+| Status           | Not Executed                                                    |
+
+### Test Steps
+
+1. Add Product A to the cart.
+2. Add Product B to the cart.
+3. Record prices and quantities.
+4. Calculate the expected total manually.
+5. Compare it with the displayed total.
+
+### Expected Result
+
+The displayed cart total should equal the sum of all applicable product line totals.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-052 — Cart Total Recalculation After Quantity Update
+
+| Field            | Details                                                                   |
+| ---------------- | ------------------------------------------------------------------------- |
+| Test Case ID     | TC-052                                                                    |
+| Title            | Verify that cart total is recalculated immediately after quantity changes |
+| Related Scenario | TS-040                                                                    |
+| Test Type        | Functional / Calculation / Regression                                     |
+| Priority         | Critical                                                                  |
+| Preconditions    | Cart contains a product with a known price                                |
+| Test Data        | Example: Product price = 50, quantity changed from 1 to 2                 |
+| Status           | Not Executed                                                              |
+
+### Test Steps
+
+1. Add a product to the cart.
+2. Record the initial price and total.
+3. Increase the quantity.
+4. Observe the updated total.
+5. Decrease the quantity.
+6. Observe the total again.
+
+### Expected Result
+
+The cart total should be recalculated correctly after every quantity change.
+
+### Actual Result
+
+Not Executed.
+
+### Defect Reference
+
+Potential regression coverage for **BUG-002 — Cart total price does not change when product quantity is updated**.
+
+---
+
+## TC-053 — Cart State After Page Refresh
+
+| Field            | Details                                 |
+| ---------------- | --------------------------------------- |
+| Test Case ID     | TC-053                                  |
+| Title            | Verify cart state after browser refresh |
+| Related Scenario | TS-044                                  |
+| Test Type        | Functional / Session                    |
+| Priority         | High                                    |
+| Preconditions    | Product has been added to the cart      |
+| Test Data        | Product with selected size and quantity |
+| Status           | Not Executed                            |
+
+### Test Steps
+
+1. Add a product to the cart.
+2. Record product, size, quantity, and total.
+3. Refresh the browser.
+4. Open the cart again.
+
+### Expected Result
+
+The cart should behave according to the application's defined persistence rules and should not lose or corrupt cart data unexpectedly.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+# 11. Additional Checkout Test Cases
+
+## TC-054 — Invalid Checkout Email
+
+| Field            | Details                          |
+| ---------------- | -------------------------------- |
+| Test Case ID     | TC-054                           |
+| Title            | Verify checkout email validation |
+| Related Scenario | TS-050                           |
+| Test Type        | Negative / Validation            |
+| Priority         | High                             |
+| Preconditions    | User has reached checkout        |
+| Test Data        | Invalid email formats            |
+| Status           | Not Executed                     |
+
+### Test Steps
+
+1. Open checkout.
+2. Enter an invalid email address.
+3. Fill other required fields with valid data.
+4. Submit the order.
+
+### Expected Result
+
+The application should reject the invalid email and prevent order submission until the value is corrected.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-055 — Invalid Checkout Phone Number
+
+| Field            | Details                                 |
+| ---------------- | --------------------------------------- |
+| Test Case ID     | TC-055                                  |
+| Title            | Verify checkout phone number validation |
+| Related Scenario | TS-051                                  |
+| Test Type        | Negative / Validation                   |
+| Priority         | Medium                                  |
+| Preconditions    | Checkout page is accessible             |
+| Test Data        | Invalid phone number format             |
+| Status           | Not Executed                            |
+
+### Test Steps
+
+1. Open checkout.
+2. Enter an invalid phone number.
+3. Complete the remaining required fields.
+4. Attempt to submit the order.
+
+### Expected Result
+
+The application should reject invalid phone input and display an appropriate validation message.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-056 — Prevent Order Submission with Incomplete Information
+
+| Field            | Details                                                     |
+| ---------------- | ----------------------------------------------------------- |
+| Test Case ID     | TC-056                                                      |
+| Title            | Verify that an incomplete checkout form cannot be submitted |
+| Related Scenario | TS-059                                                      |
+| Test Type        | Negative / Validation                                       |
+| Priority         | Critical                                                    |
+| Preconditions    | Cart contains at least one product                          |
+| Test Data        | One or more required checkout fields left empty             |
+| Status           | Not Executed                                                |
+
+### Test Steps
+
+1. Proceed to checkout.
+2. Leave at least one required field empty.
+3. Fill the remaining required fields.
+4. Attempt to place the order.
+
+### Expected Result
+
+The order should not be submitted and the missing required information should be clearly identified.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-057 — Prevent Duplicate Order Submission
+
+| Field            | Details                                                                |
+| ---------------- | ---------------------------------------------------------------------- |
+| Test Case ID     | TC-057                                                                 |
+| Title            | Verify that repeated order submission does not create duplicate orders |
+| Related Scenario | TS-060                                                                 |
+| Test Type        | Negative / Functional                                                  |
+| Priority         | High                                                                   |
+| Preconditions    | Checkout form is completed with valid information                      |
+| Test Data        | Valid checkout data                                                    |
+| Status           | Not Executed                                                           |
+
+### Test Steps
+
+1. Complete the checkout form.
+2. Click the final order submission button.
+3. Attempt to click the button repeatedly or submit again if the UI allows it.
+4. Review the resulting order state.
+
+### Expected Result
+
+Only one order should be created for a single user action. The application should prevent duplicate submissions.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+## TC-058 — Checkout Total Matches Cart Total
+
+| Field            | Details                                                 |
+| ---------------- | ------------------------------------------------------- |
+| Test Case ID     | TC-058                                                  |
+| Title            | Verify that checkout total matches the final cart total |
+| Related Scenario | TS-058                                                  |
+| Test Type        | Functional / Calculation                                |
+| Priority         | Critical                                                |
+| Preconditions    | Cart contains one or more products                      |
+| Test Data        | Known product prices and quantities                     |
+| Status           | Not Executed                                            |
+
+### Test Steps
+
+1. Open the shopping cart.
+2. Record the final cart total.
+3. Proceed to checkout.
+4. Compare the checkout total with the cart total.
+
+### Expected Result
+
+The checkout total should match the applicable final cart total, including any defined shipping or additional charges.
+
+### Actual Result
+
+Not Executed.
+
+---
+
+# 12. Additional Localization Test Cases
+
+## TC-059 — Localization of Validation Messages
+
+| Field            | Details                                                                |
+| ---------------- | ---------------------------------------------------------------------- |
+| Test Case ID     | TC-059                                                                 |
+| Title            | Verify that validation and error messages follow the selected language |
+| Related Scenario | TS-065                                                                 |
+| Test Type        | Functional / Localization                                              |
+| Priority         | Medium                                                                 |
+| Preconditions    | Application supports multiple languages                                |
+| Test Data        | Non-default application language                                       |
+| Status           | Not Executed                                                           |
+
+### Test Steps
+
+1. Change the application language.
+2. Navigate to a form with validation.
+3. Trigger a validation error.
+4. Review the displayed message.
+
+### Expected Result
+
+Validation and error messages should appear in the selected language.
+
+### Actual Result
+
+Not Executed.
+
+### Defect Reference
+
+Additional regression coverage for **BUG-001 — Website content remains in English after changing language**.
+
+---
+
+## TC-060 — No Mixed-Language Content
+
+| Field            | Details                                                                      |
+| ---------------- | ---------------------------------------------------------------------------- |
+| Test Case ID     | TC-060                                                                       |
+| Title            | Verify that the interface does not contain unexpected mixed-language content |
+| Related Scenario | TS-068                                                                       |
+| Test Type        | Functional / Localization / UI                                               |
+| Priority         | Medium                                                                       |
+| Preconditions    | A non-default language is selected                                           |
+| Test Data        | Supported non-default language                                               |
+| Status           | Not Executed                                                                 |
+
+### Test Steps
+
+1. Select a supported non-default language.
+2. Navigate through the main user journey.
+3. Review navigation labels, buttons, product information, validation messages, and checkout content.
+
+### Expected Result
+
+User-facing content should consistently use the selected language. Unexpected untranslated English or other-language text should not appear.
+
+### Actual Result
+
+Not Executed.
+
