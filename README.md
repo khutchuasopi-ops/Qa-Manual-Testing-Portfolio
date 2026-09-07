@@ -2,9 +2,9 @@
 
 Welcome to my QA Manual Testing Portfolio.
 
-This repository contains practical examples of my work as a **Junior Manual QA Tester**, including test scenarios, test cases, manual test execution, bug reports, checklists, and test summary documentation.
+This repository contains practical examples of my work as a **Junior Manual QA Tester**, including test scenarios, test cases, manual test execution, exploratory testing, smoke testing, regression testing, bug reports, checklists, and test summary documentation.
 
-The portfolio focuses on demonstrating a structured and practical approach to software testing.
+The portfolio demonstrates a structured and practical approach to manual software testing.
 
 ---
 
@@ -19,6 +19,10 @@ My current focus areas include:
 * Positive Testing
 * Negative Testing
 * UI Testing
+* Exploratory Testing
+* Smoke Testing
+* Regression Testing
+* Localization Testing
 * Test Scenario Design
 * Test Case Design
 * Manual Test Execution
@@ -40,6 +44,9 @@ The goal of this portfolio is to demonstrate my ability to:
 * Identify testable scenarios
 * Create structured test cases
 * Execute manual tests
+* Perform exploratory testing
+* Perform smoke testing
+* Perform regression testing
 * Identify and document defects
 * Assign appropriate severity and priority
 * Maintain traceability between scenarios, test cases, and defects
@@ -77,6 +84,9 @@ The project includes:
 * Positive Testing
 * Negative Testing
 * UI Testing
+* Exploratory Testing
+* Smoke Testing
+* Regression Testing
 * Manual Test Execution
 * Defect Identification
 * Bug Reporting
@@ -115,7 +125,7 @@ The current project contains **40 detailed test cases**.
 
 Three defects were documented based on the recorded testing results.
 
-The execution report intentionally distinguishes between tests that were actually recorded and tests that were not executed or not recorded.
+The execution report distinguishes between tests that were actually recorded and tests that were not recorded.
 
 ---
 
@@ -157,7 +167,7 @@ The bug reports demonstrate structured defect documentation including:
 
 # Testing Approach
 
-My testing approach in this portfolio is based on practical manual QA fundamentals.
+My testing approach is based on practical manual QA fundamentals.
 
 ### 1. Test Scenario Design
 
@@ -167,17 +177,29 @@ I identify important application areas and user flows that should be tested.
 
 I create positive and negative test cases covering expected and invalid user behavior.
 
-### 3. Manual Test Execution
+### 3. Smoke Testing
 
-I execute selected test cases and record the observed results.
+I perform basic checks of important application functionality to verify that the main user flows are working sufficiently for further testing.
 
-### 4. Defect Reporting
+### 4. Exploratory Testing
+
+I explore the application beyond predefined test cases to identify unexpected behavior, usability issues, and additional defects.
+
+### 5. Manual Test Execution
+
+I execute test cases and record the observed results.
+
+### 6. Regression Testing
+
+I re-check relevant functionality after changes or fixes to help verify that existing functionality continues to work as expected.
+
+### 7. Defect Reporting
 
 When unexpected behavior is identified, I document it using structured bug reports.
 
-### 5. Test Reporting
+### 8. Test Reporting
 
-I summarize the testing results, identified defects, limitations, and recommendations.
+I summarize testing results, identified defects, limitations, and recommendations.
 
 ---
 
@@ -233,6 +255,9 @@ Additional QA tools and technologies are areas of ongoing learning and developme
 * Positive Testing
 * Negative Testing
 * UI Testing
+* Exploratory Testing
+* Smoke Testing
+* Regression Testing
 * User Flow Testing
 * Localization Testing
 
@@ -262,9 +287,6 @@ As a Junior QA Tester, I am continuing to develop my skills in areas such as:
 
 * API Testing
 * SQL and Database Testing
-* Regression Testing
-* Smoke Testing
-* Exploratory Testing
 * Cross-Browser Testing
 * Responsive Testing
 * Test Management Tools
@@ -311,6 +333,6 @@ This portfolio demonstrates my current practical knowledge of manual software te
 
 It shows my approach to:
 
-**Planning → Test Design → Manual Execution → Defect Reporting → Test Summary**
+**Test Design → Smoke Testing → Exploratory Testing → Manual Execution → Regression Testing → Defect Reporting → Test Summary**
 
 I am continuing to improve my testing skills through hands-on practice and further learning.
