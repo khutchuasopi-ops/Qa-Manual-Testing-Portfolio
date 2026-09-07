@@ -1,27 +1,23 @@
-# E-commerce Web Application — QA Project Overview
+# Project Overview
 
 ## 1. Project Information
 
-| Field              | Details                                 |
-| ------------------ | --------------------------------------- |
-| Project            | E-commerce Web Application              |
-| Testing Type       | Manual Software Testing                 |
-| Testing Level      | Functional / UI / User Flow             |
-| Role               | Junior Manual QA Tester                 |
-| Application        | Confidential E-commerce Web Application |
-| Test Documentation | GitHub / Markdown                       |
-
-> **Confidentiality Note:** The application name, organization name, URL, credentials, and confidential business or user information are intentionally excluded from this portfolio.
+| Field        | Details                    |
+| ------------ | -------------------------- |
+| Project Name | E-commerce Web Application |
+| Project Type | Web Application            |
+| Testing Role | Junior Manual QA Tester    |
+| Testing Type | Manual Testing             |
 
 ---
 
 ## 2. Project Description
 
-This project demonstrates a structured manual QA approach to testing a web-based e-commerce application from an end-user perspective.
+This project focuses on the manual testing of a web-based e-commerce application.
 
-The primary goal was to validate critical customer journeys, identify functional and usability issues, and document defects using structured QA documentation.
+The main goal was to check important user flows and core functionality and to identify and document software defects.
 
-The testing focused on the complete customer journey from authentication and product discovery through product selection, shopping cart management, checkout, and localization.
+The testing approach focused on the application from an end-user perspective.
 
 ---
 
@@ -29,21 +25,16 @@ The testing focused on the complete customer journey from authentication and pro
 
 The main testing objectives were:
 
-* Verify successful and unsuccessful user authentication.
-* Verify validation of required login fields.
-* Verify product search and search result behavior.
-* Verify product information and product selection.
-* Verify product size selection and validation.
-* Verify adding and removing products from the shopping cart.
-* Verify product quantity management.
-* Verify shopping cart price calculation.
-* Verify checkout navigation and required-field validation.
-* Verify delivery and payment-related flows where applicable.
-* Verify language selection and localized content.
-* Verify main navigation and important UI elements.
-* Identify and document functional defects.
-* Provide reproducible defect reports.
-* Maintain traceability between test cases and identified defects.
+* Verify login functionality.
+* Verify product search and product selection.
+* Verify product size and quantity selection.
+* Verify shopping cart functionality.
+* Verify cart quantity and price calculations.
+* Verify the checkout flow.
+* Verify language and localization behavior.
+* Identify functional and UI defects.
+* Document defects with clear reproduction steps.
+* Compare expected and actual results.
 
 ---
 
@@ -51,207 +42,194 @@ The main testing objectives were:
 
 ### In Scope
 
-The following areas were included in the testing scope:
+The following application areas were included in the documented testing coverage:
 
 * User Login
-* Authentication Validation
 * Product Search
-* Search Result Relevance
-* Product Details
+* Product Selection
 * Product Size Selection
 * Product Quantity
 * Shopping Cart
 * Cart Price Calculation
-* Product Removal
-* Checkout Navigation
-* Checkout Input Validation
-* Delivery Information
-* Payment Method Selection
-* Order Summary
-* Localization
-* Main Navigation
-* UI Element Visibility
-* Basic User Flow Validation
-* Positive and Negative Testing
-* Exploratory Testing
+* Checkout Flow
+* Language / Localization
+* UI Elements and Navigation
+* Basic User Flows
 
 ### Out of Scope
 
-The following areas were not included in the current documented execution scope:
+The following areas were outside the scope of this project:
 
-* Performance and Load Testing
+* Performance Testing
+* Load Testing
+* Security Testing
 * Automated Testing
-* Source Code Testing
-* Backend Unit Testing
-* Database Validation
-* Penetration Testing
-* Production Monitoring
+* Backend Code Testing
+* Database Testing
 
-These areas may require separate test environments, technical access, or dedicated testing tools.
+The project focuses on Junior-level Manual QA testing.
 
 ---
 
-## 5. Testing Approach
+## 5. QA Activities
 
-The project follows a risk-based manual testing approach.
+The project includes the following documented QA activities:
 
-Testing activities included:
-
-1. Requirement and functionality understanding
-2. Test scenario identification
-3. Test case design
-4. Positive testing
-5. Negative testing
-6. Validation testing
-7. User-flow testing
-8. Exploratory testing
-9. Manual test execution
-10. Defect identification
-11. Defect documentation
-12. Retesting where applicable
-13. Test summary reporting
+* Test Scenario Design
+* Test Case Design
+* Functional Testing
+* Positive Testing
+* Negative Testing
+* UI Testing
+* Manual Test Execution
+* Defect Identification
+* Bug Reporting
+* Severity and Priority Assignment
+* Test Summary Reporting
 
 ---
 
-## 6. Test Design Techniques
+## 6. Test Types
 
-The following test design principles were applied or considered during test case creation:
+The documented testing coverage includes:
 
-### Equivalence Partitioning
+* Functional Testing
+* UI Testing
+* Positive Testing
+* Negative Testing
 
-Input data was divided into representative valid and invalid groups.
-
-Examples:
-
-* Valid credentials
-* Invalid credentials
-* Empty credentials
-* Existing product search
-* Non-existing product search
-
-### Boundary Value Analysis
-
-Boundary conditions were considered for areas such as:
-
-* Product quantity
-* Required fields
-* Search input
-* Checkout input
-
-### Negative Testing
-
-Invalid and incomplete user actions were tested to verify that the application handles unexpected or incorrect input appropriately.
-
-### State-Based Testing
-
-Important user states were considered, including:
-
-* Logged out
-* Logged in
-* Product selected
-* Product added to cart
-* Checkout started
-* Order submission
+Additional checks such as responsive, cross-browser, regression, and retesting may be used as future or supporting coverage, but they are not presented as completed execution results in this project.
 
 ---
 
-## 7. Key User Journeys
+## 7. Test Coverage
 
-### Login Journey
+The project contains:
 
-Login Page → Enter Credentials → Submit → Authentication Result
+* **34 Test Scenarios**
+* **40 Detailed Test Cases**
+* **3 Documented Defects**
 
-### Product Discovery Journey
+The test scenarios describe the planned and documented functional coverage.
 
-Search → Search Results → Product Details → Product Selection
+The 40 test cases represent the documented historical test execution set.
 
-### Shopping Cart Journey
-
-Product Selection → Add to Cart → Cart Review → Quantity Update → Price Verification
-
-### Checkout Journey
-
-Cart → Checkout → Customer Information → Delivery Information → Payment → Order Summary → Order Submission
-
-### Localization Journey
-
-Language Selection → Page Content → Navigation → Verify Selected Language
+Not every documented test case has a preserved execution result.
 
 ---
 
-## 8. Defect Areas Identified
+## 8. Historical Test Execution
 
-During manual testing, defects were identified in the following areas:
+The available historical execution results are:
 
-* Authentication validation
-* Shopping cart price calculation
-* Localization/content translation
+| Result           | Count |
+| ---------------- | ----: |
+| Total Test Cases |    40 |
+| Passed           |     2 |
+| Failed           |     3 |
+| Blocked          |     0 |
+| Not Recorded     |    35 |
 
-Each documented defect contains reproduction steps, expected result, actual result, severity, priority, and status.
+The available recorded results are:
+
+* **TC-001 — PASS** — Valid login completed successfully.
+* **TC-002 — FAIL** — Invalid email was accepted during login.
+* **TC-003 — PASS** — Invalid password was rejected.
+* **TC-024 — FAIL** — Cart total did not update correctly after quantity change.
+* **TC-036 — FAIL** — Website content remained in English after another language was selected.
+
+Test cases without an available historical result are marked as **NOT RECORDED**.
+
+No missing execution results were recreated or assumed.
 
 ---
 
-## 9. QA Deliverables
+## 9. Key User Flows
 
-The project includes the following QA artifacts:
+### Login Flow
+
+User opens the application → enters credentials → submits the login form → verifies the result.
+
+### Product Selection Flow
+
+User searches for a product → opens product details → selects required options → adds the product to the cart.
+
+### Shopping Cart Flow
+
+User opens the cart → verifies product information → changes quantity → checks the displayed price information.
+
+### Checkout Flow
+
+User proceeds to checkout → enters required information → reviews the order information.
+
+### Localization Flow
+
+User selects a language → checks the visible application content.
+
+---
+
+## 10. Defects Identified
+
+Three defects were documented during the available testing activity:
+
+1. **BUG-001 — Localization**
+   Website content remained in English after another language was selected.
+
+2. **BUG-002 — Shopping Cart**
+   Cart total did not update correctly after the product quantity was changed.
+
+3. **BUG-003 — Login / Authentication**
+   An invalid email was accepted during login.
+
+Detailed information is available in the `Bug-Reports` folder.
+
+---
+
+## 11. Test Documentation
+
+The project documentation includes:
 
 * Project Overview
 * Test Scenarios
 * Test Cases
 * Test Execution Report
 * Test Summary Report
-* Functional QA Checklists
+* Checklists
 * Bug Reports
-* QA Case Study
+* Case Study
 
 ---
 
-## 10. Quality Risks Identified
+## 12. Confidentiality
 
-The main quality risks identified during testing include:
+The application used for this project is confidential.
 
-### High-Risk Areas
+The following information has intentionally been excluded:
 
-* Authentication and access control
-* Shopping cart calculation
-* Checkout validation
-* Order total accuracy
+* Application name
+* Organization name
+* Application URL
+* Real credentials
+* Confidential business information
+* Confidential user information
+* Sensitive test data
 
-### Medium-Risk Areas
-
-* Localization consistency
-* Search behavior
-* UI navigation
-* Product information consistency
-
-These areas should receive additional regression coverage after defect fixes or application changes.
+Only non-sensitive information required to demonstrate the QA testing process is included in this portfolio.
 
 ---
 
-## 11. Expected QA Outcome
+## 13. Junior QA Perspective
 
-The expected outcome of this testing activity is to provide evidence that the application's critical customer journeys behave according to the expected functional requirements.
+This project demonstrates my practical foundation in Manual QA Testing.
 
-Any deviation from the expected behavior should be documented as a reproducible defect and linked to the relevant test case.
+The focus is on:
 
----
-
-## 12. Portfolio Purpose
-
-This project demonstrates practical Manual QA skills, including:
-
-* Test planning
-* Test scenario design
-* Test case design
-* Positive and negative testing
+* Structured test documentation
 * Functional testing
-* UI testing
-* Exploratory testing
+* Positive and negative testing
+* UI checks
+* Manual test execution
 * Defect reporting
-* Severity and priority assessment
-* Test execution
-* Retesting
-* QA documentation
-* Test-to-defect traceability
+* Clear communication of testing results
 
-> **Portfolio Note:** This project is presented for professional portfolio purposes. Confidential application, organization, user, and business information has intentionally been excluded.
+The project does not claim advanced or production-level QA experience.
