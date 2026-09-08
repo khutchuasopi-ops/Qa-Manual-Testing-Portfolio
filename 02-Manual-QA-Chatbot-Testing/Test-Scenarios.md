@@ -1,605 +1,689 @@
-# Chatbot Testing — Test Scenarios
+# Test Scenarios — AI-Powered E-commerce Chatbot
 
-## Project
+## 1. Document Information
 
-AI-powered e-commerce chatbot integrated into an online shopping website.
-
-## Testing Objective
-
-The goal of these scenarios is to verify that the chatbot understands user requests, provides relevant and accurate information, maintains conversation context, and handles different user flows correctly.
-
-The scenarios also cover exploratory testing of unusual, incomplete, conflicting, and multi-attribute user requests.
-
----
-
-## 1. Chat Initialization
-
-### TS-001 — Start a new conversation
-
-Verify that the chatbot opens correctly and displays an initial greeting.
-
-### TS-002 — Send a simple greeting
-
-Verify that the chatbot responds appropriately to messages such as:
-
-- Hello
-- Hi
-- Hola
-- გამარჯობა
-
-### TS-003 — Start conversation with an immediate product request
-
-Verify that the chatbot can handle a product request without requiring a greeting first.
+| Field               | Details                                                       |
+| ------------------- | ------------------------------------------------------------- |
+| Project             | AI-Powered E-commerce Chatbot                                 |
+| Testing Type        | Manual Testing                                                |
+| QA Role             | Junior Manual QA Tester                                       |
+| Scenario Level      | High-Level                                                    |
+| Primary Coverage    | Functional, Negative, Exploratory, Usability                  |
+| Additional Coverage | Context, State, Data Consistency, Compatibility, Localization |
 
 ---
 
-## 2. Product Search
+## 2. Scenario Objective
 
-### TS-004 — Search for a product category
+The purpose of this document is to define the high-level test scenarios used to evaluate the main user-facing functionality and behavioral risks of the AI-powered e-commerce chatbot.
 
-Verify that the chatbot can understand requests such as:
+The scenarios cover product discovery, product information, conversation context, complex requirements, product comparison, purchase-related interactions, operator flow, conversation state, negative input, usability, and localization.
 
-- Tell me about laptops
-- Show me phones
-- I need a TV
-
-### TS-005 — Search for a specific product
-
-Verify that the chatbot can identify a specific product or model.
-
-Example:
-
-> Tell me about iPhone 16.
-
-### TS-006 — Search for a non-existing product
-
-Verify that the chatbot clearly informs the user when a requested product cannot be found.
-
-### TS-007 — Search using incorrect or incomplete product names
-
-Verify that the chatbot can handle spelling mistakes, incomplete names, or informal product descriptions.
+Detailed test steps and expected results are maintained separately in `Test-Cases.md`.
 
 ---
 
-## 3. Product Information
+# 3. Product Search and Product Information
 
-### TS-008 — Ask for product price
+### TS-001 — Start a chatbot conversation
 
-Verify that the chatbot provides the correct product price.
+**Priority:** High
+**Type:** Functional
 
-### TS-009 — Ask for product colors
-
-Verify that the chatbot provides available color options for the selected product.
-
-### TS-010 — Ask for RAM
-
-Verify that the chatbot provides the correct RAM information.
-
-### TS-011 — Ask for storage
-
-Verify that the chatbot provides the correct storage information.
-
-### TS-012 — Ask about warranty
-
-Verify that the chatbot provides correct warranty information or correctly redirects the user when the information is unavailable.
-
-### TS-013 — Ask about product material
-
-Verify that the chatbot distinguishes between a product's color and its physical material.
-
-Example:
-
-> Silver color
-
-versus:
-
-> Made from silver material.
+Verify that the user can open and start interacting with the chatbot.
 
 ---
 
-## 4. Conversation Context
+### TS-002 — Send a basic greeting
 
-### TS-014 — Ask follow-up questions about the previously mentioned product
+**Priority:** Medium
+**Type:** Functional / Usability
 
-Example:
-
-> Tell me about laptops.
-
-Followed by:
-
-> Which one is the cheapest?
-
-Verify that the chatbot understands that "which one" refers to the previously discussed laptops.
-
-### TS-015 — Continue asking questions about the selected product
-
-Example:
-
-> How much RAM does it have?
-
-Followed by:
-
-> What colors does it come in?
-
-Verify that the chatbot maintains the correct product context.
-
-### TS-016 — Ask what product was previously selected
-
-Verify that the chatbot can correctly identify the product and attributes discussed earlier in the conversation.
-
-### TS-017 — Change product category during the conversation
-
-Example:
-
-> I want a laptop.
-
-Followed by:
-
-> Actually show me phones.
-
-Verify that the chatbot correctly changes the conversation context.
+Verify that the chatbot responds appropriately to a basic greeting.
 
 ---
 
-## 5. Multi-Attribute Requests
+### TS-003 — Search for a product category
 
-### TS-018 — Provide multiple product requirements in one message
+**Priority:** High
+**Type:** Functional
 
-Example:
-
-> I want a laptop under 1200 GEL, 8GB RAM, black, for office work.
-
-Verify that the chatbot considers all important attributes.
-
-### TS-019 — Provide many attributes in one message
-
-Example:
-
-> Color, RAM, price, design, material, battery, warranty, gaming and office use.
-
-Verify that the chatbot does not ignore most of the requested attributes.
-
-### TS-020 — Ask for a product with conflicting requirements
-
-Example:
-
-> I want a very cheap laptop with high gaming performance.
-
-Verify that the chatbot identifies the conflict and asks useful clarification questions or explains the available options.
-
-### TS-021 — Ask for a product using natural language
-
-Example:
-
-> I need something cheap but powerful.
-
-Verify that the chatbot can understand the general intent and ask relevant follow-up questions.
+Verify that the chatbot can understand a general product category request and provide relevant results or information.
 
 ---
 
-## 6. Product Recommendations
+### TS-004 — Search for a specific product
 
-### TS-022 — Ask for the cheapest product
+**Priority:** High
+**Type:** Functional
 
-Verify that the chatbot identifies the correct cheapest available option.
-
-### TS-023 — Ask for a product within a specific budget
-
-Example:
-
-> I want a laptop under 1000 GEL.
-
-Verify that recommendations stay within the requested budget.
-
-### TS-024 — Ask for a gaming laptop
-
-Verify that the chatbot recommends products suitable for gaming rather than general office laptops.
-
-### TS-025 — Ask for a product for office use
-
-Verify that the chatbot recommends appropriate products for office work.
-
-### TS-026 — Ask for a premium product with a limited budget
-
-Verify that the chatbot handles competing requirements appropriately instead of selecting a product without explaining the trade-off.
+Verify that the chatbot can identify and respond to a request for a specific product.
 
 ---
 
-## 7. Product Comparison
+### TS-005 — Request product information
 
-### TS-027 — Compare two specific products
+**Priority:** High
+**Type:** Functional
 
-Example:
-
-> Compare iPhone 16 and Samsung S24.
-
-Verify that the chatbot compares the requested models.
-
-### TS-028 — Compare products when one requested product is unavailable
-
-Verify that the chatbot clearly explains the availability issue instead of silently replacing the requested product.
-
-### TS-029 — Ask which product is cheaper
-
-Verify that the chatbot compares the correct products and provides accurate prices.
-
-### TS-030 — Ask which product has a better camera
-
-Verify that the chatbot provides a relevant comparison based on camera specifications.
+Verify that the chatbot provides relevant information about a requested product.
 
 ---
 
-## 8. Price Accuracy
+### TS-006 — Request product specifications
 
-### TS-031 — Compare chatbot price with product page price
+**Priority:** High
+**Type:** Functional
 
-Verify that the price provided by the chatbot matches the current product page.
-
-### TS-032 — Check discounted prices
-
-Verify that the chatbot clearly distinguishes between the original price and the discounted price.
-
-### TS-033 — Ask for the price after selecting product attributes
-
-Verify that the chatbot returns the price for the exact selected configuration.
-
-### TS-034 — Recheck the same product price
-
-Ask for the price multiple times during the conversation and verify consistency.
+Verify that the chatbot provides relevant technical or product attributes when requested.
 
 ---
 
-## 9. Purchase Intent
+### TS-007 — Request product price
 
-### TS-035 — Express purchase intent
+**Priority:** Critical
+**Type:** Functional / Data Consistency
 
-Example:
-
-> I want to buy it.
-
-Verify that the chatbot recognizes that the user wants to purchase the product.
-
-### TS-036 — Ask how to order
-
-Verify that the chatbot explains the purchase process clearly.
-
-### TS-037 — Ask for a product link
-
-Verify that the chatbot provides a valid product link when appropriate.
-
-### TS-038 — Ask about payment methods
-
-Verify that the chatbot provides correct information about available payment methods.
-
-### TS-039 — Ask about cash payment
-
-Verify that the chatbot distinguishes between physical-store payment and online payment.
-
-### TS-040 — Ask about pickup
-
-Verify that the chatbot does not guarantee store pickup without confirming product availability.
-
-### TS-041 — Continue purchase conversation after selecting a product
-
-Verify that the chatbot maintains the selected product and its attributes throughout the purchase flow.
+Verify that the chatbot provides the correct price for the requested product.
 
 ---
 
-## 10. Operator Handoff
+### TS-008 — Request product availability information
 
-### TS-042 — Request a human operator
+**Priority:** Medium
+**Type:** Functional
 
-Verify that the chatbot correctly transfers the conversation to an operator.
-
-### TS-043 — Continue sending messages after requesting an operator
-
-Verify that the system clearly indicates the current operator state.
-
-### TS-044 — Try to return to the chatbot after requesting an operator
-
-Verify that the user can understand how to return to AI chatbot mode, if this functionality is supported.
-
-### TS-045 — Close the chat while waiting for an operator
-
-Verify that reopening the chat preserves the correct state.
-
-### TS-046 — Refresh the page while waiting for an operator
-
-Verify that the operator/chat state remains consistent after refresh.
+Verify how the chatbot handles questions related to product availability.
 
 ---
 
-## 11. Chat State and Reopening
+### TS-009 — Request a product link
 
-### TS-047 — Minimize the chat
+**Priority:** High
+**Type:** Functional / Data Consistency
 
-Verify that minimizing the chat does not unexpectedly change the conversation state.
-
-### TS-048 — Reopen the minimized chat
-
-Verify that the conversation and current state are displayed correctly.
-
-### TS-049 — Reopen the chat without refreshing the page
-
-Verify that the system does not remain stuck in an incorrect state.
-
-### TS-050 — Start a new conversation after an old conversation
-
-Verify that the user can start a fresh conversation when appropriate.
+Verify that the chatbot provides a relevant product link when one is available.
 
 ---
 
-## 12. Error Handling
+# 4. Product Recommendations
 
-### TS-051 — Send random numbers
+### TS-010 — Request product recommendations
 
-Example:
+**Priority:** Medium
+**Type:** Functional
 
-> 123456789
-
-Verify that the chatbot handles irrelevant input gracefully.
-
-### TS-052 — Send special characters
-
-Example:
-
-> 22@@@@@@@
-
-Verify that the chatbot does not crash or produce unexpected behavior.
-
-### TS-053 — Send emojis
-
-Verify that the chatbot handles emoji-only messages.
-
-### TS-054 — Send meaningless text
-
-Verify that the chatbot responds appropriately to unclear input.
-
-### TS-055 — Send a request while the system is unavailable
-
-Verify that the maintenance/error message is displayed correctly and that the user can continue once the service becomes available.
+Verify that the chatbot can provide relevant product recommendations based on the user's request.
 
 ---
 
-## 13. Language and Mixed-Language Input
+### TS-011 — Request recommendations within a budget
 
-### TS-056 — Ask questions in English
+**Priority:** High
+**Type:** Functional
 
-Verify that English queries are understood correctly.
-
-### TS-057 — Ask questions in Georgian
-
-Verify that Georgian queries are understood correctly.
-
-### TS-058 — Mix languages in one message
-
-Example:
-
-> Hello გამარჯობა Hola Bonjour
-
-Verify that the chatbot handles mixed-language input without losing the user's intent.
-
-### TS-059 — Switch language during an existing conversation
-
-Verify that changing language does not incorrectly reset or change product context.
-
-### TS-060 — Check language consistency in responses
-
-Verify that the chatbot responds in the expected language according to the conversation or selected UI language.
+Verify that the chatbot considers a specified budget when recommending products.
 
 ---
 
-## 14. Branch and Store Information
+### TS-012 — Request recommendations using multiple attributes
 
-### TS-061 — Ask where stores are located
+**Priority:** High
+**Type:** Functional / Context
 
-Verify that the chatbot handles store-location requests according to the available system information and integration limitations.
+Verify that the chatbot considers multiple product requirements in a single request.
 
-### TS-062 — Ask for a specific store location
+Examples may include:
 
-Example:
-
-> Is there a store in Vake?
-
-Verify that the chatbot does not provide unsupported or unverified branch information.
-
-### TS-063 — Ask for store phone numbers
-
-Verify that the chatbot does not provide unsupported contact information when the required integration/data source is unavailable.
+* Product type
+* Budget
+* Brand
+* Technical specification
+* Intended use
 
 ---
 
-## 15. Conversation Robustness
+### TS-013 — Request the cheapest suitable product
 
-### TS-064 — Change topic several times
+**Priority:** Medium
+**Type:** Functional
 
-Example:
-
-> Laptop → phone → laptop → store → purchase.
-
-Verify that the chatbot correctly handles topic changes.
-
-### TS-065 — Return to a previous topic
-
-Verify that the chatbot can return to an earlier product discussion when context is still available.
-
-### TS-066 — Ask many questions in one message
-
-Verify that the chatbot addresses all important questions or clearly separates them.
-
-### TS-067 — Continue a long conversation
-
-Verify that the chatbot maintains relevant context during a long conversation.
-
-### TS-068 — Repeat the same question
-
-Verify that repeated questions receive consistent and relevant answers.
-
-### TS-069 — Ask an ambiguous question
-
-Example:
-
-> Which one?
-
-Verify that the chatbot asks for clarification instead of guessing.
-
-### TS-070 — Provide contradictory information
-
-Example:
-
-> I want black. Actually I want silver.
-
-Verify that the chatbot uses the latest requirement correctly.
+Verify that the chatbot correctly interprets a request for the lowest-priced suitable product.
 
 ---
 
-## 16. Accuracy and Consistency
+### TS-014 — Request a product for a specific use case
 
-### TS-071 — Compare chatbot information with the website
+**Priority:** Medium
+**Type:** Functional
 
-Verify important product information against the available product page.
-
-Check:
-
-- Product name
-- Price
-- Color
-- RAM
-- Storage
-- Warranty
-- Availability
-- Product link
-
-### TS-072 — Ask the same question at different points in the conversation
-
-Verify that the chatbot does not provide conflicting information.
-
-### TS-073 — Verify selected product attributes
-
-Verify that the chatbot does not mix attributes from different products.
-
-### TS-074 — Verify product link accuracy
-
-Verify that links provided by the chatbot open the correct product page.
+Verify that the chatbot considers the user's intended use when recommending a product.
 
 ---
 
-## 17. Exploratory Testing
+# 5. Follow-Up Questions and Conversation Context
 
-### TS-075 — Explore unexpected user behavior
+### TS-015 — Ask a follow-up question
 
-Use natural, incomplete, informal, misspelled, or unusual messages to identify unexpected chatbot behavior.
+**Priority:** High
+**Type:** Context
 
-Examples:
-
-- Very short messages
-- Long messages
-- Multiple questions
-- Mixed languages
-- Emojis
-- Numbers
-- Special characters
-- Contradictory requirements
-- Sudden topic changes
-
-### TS-076 — Stress the conversation with many follow-up questions
-
-Continue asking related and unrelated questions to determine whether the chatbot loses context.
-
-### TS-077 — Try to break the conversation flow
-
-Rapidly switch between:
-
-- AI chatbot
-- Operator
-- Product search
-- Purchase intent
-- Store questions
-- New product requests
-
-Verify that the chatbot remains in a valid state.
+Verify that the chatbot correctly understands a follow-up question based on the previous conversation.
 
 ---
 
-## 18. Mobile and Desktop Testing
+### TS-016 — Ask for additional information about the previously discussed product
 
-### TS-078 — Test chatbot on desktop
+**Priority:** High
+**Type:** Context
 
-Verify the chatbot UI, conversation flow, input field, messages, links, and operator state on a desktop browser.
-
-### TS-079 — Test chatbot on mobile
-
-Verify the same functionality on a mobile device.
-
-### TS-080 — Minimize and reopen chatbot on mobile
-
-Verify that conversation state and UI behave correctly.
-
-### TS-081 — Test long conversations on mobile
-
-Verify that scrolling, message display, input field, and conversation history remain usable.
-
-### TS-082 — Test chatbot during orientation changes
-
-Verify behavior when switching between portrait and landscape mode, if supported.
+Verify that the chatbot maintains the relevant product context when the user asks another question.
 
 ---
 
-## 19. Usability
+### TS-017 — Continue a product conversation through multiple messages
 
-### TS-083 — Verify clarity of chatbot responses
+**Priority:** High
+**Type:** Context
 
-Responses should be understandable and relevant to the user's question.
-
-### TS-084 — Verify useful clarification questions
-
-When the request is unclear or contains conflicting requirements, the chatbot should ask useful clarification questions.
-
-### TS-085 — Verify purchase flow guidance
-
-When the user clearly wants to purchase a product, the chatbot should provide clear next steps.
-
-### TS-086 — Verify error messages
-
-Error and maintenance messages should be understandable and should not leave the user confused about what to do next.
+Verify that product-related context is maintained across several consecutive messages.
 
 ---
 
-## 20. Regression Testing
+### TS-018 — Change the conversation topic
 
-### TS-087 — Retest fixed chatbot defects
+**Priority:** Medium
+**Type:** Context
 
-Verify that previously reported defects are resolved without introducing new problems.
-
-### TS-088 — Retest related functionality after a fix
-
-After a chatbot defect is fixed, test related conversation flows to check for regression.
-
-### TS-089 — Verify behavior across desktop and mobile after fixes
-
-Verify that fixes work consistently on both supported device types.
+Verify that the chatbot can switch to a new topic without incorrectly carrying unrelated information from the previous topic.
 
 ---
 
-# Exploratory Testing Focus
+### TS-019 — Return to a previously discussed topic
 
-During exploratory testing, special attention should be given to:
+**Priority:** Medium
+**Type:** Context / State
 
-- Context loss
-- Wrong product selection
-- Incorrect prices
-- Product attribute mixing
-- Unsupported store information
-- Incorrect product recommendations
-- Purchase-flow problems
-- Operator handoff problems
-- Chat state problems
-- Language switching
-- Mixed-language input
-- Long conversations
-- Conflicting requirements
-- Multiple questions in one message
-- Error and maintenance states
-- Mobile-specific behavior
+Verify whether the chatbot can correctly handle returning to a previous topic during the same conversation.
 
-The main goal is not only to verify predefined requirements, but also to discover unexpected behavior that may affect the user experience, product accuracy, or purchase journey.
+---
+
+### TS-020 — Handle multiple topics in one conversation
+
+**Priority:** Medium
+**Type:** Context / Exploratory
+
+Verify that the chatbot maintains appropriate context when the conversation contains multiple topics.
+
+---
+
+# 6. Complex and Multiple Requirements
+
+### TS-021 — Handle a request containing multiple product requirements
+
+**Priority:** Critical
+**Type:** Functional / Negative
+
+Verify that the chatbot considers all relevant requirements included in a single user request.
+
+---
+
+### TS-022 — Handle a complex product request
+
+**Priority:** High
+**Type:** Functional / Exploratory
+
+Verify that the chatbot can process a request containing several product attributes and provide a useful response.
+
+---
+
+### TS-023 — Handle conflicting requirements
+
+**Priority:** High
+**Type:** Negative / Exploratory
+
+Verify how the chatbot responds when the user's requirements cannot reasonably be satisfied simultaneously.
+
+---
+
+### TS-024 — Handle incomplete product requirements
+
+**Priority:** Medium
+**Type:** Negative
+
+Verify that the chatbot asks for clarification or provides an appropriate response when important information is missing.
+
+---
+
+### TS-025 — Handle ambiguous product requirements
+
+**Priority:** Medium
+**Type:** Negative / Exploratory
+
+Verify that the chatbot can identify ambiguity and respond appropriately rather than making an unjustified assumption.
+
+---
+
+# 7. Product Comparison
+
+### TS-026 — Compare two requested products
+
+**Priority:** Critical
+**Type:** Functional
+
+Verify that the chatbot compares the products explicitly requested by the user.
+
+---
+
+### TS-027 — Compare product prices
+
+**Priority:** High
+**Type:** Functional / Data Consistency
+
+Verify that prices are correctly represented when comparing products.
+
+---
+
+### TS-028 — Compare product specifications
+
+**Priority:** High
+**Type:** Functional
+
+Verify that relevant product attributes are correctly compared.
+
+---
+
+### TS-029 — Ask a follow-up question about a comparison
+
+**Priority:** High
+**Type:** Context
+
+Verify that the chatbot maintains the correct products and comparison context during follow-up questions.
+
+---
+
+### TS-030 — Verify product identity during comparison
+
+**Priority:** Critical
+**Type:** Data Consistency / Negative
+
+Verify that the chatbot does not replace one of the products requested by the user with an unrelated product.
+
+---
+
+# 8. Purchase-Related Interaction
+
+### TS-031 — Express purchase intent
+
+**Priority:** High
+**Type:** Functional / Usability
+
+Verify that the chatbot correctly recognizes when the user wants to purchase a product.
+
+---
+
+### TS-032 — Ask about ordering
+
+**Priority:** High
+**Type:** Functional
+
+Verify how the chatbot responds to questions about the ordering process.
+
+---
+
+### TS-033 — Ask about payment
+
+**Priority:** High
+**Type:** Functional
+
+Verify that the chatbot provides appropriate payment-related information where available.
+
+---
+
+### TS-034 — Ask about pickup
+
+**Priority:** Medium
+**Type:** Functional
+
+Verify how the chatbot handles questions about product pickup.
+
+---
+
+# 9. Operator Handoff and State
+
+### TS-035 — Request operator assistance
+
+**Priority:** High
+**Type:** Functional
+
+Verify that the user can request assistance from a human operator where the functionality is available.
+
+---
+
+### TS-036 — Transfer conversation to operator mode
+
+**Priority:** High
+**Type:** Functional / State
+
+Verify that the chatbot correctly transitions from AI interaction to operator mode.
+
+---
+
+### TS-037 — Return from operator mode to chatbot
+
+**Priority:** Critical
+**Type:** Functional / State
+
+Verify that the user can return from operator mode to the AI chatbot when the expected functionality is available.
+
+---
+
+### TS-038 — Minimize chatbot while in operator mode
+
+**Priority:** High
+**Type:** State / Usability
+
+Verify that minimizing the chatbot does not produce an unexpected or confusing state.
+
+---
+
+### TS-039 — Reopen chatbot after minimizing
+
+**Priority:** High
+**Type:** State
+
+Verify that reopening the chatbot results in the expected conversation state.
+
+---
+
+### TS-040 — Preserve or reset conversation state correctly
+
+**Priority:** High
+**Type:** State
+
+Verify that conversation state after transitions, minimizing, reopening, or operator interaction matches the expected behavior.
+
+---
+
+# 10. Negative Input
+
+### TS-041 — Submit invalid input
+
+**Priority:** Medium
+**Type:** Negative
+
+Verify that the chatbot handles invalid or unsupported input appropriately.
+
+---
+
+### TS-042 — Submit random input
+
+**Priority:** Low
+**Type:** Negative / Exploratory
+
+Verify how the chatbot responds to random or unrelated text.
+
+---
+
+### TS-043 — Submit special characters
+
+**Priority:** Low
+**Type:** Negative
+
+Verify that special characters do not cause unexpected chatbot behavior.
+
+---
+
+### TS-044 — Ask about an unknown product
+
+**Priority:** Medium
+**Type:** Negative
+
+Verify that the chatbot handles unknown or unavailable product requests appropriately.
+
+---
+
+### TS-045 — Submit an unexpected request
+
+**Priority:** Medium
+**Type:** Negative / Exploratory
+
+Verify that the chatbot responds appropriately when the request is outside the expected e-commerce conversation flow.
+
+---
+
+# 11. Localization and Language Handling
+
+### TS-046 — Interact in English
+
+**Priority:** High
+**Type:** Localization / Functional
+
+Verify that the chatbot correctly handles English-language requests.
+
+---
+
+### TS-047 — Interact in Georgian
+
+**Priority:** High
+**Type:** Localization / Functional
+
+Verify that the chatbot correctly handles Georgian-language requests.
+
+---
+
+### TS-048 — Use mixed English and Georgian
+
+**Priority:** Medium
+**Type:** Localization / Exploratory
+
+Verify that the chatbot can understand and respond appropriately to mixed-language messages.
+
+---
+
+### TS-049 — Maintain product terminology consistently
+
+**Priority:** Medium
+**Type:** Localization / Data Consistency
+
+Verify that product names, categories, and relevant terminology remain understandable and consistent across supported language interactions.
+
+---
+
+# 12. Usability
+
+### TS-050 — Verify response clarity
+
+**Priority:** High
+**Type:** Usability
+
+Verify that chatbot responses are understandable and provide useful information to the user.
+
+---
+
+### TS-051 — Verify response relevance
+
+**Priority:** High
+**Type:** Usability
+
+Verify that responses address the user's actual request rather than unrelated information.
+
+---
+
+### TS-052 — Verify conversation flow
+
+**Priority:** High
+**Type:** Usability
+
+Verify that the user can naturally continue the conversation without unnecessary confusion.
+
+---
+
+### TS-053 — Verify product information readability
+
+**Priority:** Medium
+**Type:** Usability
+
+Verify that product information is presented in a clear and understandable manner.
+
+---
+
+### TS-054 — Verify purchase-flow clarity
+
+**Priority:** High
+**Type:** Usability
+
+Verify that purchase-related responses provide a clear understanding of the next available action.
+
+---
+
+# 13. Mobile and Device Compatibility
+
+### TS-055 — Use chatbot on desktop/notebook
+
+**Priority:** High
+**Type:** Compatibility
+
+Verify the basic chatbot experience in the desktop/notebook environment.
+
+---
+
+### TS-056 — Use chatbot on mobile device
+
+**Priority:** High
+**Type:** Compatibility / Usability
+
+Verify the basic chatbot experience on a mobile device.
+
+---
+
+### TS-057 — Verify chat interaction on different screen sizes
+
+**Priority:** Medium
+**Type:** Compatibility / Usability
+
+Verify that the chatbot remains usable when accessed from different screen sizes represented by the tested environments.
+
+---
+
+# 14. Exploratory Risk Scenarios
+
+### TS-058 — Rapidly change conversation topics
+
+**Priority:** Medium
+**Type:** Exploratory / Context
+
+Explore whether rapid topic changes cause context mixing or incorrect responses.
+
+---
+
+### TS-059 — Combine multiple requirements with follow-up questions
+
+**Priority:** High
+**Type:** Exploratory / Context
+
+Explore whether the chatbot maintains all relevant requirements when the user continues with follow-up questions.
+
+---
+
+### TS-060 — Compare products after changing context
+
+**Priority:** High
+**Type:** Exploratory / Context
+
+Explore whether previous conversation context affects a new product comparison.
+
+---
+
+### TS-061 — Change state during an active conversation
+
+**Priority:** High
+**Type:** Exploratory / State
+
+Explore behavior when minimizing, reopening, or switching between chatbot and operator interactions during an active conversation.
+
+---
+
+### TS-062 — Use unexpected conversation sequences
+
+**Priority:** Medium
+**Type:** Exploratory
+
+Explore chatbot behavior when the user does not follow the expected conversation sequence.
+
+---
+
+# 15. Scenario Coverage Summary
+
+| Area                         | Scenario IDs    | Coverage                                     |
+| ---------------------------- | --------------- | -------------------------------------------- |
+| Product Search & Information | TS-001 – TS-009 | Product discovery and information            |
+| Recommendations              | TS-010 – TS-014 | Recommendation logic                         |
+| Context & Follow-Up          | TS-015 – TS-020 | Conversation context                         |
+| Complex Requirements         | TS-021 – TS-025 | Multiple, conflicting and ambiguous requests |
+| Product Comparison           | TS-026 – TS-030 | Comparison and product identity              |
+| Purchase Flow                | TS-031 – TS-034 | Purchase-related interaction                 |
+| Operator & State             | TS-035 – TS-040 | Operator and conversation state              |
+| Negative Testing             | TS-041 – TS-045 | Invalid and unexpected input                 |
+| Localization                 | TS-046 – TS-049 | Language handling                            |
+| Usability                    | TS-050 – TS-054 | User-facing experience                       |
+| Compatibility                | TS-055 – TS-057 | Desktop/mobile                               |
+| Exploratory Risks            | TS-058 – TS-062 | Advanced exploratory coverage                |
+
+**Total High-Level Test Scenarios: 62**
+
+---
+
+# 16. Traceability
+
+The scenarios are mapped to the detailed test cases in `Test-Cases.md`.
+
+The execution results are documented in `Test-Execution.md`.
+
+Confirmed defects are documented in:
+
+* `Bug-Reports/BUG-001.md`
+* `Bug-Reports/BUG-002.md`
+* `Bug-Reports/BUG-003.md`
+* `Bug-Reports/BUG-004.md`
+* `Bug-Reports/BUG-005.md`
+
+Exploratory findings are documented in `Exploratory-Testing.md`.
+
+---
+
+# 17. Testing Notes
+
+Not every scenario necessarily results in a confirmed defect.
+
+During manual testing, an observed behavior may be classified as:
+
+* Pass
+* Fail
+* Partial / Needs Improvement
+* Observation
+* Requirement Concern
+* Needs Verification
+
+A behavior is documented as a confirmed defect only when there is sufficient evidence that the observed result does not meet the expected behavior.
+
+This distinction is especially important for AI-powered applications because some responses may depend on available product data, business rules, conversation context, or expected chatbot behavior.
+
+---
+
+## 18. QA Perspective
+
+These scenarios are designed to demonstrate a structured manual QA approach rather than exhaustive production test coverage.
+
+The main focus is on identifying risks that can directly affect the user's ability to:
+
+1. Find products.
+2. Understand product information.
+3. Compare the correct products.
+4. Continue a conversation.
+5. Provide multiple requirements.
+6. Complete or continue purchase-related interactions.
+7. Transition between AI and operator interaction.
+8. Maintain the expected conversation state.
+9. Use the chatbot in supported languages.
+10. Interact with the chatbot comfortably across tested devices.
