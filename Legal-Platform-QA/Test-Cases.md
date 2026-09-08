@@ -1,978 +1,823 @@
-# Test Cases
+# Test Cases — Legal Platform QA
 
-This document contains manual test cases created to verify the main functionality of the application.
+## Documents
 
-The test cases cover positive scenarios, negative scenarios, input validation, file management, UI behavior, search, filtering, and error handling.
+### TC-001 — Create a Document
 
----
-
-## 1. Dashboard
-
-### TC-DASH-001 – Verify Dashboard Loads Successfully
-
-**Priority:** High
-
-**Preconditions:**
-- User is logged in.
+**Precondition:** User is logged in and Documents section is available.
 
 **Steps:**
-1. Open the Dashboard.
-2. Wait for the page to finish loading.
+
+1. Open Documents.
+2. Click **Create**.
+3. Enter valid document information.
+4. Save the document.
 
 **Expected Result:**
-The Dashboard loads successfully and all available sections are displayed correctly.
-
-**Status:** Not Executed
+The document is created and displayed in the Documents section.
 
 ---
 
-### TC-DASH-002 – Verify Activity Overview Date Filters
-
-**Priority:** Medium
-
-**Preconditions:**
-- User is on the Dashboard.
+### TC-002 — Required Document Fields
 
 **Steps:**
-1. Locate the Activity Overview section.
-2. Select the 5-day period.
-3. Check the displayed data.
-4. Repeat the test for 10, 14, 30, and 90 days.
+
+1. Open the document creation form.
+2. Leave a required field empty.
+3. Click **Save**.
 
 **Expected Result:**
-The Activity Overview updates according to the selected time period.
-
-**Status:** Not Executed
+The document is not created and a validation message is displayed.
 
 ---
 
-### TC-DASH-003 – Verify Dashboard Refresh
-
-**Priority:** Medium
-
-**Preconditions:**
-- User is on the Dashboard.
+### TC-003 — Edit a Document
 
 **Steps:**
-1. Refresh the browser page.
-2. Wait for the Dashboard to load.
+
+1. Open an existing document.
+2. Change one of its values.
+3. Save the changes.
 
 **Expected Result:**
-The Dashboard loads normally and previously available data remains consistent.
-
-**Status:** Not Executed
+The updated information is displayed correctly.
 
 ---
 
-### TC-DASH-004 – Verify Dashboard Navigation
-
-**Priority:** Medium
-
-**Preconditions:**
-- User is logged in.
+### TC-004 — Delete a Document
 
 **Steps:**
-1. Open the Dashboard.
-2. Navigate to another section.
-3. Return to the Dashboard.
+
+1. Open an existing document.
+2. Click **Delete**.
+3. Confirm the action.
 
 **Expected Result:**
-The Dashboard opens correctly and its data is displayed without unexpected changes.
-
-**Status:** Not Executed
+The document is removed from the active document list.
 
 ---
 
-# 2. Repository / Documents
-
-### TC-REP-001 – Upload a PDF Document
-
-**Priority:** High
-
-**Preconditions:**
-- User has access to the Repository.
+### TC-005 — Document Data After Refresh
 
 **Steps:**
+
+1. Open an existing document.
+2. Make a change.
+3. Save the change.
+4. Refresh the page.
+
+**Expected Result:**
+The saved information is still displayed correctly after refresh.
+
+---
+
+## File Upload
+
+### TC-006 — Upload a Valid File
+
+**Steps:**
+
+1. Open the file upload section.
+2. Select a supported file.
+3. Upload the file.
+
+**Expected Result:**
+The file is uploaded successfully and appears in the expected location.
+
+---
+
+### TC-007 — Upload an Unsupported File
+
+**Steps:**
+
+1. Open the file upload section.
+2. Select an unsupported file type.
+3. Try to upload the file.
+
+**Expected Result:**
+The application prevents the upload and displays an appropriate validation message.
+
+---
+
+### TC-008 — Upload File With Invalid Name
+
+**Steps:**
+
+1. Open the file upload section.
+2. Select a file with an invalid or unsupported name.
+3. Upload the file.
+
+**Expected Result:**
+The application handles the invalid filename correctly and displays a validation message if required.
+
+---
+
+### TC-009 — Verify Uploaded File Information
+
+**Steps:**
+
+1. Upload a valid file.
+2. Open the uploaded file information.
+
+**Expected Result:**
+The displayed file information is correct.
+
+---
+
+## File Replacement
+
+### TC-010 — Replace an Existing File
+
+**Steps:**
+
+1. Open an existing file.
+2. Select the replace option.
+3. Upload another valid file.
+4. Save the change.
+
+**Expected Result:**
+The original file is replaced with the new file.
+
+---
+
+### TC-011 — Verify New File After Replacement
+
+**Steps:**
+
+1. Replace an existing file.
+2. Open the file again.
+
+**Expected Result:**
+The new file is displayed.
+
+---
+
+### TC-012 — Verify File Data After Replacement
+
+**Steps:**
+
+1. Replace an existing file.
+2. Check the file information.
+3. Refresh the page.
+
+**Expected Result:**
+The correct new file and related information remain displayed after refresh.
+
+---
+
+## Repository
+
+### TC-013 — Open Repository
+
+**Steps:**
+
+1. Open the Repository section.
+
+**Expected Result:**
+The Repository opens and available items are displayed.
+
+---
+
+### TC-014 — Open Repository Item
+
+**Steps:**
+
 1. Open the Repository.
-2. Click the upload button.
-3. Select a valid PDF file.
-4. Confirm the upload.
+2. Select an existing item.
 
 **Expected Result:**
-The document is uploaded successfully and the correct file name is displayed.
-
-**Status:** Not Executed
+The selected item opens correctly.
 
 ---
 
-### TC-REP-002 – Upload a Different Supported File
-
-**Priority:** High
-
-**Preconditions:**
-- User is on the Repository page.
+### TC-015 — Delete Repository Item
 
 **Steps:**
-1. Click Upload.
-2. Select a supported document format.
-3. Complete the upload.
 
-**Expected Result:**
-The selected document is uploaded successfully.
-
-**Status:** Not Executed
-
----
-
-### TC-REP-003 – Replace an Existing Document
-
-**Priority:** High
-
-**Preconditions:**
-- A document already exists in the Repository.
-
-**Steps:**
-1. Open the existing document.
-2. Select the option to replace the file.
-3. Choose a different document.
-4. Save the changes.
-
-**Expected Result:**
-The original document is replaced with the newly selected document, and the displayed file name is updated accordingly.
-
-**Status:** Not Executed
-
----
-
-### TC-REP-004 – Cancel Document Upload
-
-**Priority:** Medium
-
-**Preconditions:**
-- User is on the document upload form.
-
-**Steps:**
-1. Start uploading a document.
-2. Select a file.
-3. Click Cancel.
-
-**Expected Result:**
-The upload is cancelled and the document is not added or changed.
-
-**Status:** Not Executed
-
----
-
-### TC-REP-005 – Delete a Document
-
-**Priority:** High
-
-**Preconditions:**
-- A document exists in the Repository.
-
-**Steps:**
-1. Select the document.
-2. Choose Delete.
-3. Confirm the deletion.
-
-**Expected Result:**
-The document is removed from the active Repository and moved to the Recycle Bin.
-
-**Status:** Not Executed
-
----
-
-### TC-REP-006 – Download a Document
-
-**Priority:** Medium
-
-**Preconditions:**
-- A document is available in the Repository.
-
-**Steps:**
-1. Select the document.
-2. Click Download.
-
-**Expected Result:**
-The document downloads successfully and can be opened.
-
-**Status:** Not Executed
-
----
-
-### TC-REP-007 – Upload a Document With a Long File Name
-
-**Priority:** Low
-
-**Preconditions:**
-- User is on the Repository page.
-
-**Steps:**
-1. Select a document with a very long file name.
-2. Upload the document.
-
-**Expected Result:**
-The document is uploaded successfully and the file name is displayed without breaking the layout.
-
-**Status:** Not Executed
-
----
-
-### TC-REP-008 – Upload a Document With Special Characters
-
-**Priority:** Medium
-
-**Preconditions:**
-- User is on the Repository page.
-
-**Steps:**
-1. Select a file containing special characters in its name.
-2. Upload the file.
-
-**Expected Result:**
-The file is uploaded successfully and its name is displayed correctly.
-
-**Status:** Not Executed
-
----
-
-### TC-REP-009 – Verify File Name After Replacement
-
-**Priority:** High
-
-**Preconditions:**
-- An existing document is available.
-- A second document is available for replacement.
-
-**Steps:**
-1. Open the existing document.
-2. Replace it with the second document.
-3. Save the changes.
-4. Check the displayed file name.
-
-**Expected Result:**
-The displayed file name matches the newly uploaded document.
-
-**Status:** Not Executed
-
----
-
-# 3. Templates
-
-### TC-TEMP-001 – Create a New Template
-
-**Priority:** High
-
-**Preconditions:**
-- User has permission to create templates.
-
-**Steps:**
-1. Open Templates.
-2. Select New Template.
-3. Enter a valid template name.
-4. Upload a document if required.
-5. Save the template.
-
-**Expected Result:**
-The template is created successfully and appears in the Templates list.
-
-**Status:** Not Executed
-
----
-
-### TC-TEMP-002 – Create Template With a Valid Document
-
-**Priority:** High
-
-**Preconditions:**
-- User is on the New Template page.
-
-**Steps:**
-1. Enter a valid template name.
-2. Upload a supported document.
-3. Save the template.
-
-**Expected Result:**
-The template is created and the uploaded document is correctly associated with it.
-
-**Status:** Not Executed
-
----
-
-### TC-TEMP-003 – Create Template Without a Name
-
-**Priority:** Medium
-
-**Preconditions:**
-- User is on the New Template page.
-
-**Steps:**
-1. Leave the template name empty.
-2. Upload a valid document.
-3. Attempt to save the template.
-
-**Expected Result:**
-If the template name is required, the system should prevent saving and display a validation message.
-
-**Status:** Not Executed
-
----
-
-### TC-TEMP-004 – Create Template With a Very Long Name
-
-**Priority:** Medium
-
-**Preconditions:**
-- User is on the New Template page.
-
-**Steps:**
-1. Enter a very long template name.
-2. Upload a valid document.
-3. Save the template.
-
-**Expected Result:**
-The system should either accept the name within the supported limit or display an appropriate validation message. The interface should not break.
-
-**Status:** Not Executed
-
----
-
-### TC-TEMP-005 – Edit an Existing Template
-
-**Priority:** High
-
-**Preconditions:**
-- An existing template is available.
-
-**Steps:**
-1. Open the template.
-2. Change one of its editable fields.
-3. Save the changes.
-4. Reopen the template.
-
-**Expected Result:**
-The changes are saved and remain available after reopening the template.
-
-**Status:** Not Executed
-
----
-
-### TC-TEMP-006 – Delete a Template
-
-**Priority:** High
-
-**Preconditions:**
-- An existing template is available.
-
-**Steps:**
-1. Select the template.
-2. Click Delete.
-3. Confirm the deletion.
-
-**Expected Result:**
-The template is removed from the active list and moved to the Recycle Bin if that functionality applies.
-
-**Status:** Not Executed
-
----
-
-### TC-TEMP-007 – Generate a Playbook From a Template
-
-**Priority:** High
-
-**Preconditions:**
-- A valid document is available for Playbook generation.
-
-**Steps:**
-1. Open the New Template flow.
-2. Upload a valid document.
-3. Select the option to generate a Playbook.
+1. Open the Repository.
+2. Select an item.
+3. Delete the item.
 4. Confirm the action.
-5. Wait for the generation process to complete.
 
 **Expected Result:**
-The Playbook is generated successfully and the user receives confirmation or access to the generated file.
-
-**Status:** Not Executed
+The item is removed from the active Repository list.
 
 ---
 
-### TC-TEMP-008 – Cancel Playbook Generation
-
-**Priority:** Medium
-
-**Preconditions:**
-- A valid document is available.
-- The Playbook generation confirmation is displayed.
+### TC-016 — Restore Repository Item
 
 **Steps:**
-1. Start the Playbook generation flow.
-2. When prompted, choose No or Cancel.
+
+1. Delete an existing Repository item.
+2. Open the Recycle Bin.
+3. Select the deleted item.
+4. Restore it.
 
 **Expected Result:**
-Playbook generation is cancelled and no Playbook is created.
-
-**Status:** Not Executed
+The item is restored and becomes available again.
 
 ---
 
-# 4. Events
+## Templates
 
-### TC-EVENT-001 – Create Event With Valid Information
-
-**Priority:** High
-
-**Preconditions:**
-- User has permission to create Events.
+### TC-017 — Create a Template
 
 **Steps:**
-1. Open the Events section.
-2. Select Create Event.
-3. Enter a valid event name.
-4. Complete the required fields.
-5. Save the Event.
+
+1. Open Templates.
+2. Click **Create**.
+3. Enter valid information.
+4. Save the template.
 
 **Expected Result:**
-The Event is created successfully and appears in the Events list.
-
-**Status:** Not Executed
+The template is created successfully.
 
 ---
 
-### TC-EVENT-002 – Create Event Without a Name
-
-**Priority:** High
-
-**Preconditions:**
-- User is on the Event creation form.
+### TC-018 — Required Template Fields
 
 **Steps:**
-1. Leave the Event Name field empty.
-2. Complete the other required fields.
-3. Attempt to create the Event.
+
+1. Open the template creation form.
+2. Leave a required field empty.
+3. Click **Save**.
 
 **Expected Result:**
-The system should prevent creation if the Event Name is required and display an appropriate validation message.
-
-**Status:** Not Executed
+The template is not created and a validation message is displayed.
 
 ---
 
-### TC-EVENT-003 – Create Event With Whitespace-Only Name
-
-**Priority:** High
-
-**Preconditions:**
-- User is on the Event creation form.
+### TC-019 — Template Name Validation
 
 **Steps:**
-1. Enter only spaces in the Event Name field.
-2. Complete the other required fields.
-3. Click Create.
+
+1. Open the template creation form.
+2. Enter an invalid template name.
+3. Try to save the template.
 
 **Expected Result:**
-The system should reject whitespace-only input and display a validation message.
-
-**Status:** Not Executed
+The application rejects the invalid name and displays a validation message.
 
 ---
 
-### TC-EVENT-004 – Create Event With a One-Character Name
-
-**Priority:** Low
-
-**Preconditions:**
-- User is on the Event creation form.
+### TC-020 — Empty Template Name
 
 **Steps:**
-1. Enter a single character as the Event Name.
-2. Complete the required fields.
-3. Create the Event.
+
+1. Open the template creation form.
+2. Leave the template name empty.
+3. Click **Save**.
 
 **Expected Result:**
-The system should follow the defined minimum-length validation rules for Event names.
-
-**Status:** Not Executed
+The template is not created.
 
 ---
 
-### TC-EVENT-005 – Create Event With a Very Long Name
-
-**Priority:** Medium
-
-**Preconditions:**
-- User is on the Event creation form.
+### TC-021 — Edit a Template
 
 **Steps:**
-1. Enter a very long string in the Event Name field.
-2. Complete the required fields.
-3. Attempt to create the Event.
 
-**Expected Result:**
-The system should enforce the supported name length and prevent the interface from breaking.
-
-**Status:** Not Executed
-
----
-
-### TC-EVENT-006 – Edit an Existing Event
-
-**Priority:** High
-
-**Preconditions:**
-- An existing Event is available.
-
-**Steps:**
-1. Open the Event.
-2. Change an editable field.
+1. Open an existing template.
+2. Change the template information.
 3. Save the changes.
-4. Reopen the Event.
 
 **Expected Result:**
-The updated information is saved correctly.
-
-**Status:** Not Executed
+The updated template information is displayed correctly.
 
 ---
 
-### TC-EVENT-007 – Delete an Event
+## Events
 
-**Priority:** High
-
-**Preconditions:**
-- An existing Event is available.
+### TC-022 — Create an Event
 
 **Steps:**
-1. Select the Event.
-2. Click Delete.
-3. Confirm the deletion.
+
+1. Open Events.
+2. Click **Create**.
+3. Enter valid event information.
+4. Save the event.
 
 **Expected Result:**
-The Event is deleted and handled according to the application's deletion flow.
-
-**Status:** Not Executed
+The event is created successfully.
 
 ---
 
-# 5. Workflows
-
-### TC-WF-001 – Open Updated From Calendar
-
-**Priority:** Medium
-
-**Preconditions:**
-- User has access to Workflows.
+### TC-023 — Required Event Fields
 
 **Steps:**
-1. Open the Workflows page.
-2. Click Updated From.
+
+1. Open the event creation form.
+2. Leave a required field empty.
+3. Click **Save**.
 
 **Expected Result:**
-A calendar opens and allows the user to select a date.
-
-**Status:** Not Executed
+The event is not created and a validation message is displayed.
 
 ---
 
-### TC-WF-002 – Navigate Between Calendar Months
-
-**Priority:** Low
-
-**Preconditions:**
-- The Updated From calendar is open.
+### TC-024 — Event Name Validation
 
 **Steps:**
-1. Click the next month arrow.
-2. Click the previous month arrow.
-3. Repeat several times.
+
+1. Open the event creation form.
+2. Enter an invalid event name.
+3. Save the event.
 
 **Expected Result:**
-The calendar moves between months correctly and displays the selected month clearly.
-
-**Status:** Not Executed
+The application rejects the invalid name.
 
 ---
 
-### TC-WF-003 – Apply Updated From Filter
-
-**Priority:** High
-
-**Preconditions:**
-- Workflow records are available.
+### TC-025 — Event Name Boundary Value
 
 **Steps:**
-1. Open the Updated From filter.
-2. Select a date.
-3. Apply the filter.
+
+1. Open the event creation form.
+2. Enter a name at the allowed character limit.
+3. Save the event.
+4. Repeat using a value above the allowed limit.
 
 **Expected Result:**
-Only records matching the selected date criteria are displayed.
-
-**Status:** Not Executed
+The value within the allowed limit is accepted.
+The value above the limit is rejected or handled according to the requirements.
 
 ---
 
-### TC-WF-004 – Verify Workflow Status Filters
-
-**Priority:** High
-
-**Preconditions:**
-- User is on the Workflows page.
+### TC-026 — Verify Event After Saving
 
 **Steps:**
-1. Select each available status/filter.
-2. Observe the displayed results.
+
+1. Create an event with valid information.
+2. Open the created event.
 
 **Expected Result:**
-Each filter responds to the user's selection and displays the appropriate records.
-
-**Status:** Not Executed
+The saved event information is displayed correctly.
 
 ---
 
-### TC-WF-005 – Clear Workflow Filters
+## Workflows
 
-**Priority:** Medium
-
-**Preconditions:**
-- One or more workflow filters are applied.
+### TC-027 — Start a Workflow
 
 **Steps:**
-1. Apply a workflow filter.
-2. Clear the filter.
+
+1. Open Workflows.
+2. Select an available workflow.
+3. Start the workflow.
 
 **Expected Result:**
-The filter is removed and the default set of workflow records is displayed.
-
-**Status:** Not Executed
+The selected workflow starts successfully.
 
 ---
 
-# 6. AI Assistant
-
-### TC-AI-001 – Send a Basic Message
-
-**Priority:** High
-
-**Preconditions:**
-- User has access to the AI Assistant.
+### TC-028 — Workflow Required Information
 
 **Steps:**
+
+1. Start a workflow.
+2. Leave a required field empty.
+3. Continue.
+
+**Expected Result:**
+The application prevents the user from continuing and displays a validation message.
+
+---
+
+### TC-029 — Workflow Invalid Input
+
+**Steps:**
+
+1. Start a workflow.
+2. Enter invalid information.
+3. Continue.
+
+**Expected Result:**
+The invalid input is rejected and an appropriate message is displayed.
+
+---
+
+### TC-030 — Workflow Result
+
+**Steps:**
+
+1. Start a workflow.
+2. Enter valid information.
+3. Complete the workflow.
+
+**Expected Result:**
+The workflow completes and the expected result is displayed.
+
+---
+
+## AI Assistant
+
+### TC-031 — Open AI Assistant
+
+**Steps:**
+
+1. Open the AI Assistant section.
+
+**Expected Result:**
+The AI Assistant opens correctly.
+
+---
+
+### TC-032 — Send a Valid Request
+
+**Steps:**
+
 1. Open the AI Assistant.
-2. Enter a simple message.
-3. Send the message.
+2. Enter a valid request.
+3. Send the request.
 
 **Expected Result:**
-The message is displayed and the AI Assistant returns a response.
-
-**Status:** Not Executed
+The request is submitted and a response is displayed.
 
 ---
 
-### TC-AI-002 – Send an Empty Message
-
-**Priority:** Medium
-
-**Preconditions:**
-- AI Assistant is open.
+### TC-033 — Empty AI Request
 
 **Steps:**
-1. Leave the message field empty.
-2. Attempt to send the message.
 
-**Expected Result:**
-The system should prevent an empty message from being submitted.
-
-**Status:** Not Executed
-
----
-
-### TC-AI-003 – Start a New Conversation
-
-**Priority:** High
-
-**Preconditions:**
-- An existing conversation contains messages.
-
-**Steps:**
 1. Open the AI Assistant.
-2. Send a message.
-3. Start a new conversation.
+2. Leave the input empty.
+3. Try to send the request.
 
 **Expected Result:**
-A new conversation is opened without incorrectly carrying over messages from the previous conversation.
-
-**Status:** Not Executed
+The application prevents an empty request or handles it with an appropriate message.
 
 ---
 
-### TC-AI-004 – Refresh AI Assistant
-
-**Priority:** Medium
-
-**Preconditions:**
-- The AI Assistant contains an active conversation.
+### TC-034 — Invalid AI Input
 
 **Steps:**
-1. Send a message.
-2. Refresh the browser.
-3. Wait for the page to load.
+
+1. Open the AI Assistant.
+2. Enter invalid or unexpected input.
+3. Send the request.
 
 **Expected Result:**
-The application should behave according to its intended conversation persistence rules.
-
-**Status:** Not Executed
+The application handles the input without breaking the page or conversation.
 
 ---
 
-### TC-AI-005 – Navigate Away From AI Assistant
-
-**Priority:** Medium
-
-**Preconditions:**
-- The AI Assistant contains an active conversation.
+### TC-035 — Multiple AI Requests
 
 **Steps:**
-1. Send a message.
-2. Navigate to another section.
-3. Return to the AI Assistant.
+
+1. Open the AI Assistant.
+2. Send one valid request.
+3. Send another request.
 
 **Expected Result:**
-Conversation history should behave according to the application's intended persistence rules.
-
-**Status:** Not Executed
+Both requests are handled correctly and the conversation remains usable.
 
 ---
 
-### TC-AI-006 – Send a Long Message
+## Search
 
-**Priority:** Medium
-
-**Preconditions:**
-- AI Assistant is open.
+### TC-036 — Search Existing Value
 
 **Steps:**
-1. Enter a long text message.
-2. Send the message.
 
-**Expected Result:**
-The message is submitted successfully or the user receives a clear validation message if a length limit is exceeded.
-
-**Status:** Not Executed
-
----
-
-# 7. Search
-
-### TC-SEARCH-001 – Search for an Existing Document
-
-**Priority:** High
-
-**Preconditions:**
-- At least one searchable document exists.
-
-**Steps:**
 1. Open Search.
-2. Enter part of the document name.
-3. Submit the search.
+2. Enter a value that exists.
+3. Run the search.
 
 **Expected Result:**
-Relevant results are displayed.
-
-**Status:** Not Executed
+Matching results are displayed.
 
 ---
 
-### TC-SEARCH-002 – Search With No Matching Results
-
-**Priority:** Medium
-
-**Preconditions:**
-- User is on the Search page.
+### TC-037 — Search Partial Value
 
 **Steps:**
-1. Enter a value that does not exist.
-2. Run the search.
+
+1. Open Search.
+2. Enter part of an existing value.
+3. Run the search.
 
 **Expected Result:**
-The system displays an appropriate no-results state.
-
-**Status:** Not Executed
+Relevant matching results are displayed.
 
 ---
 
-### TC-SEARCH-003 – Clear Search
-
-**Priority:** Medium
-
-**Preconditions:**
-- A search has been performed.
+### TC-038 — Search With No Results
 
 **Steps:**
-1. Enter a search term.
-2. Run the search.
-3. Click the Clear button/icon.
+
+1. Open Search.
+2. Enter a value that does not exist.
+3. Run the search.
 
 **Expected Result:**
-The search term is removed and the search state is reset.
-
-**Status:** Not Executed
+No matching results are displayed and the application provides an appropriate empty-state message.
 
 ---
 
-### TC-SEARCH-004 – Search Using Documents and Global Modes
-
-**Priority:** High
-
-**Preconditions:**
-- Search functionality is available.
+### TC-039 — Empty Search
 
 **Steps:**
-1. Search for a known value using Documents.
-2. Repeat the search using Global.
+
+1. Open Search.
+2. Leave the search field empty.
+3. Run the search.
 
 **Expected Result:**
-Each search mode returns results according to its intended scope.
-
-**Status:** Not Executed
+The application handles the empty search correctly.
 
 ---
 
-### TC-SEARCH-005 – Search With Special Characters
-
-**Priority:** Low
-
-**Preconditions:**
-- Search field is available.
+### TC-040 — Search Results
 
 **Steps:**
-1. Enter special characters into the search field.
-2. Run the search.
+
+1. Search for an existing value.
+2. Review the returned results.
 
 **Expected Result:**
-The application handles the input safely and provides an appropriate result or no-results state without breaking the page.
-
-**Status:** Not Executed
+The results match the search criteria.
 
 ---
 
-# 8. Recycle Bin
-
-### TC-REC-001 – Verify Deleted Item Appears in Recycle Bin
-
-**Priority:** High
-
-**Preconditions:**
-- An item can be deleted.
+### TC-041 — Filter Search Results
 
 **Steps:**
+
+1. Perform a search.
+2. Apply an available filter.
+3. Review the results.
+
+**Expected Result:**
+The results are filtered according to the selected filter.
+
+---
+
+## Recycle Bin
+
+### TC-042 — Deleted Item Appears in Recycle Bin
+
+**Steps:**
+
 1. Delete an item.
 2. Open the Recycle Bin.
 
 **Expected Result:**
 The deleted item appears in the Recycle Bin.
 
-**Status:** Not Executed
-
 ---
 
-### TC-REC-002 – Restore an Item
-
-**Priority:** High
-
-**Preconditions:**
-- A deleted item exists in the Recycle Bin.
+### TC-043 — Restore an Item
 
 **Steps:**
+
 1. Open the Recycle Bin.
-2. Select the deleted item.
-3. Choose Restore.
+2. Select a deleted item.
+3. Click **Restore**.
 
 **Expected Result:**
-The item is restored and becomes available in its original location.
-
-**Status:** Not Executed
+The item is restored successfully.
 
 ---
 
-### TC-REC-003 – Permanently Delete an Item
-
-**Priority:** High
-
-**Preconditions:**
-- A deleted item exists in the Recycle Bin.
+### TC-044 — Verify Item After Restore
 
 **Steps:**
-1. Open the Recycle Bin.
-2. Select the item.
-3. Choose Permanent Delete.
-4. Confirm the action.
+
+1. Restore a deleted item.
+2. Return to its original section.
 
 **Expected Result:**
-The item is permanently removed and is no longer available for restoration.
-
-**Status:** Not Executed
+The restored item is available in its original location.
 
 ---
 
-# 9. General Validation
-
-### TC-VAL-001 – Verify Required Fields
-
-**Priority:** High
+### TC-045 — Verify Data After Restore
 
 **Steps:**
-1. Open forms containing required fields.
-2. Leave required fields empty.
-3. Attempt to save.
+
+1. Delete an item.
+2. Restore the item.
+3. Open the restored item.
 
 **Expected Result:**
-The system prevents submission and clearly identifies the required fields.
-
-**Status:** Not Executed
+The item and its information are displayed correctly after restoration.
 
 ---
 
-### TC-VAL-002 – Verify Whitespace-Only Input
+## Playbook Generation
 
-**Priority:** Medium
+### TC-046 — Start Playbook Generation
 
 **Steps:**
-1. Enter only spaces into text fields.
-2. Attempt to save the form.
+
+1. Open Playbook Generation.
+2. Start the process.
 
 **Expected Result:**
-Whitespace-only input should be rejected where meaningful text is required.
-
-**Status:** Not Executed
+The Playbook Generation process starts successfully.
 
 ---
 
-### TC-VAL-003 – Verify Long Text Input
-
-**Priority:** Medium
+### TC-047 — Required Playbook Input
 
 **Steps:**
-1. Enter a very long value into a text field.
-2. Attempt to save.
+
+1. Open Playbook Generation.
+2. Leave a required field empty.
+3. Try to continue.
 
 **Expected Result:**
-The application should enforce any defined character limit and maintain a stable layout.
-
-**Status:** Not Executed
+The application prevents the user from continuing and displays a validation message.
 
 ---
 
-### TC-VAL-004 – Verify Special Characters
-
-**Priority:** Low
+### TC-048 — Invalid Playbook Input
 
 **Steps:**
-1. Enter special characters into supported text fields.
-2. Save the information.
+
+1. Open Playbook Generation.
+2. Enter invalid input.
+3. Try to continue.
 
 **Expected Result:**
-The application handles the input correctly without unexpected errors or UI issues.
+The invalid input is rejected or handled correctly.
 
-**Status:** Not Executed
-Not Executed
+---
+
+### TC-049 — Generated Playbook
+
+**Steps:**
+
+1. Enter valid information.
+2. Complete the Playbook Generation process.
+3. Review the result.
+
+**Expected Result:**
+A Playbook is generated and the content is displayed correctly.
+
+---
+
+## UI and Usability
+
+### TC-050 — Button Display
+
+**Steps:**
+
+1. Open the main sections of the application.
+2. Review the available buttons and controls.
+
+**Expected Result:**
+Buttons and controls are visible and readable.
+
+---
+
+### TC-051 — Text Readability
+
+**Steps:**
+
+1. Open different sections.
+2. Review labels, buttons, and messages.
+
+**Expected Result:**
+Text is readable and does not overlap or become hidden.
+
+---
+
+### TC-052 — Validation Messages
+
+**Steps:**
+
+1. Trigger a validation error.
+2. Review the displayed message.
+
+**Expected Result:**
+The message clearly explains the problem.
+
+---
+
+### TC-053 — Navigation
+
+**Steps:**
+
+1. Navigate between the main application sections.
+2. Use the available navigation controls.
+
+**Expected Result:**
+Navigation works correctly and the selected section opens.
+
+---
+
+### TC-054 — UI After Saving
+
+**Steps:**
+
+1. Create or update an item.
+2. Save the changes.
+3. Review the page.
+
+**Expected Result:**
+The updated information is displayed correctly and the UI remains usable.
+
+---
+
+### TC-055 — UI After Error
+
+**Steps:**
+
+1. Perform an action that causes a validation or application error.
+2. Review the page.
+
+**Expected Result:**
+The error is handled without breaking the page or preventing normal navigation.
+
+---
+
+## Regression
+
+### TC-056 — Document Regression
+
+**Steps:**
+
+1. Open Documents after an application change.
+2. Create or edit a document.
+3. Save the changes.
+
+**Expected Result:**
+Document functionality continues to work correctly.
+
+---
+
+### TC-057 — File Regression
+
+**Steps:**
+
+1. Upload a valid file.
+2. Replace the file.
+3. Refresh the page.
+
+**Expected Result:**
+File upload and replacement continue to work correctly and the correct file is displayed.
+
+---
+
+### TC-058 — Search Regression
+
+**Steps:**
+
+1. Open Search after an application change.
+2. Search for an existing value.
+3. Apply a filter.
+
+**Expected Result:**
+Search and filtering continue to work correctly.
+
+---
+
+### TC-059 — Template and Event Regression
+
+**Steps:**
+
+1. Open Templates and Events.
+2. Create or update an item.
+3. Save the changes.
+
+**Expected Result:**
+Template and Event functionality continues to work correctly.
+
+---
+
+### TC-060 — Recycle Bin Regression
+
+**Steps:**
+
+1. Delete an item.
+2. Open the Recycle Bin.
+3. Restore the item.
+
+**Expected Result:**
+The item is restored correctly and appears in its original location.
+
+---
+
+## Test Case Summary
+
+**Total Test Cases: 60**
+
+The test cases cover:
+
+* Documents
+* Repository
+* File Upload
+* File Replacement
+* Templates
+* Events
+* Workflows
+* AI Assistant
+* Search
+* Recycle Bin
+* Playbook Generation
+* UI and Usability
+* Regression Testing
+
+Test execution results are documented separately in `Test-Execution.md`.
