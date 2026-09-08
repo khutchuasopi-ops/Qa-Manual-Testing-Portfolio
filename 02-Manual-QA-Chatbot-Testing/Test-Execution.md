@@ -1,566 +1,1305 @@
 # Test Execution Report — AI-Powered E-commerce Chatbot
 
-## 1. Overview
+## 1. Document Information
 
-I performed manual and exploratory testing of an AI-powered e-commerce chatbot.
+| Field                | Details                                                    |
+| -------------------- | ---------------------------------------------------------- |
+| Project              | AI-Powered E-commerce Chatbot                              |
+| Testing Type         | Manual Testing                                             |
+| QA Role              | Junior Manual QA Tester                                    |
+| Application Type     | Web-based E-commerce Chatbot                               |
+| Test Environments    | Desktop / Notebook and Mobile Device                       |
+| Related Documents    | Test Plan, Test Scenarios, Test Cases, Exploratory Testing |
+| Defect Documentation | `Bug-Reports/`                                             |
 
-The testing focused on realistic customer conversations rather than only happy-path questions.
+---
 
-The main areas tested included:
+# 2. Execution Objective
+
+The purpose of this execution activity was to manually evaluate the main user-facing functionality and behavioral risks of the AI-powered e-commerce chatbot.
+
+Testing focused on:
 
 * Product search
 * Product information
+* Product prices
+* Product links
 * Product recommendations
+* Complex requirements
 * Product comparison
-* Purchase intent
+* Follow-up questions
+* Conversation context
+* Topic switching
+* Purchase-related interaction
 * Operator handoff
-* Conversation state
-* Language switching
-* Complex and ambiguous user requests
-
-> **Confidentiality Note:** Specific application, organization, website, product, and business information has been generalized or excluded from this portfolio.
-
----
-
-## 2. Test Environment
-
-* **Application:** Confidential AI-Powered E-commerce Chatbot
-* **Testing Type:** Manual / Exploratory Testing
-* **Platform:** Web
-* **Languages Tested:** English and Georgian
-* **Product Categories:** Laptops and Smartphones
+* Operator state
+* Minimize/reopen behavior
+* Negative input
+* Localization
+* Usability
+* Desktop/mobile usage
 
 ---
 
-## 3. Test Execution Summary
+# 3. Execution Status Definitions
 
-| Area                            | Result                        |
-| ------------------------------- | ----------------------------- |
-| Laptop product search           | Tested                        |
-| Cheapest product search         | Tested                        |
-| Price questions                 | Tested                        |
-| RAM questions                   | Tested                        |
-| Color questions                 | Tested                        |
-| Gaming requirements             | Tested                        |
-| Complex product requirements    | Defect found                  |
-| Product comparison              | Defect found                  |
-| Product price consistency       | Defect found                  |
-| Product links                   | Tested                        |
-| Purchase intent                 | Improvement / defect observed |
-| Payment questions               | Tested                        |
-| Pickup / availability questions | Tested                        |
-| Operator handoff                | Tested                        |
-| Returning from operator mode    | Defect found                  |
-| Minimize and reopen chat        | Defect found                  |
-| Conversation context            | Tested                        |
-| Topic switching                 | Tested                        |
-| Mixed-language input            | Tested                        |
-| Store information               | Requirement concern found     |
-| System maintenance behavior     | Observed                      |
-| Product material questions      | Tested                        |
-| Ambiguous questions             | Tested                        |
+| Status                 | Meaning                                                                      |
+| ---------------------- | ---------------------------------------------------------------------------- |
+| **PASS**               | Expected behavior was observed.                                              |
+| **FAIL**               | Observed behavior did not meet the expected result.                          |
+| **PARTIAL**            | Some expected behavior worked, but one or more aspects required improvement. |
+| **OBSERVATION**        | Behavior was observed but could not be confirmed as a defect.                |
+| **NEEDS VERIFICATION** | Additional information or confirmation was required.                         |
+| **BLOCKED**            | Test could not be completed because a required condition was unavailable.    |
 
 ---
 
-# 4. Detailed Execution Results
+# 4. Functional Execution Results
 
-## 4.1 Laptop Search
+## 4.1 Start Chatbot
 
-**Test:**
+**Related Test Case:** TC-001
+**Area:** Basic Functionality
+**Priority:** High
+**Result:** PASS
 
-`I want a laptop under 1200 GEL`
+### Expected
 
-**Observed Result:**
+The chatbot should open successfully and allow the user to start a conversation.
 
-The chatbot provided laptop recommendations and asked about preferred brand or screen size.
+### Observed
 
-**Result:** Pass
+The chatbot was accessible and available for interaction.
 
-No defect was observed during this test.
+### Conclusion
 
----
-
-## 4.2 Cheapest Laptop
-
-**Test:**
-
-`Which one is the cheapest?`
-
-**Observed Result:**
-
-The chatbot provided a cheapest laptop recommendation and price.
-
-**Result:** Pass
-
-No defect was confirmed during this test.
+The basic chatbot entry point worked as expected.
 
 ---
 
-## 4.3 RAM Information
+## 4.2 Basic Greeting
 
-**Test:**
+**Related Test Case:** TC-002
+**Area:** Basic Functionality
+**Priority:** Medium
+**Result:** PASS
 
-`How much RAM does it have?`
+### Expected
 
-**Observed Result:**
+The chatbot should respond appropriately to a basic greeting.
 
-The chatbot provided RAM information for the discussed laptops.
+### Observed
 
-**Result:** Pass
+The chatbot responded to the greeting and allowed the conversation to continue.
 
-No defect was confirmed during this test.
+### Conclusion
 
----
-
-## 4.4 Laptop Colors
-
-**Test:**
-
-`What colors does it come in?`
-
-**Observed Result:**
-
-The chatbot provided available color options.
-
-**Result:** Pass
-
-No defect was confirmed during this test.
+No confirmed defect was identified.
 
 ---
 
-## 4.5 Gaming Requirement
+## 4.3 Product Category Search
 
-**Test:**
+**Related Test Case:** TC-003
+**Area:** Product Search
+**Priority:** High
+**Result:** PASS
 
-`I need a laptop for gaming`
+### Expected
 
-**Observed Result:**
+The chatbot should understand the requested product category and provide relevant information.
 
-The chatbot recognized the gaming requirement and suggested appropriate laptop options.
+### Observed
 
-**Result:** Pass
+The chatbot was able to process the product-category request and provide a relevant response.
 
-No defect was confirmed during this test.
+### Conclusion
 
----
-
-## 4.6 Complex Product Requirements
-
-**Test:**
-
-`color RAM price design material battery warranty gaming office`
-
-**Observed Result:**
-
-The chatbot focused mainly on RAM and asked:
-
-`Which RAM capacity would be your priority?`
-
-The other requirements were not properly addressed.
-
-**Result:** Fail
-
-**Related Bug:** BUG-005
+No confirmed defect was identified.
 
 ---
 
-## 4.7 Conflicting Requirements
+## 4.4 Specific Product Search
 
-**Test:**
+**Related Test Case:** TC-004
+**Area:** Product Search
+**Priority:** High
+**Result:** PASS
 
-`want a laptop under 1000 GEL and high performance`
+### Expected
 
-Then:
+The chatbot should identify the requested product correctly.
 
-`cheap but gaming laptop`
+### Observed
 
-**Observed Result:**
+The requested product was recognized and relevant information was returned.
 
-The chatbot could not provide a clear matching product and suggested operator assistance.
+### Conclusion
 
-**Result:** Needs Improvement
-
-This behavior was useful for exploratory testing, but it was not classified as a confirmed defect without a clearly defined product or business requirement.
-
----
-
-## 4.8 Product Comparison
-
-**Test:**
-
-`Compare Product A and Product B`
-
-**Observed Result:**
-
-The chatbot compared the requested first product with a different second product instead of the product specified by the user.
-
-**Result:** Fail
-
-**Related Bug:** BUG-004
-
-> Specific real product names have been generalized for portfolio confidentiality.
+No confirmed defect was identified.
 
 ---
 
-## 4.9 Follow-up Comparison Question
+## 4.5 Product Information
 
-**Test:**
+**Related Test Case:** TC-005
+**Area:** Product Information
+**Priority:** High
+**Result:** PASS
 
-`Which one has a better camera?`
+### Expected
 
-**Observed Result:**
+The chatbot should provide relevant information about the requested product.
 
-The chatbot continued the comparison using the incorrect product context established during the previous response.
+### Observed
 
-**Result:** Fail
+Relevant product information was provided.
 
-**Related Bug:** BUG-004
+### Conclusion
 
----
-
-## 4.10 Product Price
-
-**Test:**
-
-`What is the price?`
-
-**Observed Result:**
-
-The chatbot provided a product price that differed from the price displayed on the corresponding product page.
-
-**Result:** Fail
-
-**Related Bug:** BUG-001
+No confirmed defect was identified.
 
 ---
 
-## 4.11 Product Link
+## 4.6 Product Specifications
 
-**Test:**
+**Related Test Case:** TC-006
+**Area:** Product Information
+**Priority:** High
+**Result:** PASS
 
-Asked the chatbot to provide a link for the selected product.
+### Expected
 
-**Observed Result:**
+The chatbot should provide relevant specifications for the requested product.
 
-The chatbot provided a product link that opened the corresponding product page.
+### Observed
 
-However, the price displayed on the product page did not match the price provided by the chatbot.
+Product-related specifications were returned and could be reviewed.
 
-**Result:** Partial / Fail
+### Conclusion
 
-**Related Bug:** BUG-001
-
----
-
-## 4.12 Purchase Intent
-
-**Test:**
-
-`Let's buy the laptop`
-
-and:
-
-`I want to buy it`
-
-**Observed Result:**
-
-The chatbot recognized the purchase intent and explained that the user could continue through the product page, cart, or available payment options.
-
-However, it did not move into a structured checkout flow with a clear product summary and confirmation.
-
-**Result:** Needs Improvement
-
-This was documented as a UX / recommendation rather than a confirmed functional defect.
+No confirmed defect was identified during the executed check.
 
 ---
 
-## 4.13 Payment Method
+## 4.7 Product Price
 
-**Test:**
+**Related Test Case:** TC-007
+**Area:** Product Information / Data Consistency
+**Priority:** Critical
+**Result:** FAIL
+**Related Defect:** BUG-001
 
-`Can I pay cash?`
+### Expected
 
-**Observed Result:**
+The product price returned by the chatbot should be consistent with the corresponding product information where the values are expected to match.
 
-The chatbot explained the available payment options.
+### Observed
 
-**Result:** Pass
+A price inconsistency was identified between the chatbot response and the corresponding product information.
 
-No defect was confirmed during this test.
+### Impact
 
----
+Users may receive incorrect or conflicting price information.
 
-## 4.14 Pickup / Availability
+### Conclusion
 
-**Test:**
-
-`Can I pick it up tomorrow?`
-
-**Observed Result:**
-
-The chatbot indicated that pickup could depend on product availability and asked for additional information.
-
-**Result:** Needs Verification
-
-The chatbot did not verify real-time stock availability during this conversation.
+The issue was documented as `BUG-001`.
 
 ---
 
-## 4.15 Operator Handoff
+## 4.8 Product Link
 
-**Test:**
+**Related Test Case:** TC-009
+**Area:** Product Link / Data Consistency
+**Priority:** High
+**Result:** PARTIAL
+**Related Defect:** BUG-001
 
-`Connect me to operator`
+### Expected
 
-**Observed Result:**
+The chatbot should provide a relevant product link and maintain consistent product information.
 
-The system confirmed that the request had been sent to an operator.
+### Observed
 
-**Result:** Pass
+The product link led to the relevant product page, but the price information did not remain consistent with the chatbot response.
 
-The operator request was successfully submitted.
+### Conclusion
 
----
-
-## 4.16 Return to AI After Operator Request
-
-**Test:**
-
-After requesting an operator:
-
-`Never mind. Can you return to chatbot?`
-
-**Observed Result:**
-
-The system indicated that an operator had already been requested.
-
-The user could not return to the AI chatbot through the conversation.
-
-**Result:** Fail
-
-**Related Bug:** BUG-002
+The link functionality itself was usable, but the related product information inconsistency was documented under `BUG-001`.
 
 ---
 
-## 4.17 Minimize and Reopen Chat
+# 5. Recommendation and Complex Request Execution
 
-**Test:**
+## 5.1 Product Recommendation
 
-1. Request an operator.
-2. Minimize the chatbot.
-3. Reopen the chatbot.
-4. Continue the conversation.
+**Related Test Case:** TC-010
+**Area:** Recommendations
+**Priority:** Medium
+**Result:** PASS
 
-**Observed Result:**
+### Expected
 
-The chatbot remained in the previous operator state.
+The chatbot should provide relevant product recommendations.
 
-Refreshing the page changed the behavior, but minimizing and reopening the chat did not reset the conversation state.
+### Observed
 
-**Result:** Fail
+Relevant recommendations were provided.
 
-**Related Bug:** BUG-003
+### Conclusion
 
----
-
-## 4.18 Topic Switching
-
-**Test:**
-
-`I want a laptop`
-
-Then:
-
-`Actually show me phones`
-
-**Observed Result:**
-
-The chatbot switched from laptops to phones.
-
-**Result:** Pass
-
-No defect was confirmed during this test.
+No confirmed defect was identified.
 
 ---
 
-## 4.19 Multiple Topics in One Conversation
+## 5.2 Budget-Based Recommendation
 
-**Test:**
+**Related Test Case:** TC-011
+**Area:** Recommendations
+**Priority:** High
+**Result:** PASS
 
-Laptop questions → phone comparison → laptop → phones → store information → purchase.
+### Expected
 
-**Observed Result:**
+The chatbot should consider the user's specified budget.
 
-The chatbot was able to continue the conversation, but longer conversations created situations where context and product selection required closer verification.
+### Observed
 
-**Result:** Exploratory Observation
+The budget requirement was considered during the recommendation flow.
 
----
+### Conclusion
 
-## 4.20 Store Information
-
-**Test:**
-
-`Where is your store?`
-
-**Observed Result:**
-
-The chatbot provided specific store information.
-
-**Result:** Requirement Concern
-
-The expected behavior for store information should be verified against the defined chatbot capabilities and available integrations.
-
-This was treated as a requirement/business-rule concern rather than a confirmed technical defect.
+No confirmed defect was identified during the executed check.
 
 ---
 
-## 4.21 Material Question
+## 5.3 Multiple Product Requirements
 
-**Test:**
+**Related Test Case:** TC-020
+**Area:** Complex Requests
+**Priority:** Critical
+**Result:** FAIL
+**Related Defect:** BUG-005
 
-`silver material?`
+### Expected
 
-**Observed Result:**
+The chatbot should consider the major requirements included in a single product request.
 
-The chatbot distinguished between color and material and explained that laptops could use materials such as aluminum or plastic.
+### Observed
 
-**Result:** Pass
+The chatbot did not consistently handle all requested requirements together. In some cases, the response focused on only part of the request.
 
-No defect was confirmed during this test.
+### Impact
 
----
+Users may receive recommendations that do not satisfy their actual requirements.
 
-## 4.22 Multiple Attribute Question
+### Conclusion
 
-**Test:**
-
-`silver material? design? color? RAM? price?`
-
-**Observed Result:**
-
-The chatbot provided information about several requested attributes and then asked which brand was preferred.
-
-**Result:** No Confirmed Defect
+The behavior was documented as `BUG-005`.
 
 ---
 
-## 4.23 Product Memory
+## 5.4 Complex Product Request
 
-**Test:**
+**Related Test Case:** TC-021
+**Area:** Complex Requests
+**Priority:** High
+**Result:** FAIL
+**Related Defect:** BUG-005
 
-After discussing a specific laptop:
+### Expected
 
-`What I chose?`
+The chatbot should process a request containing several product requirements and provide a useful response.
 
-**Observed Result:**
+### Observed
 
-The chatbot identified the product configuration discussed earlier in the conversation.
+Complex requests were not always handled completely. Some requested attributes could be ignored or receive insufficient consideration.
 
-**Result:** Pass
+### Conclusion
 
-No defect was confirmed during this test.
-
----
-
-## 4.24 Mixed Language
-
-**Test:**
-
-The conversation was switched between English and Georgian.
-
-**Observed Result:**
-
-The chatbot continued responding and understood the general conversation.
-
-**Result:** Pass
-
-No confirmed defect was observed.
+The issue is related to the multiple-requirement handling documented in `BUG-005`.
 
 ---
 
-## 4.25 System Maintenance
+## 5.5 Conflicting Requirements
 
-**Test:**
+**Related Test Case:** TC-022
+**Area:** Negative / Exploratory
+**Priority:** High
+**Result:** OBSERVATION
 
-During some messages, the chatbot displayed a system maintenance message.
+### Expected
 
-**Observed Result:**
+The chatbot should recognize when requirements conflict and provide clarification, realistic alternatives, or an explanation.
 
-The maintenance message appeared during testing and the chatbot became available again later.
+### Observed
 
-**Result:** Observed
+Conflicting requirements could result in limited recommendations or a transition toward operator assistance.
 
-This was not automatically classified as a chatbot defect because the system may genuinely have been temporarily unavailable.
+### Conclusion
 
----
-
-# 5. Confirmed / Documented Bugs
-
-The following issues were documented as separate bug reports:
-
-| Bug ID  | Issue                                                                    | Result |
-| ------- | ------------------------------------------------------------------------ | ------ |
-| BUG-001 | Chatbot price differs from product page                                  | Fail   |
-| BUG-002 | User cannot clearly return from operator mode                            | Fail   |
-| BUG-003 | Operator state remains after minimize/reopen                             | Fail   |
-| BUG-004 | Requested product is replaced with a different product during comparison | Fail   |
-| BUG-005 | Multiple product requirements are not properly handled                   | Fail   |
-
-Detailed reproduction steps, expected results, actual results, and severity/priority information are available in the `Bug-Reports` folder.
+The behavior was treated as an observation because the expected business behavior for all conflicting combinations was not fully defined.
 
 ---
 
-# 6. Recommendations / Improvements
+# 6. Conversation Context Execution
 
-During testing, several areas were identified that may require product or UX improvements.
+## 6.1 Product Follow-Up
 
-## Purchase Flow
+**Related Test Case:** TC-015
+**Area:** Context
+**Priority:** High
+**Result:** PASS
 
-The chatbot recognizes purchase intent but could provide a more structured path toward checkout.
+### Expected
 
-## Complex Requests
+The chatbot should understand follow-up questions based on the previous product context.
 
-The chatbot could improve how it processes multiple requirements within a single user message.
+### Observed
 
-## Store Information
+The chatbot was able to maintain relevant product context during follow-up interaction.
 
-The expected behavior for store information should be confirmed based on available integrations and business requirements.
+### Conclusion
 
-## Pickup Availability
-
-The chatbot should provide availability information only when current stock data is available.
+No confirmed defect was identified.
 
 ---
 
-# 7. QA Conclusion
+## 6.2 Multi-Message Product Conversation
 
-The chatbot successfully handled many basic product-related questions.
+**Related Test Case:** TC-016
+**Area:** Context
+**Priority:** High
+**Result:** PASS
 
-The most important issues identified during exploratory testing were related to:
+### Expected
 
-* Data consistency
-* Product identity
-* Conversation state
-* Operator handoff
-* Complex user intent
-* Product comparison
-* Price consistency
+Relevant product context should be maintained across consecutive messages.
 
-The testing also demonstrated that AI-powered conversational systems require testing beyond simple question-and-answer scenarios.
+### Observed
 
-Long conversations, changing requirements, product comparisons, purchase intent, and transitions between AI and human support can expose issues that may not be visible during basic functional testing.
+The chatbot generally maintained the active product context.
 
-This project demonstrates practical skills in:
+### Conclusion
 
-* Manual Testing
-* Exploratory Testing
-* Functional Testing
-* Negative Testing
-* Conversational Testing
-* Context and State Testing
-* Defect Identification
-* Bug Reporting
-* Requirement-based thinking
-* QA Documentation
+No confirmed defect was identified during the executed check.
 
+---
+
+## 6.3 Topic Switching
+
+**Related Test Case:** TC-017
+**Area:** Context
+**Priority:** Medium
+**Result:** PASS
+
+### Expected
+
+The chatbot should switch to the new topic without incorrectly applying unrelated previous context.
+
+### Observed
+
+Topic switching generally worked as expected.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+## 6.4 Return to Previous Topic
+
+**Related Test Case:** TC-018
+**Area:** Context / State
+**Priority:** Medium
+**Result:** OBSERVATION
+
+### Expected
+
+The chatbot should handle a return to a previously discussed topic appropriately.
+
+### Observed
+
+The behavior was generally understandable, but context-related edge cases remained possible.
+
+### Conclusion
+
+No confirmed defect was established from this check.
+
+---
+
+## 6.5 Multiple Topics in One Conversation
+
+**Related Test Case:** TC-019
+**Area:** Context / Exploratory
+**Priority:** Medium
+**Result:** OBSERVATION
+
+### Expected
+
+The chatbot should keep unrelated topics from interfering with one another.
+
+### Observed
+
+Topic switching generally worked, although extended conversations may create a risk of context mixing.
+
+### Conclusion
+
+This was retained as an exploratory observation rather than a confirmed defect.
+
+---
+
+# 7. Product Comparison Execution
+
+## 7.1 Compare Requested Products
+
+**Related Test Case:** TC-025
+**Area:** Product Comparison
+**Priority:** Critical
+**Result:** FAIL
+**Related Defect:** BUG-004
+
+### Expected
+
+The chatbot should compare the exact products requested by the user.
+
+### Observed
+
+During comparison testing, a requested product could be replaced with a different product/model.
+
+### Example
+
+The user requested a comparison involving iPhone 16 and Samsung S24, while the response compared iPhone 16 with Samsung Galaxy S26.
+
+### Impact
+
+The user receives a comparison that does not match the original request.
+
+### Conclusion
+
+The issue was documented as `BUG-004`.
+
+---
+
+## 7.2 Compare Product Prices
+
+**Related Test Case:** TC-026
+**Area:** Product Comparison
+**Priority:** High
+**Result:** FAIL
+
+### Expected
+
+The chatbot should compare the prices of the correct products.
+
+### Observed
+
+The comparison flow was affected when the chatbot substituted a requested product with another model.
+
+### Conclusion
+
+This execution result is associated with the product-identity problem documented in `BUG-004`.
+
+---
+
+## 7.3 Compare Product Specifications
+
+**Related Test Case:** TC-027
+**Area:** Product Comparison
+**Priority:** High
+**Result:** FAIL
+
+### Expected
+
+The chatbot should compare specifications belonging to the products explicitly requested.
+
+### Observed
+
+Product substitution during comparison created a risk that the comparison data could belong to a different model.
+
+### Conclusion
+
+The behavior was treated as part of the product-identity issue documented in `BUG-004`.
+
+---
+
+## 7.4 Follow-Up Comparison Question
+
+**Related Test Case:** TC-028
+**Area:** Context / Comparison
+**Priority:** High
+**Result:** FAIL
+**Related Defect:** BUG-004
+
+### Expected
+
+The chatbot should maintain the correct comparison context during follow-up questions.
+
+### Observed
+
+Because the original comparison could contain a substituted product, follow-up comparison questions could continue with the incorrect product context.
+
+### Conclusion
+
+The issue was linked to `BUG-004`.
+
+---
+
+# 8. Purchase Flow Execution
+
+## 8.1 Purchase Intent
+
+**Related Test Case:** TC-029
+**Area:** Purchase Flow
+**Priority:** High
+**Result:** PARTIAL
+
+### Expected
+
+The chatbot should recognize purchase intent and provide clear next steps where supported.
+
+### Observed
+
+Purchase intent was recognized, but the interaction did not always provide a complete structured purchasing flow.
+
+### Conclusion
+
+This was treated as a usability/functional observation rather than a confirmed defect because the complete expected purchase workflow was not fully defined.
+
+---
+
+## 8.2 Ordering Information
+
+**Related Test Case:** TC-030
+**Area:** Purchase Flow
+**Priority:** High
+**Result:** PASS
+
+### Expected
+
+The chatbot should provide understandable information about ordering where supported.
+
+### Observed
+
+Ordering-related information was provided.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+## 8.3 Payment Information
+
+**Related Test Case:** TC-031
+**Area:** Purchase Flow
+**Priority:** High
+**Result:** PASS
+
+### Expected
+
+The chatbot should provide appropriate payment-related information.
+
+### Observed
+
+The payment-related interaction worked as expected during the executed check.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+## 8.4 Pickup Information
+
+**Related Test Case:** TC-032
+**Area:** Purchase Flow
+**Priority:** Medium
+**Result:** NEEDS VERIFICATION
+
+### Expected
+
+The chatbot should provide accurate pickup information where supported.
+
+### Observed
+
+The available behavior required additional confirmation against the expected business rules.
+
+### Conclusion
+
+No confirmed defect was created from this result.
+
+---
+
+# 9. Operator and State Execution
+
+## 9.1 Operator Assistance
+
+**Related Test Case:** TC-033
+**Area:** Operator Flow
+**Priority:** High
+**Result:** PASS
+
+### Expected
+
+The user should be able to request operator assistance where supported.
+
+### Observed
+
+Operator assistance could be requested and the conversation transitioned into the expected operator-related state.
+
+### Conclusion
+
+No defect was identified for the initial operator handoff.
+
+---
+
+## 9.2 Return From Operator Mode
+
+**Related Test Case:** TC-034
+**Area:** Operator Flow / State
+**Priority:** Critical
+**Result:** FAIL
+**Related Defect:** BUG-002
+
+### Expected
+
+The user should be able to return from operator mode to the chatbot where the functionality is supported.
+
+### Observed
+
+The user could not successfully return to the AI chatbot as expected.
+
+### Impact
+
+The user may be left in an undesired conversation state and unable to continue the chatbot interaction.
+
+### Conclusion
+
+The issue was documented as `BUG-002`.
+
+---
+
+## 9.3 Minimize and Reopen During Operator State
+
+**Related Test Case:** TC-035
+**Area:** State / Usability
+**Priority:** High
+**Result:** FAIL
+**Related Defect:** BUG-003
+
+### Expected
+
+After minimizing and reopening the chatbot, the state should remain understandable and match the expected application behavior.
+
+### Observed
+
+After reopening, the chatbot remained in operator-related state unexpectedly.
+
+### Impact
+
+The user may believe the chatbot is available while the application remains in an operator state.
+
+### Conclusion
+
+The issue was documented as `BUG-003`.
+
+---
+
+## 9.4 State After Refresh
+
+**Related Test Case:** TC-036
+**Area:** State
+**Priority:** High
+**Result:** FAIL / RELATED TO BUG-003
+
+### Expected
+
+The application should maintain or reset the conversation state according to the expected behavior.
+
+### Observed
+
+State persistence around the operator flow created unexpected behavior after reopening the chatbot.
+
+### Conclusion
+
+The observed behavior is related to the state issue documented in `BUG-003`.
+
+---
+
+# 10. Negative Testing Execution
+
+## 10.1 Invalid Input
+
+**Related Test Case:** TC-037
+**Area:** Negative Testing
+**Priority:** Low
+**Result:** PASS
+
+### Expected
+
+The chatbot should handle unsupported input without breaking the interface.
+
+### Observed
+
+The chatbot remained usable when receiving unsupported input.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+## 10.2 Special Characters
+
+**Related Test Case:** TC-038
+**Area:** Negative Testing
+**Priority:** Low
+**Result:** PASS
+
+### Expected
+
+Special-character input should not break the chatbot.
+
+### Observed
+
+The chatbot handled the input without a visible application failure.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+## 10.3 Unknown Product
+
+**Related Test Case:** TC-039
+**Area:** Negative Testing
+**Priority:** Medium
+**Result:** PASS
+
+### Expected
+
+The chatbot should handle an unknown product appropriately.
+
+### Observed
+
+The chatbot did not produce a confirmed application failure when handling the request.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+## 10.4 Unexpected Request
+
+**Related Test Case:** TC-040
+**Area:** Negative / Exploratory
+**Priority:** Medium
+**Result:** OBSERVATION
+
+### Expected
+
+The chatbot should gracefully handle requests outside the normal e-commerce flow.
+
+### Observed
+
+The chatbot remained available for further interaction.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+# 11. Localization Execution
+
+## 11.1 English Interaction
+
+**Related Test Case:** TC-041
+**Area:** Localization
+**Priority:** High
+**Result:** PASS
+
+### Expected
+
+English-language requests should be understood and answered appropriately.
+
+### Observed
+
+English interaction worked as expected.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+## 11.2 Georgian Interaction
+
+**Related Test Case:** TC-042
+**Area:** Localization
+**Priority:** High
+**Result:** PASS
+
+### Expected
+
+Georgian-language requests should be understood and answered appropriately.
+
+### Observed
+
+Georgian-language interaction was supported during testing.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+## 11.3 Mixed-Language Interaction
+
+**Related Test Case:** TC-043
+**Area:** Localization / Exploratory
+**Priority:** Medium
+**Result:** PASS
+
+### Expected
+
+Mixed-language input should not break the conversation.
+
+### Observed
+
+The chatbot handled mixed-language interaction and remained usable.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+## 11.4 Product Terminology Consistency
+
+**Related Test Case:** TC-044
+**Area:** Localization / Data Consistency
+**Priority:** Medium
+**Result:** OBSERVATION
+
+### Expected
+
+Product identity and terminology should remain understandable across language changes.
+
+### Observed
+
+Language changes did not produce a confirmed functional failure, although terminology consistency remained an area worth monitoring.
+
+### Conclusion
+
+No confirmed defect was created from this check.
+
+---
+
+# 12. Usability Execution
+
+## 12.1 Response Clarity
+
+**Related Test Case:** TC-045
+**Area:** Usability
+**Priority:** High
+**Result:** PASS
+
+### Expected
+
+Responses should be understandable and useful.
+
+### Observed
+
+The chatbot generally provided understandable responses.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+## 12.2 Response Relevance
+
+**Related Test Case:** TC-046
+**Area:** Usability
+**Priority:** High
+**Result:** PARTIAL
+
+### Expected
+
+Responses should directly address the user's request.
+
+### Observed
+
+Most responses were relevant, but complex requirements and comparison scenarios could result in incomplete or substituted information.
+
+### Conclusion
+
+The confirmed functional issues were documented separately as `BUG-004` and `BUG-005`.
+
+---
+
+## 12.3 Conversation Flow
+
+**Related Test Case:** TC-047
+**Area:** Usability
+**Priority:** High
+**Result:** PARTIAL
+
+### Expected
+
+Users should be able to continue conversations naturally.
+
+### Observed
+
+Normal conversation flow worked, but operator-state behavior and complex requests created usability limitations.
+
+### Conclusion
+
+The related functional issues are documented under `BUG-002`, `BUG-003`, and `BUG-005`.
+
+---
+
+## 12.4 Product Information Readability
+
+**Related Test Case:** TC-048
+**Area:** Usability
+**Priority:** Medium
+**Result:** PASS
+
+### Expected
+
+Product information should be understandable and reasonably easy to review.
+
+### Observed
+
+Product information was readable during normal interaction.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+## 12.5 Purchase Flow Clarity
+
+**Related Test Case:** TC-049
+**Area:** Usability
+**Priority:** High
+**Result:** PARTIAL
+
+### Expected
+
+The chatbot should provide clear next steps when the user expresses purchase intent.
+
+### Observed
+
+Purchase intent was recognized, but the experience was not equivalent to a complete structured checkout flow.
+
+### Conclusion
+
+This was treated as an improvement area rather than a confirmed defect because the complete checkout requirements were not available.
+
+---
+
+# 13. Mobile and Compatibility Execution
+
+## 13.1 Desktop / Notebook
+
+**Related Test Case:** TC-050
+**Area:** Compatibility
+**Priority:** High
+**Result:** PASS
+
+### Expected
+
+The chatbot should remain usable in the tested desktop/notebook environment.
+
+### Observed
+
+The chatbot was accessible and usable for normal interaction.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+## 13.2 Mobile Device
+
+**Related Test Case:** TC-051
+**Area:** Compatibility / Usability
+**Priority:** High
+**Result:** PASS
+
+### Expected
+
+The chatbot should remain usable on the tested mobile environment.
+
+### Observed
+
+The chatbot could be opened and used for normal conversation on the tested mobile device.
+
+### Conclusion
+
+No confirmed critical mobile usability issue was identified during the executed checks.
+
+---
+
+## 13.3 Different Screen Sizes
+
+**Related Test Case:** TC-052
+**Area:** Compatibility / Usability
+**Priority:** Medium
+**Result:** PASS
+
+### Expected
+
+Core chatbot interaction should remain available across the tested screen sizes.
+
+### Observed
+
+Core interaction remained available in the tested desktop/notebook and mobile environments.
+
+### Conclusion
+
+No confirmed defect was identified.
+
+---
+
+# 14. Exploratory Execution
+
+## 14.1 Rapid Topic Switching
+
+**Related Test Case:** TC-053
+**Area:** Exploratory / Context
+**Priority:** Medium
+**Result:** OBSERVATION
+
+### Finding
+
+Rapid topic changes generally worked, but longer conversations may create a risk of context mixing.
+
+### Classification
+
+Observation — no confirmed defect.
+
+---
+
+## 14.2 Multiple Requirements With Follow-Up
+
+**Related Test Case:** TC-054
+**Area:** Exploratory / Context
+**Priority:** High
+**Result:** FAIL
+**Related Defect:** BUG-005
+
+### Finding
+
+When multiple product requirements were followed by additional questions, some requirements could be lost or insufficiently considered.
+
+### Classification
+
+Confirmed functional issue documented in `BUG-005`.
+
+---
+
+## 14.3 Comparison After Context Change
+
+**Related Test Case:** TC-055
+**Area:** Exploratory / Context
+**Priority:** High
+**Result:** FAIL
+**Related Defect:** BUG-004
+
+### Finding
+
+Product identity could be affected by context during comparison, resulting in a different product being used in the comparison.
+
+### Classification
+
+Confirmed defect documented in `BUG-004`.
+
+---
+
+## 14.4 State Change During Active Conversation
+
+**Related Test Case:** TC-056
+**Area:** Exploratory / State
+**Priority:** High
+**Result:** FAIL
+**Related Defects:** BUG-002, BUG-003
+
+### Finding
+
+Operator state and minimize/reopen behavior produced unexpected state-related results.
+
+### Classification
+
+Confirmed defects documented in `BUG-002` and `BUG-003`.
+
+---
+
+## 14.5 Unexpected Conversation Sequence
+
+**Related Test Case:** TC-057
+**Area:** Exploratory
+**Priority:** Medium
+**Result:** OBSERVATION
+
+### Finding
+
+The chatbot remained usable during unexpected conversation sequences, although state and context behavior should continue to be monitored.
+
+### Classification
+
+Observation — no additional confirmed defect.
+
+---
+
+# 15. Confirmed Defects
+
+The following defects were identified and documented during the testing activity:
+
+| Bug ID  | Area               | Summary                                            | Severity |
+| ------- | ------------------ | -------------------------------------------------- | -------- |
+| BUG-001 | Product Data       | Product price inconsistency                        | Medium   |
+| BUG-002 | Operator Flow      | Unable to return from operator mode                | High     |
+| BUG-003 | State              | Operator state persists after minimize/reopen      | High     |
+| BUG-004 | Product Comparison | Requested product replaced during comparison       | High     |
+| BUG-005 | Complex Requests   | Multiple product requirements not properly handled | High     |
+
+Detailed reproduction information is available in the corresponding files under `Bug-Reports/`.
+
+---
+
+# 16. Execution Findings by Area
+
+| Testing Area                | Overall Result     | Main Finding                                          |
+| --------------------------- | ------------------ | ----------------------------------------------------- |
+| Basic Chatbot Functionality | PASS               | Core interaction worked                               |
+| Product Search              | PASS               | Product requests were generally understood            |
+| Product Information         | PASS / FAIL        | Price consistency issue identified                    |
+| Recommendations             | PASS / PARTIAL     | Complex requirements may reduce relevance             |
+| Conversation Context        | PASS / OBSERVATION | Context generally maintained                          |
+| Complex Requests            | FAIL               | Multiple requirements not always handled correctly    |
+| Product Comparison          | FAIL               | Product substitution identified                       |
+| Purchase Flow               | PASS / PARTIAL     | Purchase intent recognized; flow not fully structured |
+| Operator Flow               | FAIL               | Return from operator mode issue                       |
+| Conversation State          | FAIL               | Unexpected operator-state persistence                 |
+| Negative Testing            | PASS               | No confirmed critical failure                         |
+| Localization                | PASS / OBSERVATION | Basic multilingual interaction worked                 |
+| Usability                   | PASS / PARTIAL     | Some functional issues affect user experience         |
+| Mobile / Compatibility      | PASS               | Basic interaction worked in tested environments       |
+| Exploratory Testing         | Mixed              | Additional context/state risks identified             |
+
+---
+
+# 17. Main QA Findings
+
+The main quality risks identified during execution were:
+
+### 1. Product Data Consistency
+
+The chatbot and product information can display inconsistent prices.
+
+This is particularly important because price accuracy directly affects user trust and purchasing decisions.
+
+### 2. Product Identity
+
+During product comparison, the chatbot may replace a product explicitly requested by the user with another model.
+
+This creates a significant risk of misleading comparison results.
+
+### 3. Multiple Requirements
+
+Complex requests containing several product requirements are not always handled completely.
+
+Some requirements may be ignored or receive insufficient consideration.
+
+### 4. Conversation State
+
+Operator-related state can persist unexpectedly after minimize/reopen actions.
+
+This can make it unclear whether the user is interacting with the AI chatbot or remains in operator mode.
+
+### 5. Operator Return Flow
+
+The user may be unable to return from operator mode to the AI chatbot as expected.
+
+---
+
+# 18. Recommendations
+
+Based on the manual testing results, the following areas should receive additional attention:
+
+1. Validate product prices against the authoritative product source.
+2. Preserve exact product identity during comparisons.
+3. Improve handling of multiple simultaneous product requirements.
+4. Review operator-to-AI state transitions.
+5. Define expected behavior for minimize/reopen during operator interaction.
+6. Improve user feedback when the chatbot cannot satisfy all requested requirements.
+7. Add clear handling for conflicting or ambiguous product requests.
+8. Repeat affected test cases after fixes.
+9. Perform regression testing on related conversation and state flows after changes.
+
+---
+
+# 19. Retesting and Regression
+
+After a defect is fixed, the following related test cases should be executed again:
+
+| Defect  | Retest Cases                           |
+| ------- | -------------------------------------- |
+| BUG-001 | TC-007, TC-009                         |
+| BUG-002 | TC-034                                 |
+| BUG-003 | TC-035, TC-036                         |
+| BUG-004 | TC-025, TC-026, TC-027, TC-028, TC-055 |
+| BUG-005 | TC-020, TC-021, TC-054                 |
+
+Regression testing should also include related conversation, product, and state flows to verify that fixes do not introduce new issues.
+
+---
+
+# 20. Testing Limitations
+
+This execution report represents a practical manual QA portfolio exercise rather than exhaustive production testing.
+
+Limitations include:
+
+* No source code access
+* No database access
+* No API-level testing
+* No performance/load testing
+* No security penetration testing
+* Limited device coverage
+* No automated test execution
+* Business rules were not available for every chatbot behavior
+* Some AI responses may depend on available product data and conversation context
+
+Where expected behavior could not be fully confirmed, the result was documented as an observation, partial result, or verification requirement rather than automatically reported as a defect.
+
+---
+
+# 21. Final QA Assessment
+
+The chatbot successfully supported the main conversational interaction and several core e-commerce use cases.
+
+However, testing identified important risks around:
+
+* Product price consistency
+* Product identity during comparison
+* Multiple product requirements
+* Operator state
+* Return from operator mode
+
+The identified defects are documented and linked to the relevant test cases.
+
+The most important next step would be to retest the affected functionality after fixes and perform targeted regression testing around **product data, comparison, conversation state, and operator interaction**.
+
+Overall, the testing demonstrates a structured manual QA process covering functional, negative, exploratory, usability, context, state, data consistency, localization, and basic compatibility testing.
