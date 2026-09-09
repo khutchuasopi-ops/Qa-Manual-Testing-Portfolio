@@ -2,11 +2,11 @@
 
 ## 1. Project Overview
 
-This document summarizes the manual test execution activities performed for a confidential legal technology platform.
+This document summarizes the manual test execution performed for a confidential legal technology platform.
 
-The goal of testing was to identify functional defects, validation issues, business logic problems, UI inconsistencies, and data handling issues across key platform features.
+The main goal of testing was to check key user flows, input validation, boundary cases, UI behavior, search functionality, file replacement, and data consistency.
 
-All application, organization, user, and other identifying information has been anonymized for portfolio purposes.
+The project has been anonymized for portfolio purposes. No confidential application, company, user, or business information is included.
 
 ---
 
@@ -34,7 +34,7 @@ The following areas were covered during manual testing:
 
 ## 3. Testing Types
 
-The following testing techniques were used:
+The following manual testing types and techniques were used:
 
 * Functional Testing
 * Negative Testing
@@ -57,7 +57,7 @@ The following testing techniques were used:
 | Platform           | Web                                    |
 | Testing Type       | Manual QA                              |
 | Browser            | Chrome                                 |
-| Test Environment   | Staging                                |
+| Environment        | Staging                                |
 | Test Documentation | Markdown                               |
 | Version Control    | GitHub                                 |
 
@@ -65,26 +65,27 @@ The following testing techniques were used:
 
 ## 5. Execution Approach
 
-Testing was performed using a combination of predefined test cases, checklists, exploratory testing, negative testing, and boundary value analysis.
+Testing was performed using prepared test cases, checklists, exploratory testing, negative testing, and boundary value testing.
 
-The execution process included:
+The main execution steps were:
 
-1. Reviewing the expected behavior of each feature.
-2. Executing functional test scenarios.
-3. Testing valid and invalid input values.
-4. Checking boundary conditions.
-5. Verifying UI behavior and user interaction.
-6. Checking data consistency between related areas.
-7. Performing exploratory testing to identify unexpected behavior.
-8. Documenting reproducible defects.
-9. Assigning severity and priority to identified issues.
-10. Preparing bug reports with reproduction steps and expected results.
+1. Review the expected behavior of the feature.
+2. Execute the main user flow.
+3. Test valid input.
+4. Test invalid input.
+5. Check boundary values where applicable.
+6. Check UI behavior and user interaction.
+7. Check data consistency between related areas.
+8. Perform exploratory testing.
+9. Record reproducible issues.
+10. Create bug reports with clear reproduction steps.
+11. Assign severity and priority to identified defects.
 
 ---
 
-## 6. Documented Test Findings
+## 6. Documented Defects
 
-The following defects were identified and documented during manual testing.
+During manual testing, 5 defects were identified and documented.
 
 | Bug ID  | Area             | Defect                                       | Severity | Priority | Status |
 | ------- | ---------------- | -------------------------------------------- | -------- | -------- | ------ |
@@ -102,25 +103,25 @@ The following defects were identified and documented during manual testing.
 
 File Upload / File Replacement
 
-### Expected Behavior
+### Expected Result
 
-After replacing a file, the platform should display the new file name consistently in all relevant locations.
+After replacing a file, the new file name should be displayed correctly in all relevant locations.
 
-### Observed Behavior
+### Actual Result
 
-The previous file name remains visible after the file has been replaced.
-
-### Impact
-
-Users may be confused about which file is currently associated with the record.
+After the file is replaced, the previous file name remains visible.
 
 ### Severity
 
-**Medium**
+Medium
 
 ### Priority
 
-**Medium**
+Medium
+
+### Status
+
+Open
 
 ### Related Bug Report
 
@@ -134,25 +135,25 @@ Users may be confused about which file is currently associated with the record.
 
 Search
 
-### Expected Behavior
+### Expected Result
 
-The search input should provide clear and consistent cursor and input behavior when the user enters, modifies, or clears a search query.
+The search field should behave consistently when the user enters, changes, or clears a search query.
 
-### Observed Behavior
+### Actual Result
 
-The search input demonstrates inconsistent cursor/clear behavior during interaction.
-
-### Impact
-
-The issue can make search interaction less intuitive and may negatively affect usability.
+The search field shows inconsistent cursor and clear behavior during interaction.
 
 ### Severity
 
-**Low**
+Low
 
 ### Priority
 
-**Medium**
+Medium
+
+### Status
+
+Open
 
 ### Related Bug Report
 
@@ -166,27 +167,27 @@ The issue can make search interaction less intuitive and may negatively affect u
 
 Events
 
-### Expected Behavior
+### Expected Result
 
-The event name field should reject input containing only whitespace characters.
+The event name field should reject input that contains only spaces.
 
 A validation message should be displayed and the event should not be created.
 
-### Observed Behavior
+### Actual Result
 
 The platform accepts a whitespace-only value as an event name.
 
-### Impact
-
-Invalid or meaningless event records can be created.
-
 ### Severity
 
-**Medium**
+Medium
 
 ### Priority
 
-**High**
+High
+
+### Status
+
+Open
 
 ### Related Bug Report
 
@@ -200,27 +201,27 @@ Invalid or meaningless event records can be created.
 
 Events
 
-### Expected Behavior
+### Expected Result
 
-The event name field should have a defined maximum length.
+The event name field should have a maximum character limit.
 
-Input exceeding the allowed limit should be rejected or validated with a clear error message.
+Input above the allowed limit should be rejected or clearly validated.
 
-### Observed Behavior
+### Actual Result
 
 The platform accepts an excessively long event name without appropriate validation.
 
-### Impact
-
-This may result in inconsistent data, UI layout issues, or usability problems.
-
 ### Severity
 
-**Medium**
+Medium
 
 ### Priority
 
-**Medium**
+Medium
+
+### Status
+
+Open
 
 ### Related Bug Report
 
@@ -234,27 +235,27 @@ This may result in inconsistent data, UI layout issues, or usability problems.
 
 Templates
 
-### Expected Behavior
+### Expected Result
 
 The template name field should enforce the defined maximum character limit.
 
-Input exceeding the allowed limit should be rejected or clearly validated.
+Input above the allowed limit should be rejected or clearly validated.
 
-### Observed Behavior
+### Actual Result
 
 The platform accepts an excessively long template name.
 
-### Impact
-
-This may lead to inconsistent data and potential UI or usability issues.
-
 ### Severity
 
-**Medium**
+Medium
 
 ### Priority
 
-**Medium**
+Medium
+
+### Status
+
+Open
 
 ### Related Bug Report
 
@@ -264,16 +265,16 @@ This may lead to inconsistent data and potential UI or usability issues.
 
 ## 12. Defect Summary
 
-A total of **5 documented defects** are included in this portfolio project.
+A total of 5 defects were identified during the testing process.
 
 ### By Severity
 
 | Severity | Count |
 | -------- | ----: |
+| Critical |     0 |
 | High     |     0 |
 | Medium   |     4 |
 | Low      |     1 |
-| Critical |     0 |
 
 ### By Priority
 
@@ -287,81 +288,65 @@ A total of **5 documented defects** are included in this portfolio project.
 
 ## 13. Main QA Findings
 
-The main issues identified during testing were related to:
+The main issues found during testing were related to:
 
 * Input validation
 * Boundary value handling
 * File replacement and data consistency
 * Search usability
-* Event creation validation
-* Template validation
+* Event name validation
+* Template name validation
 * UI behavior
-* Handling of invalid input
+* Invalid input handling
 
-These findings demonstrate the importance of testing both expected user flows and invalid or boundary conditions.
-
----
-
-## 14. Recommendations
-
-Based on the documented findings, the following improvements are recommended:
-
-1. Add validation for whitespace-only input.
-2. Define and enforce maximum character limits for name fields.
-3. Ensure replaced file information is updated consistently across the interface.
-4. Review search input and clear/cursor behavior.
-5. Add automated validation where appropriate for reusable input rules.
-6. Perform regression testing after defect fixes.
-7. Verify that validation messages are clear and actionable for users.
+The testing showed the importance of checking both normal user flows and invalid or boundary input.
 
 ---
 
-## 15. Retesting Approach
+## 14. Retesting and Regression
 
-After defects are fixed, each issue should be retested using the original reproduction steps.
+After a defect is fixed, the original reproduction steps should be used to retest the issue.
 
-Retesting should verify:
+Retesting should confirm that:
 
-* The reported issue is resolved.
+* The reported issue is fixed.
 * The expected behavior is restored.
-* No related functionality is negatively affected.
-* Boundary and negative cases continue to behave correctly.
+* The same issue does not occur again.
+* Related functionality still works correctly.
 
-Regression testing should also be performed around the affected features.
+Regression testing should also be performed around the affected feature to make sure that the fix has not introduced another issue.
 
 ---
 
-## 16. QA Workflow Demonstrated
+## 15. QA Workflow
 
-This project demonstrates the following manual QA workflow:
+The testing process followed this general manual QA workflow:
 
 **Requirement / Feature Understanding → Test Planning → Test Scenarios → Test Cases → Manual Execution → Defect Identification → Bug Reporting → Retesting → Regression Testing → Test Summary**
 
 ---
 
-## 17. Conclusion
+## 16. Conclusion
 
-Manual testing of the confidential legal technology platform identified several functional, validation, usability, and data consistency issues.
+Manual testing of the confidential legal technology platform identified functional, validation, usability, and data consistency issues.
 
-The documented defects demonstrate practical application of:
+The documented defects mainly involved:
 
-* Functional testing
-* Negative testing
-* Boundary value analysis
-* Input validation
-* Exploratory testing
-* UI testing
-* Defect reporting
-* Severity and priority assessment
-* Retesting and regression planning
+* File replacement
+* Search behavior
+* Event validation
+* Boundary value validation
+* Template validation
 
-This project is included as an anonymized portfolio example of a Junior Manual QA testing workflow.
+The project demonstrates practical experience with manual functional testing, negative testing, boundary testing, exploratory testing, UI testing, defect reporting, and basic retesting and regression planning.
+
+This project is presented as an anonymized example of a Junior Manual QA testing workflow.
 
 ---
 
-## 18. Confidentiality Note
+## 17. Confidentiality
 
-This portfolio project intentionally excludes:
+The portfolio version does not include:
 
 * Original application name
 * Company name
@@ -369,6 +354,7 @@ This portfolio project intentionally excludes:
 * User credentials
 * Personal information
 * Confidential business information
-* Identifying screenshots or production data
+* Identifying screenshots
+* Production data
 
-The project has been anonymized for portfolio and educational purposes.
+The project has been anonymized for portfolio purposes.
