@@ -1,133 +1,241 @@
-# Legal Platform – QA Testing Project
+# Legal Platform — Manual QA Testing
 
-## Overview
+## Project Overview
 
-This repository presents my manual QA testing work for a confidential legal technology platform.
+This project contains manual QA testing work for a confidential legal technology platform.
 
-The application provides functionality for managing legal documents, templates, events, workflows, repositories, AI-assisted features, and related legal operations.
+The platform includes features for managing legal documents, templates, events, workflows, repositories, search, and AI-assisted functionality.
 
-The project demonstrates a structured software testing approach, including test planning, test case design, exploratory testing, test execution, defect identification, validation, and retesting.
+The project has been anonymized for portfolio purposes.
 
-> **Confidentiality Notice**
->
-> The application name, URL, company information, user data, and other identifying details have been intentionally omitted or anonymized.
+---
+
+## QA Role
+
+**Junior Manual QA Tester**
+
+The testing work included planning, test design, manual execution, exploratory testing, defect reporting, and validation of identified issues.
+
+---
 
 ## Testing Scope
 
-The following areas were explored and tested:
+The main areas covered were:
 
 * Dashboard
 * Repository
 * Documents
+* File Upload and Replacement
 * Templates
 * Events
 * Workflows
 * AI Assistant
-* Search
+* Search and Filtering
 * Recycle Bin
-* File Upload and Replacement
 * Playbook Generation
+* UI and Usability
+* Data Consistency
 
-## Testing Activities
+---
+
+## Testing Types
+
+The following manual testing approaches were used:
 
 * Functional Testing
 * Negative Testing
 * Boundary Value Testing
-* Input Validation Testing
-* UI Testing
+* Input Validation
 * Exploratory Testing
 * Regression Testing
+* UI Testing
 * Error Handling
 * Data Consistency Testing
 * Search and Filtering Testing
 
+---
+
 ## QA Process
 
-The testing process followed this workflow:
+The testing process followed these main steps:
 
-1. Application exploration
-2. Requirement and behavior analysis
-3. Test scenario identification
-4. Test case creation
-5. Test execution
-6. Exploratory testing
-7. Defect investigation
-8. Defect validation
-9. Bug reporting
-10. Retesting and regression testing
-11. Final test summary
+**Feature Understanding → Test Planning → Test Scenarios → Test Cases → Manual Execution → Exploratory Testing → Defect Reporting → Retesting → Regression Testing**
 
-## Documentation
+---
 
-| Document                                      | Purpose                                        |
-| --------------------------------------------- | ---------------------------------------------- |
-| [Project Overview](Project-Overview.md)       | Application scope and testing context          |
-| [Test Plan](Test-Plan.md)                     | Testing strategy and approach                  |
-| [Test Scenarios](Test-Scenarios.md)           | High-level testing scenarios                   |
-| [Test Cases](Test-Cases.md)                   | Detailed test cases                            |
-| [Checklists](Checklists.md)                   | Quick testing checklists                       |
-| [Exploratory Testing](Exploratory-Testing.md) | Exploratory testing sessions                   |
-| [Test Execution](Test-Execution.md)           | Test execution results and documented findings |
-| [Case Study](Case-Study.md)                   | Overall project analysis                       |
-| [Bug Reports](Bug-Reports/README.md)          | Documented defects                             |
+## Test Documentation
 
-## Testing Environment
+| Document                                      | Description                                         |
+| --------------------------------------------- | --------------------------------------------------- |
+| [Project Overview](Project-Overview.md)       | Project scope, objectives, and testing information  |
+| [Test Plan](Test-Plan.md)                     | Testing scope, approach, environment, and criteria  |
+| [Test Scenarios](Test-Scenarios.md)           | High-level scenarios covering the main features     |
+| [Test Cases](Test-Cases.md)                   | Detailed manual test cases                          |
+| [Test Execution](Test-Execution.md)           | Manual execution results and testing findings       |
+| [Exploratory Testing](Exploratory-Testing.md) | Exploratory testing approach and findings           |
+| [Checklists](Checklists.md)                   | Reusable checks for functional and negative testing |
+| [Bug Reports](Bug-Reports/)                   | Documented defects with reproduction steps          |
 
-* Environment: Staging
-* Testing Type: Manual QA
-* Primary Browser: Chrome
-* Documentation: Markdown
-* Defect Tracking: GitHub
+---
+
+## Main Testing Areas
+
+### Documents and Files
+
+Testing included:
+
+* File upload
+* File replacement
+* File names
+* File actions
+* Data consistency after replacement
+* Invalid file input
+
+### Templates
+
+Testing included:
+
+* Template creation
+* Template editing
+* Template deletion
+* Template name validation
+* Empty input
+* Long input values
+
+### Events
+
+Testing included:
+
+* Event creation
+* Event editing
+* Event deletion
+* Event name validation
+* Boundary values
+* Invalid input
+
+### Search
+
+Testing included:
+
+* Valid search terms
+* Partial search
+* No results
+* Empty search
+* Clearing search
+* Search result consistency
+
+### AI Assistant
+
+Testing included:
+
+* User questions
+* Follow-up questions
+* Context handling
+* Invalid or unclear requests
+* Response behavior
+* Error handling
+
+### Playbook Generation
+
+Testing included:
+
+* Starting generation
+* Generation flow
+* Loading behavior
+* Generated result
+* Error handling
+
+---
 
 ## Documented Defects
 
-The project contains 5 documented defects covering:
+Five defects were documented during the testing work.
 
-* File replacement and data consistency
-* Search usability
-* Input validation
-* Boundary value validation
-* Event and template name validation
+| Bug ID  | Area             | Summary                                        | Severity | Priority | Status |
+| ------- | ---------------- | ---------------------------------------------- | -------- | -------- | ------ |
+| BUG-001 | File Replacement | Old file name remains after replacement        | Medium   | Medium   | Open   |
+| BUG-002 | Search           | Search cursor / clear behavior is inconsistent | Low      | Medium   | Open   |
+| BUG-003 | Events           | Whitespace-only event name is accepted         | Medium   | High     | Open   |
+| BUG-004 | Events           | Excessively long event name is accepted        | Medium   | Medium   | Open   |
+| BUG-005 | Templates        | Excessively long template name is accepted     | Medium   | Medium   | Open   |
 
-See the [Bug Reports](Bug-Reports/README.md) section for detailed defect reports.
+---
 
-## Key QA Skills Demonstrated
+## Exploratory Testing Findings
 
-* Test Planning
-* Test Scenario Design
-* Test Case Design
-* Functional Testing
-* Negative Testing
-* Boundary Value Analysis
-* Input Validation
-* Exploratory Testing
-* Defect Identification
-* Bug Reporting
-* Severity and Priority Assignment
-* Retesting
-* Regression Testing
-* Data Consistency Validation
-* UI and Usability Testing
+Exploratory testing also identified findings that required additional investigation.
+
+One example was an error observed during Playbook generation.
+
+This was kept as an exploratory finding rather than being counted as a confirmed defect because further verification was needed.
+
+This distinction was used to avoid treating every unexpected observation as a confirmed bug.
+
+---
+
+## Test Environment
+
+| Item            | Details                                |
+| --------------- | -------------------------------------- |
+| Application     | Confidential Legal Technology Platform |
+| Environment     | Staging                                |
+| Platform        | Web                                    |
+| Testing         | Manual QA                              |
+| Browser         | Chrome                                 |
+| Documentation   | Markdown                               |
+| Version Control | GitHub                                 |
+
+Exact browser versions and test dates were not recorded in the portfolio where they were not available.
+
+---
+
+## Out of Scope
+
+The following areas were not part of this manual testing project:
+
+* Source code testing
+* Automated testing
+* API testing
+* Database testing
+* Performance testing
+* Load testing
+* Security penetration testing
+* Internal AI/model implementation
+
+---
+
+## QA Perspective
+
+This project demonstrates practical experience with manual QA activities at a Junior level, including:
+
+* Understanding application functionality
+* Creating test scenarios
+* Writing detailed test cases
+* Performing functional testing
+* Performing negative and boundary testing
+* Exploratory testing
+* Identifying reproducible defects
+* Writing clear bug reports
+* Retesting reported issues
+* Planning regression checks
+* Checking data consistency and usability
+
+The focus is on practical manual testing and clear QA documentation rather than advanced automation or technical testing.
+
+---
 
 ## Project Status
 
-**Testing documentation completed.**
+**Completed**
 
-The project includes documented test scenarios, test cases, exploratory testing, test execution findings, and 5 bug reports.
+The project documentation contains the testing scope, test scenarios, test cases, execution information, exploratory findings, checklists, and documented defects.
 
-The project is presented as an anonymized manual QA portfolio project.
+---
 
 ## Confidentiality
 
-This project intentionally excludes:
+The project has been anonymized for portfolio purposes.
 
-* Original application name
-* Company name
-* Application URL
-* User credentials
-* Personal information
-* Confidential business information
-* Identifying screenshots or production data
+No confidential application URLs, credentials, personal information, or sensitive business data are included.
 
-All identifying information has been anonymized for portfolio purposes.
 
