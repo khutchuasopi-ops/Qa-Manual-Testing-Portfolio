@@ -1,12 +1,18 @@
-# Case Study – Legal Platform Manual Testing
+# Case Study — Legal Platform Manual QA Testing
 
 ## 1. Project Overview
 
-This project focused on manual testing of a web-based legal platform designed to support organizations and their members with document and contract-related activities.
+This project focused on manual testing of a confidential web-based legal technology platform.
 
-The platform includes functionality for managing documents, templates, events, workflows, tasks, search, and other collaboration-related features.
+The platform includes functionality for managing documents, templates, events, workflows, repositories, search, and AI-assisted features.
 
-The goal of the testing was to evaluate the application's functionality, usability, validation, and consistency from an end-user perspective.
+The project has been anonymized for portfolio purposes.
+
+### QA Role
+
+**Junior Manual QA Tester**
+
+The main focus was on functional testing, negative testing, boundary values, input validation, exploratory testing, defect reporting, and data consistency.
 
 ---
 
@@ -14,83 +20,95 @@ The goal of the testing was to evaluate the application's functionality, usabili
 
 The main objectives were to:
 
-- Verify that core features work according to expected behavior.
-- Validate form fields and user input.
-- Test document upload and replacement functionality.
-- Test Templates and Events.
-- Verify Search functionality.
-- Check navigation and UI behavior.
-- Identify invalid or unexpected user inputs.
-- Perform exploratory testing to discover issues outside predefined test cases.
-- Document and validate reproducible defects.
+* Verify that the main user flows work as expected.
+* Check form fields and user input validation.
+* Test document upload and replacement.
+* Test Templates and Events.
+* Check Search functionality.
+* Check basic UI and usability.
+* Test invalid and unexpected input.
+* Perform exploratory testing.
+* Identify reproducible defects.
+* Document defects with clear reproduction steps.
+* Support retesting and regression checks.
 
 ---
 
 ## 3. Testing Approach
 
-A combination of structured and exploratory manual testing was used.
+Both structured and exploratory manual testing were used.
 
 ### Structured Testing
 
-Test scenarios and test cases were created before execution to provide consistent coverage of the application's main functionality.
+Test scenarios and test cases were created to cover the main application functionality.
 
-Testing included:
+The testing included:
 
-- Positive test cases
-- Negative test cases
-- Boundary-value testing
-- Input validation
-- UI and usability checks
-- File upload testing
-- Navigation testing
+* Positive testing
+* Negative testing
+* Boundary Value Testing
+* Input Validation
+* Functional Testing
+* UI and Usability Testing
+* File Upload Testing
+* Search and Filtering Testing
+* Data Consistency Testing
 
 ### Exploratory Testing
 
-Exploratory testing was also performed by interacting with the application without following predefined test cases.
+Exploratory testing was used to investigate areas beyond the predefined test cases.
 
-This helped identify unexpected behaviors such as:
+The testing focused on:
 
-- Invalid input being accepted.
-- Incorrect information being displayed after document replacement.
-- UI interaction inconsistencies.
-- Extremely long input being accepted.
+* Unexpected input
+* Empty values
+* Whitespace-only values
+* Very long input
+* File replacement
+* UI behavior
+* Error handling
+* Unexpected application behavior
+
+When an unexpected result was found, it was investigated and reproduced where possible before being treated as a confirmed defect.
 
 ---
 
 ## 4. Areas Tested
 
-The following areas were explored during testing:
-
-| Area | Testing Focus |
-|---|---|
-| Repository | Document upload, replacement and file information |
-| Templates | Template creation and input validation |
-| Events | Event creation and name validation |
-| Search | Search input and clear functionality |
-| Workflows | Date and workflow-related controls |
-| Dashboard | Activity overview and navigation |
-| Tasks | Filters and task-related functionality |
-| AI Assistant | Basic interaction and response behavior |
-| UI | Buttons, icons, cursor behavior and usability |
+| Area                | Testing Focus                                        |
+| ------------------- | ---------------------------------------------------- |
+| Dashboard           | Navigation and basic functionality                   |
+| Repository          | Documents, upload, replacement, and file information |
+| Documents           | Document actions and data consistency                |
+| Templates           | Creation, editing, deletion, and validation          |
+| Events              | Creation, editing, and name validation               |
+| Workflows           | Workflow-related controls and validation             |
+| Search              | Search input, results, and clear behavior            |
+| Recycle Bin         | Deleted and restored items                           |
+| AI Assistant        | Basic interaction and response behavior              |
+| Playbook Generation | Generation flow and error handling                   |
+| UI                  | Buttons, controls, cursor behavior, and usability    |
 
 ---
 
 ## 5. Test Data
 
-Different types of input were used to evaluate application validation.
+Different types of input were used during testing.
 
 Examples included:
 
-- Valid names
-- Empty input
-- Whitespace-only input
-- Single-character input
-- Very long input
-- Special characters
-- Different document files
-- Replacing an existing uploaded document
+* Valid names
+* Empty input
+* Whitespace-only input
+* Single-character input
+* Very long input
+* Special characters
+* Different document files
+* Replacement files
+* Search keywords
+* Invalid or unexpected values
 
-The purpose was to determine how the application handles both normal and unexpected user input.
+The purpose was to check how the application handles both normal and invalid user input.
 
 ---
 
@@ -98,128 +116,174 @@ The purpose was to determine how the application handles both normal and unexpec
 
 Five confirmed defects were documented during testing.
 
-| ID | Area | Defect | Severity | Status |
-|---|---|---|---|---|
-| BUG-001 | Repository | Old file name remains after document replacement | Medium | Open |
-| BUG-002 | Search | Clear Search icon does not display pointer cursor | Low | Open |
-| BUG-003 | Events | Event can be created with whitespace-only name | Medium | Open |
-| BUG-004 | Events | Event accepts an excessively long name | Medium | Open |
-| BUG-005 | Templates | Template accepts an excessively long name | Medium | Open |
+| Bug ID  | Area             | Defect                                                 | Severity | Priority | Status |
+| ------- | ---------------- | ------------------------------------------------------ | -------- | -------- | ------ |
+| BUG-001 | File Replacement | Old file name remains after document replacement       | Medium   | Medium   | Open   |
+| BUG-002 | Search           | Clear Search interaction has incorrect cursor behavior | Low      | Medium   | Open   |
+| BUG-003 | Events           | Event accepts whitespace-only name                     | Medium   | High     | Open   |
+| BUG-004 | Events           | Event accepts an excessively long name                 | Medium   | Medium   | Open   |
+| BUG-005 | Templates        | Template accepts an excessively long name              | Medium   | Medium   | Open   |
 
-Detailed reproduction steps, expected results, actual results, impact, and severity are documented separately in the `Bug-Reports` folder.
+Detailed reproduction steps, actual results, expected results, severity, priority, environment, and status are documented separately in the `Bug-Reports` folder.
 
 ---
 
 ## 7. Example Defect Investigation
 
-### BUG-001 – Old File Name Remains After Replacing a Document
+### BUG-001 — Old File Name Remains After Document Replacement
 
-During exploratory testing of the Repository, I uploaded a PDF document and then replaced it with a different PDF.
+During exploratory testing of the Repository, an existing document was replaced with another document.
 
-The replacement operation completed successfully, but the displayed file name remained the name of the original document.
+The replacement action completed, but the displayed file name remained unchanged.
 
-I reproduced the behavior and documented it as a functional/data consistency defect.
+The behavior was reproduced and documented as a data consistency defect.
 
-### Expected
+### Expected Result
 
 The newly uploaded document and its corresponding file name should be displayed.
 
-### Actual
+### Actual Result
 
 The new document was uploaded, but the previous file name remained visible.
 
-### Impact
+### Why It Matters
 
-This can cause confusion for users because the displayed file information does not correspond to the current document.
-
----
-
-## 8. Testing Challenges
-
-One of the main challenges was distinguishing between an actual defect and expected application behavior.
-
-Not every unexpected behavior was immediately classified as a bug.
-
-For each potential issue, I considered:
-
-- Is the behavior reproducible?
-- What should the expected behavior be?
-- Is there a clear validation rule?
-- Does the behavior affect the user?
-- Could the behavior be intentional?
-- Can the issue be supported by the available requirements or application behavior?
-
-This helped avoid reporting issues that could not be confirmed as genuine defects.
+The displayed file information does not match the current document and may confuse the user.
 
 ---
 
-## 9. QA Techniques Used
+## 8. Exploratory Testing Findings
 
-The following manual testing techniques were applied:
+Exploratory testing also produced findings that were reviewed separately from confirmed defects.
 
-- Functional Testing
-- Exploratory Testing
-- Positive Testing
-- Negative Testing
-- Boundary Value Analysis
-- Input Validation Testing
-- UI/Usability Testing
-- Regression-oriented checks
-- Defect Reproduction
-- Defect Documentation
+One example was an error observed during Playbook generation.
+
+This was recorded as a finding requiring further verification rather than being added to the confirmed bug count.
+
+This distinction was important because an unexpected result should not automatically be treated as a confirmed defect without enough evidence.
 
 ---
 
-## 10. Test Results
+## 9. Testing Challenges
 
-Testing resulted in five confirmed defects.
+One of the main challenges was distinguishing between:
 
-The final execution statistics will be updated after completing execution of the full test suite.
+* A confirmed defect
+* A validation issue
+* A usability concern
+* An unexpected but potentially intentional behavior
+* A finding that needs more verification
 
-| Metric | Result |
-|---|---:|
-| Confirmed Defects | 5 |
-| Open Defects | 5 |
-| Resolved Defects | 0 |
-| Needs Validation | 0 |
-| Test Cases Executed | TBD |
-| Passed | TBD |
-| Failed | TBD |
-| Blocked | TBD |
+For each potential issue, the following questions were considered:
 
----
+* Can the behavior be reproduced?
+* What is the expected result?
+* Is there a clear validation rule?
+* Does the behavior affect the user?
+* Could the behavior be intentional?
+* Is there enough evidence to report it as a defect?
 
-## 11. Key Findings
-
-The testing demonstrated several areas where input validation and UI consistency could be improved.
-
-The most significant findings involved:
-
-- Data consistency after document replacement.
-- Input validation for Event names.
-- Input validation for Template names.
-- Handling of whitespace-only input.
-- UI feedback for interactive controls.
-
-These findings demonstrate the importance of testing not only the expected user flow but also invalid, boundary, and unexpected input.
+This helped keep the bug reports focused on reproducible issues.
 
 ---
 
-## 12. Conclusion
+## 10. QA Techniques Used
 
-This project provided practical experience in testing a complex web application with multiple interconnected features.
+The following manual QA techniques were used:
 
-The testing process included planning test coverage, creating test cases, executing tests, performing exploratory testing, investigating unexpected behavior, reproducing defects, and documenting findings.
+* Functional Testing
+* Positive Testing
+* Negative Testing
+* Exploratory Testing
+* Boundary Value Testing
+* Input Validation Testing
+* UI and Usability Testing
+* Data Consistency Testing
+* Search Testing
+* Defect Reproduction
+* Defect Documentation
+* Retesting
+* Regression Checks
 
-The project also reinforced the importance of distinguishing confirmed defects from expected behavior and requirement-dependent observations.
+---
 
-The final deliverables include:
+## 11. Test Results
 
-- Test Plan
-- Test Scenarios
-- Test Cases
-- Checklists
-- Exploratory Testing Notes
-- Test Execution Results
-- Bug Reports
-- Case Study
+The testing identified **5 confirmed defects**.
+
+All five documented defects currently have an **Open** status.
+
+| Metric                             | Result |
+| ---------------------------------- | -----: |
+| Confirmed Defects                  |      5 |
+| Open Defects                       |      5 |
+| Resolved Defects                   |      0 |
+| Confirmed Defects Requiring Retest |      0 |
+
+Detailed test execution information is maintained in `Test-Execution.md`.
+
+Test case Pass/Fail statistics are not included here because this case study focuses on the overall testing process and findings rather than duplicating the execution report.
+
+---
+
+## 12. Key Findings
+
+The main findings were related to:
+
+* Data consistency after document replacement
+* Event name validation
+* Template name validation
+* Whitespace-only input
+* Search interaction behavior
+* Error handling during Playbook generation
+
+These findings showed the importance of testing not only the normal user flow but also invalid, boundary, and unexpected input.
+
+---
+
+## 13. QA Workflow
+
+The project followed a practical manual QA workflow:
+
+**Feature Understanding → Test Planning → Test Scenarios → Test Cases → Manual Execution → Exploratory Testing → Defect Reporting → Retesting → Regression Checks**
+
+---
+
+## 14. Conclusion
+
+This project provided practical experience in testing a web application with multiple connected features.
+
+The testing process included:
+
+* Planning test coverage
+* Creating test scenarios
+* Writing test cases
+* Performing manual functional testing
+* Performing negative and boundary testing
+* Performing exploratory testing
+* Investigating unexpected behavior
+* Reproducing defects
+* Writing bug reports
+* Planning retesting and regression checks
+
+The project also reinforced the importance of separating confirmed defects from findings that require additional verification.
+
+The final project documentation includes:
+
+* Project Overview
+* Test Plan
+* Test Scenarios
+* Test Cases
+* Checklists
+* Exploratory Testing
+* Test Execution
+* Bug Reports
+* Case Study
+
+---
+
+## 15. Confidentiality
+
+The project has been anonymized for portfolio purposes.
+
+No confidential application URLs, credentials, personal information, or sensitive business data are included.
