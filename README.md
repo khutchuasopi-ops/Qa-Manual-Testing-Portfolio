@@ -1,338 +1,356 @@
 # QA Manual Testing Portfolio
 
-Welcome to my QA Manual Testing Portfolio.
+## About This Portfolio
 
-This repository contains practical examples of my work as a **Junior Manual QA Tester**, including test scenarios, test cases, manual test execution, exploratory testing, smoke testing, regression testing, bug reports, checklists, and test summary documentation.
+This repository contains practical manual QA testing projects created to demonstrate my testing approach, documentation skills, and ability to identify and report software defects.
 
-The portfolio demonstrates a structured and practical approach to manual software testing.
+I am a **Junior Manual QA Tester** focused on building practical experience through structured testing and clear QA documentation.
+
+The portfolio includes projects from different application areas, including e-commerce, AI chatbot testing, legal technology, production management, and AI writing tools.
 
 ---
 
-## About Me
+## QA Skills Demonstrated
 
-I am a **Junior Manual QA Tester** focused on developing strong fundamentals in software testing and quality assurance.
-
-My current focus areas include:
-
-* Manual Testing
-* Functional Testing
-* Positive Testing
-* Negative Testing
-* UI Testing
+* Manual Functional Testing
+* Positive and Negative Testing
 * Exploratory Testing
 * Smoke Testing
 * Regression Testing
-* Localization Testing
+* Retesting
 * Test Scenario Design
 * Test Case Design
-* Manual Test Execution
+* Test Execution
+* Checklist Creation
 * Defect Identification
 * Bug Reporting
-* Severity and Priority Assignment
-* Test Documentation
-* Test Summary Reporting
-
-I am continuously developing my QA knowledge and expanding my practical testing skills.
-
----
-
-## Portfolio Goals
-
-The goal of this portfolio is to demonstrate my ability to:
-
-* Understand application requirements and user flows
-* Identify testable scenarios
-* Create structured test cases
-* Execute manual tests
-* Perform exploratory testing
-* Perform smoke testing
-* Perform regression testing
-* Identify and document defects
-* Assign appropriate severity and priority
-* Maintain traceability between scenarios, test cases, and defects
-* Summarize test results clearly
-* Communicate testing findings in a professional way
+* Severity and Priority Classification
+* Input Validation
+* Boundary and Negative Testing
+* Business Logic Validation
+* Data Consistency Testing
+* UI and Usability Testing
+* Search and Filtering Validation
+* Error Handling Validation
 
 ---
 
-# Projects
+## Testing Approach
+
+For each project, I follow a structured manual testing process:
+
+**Requirements / Application Understanding → Test Scenarios → Test Cases → Test Execution → Defect Reporting → Retesting → Regression → Test Summary**
+
+Depending on the project, I also use exploratory testing to investigate unexpected behavior and areas that may not be fully covered by predefined test cases.
+
+---
+
+# Portfolio Projects
 
 ## Project 01 — E-commerce Web Application
 
-A manual testing project focused on an e-commerce web application.
+**Folder:** [`01-Ecommerce-Web-Application`](./01-Ecommerce-Web-Application)
 
-### Testing Scope
+Manual QA testing of an e-commerce web application.
 
-The project covers major user flows including:
+### Main Testing Areas
 
-* Login
-* Product Search
-* Product Details
-* Size Selection
-* Shopping Cart
-* Checkout
-* Localization
-* UI and Navigation
+* Product browsing
+* Product details
+* Search and filtering
+* Cart functionality
+* Quantity and price calculations
+* Checkout-related flows
+* Login and validation
+* Language selection
+* UI behavior
 
-### QA Activities
+### Testing Types
 
-The project includes:
-
-* Test Scenario Design
-* Test Case Design
 * Functional Testing
 * Positive Testing
 * Negative Testing
-* UI Testing
 * Exploratory Testing
 * Smoke Testing
 * Regression Testing
-* Manual Test Execution
-* Defect Identification
-* Bug Reporting
-* Severity and Priority Assignment
-* Test Summary Reporting
+* UI Testing
+* Validation Testing
 
-### Project Documentation
+### Documentation
 
-* [Project Overview](01-Ecommerce-Web-Application/Project-Overview.md)
-* [Test Scenarios](01-Ecommerce-Web-Application/Test-Scenarios.md)
-* [Test Cases](01-Ecommerce-Web-Application/Test-Cases.md)
-* [Checklists](01-Ecommerce-Web-Application/Checklists.md)
-* [Case Study](01-Ecommerce-Web-Application/Case-Study.md)
-* [Test Execution Report](01-Ecommerce-Web-Application/Test-Execution/Test-Execution-Report.md)
-* [Test Summary Report](01-Ecommerce-Web-Application/Test-Summary-Report.md)
-
-### Defect Reports
-
-* [BUG-001](01-Ecommerce-Web-Application/Bug-Reports/BUG-001.md)
-* [BUG-002](01-Ecommerce-Web-Application/Bug-Reports/BUG-002.md)
-* [BUG-003](01-Ecommerce-Web-Application/Bug-Reports/BUG-003.md)
+* [Project Overview](./01-Ecommerce-Web-Application/Project-Overview.md)
+* [Test Scenarios](./01-Ecommerce-Web-Application/Test-Scenarios.md)
+* [Test Cases](./01-Ecommerce-Web-Application/Test-Cases.md)
+* [Test Execution](./01-Ecommerce-Web-Application/Test-Execution/Test-Execution-Report.md)
+* [Checklists](./01-Ecommerce-Web-Application/Checklists.md)
+* [Bug Reports](./01-Ecommerce-Web-Application/Bug-Reports)
 
 ---
 
-## Test Execution Summary
+## Project 02 — AI Chatbot Manual Testing
 
-The current project contains **40 detailed test cases**.
+**Folder:** [`02-Manual-QA-Chatbot-Testing`](./02-Manual-QA-Chatbot-Testing)
 
-| Result       |  Count |
-| ------------ | -----: |
-| PASS         |      2 |
-| FAIL         |      3 |
-| BLOCKED      |      0 |
-| Not Recorded |     35 |
-| **Total**    | **40** |
+Manual testing of an AI-powered e-commerce chatbot with a focus on conversation behavior, product information, user requests, and state handling.
 
-Three defects were documented based on the recorded testing results.
+### Main Testing Areas
 
-The execution report distinguishes between tests that were actually recorded and tests that were not recorded.
+* Product information
+* Product prices
+* Multiple product requirements
+* Product comparison
+* Conversation context
+* Follow-up questions
+* Invalid and unclear requests
+* Operator handoff
+* Returning from operator mode
+* Chatbot state after minimizing and reopening
+* Mixed-language input
+* Usability
 
----
+### Testing Types
 
-## Recorded Test Results
+* Functional Testing
+* Negative Testing
+* Exploratory Testing
+* Context Testing
+* State Testing
+* Data Consistency Testing
+* Usability Testing
 
-| Test Case | Result |
-| --------- | ------ |
-| TC-001    | PASS   |
-| TC-002    | FAIL   |
-| TC-003    | PASS   |
-| TC-024    | FAIL   |
-| TC-036    | FAIL   |
+### Documentation
 
-Detailed execution information is available in the [Test Execution Report](01-Ecommerce-Web-Application/Test-Execution/Test-Execution-Report.md).
-
----
-
-## Defect Summary
-
-| Bug ID  | Severity | Priority | Status   |
-| ------- | -------- | -------- | -------- |
-| BUG-001 | Medium   | Medium   | Reported |
-| BUG-002 | High     | High     | Reported |
-| BUG-003 | Medium   | High     | Open     |
-
-The bug reports demonstrate structured defect documentation including:
-
-* Bug description
-* Steps to reproduce
-* Expected result
-* Actual result
-* Impact
-* Severity
-* Priority
-* Related test case
-* Related test scenario
+* [Project Overview](./02-Manual-QA-Chatbot-Testing/Project-Overview.md)
+* [Test Plan](./02-Manual-QA-Chatbot-Testing/Test-Plan.md)
+* [Test Scenarios](./02-Manual-QA-Chatbot-Testing/Test-Scenarios.md)
+* [Test Cases](./02-Manual-QA-Chatbot-Testing/Test-Cases.md)
+* [Test Execution](./02-Manual-QA-Chatbot-Testing/Test-Execution.md)
+* [Exploratory Testing](./02-Manual-QA-Chatbot-Testing/Exploratory-Testing.md)
+* [Bug Reports](./02-Manual-QA-Chatbot-Testing/Bug-Reports)
 
 ---
 
-# Testing Approach
+## Project 03 — Legal Platform QA
 
-My testing approach is based on practical manual QA fundamentals.
+**Folder:** [`Legal-Platform-QA`](./Legal-Platform-QA)
 
-### 1. Test Scenario Design
+Manual QA testing of a confidential legal technology platform.
 
-I identify important application areas and user flows that should be tested.
+The project focuses on document management, repositories, templates, events, workflows, search, AI-assisted functionality, file handling, and data validation.
 
-### 2. Test Case Design
+### Main Testing Areas
 
-I create positive and negative test cases covering expected and invalid user behavior.
+* Dashboard
+* Repository
+* Documents
+* File Upload
+* File Replacement
+* Templates
+* Events
+* Workflows
+* AI Assistant
+* Search and Filtering
+* Recycle Bin
+* Playbook Generation
+* UI and Usability
+* Data Consistency
 
-### 3. Smoke Testing
+### Testing Types
 
-I perform basic checks of important application functionality to verify that the main user flows are working sufficiently for further testing.
+* Functional Testing
+* Negative Testing
+* Boundary Testing
+* Input Validation
+* Exploratory Testing
+* Regression Testing
+* UI Testing
+* Data Consistency Testing
+* Search and Filtering Testing
+* Error Handling
 
-### 4. Exploratory Testing
+### Documentation
 
-I explore the application beyond predefined test cases to identify unexpected behavior, usability issues, and additional defects.
-
-### 5. Manual Test Execution
-
-I execute test cases and record the observed results.
-
-### 6. Regression Testing
-
-I re-check relevant functionality after changes or fixes to help verify that existing functionality continues to work as expected.
-
-### 7. Defect Reporting
-
-When unexpected behavior is identified, I document it using structured bug reports.
-
-### 8. Test Reporting
-
-I summarize testing results, identified defects, limitations, and recommendations.
+* [Project Overview](./Legal-Platform-QA/Project-Overview.md)
+* [Test Plan](./Legal-Platform-QA/Test-Plan.md)
+* [Test Scenarios](./Legal-Platform-QA/Test-Scenarios.md)
+* [Test Cases](./Legal-Platform-QA/Test-Cases.md)
+* [Test Execution](./Legal-Platform-QA/Test-Execution.md)
+* [Exploratory Testing](./Legal-Platform-QA/Exploratory-Testing.md)
+* [Checklists](./Legal-Platform-QA/Checklists.md)
+* [Bug Reports](./Legal-Platform-QA/Bug-Reports)
 
 ---
 
-# Traceability
+## Project 04 — Production Management Platform QA
 
-The portfolio demonstrates traceability between:
+**Folder:** [`Production-Management-Platform-QA`](./Production-Management-Platform-QA)
 
-**Test Scenario → Test Case → Test Execution → Bug Report**
+Manual QA testing of a production management platform.
 
-Example:
+The project covers project management, director availability, production budgets, invoices, sales activities, file management, cloud integrations, and UI behavior.
 
-`TS-002 → TC-002 → FAIL → BUG-003`
+### Main Testing Areas
 
-This helps demonstrate how a reported defect can be connected to the original testing objective.
+* Project Management
+* Director Availability
+* Production Budget
+* Invoice Management
+* Sales Activities
+* File Management
+* Cloud Integrations
+* UI and Usability
+
+### Testing Types
+
+* Functional Testing
+* Exploratory Testing
+* Regression Testing
+* Retesting
+* Negative Testing
+* Boundary Testing
+* Input Validation
+* Data Validation
+* Business Logic Validation
+* UI and Usability Testing
+
+### Documented Defects
+
+The project contains documented defects covering:
+
+* Director Availability
+* Project Details loading
+* Production Budget calculations
+* Invoice validation
+* Sales Activity filtering
+* UI button readability
+
+Two defects were fixed and successfully retested. One remained reproducible during retesting, while the remaining documented defects did not have a recorded retest result.
+
+### Documentation
+
+* [Project Overview](./Production-Management-Platform-QA/Project-Overview.md)
+* [Test Plan](./Production-Management-Platform-QA/Test-Plan.md)
+* [Test Scenarios](./Production-Management-Platform-QA/Test-Scenarios.md)
+* [Test Cases](./Production-Management-Platform-QA/Test-Cases.md)
+* [Test Execution](./Production-Management-Platform-QA/Test-Execution.md)
+* [Exploratory Testing](./Production-Management-Platform-QA/Exploratory-Testing.md)
+* [Checklists](./Production-Management-Platform-QA/Checklists.md)
+* [Bug Reports](./Production-Management-Platform-QA/Bug-Reports)
 
 ---
 
-# Documentation
+## Project 05 — AI Writing Workspace QA
 
-The portfolio contains the following QA documentation:
+**Folder:** [`05-AI-Writing-Workspace-QA`](./05-AI-Writing-Workspace-QA)
+
+Manual QA testing project focused on an AI-powered writing workspace.
+
+This project is included as part of the portfolio to demonstrate testing of an AI-based application and its user-facing workflows.
+
+Project-specific documentation is available inside the project folder.
+
+---
+
+# QA Documentation Structure
+
+The projects in this portfolio use structured QA documentation such as:
 
 * Project Overview
+* Test Plan
 * Test Scenarios
 * Test Cases
+* Test Execution
+* Exploratory Testing
 * Checklists
-* Test Execution Report
 * Bug Reports
-* Test Summary Report
-* Case Study
+* Test Summary / Case Study
 
-These documents are organized to demonstrate a clear and structured manual testing workflow.
+The exact documentation structure depends on the project and the testing performed.
+
+---
+
+# Bug Reporting
+
+Defects are documented using a simple and practical format suitable for common issue-tracking workflows.
+
+Each bug report normally includes:
+
+* Bug ID
+* Title
+* Environment
+* Steps to Reproduce
+* Actual Result
+* Expected Result
+* Severity
+* Priority
+* Status
+* Related Test Case or Scenario when applicable
+
+The reports are intentionally kept clear and focused rather than using an unnecessarily complex defect template.
 
 ---
 
 # Tools
 
-Tools and technologies currently used in this portfolio include:
-
 * GitHub
 * Markdown
-* Google Chrome
+* Web Browsers
 * Chrome DevTools
-
-Additional QA tools and technologies are areas of ongoing learning and development.
-
----
-
-# Skills
-
-### Manual Testing
-
-* Functional Testing
-* Positive Testing
-* Negative Testing
-* UI Testing
-* Exploratory Testing
-* Smoke Testing
-* Regression Testing
-* User Flow Testing
-* Localization Testing
-
-### Test Documentation
-
-* Test Scenarios
-* Test Cases
-* Checklists
-* Bug Reports
-* Test Execution Reports
-* Test Summary Reports
-* Case Study Documentation
-
-### Defect Management
-
-* Defect Identification
-* Bug Documentation
-* Severity Assignment
-* Priority Assignment
-* Defect Traceability
+* Manual Testing
 
 ---
 
 # Current Learning Areas
 
-As a Junior QA Tester, I am continuing to develop my skills in areas such as:
+I am continuing to develop my QA knowledge in areas such as:
 
 * API Testing
 * SQL and Database Testing
 * Cross-Browser Testing
 * Responsive Testing
 * Test Management Tools
+* Jira and similar issue-tracking workflows
 
-These areas are presented as **learning and development goals**, not as completed project experience.
-
----
-
-# Portfolio Limitations
-
-This portfolio represents a practical learning project and should not be considered production-level QA experience.
-
-Some testing areas may require additional execution, environments, tools, or test data before they can be considered fully covered.
-
-The portfolio therefore distinguishes between:
-
-* Testing that was actually performed and recorded
-* Testing documentation prepared for the project
-* Areas identified for future testing and learning
-
----
-
-# Confidentiality
-
-Application-specific credentials, private test data, and other confidential information are intentionally excluded from this public portfolio.
-
-Only non-sensitive testing documentation and examples are included.
+These areas are part of my ongoing learning and are not presented as professional experience unless specifically documented in a project.
 
 ---
 
 # Junior QA Perspective
 
-This portfolio reflects my current level as a **Junior Manual QA Tester**.
+This portfolio represents my current development as a **Junior Manual QA Tester**.
 
-My goal is to demonstrate strong testing fundamentals, structured thinking, attention to detail, clear defect reporting, and continuous improvement.
+My focus is on building strong fundamentals through practical testing:
 
-I am continuing to build practical experience and expand my knowledge of software testing tools and techniques.
+* Understanding application requirements and user flows
+* Creating meaningful test scenarios and test cases
+* Performing functional and exploratory testing
+* Identifying unexpected behavior
+* Writing clear bug reports
+* Executing tests and recording results
+* Performing retesting after fixes
+* Running regression checks
+* Keeping QA documentation organized and understandable
+
+The goal is not to present senior-level experience, but to demonstrate a solid practical foundation and continuous learning.
 
 ---
 
-# Conclusion
+# Confidentiality
 
-This portfolio demonstrates my current practical knowledge of manual software testing through a structured e-commerce testing project.
+Some projects are based on confidential or anonymized applications.
 
-It shows my approach to:
+No confidential company information, credentials, or sensitive data is intentionally included in this portfolio.
 
-**Test Design → Smoke Testing → Exploratory Testing → Manual Execution → Regression Testing → Defect Reporting → Test Summary**
+---
 
-I am continuing to improve my testing skills through hands-on practice and further learning.
+## Portfolio Status
+
+This portfolio contains multiple completed manual QA projects covering different application types and testing challenges.
+
+The documentation will continue to be improved as I gain more practical QA experience.
+
+---
+
+## Repository
+
+**GitHub:** [QA Manual Testing Portfolio](https://github.com/khutchuasopi-ops/Qa-Manual-Testing-Portfolio)
