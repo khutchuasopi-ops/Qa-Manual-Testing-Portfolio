@@ -2,45 +2,63 @@
 
 ## Project Summary
 
-This project represents manual QA testing performed on a production management platform used to manage projects, budgets, invoices, and activity tracking.
+This project represents manual QA testing performed on an anonymized production management platform used to manage projects, budgets, invoices, availability, and activity tracking.
 
-The goal of testing was to identify functional, UI, validation, and business logic issues across multiple modules.
+The goal of testing was to identify functional, validation, business logic, data consistency, and UI usability issues across multiple application areas.
 
 ## Scope of Testing
 
-- Project creation and lifecycle (Draft → Stages)
-- Director Availability management
-- Production Budget calculations
-- Invoice creation and validation
-- Sales Activity tracking
-- UI/UX behavior and usability
+The testing covered the following areas:
+
+* Project Management
+* Director Availability
+* Production Budget
+* Invoice Management
+* Sales Activity
+* File Management
+* Cloud Integrations
+* UI and Usability
 
 ## Testing Types Performed
 
-- Functional Testing
-- Exploratory Testing
-- Regression Testing
-- Negative Testing
-- UI/UX Testing
-- Data Validation Testing
-- Business Logic Testing
+* Functional Testing
+* Exploratory Testing
+* Regression Testing
+* Retesting
+* Negative Testing
+* Boundary Testing
+* Input Validation
+* Data Validation
+* Business Logic Validation
+* UI / Usability Testing
 
 ## Tools & Environment
 
-- Manual Testing
-- Web-based QA Environment
-- Browser Testing
+* Manual Testing
+* Web-based QA Environment
+* Browser Testing
+* GitHub
+* Markdown
 
 ## Outcome
 
-Several defects were identified and documented in the Bug Reports section of this project.
+Several defects were identified, reproduced, and documented during manual testing.
 
-All bugs are reproducible and structured with:
-- Steps to Reproduce
-- Actual Result
-- Expected Result
-- Impact
+A total of **6 defects** were documented in the Bug Reports section.
+
+Where fixes were available, retesting was performed:
+
+* BUG-001 — Fixed and successfully retested
+* BUG-002 — Retested and remained reproducible
+* BUG-003 — Fixed and successfully retested
+* BUG-004 — No retest result documented
+* BUG-005 — No retest result documented
+* BUG-006 — No retest result documented
+
+Bug reports include clear reproduction steps, actual results, expected results, severity, environment, and relevant additional information.
 
 ## Status
 
-Ongoing QA project — new issues may be added as testing continues.
+**Completed**
+
+The manual testing activities and documentation included in this portfolio project have been completed.
