@@ -7,26 +7,27 @@
 
 ## Preconditions
 
-The Cloud Import page is accessible and the relevant Cloud integration settings are available.
+* Cloud Import page is accessible.
+* Relevant Cloud integration settings are available.
 
-## Steps to Reproduce
+## Steps
 
 1. Open **Files**.
 2. Click **Import from Cloud**.
 3. Click **Set up in Settings**.
 4. Navigate to the relevant Cloud integration settings.
 5. Locate the action button.
-6. Move the mouse over the button.
+6. Hover over the button.
 7. Compare the normal and hover states.
 
 ## Actual Result
 
-In the hover state, the button background becomes white while the text remains white. The text blends into the background and becomes practically unreadable.
+When hovering over the button, the background becomes white while the text remains white. As a result, the text blends into the background and becomes difficult to read.
 
 ## Expected Result
 
-The hover state should maintain sufficient contrast between the button text and background.
+The button text should remain clearly readable in both normal and hover states, with sufficient contrast between the text and background.
 
 ## Impact
 
-Users may have difficulty reading the action and identifying what the button does.
+Users may have difficulty reading the button label and understanding the available action.
