@@ -32,6 +32,9 @@ The selected project opens successfully.
 **Expected Result:**
 Project Details load successfully.
 
+**Actual Result:**
+Project Details failed to load for one specific project.
+
 ---
 
 ### TC-003 — Compare Project Details Across Projects
@@ -239,6 +242,8 @@ The Event is created successfully and remains visible in Availability.
 **Retest Result:**
 The previously identified Event creation issue was fixed and successfully retested.
 
+**Related Bug:** BUG-001
+
 ---
 
 ## 3. Production Budget
@@ -378,6 +383,8 @@ The added expense is included correctly in the corresponding budget calculations
 **Retest Result:**
 The previously identified calculation issue was fixed and successfully retested.
 
+**Related Bug:** BUG-003
+
 ---
 
 ### TC-023 — Verify Budget Values After Refresh
@@ -465,6 +472,8 @@ The invoice is rejected and a clear validation message explains that negative am
 
 **Actual Result:**
 The application displayed `[object Object]` instead of a readable validation message.
+
+**Related Bug:** BUG-004
 
 ---
 
@@ -594,6 +603,8 @@ The Meeting view displays only Meeting activities.
 **Actual Result:**
 The Meeting view displayed both Meeting and Call activities.
 
+**Related Bug:** BUG-005
+
 ---
 
 ### TC-035 — Compare Call and Meeting Views
@@ -609,7 +620,7 @@ The Meeting view displayed both Meeting and Call activities.
 4. Compare the displayed records.
 
 **Expected Result:**
-Each activity view should preserve the selected activity type and display only relevant records.
+Each activity view should display only records relevant to the selected activity type.
 
 **Actual Result:**
 Call filtering worked correctly, while Meeting filtering displayed unrelated Call activities.
@@ -683,6 +694,8 @@ The button text remains readable and maintains sufficient contrast against the h
 **Actual Result:**
 The background became white while the text remained white, making the text practically unreadable.
 
+**Related Bug:** BUG-006
+
 ---
 
 ## 7. Cross-Module / Regression
@@ -703,4 +716,4 @@ The background became white while the text remained white, making the text pract
 7. Compare the displayed data with the saved values.
 
 **Expected Result:**
-Saved data remains consistent after navigation and refresh, and no unexpected changes or data loss occur.
+Saved data remains consistent after navigation and refresh, with no unexpected changes or data loss.
