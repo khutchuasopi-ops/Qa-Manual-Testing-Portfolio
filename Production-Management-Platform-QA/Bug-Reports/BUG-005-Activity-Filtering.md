@@ -7,11 +7,11 @@
 
 ## Preconditions
 
-The Sales Activity area contains both Call and Meeting activities.
+* Sales Activity contains both **Call** and **Meeting** activities.
 
-## Steps to Reproduce
+## Steps
 
-1. Open the **Sales Activity** area.
+1. Open **Sales Activity**.
 2. Open a **Call** activity.
 3. Review the displayed activities.
 4. Return to the activity list.
@@ -20,14 +20,12 @@ The Sales Activity area contains both Call and Meeting activities.
 
 ## Actual Result
 
-The Call view displays only Call activities.
-
-However, the Meeting view displays both Meeting and Call activities.
+The Call view displays only Call activities, but the Meeting view displays both Meeting and Call activities.
 
 ## Expected Result
 
-The Meeting view should display only Meeting activities, in the same way that the Call view displays only Call activities.
+The Meeting view should display only Meeting activities, consistent with the filtering behavior of the Call view.
 
 ## Impact
 
-Users may see unrelated activities when reviewing a specific activity type, which can cause confusion and inaccurate activity tracking.
+Displaying unrelated activities can cause confusion and make activity tracking inaccurate.
