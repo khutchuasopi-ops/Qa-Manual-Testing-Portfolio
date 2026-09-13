@@ -1,12 +1,16 @@
 # QA Case Study — Production Management Platform
 
-## Project Overview
+## 1. Project Overview
 
 This case study presents manual QA testing performed on an anonymized production management platform.
 
-The testing covered multiple modules and focused on identifying real functional, business logic, validation, data consistency, and UI usability issues.
+The testing covered multiple application modules and focused on identifying functional, business logic, validation, data consistency, and UI usability issues.
 
-## Testing Approach
+The testing process included planned test cases, exploratory testing, defect reporting, retesting, and regression checks.
+
+---
+
+## 2. Testing Approach
 
 Testing was performed using a combination of:
 
@@ -16,82 +20,126 @@ Testing was performed using a combination of:
 * Boundary Testing
 * Regression Testing
 * Retesting
+* Input Validation
 * Data Validation
 * Business Logic Validation
 * UI / Usability Testing
 
-## Key Defects Identified
+The testing approach combined predefined test cases with exploratory investigation of unexpected application behavior.
 
-### 1. Director Availability Event
+---
+
+## 3. Key Defects Identified
+
+### 3.1 Director Availability Event
 
 An issue prevented Availability Events from being added successfully.
 
-The issue was reported, fixed, and successfully retested.
+The issue was documented as **BUG-001**, fixed, and successfully retested.
 
 **QA focus:** Functional testing and regression testing.
 
-### 2. Project Details Loading
+---
+
+### 3.2 Project Details Loading
 
 A specific project failed to load its Project Details while other projects opened successfully.
 
-The issue remained reproducible during retesting.
+The issue was documented as **BUG-002** and remained reproducible during retesting.
 
 **QA focus:** Functional testing and data/loading investigation.
 
-### 3. Production Budget Calculation
+---
 
-Expenses were initially not correctly reflected in the Budget Sub-total and Total Budget.
+### 3.3 Production Budget Calculation
 
-The issue was fixed and successfully retested after valid budget values were entered.
+An added expense was initially not correctly reflected in the Budget Sub-total and Total Budget.
+
+The issue was documented as **BUG-003**, fixed, and successfully retested.
 
 **QA focus:** Business logic and calculation validation.
 
-### 4. Invoice Validation
+---
+
+### 3.4 Invoice Validation
 
 Entering a negative invoice amount resulted in `[object Object]` instead of a readable validation message.
 
-**QA focus:** Negative testing and error handling.
+The issue was documented as **BUG-004**.
 
-### 5. Sales Activity Filtering
+**QA focus:** Negative testing, input validation, and error handling.
+
+---
+
+### 3.5 Sales Activity Filtering
 
 The Meeting activity view displayed both Meeting and Call activities instead of only the selected activity type.
 
+The issue was documented as **BUG-005**.
+
 **QA focus:** Data filtering and consistency testing.
 
-### 6. Hover Contrast
+---
 
-A button's hover state changed the background to white while keeping the text white, making the text practically unreadable.
+### 3.6 Hover Contrast
+
+A button's hover state changed the background to white while the text remained white, making the text difficult to read.
+
+The issue was documented as **BUG-006**.
 
 **QA focus:** UI, usability, and accessibility.
 
-## QA Challenges
+---
+
+## 4. QA Challenges
 
 During testing, several behaviors initially appeared suspicious but were not confirmed as defects after further investigation.
 
-This included checking:
+The investigation included:
 
 * Crew counts and department assignments
 * Project stages
 * Scheduled follow-ups and task creation
-* Invoice display states
-* Report values
+* Invoice display behavior
+* Report values and totals
 * Similar project records
 * Data consistency after refresh
+* Cloud integration behavior
 
-These investigations helped distinguish actual defects from expected application behavior or configuration-related results.
+Where a behavior could not be confirmed as a defect, it was not reported as a separate bug.
 
-## Retesting
+This helped distinguish confirmed defects from expected behavior, configuration-related results, and observations requiring further verification.
 
-Previously reported issues were retested after fixes where applicable.
+---
 
-Confirmed successful fixes included:
+## 5. Retesting
 
-* Director Availability Event creation
-* Production Budget expense calculation
+Previously reported issues were retested when a fix was available.
 
-Retesting helped verify that fixes resolved the original issues without relying only on developer confirmation.
+### Successfully Retested
 
-## Key QA Skills Demonstrated
+* **BUG-001** — Director Availability Event creation
+* **BUG-003** — Production Budget expense calculation
+
+Both issues were fixed and successfully verified during retesting.
+
+### Still Reproducible
+
+* **BUG-002** — Project Details failed to load for a specific project
+
+The issue remained reproducible during retesting and was kept open.
+
+### No Retest Result Documented
+
+* **BUG-004** — Negative invoice amount validation
+* **BUG-005** — Meeting Activity filtering
+* **BUG-006** — Button text on hover
+
+These defects remain documented as open because no retest result was recorded.
+
+---
+
+## 6. Key QA Skills Demonstrated
 
 * Defect identification
 * Bug reproduction
@@ -99,16 +147,38 @@ Retesting helped verify that fixes resolved the original issues without relying 
 * Severity assessment
 * Exploratory investigation
 * Negative testing
+* Input validation
 * Business logic validation
 * Regression testing
 * Retesting
-* Data consistency analysis
+* Data consistency checking
 * UI and usability evaluation
 
-## Outcome
+---
 
-The testing identified six verified defects across different application areas.
+## 7. Outcome
 
-The project remains ongoing, allowing additional verified findings to be added as testing continues.
+The testing identified and documented **six defects** across different application areas.
+
+| Status                          | Number |
+| ------------------------------- | -----: |
+| Fixed and successfully retested |      2 |
+| Still reproducible              |      1 |
+| Open with no documented retest  |      3 |
+| **Total**                       |  **6** |
+
+The documented results provide a record of the main issues found during manual testing and the retesting performed where fixes were available.
+
+---
+
+## 8. Project Status
+
+**Completed**
+
+The documented testing activities for the tested functionality have been completed.
+
+All identified defects are documented in the project's Bug Reports section, together with the available retesting results.
+
+---
 
 > All project names, data, and identifying information have been anonymized for portfolio purposes.
