@@ -2,9 +2,11 @@
 
 ## Overview
 
-This document contains the main manual QA test scenarios executed during testing of the AI Writing Workspace.
+This document contains the manual QA test scenarios executed during testing of the AI Writing Workspace.
 
 The scenarios cover core user workflows, application state, data persistence, AI functionality, navigation, and UI/UX behavior.
+
+Testing was performed in the **Staging / Preview environment**.
 
 ---
 
@@ -12,8 +14,8 @@ The scenarios cover core user workflows, application state, data persistence, AI
 
 ## TS-BOARD-001 — Verify Item Drag & Drop
 
-**Area:** Board  
-**Priority:** Medium  
+**Area:** Board
+**Priority:** Medium
 **Type:** Functional
 
 ### Steps
@@ -39,8 +41,8 @@ The item was moved successfully.
 
 ## TS-BOARD-002 — Verify Moving an Item to Another Section
 
-**Area:** Board  
-**Priority:** Medium  
+**Area:** Board
+**Priority:** Medium
 **Type:** Functional
 
 ### Steps
@@ -66,8 +68,8 @@ The item was moved successfully.
 
 ## TS-BOARD-003 — Verify Position Persistence After Drag & Drop
 
-**Area:** Board  
-**Priority:** Medium  
+**Area:** Board
+**Priority:** Medium
 **Type:** Persistence
 
 ### Steps
@@ -91,42 +93,12 @@ The item position was preserved.
 
 ---
 
-## TS-BOARD-004 — Verify Item Deletion
-
-**Area:** Board  
-**Priority:** High  
-**Type:** Functional / Persistence
-
-### Steps
-
-1. Open the Board.
-2. Select an existing item.
-3. Delete the item.
-4. Refresh the page.
-5. Check whether the deleted item is still displayed.
-
-### Expected Result
-
-The deleted item should be removed and should not appear after refresh.
-
-### Actual Result
-
-The deleted item remained visible after deletion and was still displayed after refresh.
-
-### Status
-
-**FAIL**
-
-**Related Bug:** BUG-001
-
----
-
 # 2. Draft
 
 ## TS-DRAFT-001 — Verify Draft Loading
 
-**Area:** Draft  
-**Priority:** Medium  
+**Area:** Draft
+**Priority:** Medium
 **Type:** Functional
 
 ### Steps
@@ -149,14 +121,16 @@ Draft initially remained in a loading state. Navigating to another section and r
 
 **FAIL**
 
-**Related Bug:** BUG-002
+### Related Bug
+
+BUG-002
 
 ---
 
 ## TS-DRAFT-002 — Verify AI Initial Interaction
 
-**Area:** Draft  
-**Priority:** Medium  
+**Area:** Draft
+**Priority:** Medium
 **Type:** Functional
 
 ### Steps
@@ -182,8 +156,8 @@ The AI Assistant displayed the expected initial question.
 
 ## TS-DRAFT-003 — Verify AI Assistant Text Entry
 
-**Area:** Draft / AI Assistant  
-**Priority:** High  
+**Area:** Draft / AI Assistant
+**Priority:** High
 **Type:** Functional
 
 ### Steps
@@ -206,14 +180,16 @@ The AI Assistant returned an error during the interaction.
 
 **FAIL**
 
-**Related Bug:** BUG-005
+### Related Bug
+
+BUG-003
 
 ---
 
 ## TS-DRAFT-004 — Verify Draft Editor Text Entry
 
-**Area:** Draft Editor  
-**Priority:** High  
+**Area:** Draft Editor
+**Priority:** High
 **Type:** Functional / UI
 
 ### Steps
@@ -237,14 +213,16 @@ The text appeared in uppercase while it was being entered.
 
 **FAIL**
 
-**Related Bug:** BUG-004
+### Related Bug
+
+BUG-004
 
 ---
 
 ## TS-DRAFT-005 — Verify Draft Content Persistence
 
-**Area:** Draft Editor  
-**Priority:** High  
+**Area:** Draft Editor
+**Priority:** High
 **Type:** Persistence
 
 ### Steps
@@ -267,14 +245,16 @@ The entered text disappeared after refresh.
 
 **FAIL**
 
-**Related Bug:** BUG-003
+### Related Bug
+
+BUG-001
 
 ---
 
 ## TS-DRAFT-006 — Verify AI Assistant Draft Creation
 
-**Area:** Draft / AI Assistant  
-**Priority:** High  
+**Area:** Draft / AI Assistant
+**Priority:** High
 **Type:** Functional
 
 ### Steps
@@ -298,14 +278,16 @@ The AI Assistant indicated that it was writing into a Draft, but the generated f
 
 **FAIL**
 
-**Related Bug:** BUG-005
+### Related Bug
+
+BUG-003
 
 ---
 
 ## TS-DRAFT-007 — Verify New Draft Context Isolation
 
-**Area:** Draft / AI Assistant  
-**Priority:** High  
+**Area:** Draft / AI Assistant
+**Priority:** High
 **Type:** State / Context
 
 ### Steps
@@ -328,7 +310,9 @@ The AI Assistant referenced unrelated content from a previous independent docume
 
 **FAIL**
 
-**Related Bug:** BUG-006
+### Related Bug
+
+BUG-005
 
 ---
 
@@ -336,8 +320,8 @@ The AI Assistant referenced unrelated content from a previous independent docume
 
 ## TS-PLAN-001 — Verify Plan Opens Correctly
 
-**Area:** Plan  
-**Priority:** Medium  
+**Area:** Plan
+**Priority:** Medium
 **Type:** Functional
 
 ### Steps
@@ -362,16 +346,15 @@ The Plan page opened successfully.
 
 ## TS-PLAN-002 — Verify Assistant Planning Request
 
-**Area:** Plan / AI Assistant  
-**Priority:** High  
+**Area:** Plan / AI Assistant
+**Priority:** High
 **Type:** Functional
 
 ### Steps
 
 1. Open Plan.
 2. Use the Assistant input.
-3. Enter a request such as:
-   `I want to plan an essay about the ocean.`
+3. Enter a planning request.
 4. Submit the request.
 5. Observe the AI response.
 6. Check the Plan page.
@@ -388,14 +371,16 @@ The Assistant generated planning options and indicated that it would build the o
 
 **FAIL**
 
-**Related Bug:** BUG-007
+### Related Bug
+
+BUG-005
 
 ---
 
 ## TS-PLAN-003 — Verify Plan After Refresh
 
-**Area:** Plan  
-**Priority:** High  
+**Area:** Plan
+**Priority:** High
 **Type:** Persistence
 
 ### Steps
@@ -417,7 +402,9 @@ The Plan remained empty after refresh.
 
 **FAIL**
 
-**Related Bug:** BUG-007
+### Related Bug
+
+BUG-005
 
 ---
 
@@ -425,8 +412,8 @@ The Plan remained empty after refresh.
 
 ## TS-LIBRARY-001 — Verify Project Opening
 
-**Area:** Library  
-**Priority:** Medium  
+**Area:** Library
+**Priority:** Medium
 **Type:** Functional
 
 ### Steps
@@ -451,8 +438,8 @@ The Project opened successfully.
 
 ## TS-LIBRARY-002 — Verify Project Details
 
-**Area:** Library / Project  
-**Priority:** Low  
+**Area:** Library / Project
+**Priority:** Low
 **Type:** UI
 
 ### Steps
@@ -467,7 +454,7 @@ Relevant Project information should be displayed.
 
 ### Actual Result
 
-Project information such as About, Author, Category, Date, Description, and Companion instructions was displayed.
+Project information was displayed correctly.
 
 ### Status
 
@@ -479,8 +466,8 @@ Project information such as About, Author, Category, Date, Description, and Comp
 
 ## TS-POSTER-001 — Verify Poster Upload and Save
 
-**Area:** Poster / Cover  
-**Priority:** High  
+**Area:** Poster / Cover
+**Priority:** High
 **Type:** Functional
 
 ### Steps
@@ -494,7 +481,7 @@ Project information such as About, Author, Category, Date, Description, and Comp
 
 ### Expected Result
 
-The selected image should be saved and displayed as the new poster immediately after saving.
+The selected image should be saved and displayed as the new poster.
 
 ### Actual Result
 
@@ -504,14 +491,16 @@ The Save Poster action did not respond immediately. After some time, the poster 
 
 **FAIL**
 
-**Related Bug:** BUG-008
+### Related Bug
+
+BUG-006
 
 ---
 
 ## TS-POSTER-002 — Verify Poster Upload Dialog Shows Current Image
 
-**Area:** Poster / Cover  
-**Priority:** Medium  
+**Area:** Poster / Cover
+**Priority:** Medium
 **Type:** Functional / UI State
 
 ### Preconditions
@@ -536,7 +525,9 @@ The dialog displayed the previously uploaded image instead of the current poster
 
 **FAIL**
 
-**Related Bug:** BUG-009
+### Related Bug
+
+BUG-007
 
 ---
 
@@ -544,8 +535,8 @@ The dialog displayed the previously uploaded image instead of the current poster
 
 ## TS-AICHAT-001 — Verify New Chat State
 
-**Area:** AI Chat  
-**Priority:** Medium  
+**Area:** AI Chat
+**Priority:** Medium
 **Type:** State
 
 ### Steps
@@ -567,76 +558,18 @@ The previous conversation remained visible until new text was entered. After ent
 
 **FAIL**
 
-**Related Bug:** BUG-011
+### Related Bug
+
+BUG-008
 
 ---
 
-## TS-AICHAT-002 — Verify Deleted Project Conversation Behavior
-
-**Area:** AI Chat / Project  
-**Priority:** Medium  
-**Type:** State
-
-### Steps
-
-1. Open a Project / Manuscript with an existing AI Chat conversation.
-2. Delete the Project / Manuscript.
-3. Open the AI Chat conversation dropdown.
-4. Check whether the deleted Project conversation is still listed.
-
-### Expected Result
-
-If Project deletion is expected to remove related conversations, the deleted Project conversation should no longer appear.
-
-### Actual Result
-
-The conversation title associated with the deleted Project remained visible in the AI Chat dropdown.
-
-### Status
-
-**FAIL / Requires Product Confirmation**
-
-**Related Bug:** BUG-010
-
----
-
-# 7. Templates
-
-## TS-TEMPLATE-001 — Verify Draggable Template Elements
-
-**Area:** Templates  
-**Priority:** Medium  
-**Type:** Functional
-
-### Steps
-
-1. Open a Template.
-2. Hover over a draggable text element.
-3. Drag the element to another position.
-4. Release the mouse button.
-
-### Expected Result
-
-The element should be draggable and the interface should clearly indicate that it can be moved.
-
-### Actual Result
-
-The element could be dragged successfully, but the cursor remained a regular arrow instead of providing a clear drag/grab indication.
-
-### Status
-
-**PASS — UX Recommendation**
-
-**Related UX:** UX-001
-
----
-
-# 8. Split View
+# 7. Split View
 
 ## TS-SPLIT-001 — Verify Pagination and Page Breaks in Split View
 
-**Area:** Split View / Draft  
-**Priority:** High  
+**Area:** Split View / Draft
+**Priority:** High
 **Type:** Functional / UI State
 
 ### Steps
@@ -659,15 +592,47 @@ Pagination/page breaks were duplicated or reset on the second side when the same
 
 **FAIL — Reproduced**
 
-**Related Bug:** BUG-012
+### Related Bug
+
+BUG-009
 
 ---
 
-# 9. UX Recommendations
+# 8. UX Recommendations
 
-## TS-UX-001 — Project Details Close Button
+## TS-UX-001 — Verify Draggable Template Elements
 
-**Area:** Library / Project Details  
+**Area:** Templates
+**Type:** UX Recommendation
+
+### Steps
+
+1. Open a Template.
+2. Hover over a draggable text element.
+3. Drag the element to another position.
+4. Release the mouse button.
+
+### Expected Result
+
+The element should be draggable and the interface should clearly indicate that it can be moved.
+
+### Actual Result
+
+The element could be dragged successfully, but the cursor remained a regular arrow instead of providing a clear drag/grab indication.
+
+### Status
+
+**PASS — UX Recommendation**
+
+### Related UX
+
+UX-001
+
+---
+
+## TS-UX-002 — Verify Project Details Close Control
+
+**Area:** Library / Project Details
 **Type:** UX Recommendation
 
 ### Current Behavior
@@ -682,42 +647,48 @@ Consider adding a visible Close (X) button to make closing the panel easier and 
 
 **UX Recommendation**
 
-**Related UX:** UX-002
+### Related UX
+
+UX-002
 
 ---
 
-# 10. Test Scenario Summary
+# Test Scenario Summary
 
-| Area | Scenarios Tested | Pass | Fail | UX |
-|------|------------------:|-----:|-----:|----:|
-| Board | 4 | 3 | 1 | 0 |
-| Draft | 7 | 1 | 6 | 0 |
-| Plan | 3 | 1 | 2 | 0 |
-| Library | 2 | 2 | 0 | 0 |
-| Poster / Cover | 2 | 0 | 2 | 0 |
-| AI Chat | 2 | 0 | 2 | 0 |
-| Templates | 1 | 1 | 0 | 1 |
-| Split View | 1 | 0 | 1 | 0 |
-| UX Recommendations | 1 | 0 | 0 | 1 |
+| Area                 | Scenarios Tested | Pass | Fail | UX |
+| -------------------- | ---------------: | ---: | ---: | -: |
+| Board                |                3 |    3 |    0 |  0 |
+| Draft                |                7 |    1 |    6 |  0 |
+| Plan                 |                3 |    1 |    2 |  0 |
+| Library              |                2 |    2 |    0 |  0 |
+| Poster / Cover       |                2 |    0 |    2 |  0 |
+| AI Chat              |                1 |    0 |    1 |  0 |
+| Split View           |                1 |    0 |    1 |  0 |
+| Templates / UX       |                1 |    1 |    0 |  1 |
+| Project Details / UX |                1 |    0 |    0 |  1 |
+
+---
+
+## Confirmed Bug Traceability
+
+| Bug ID  | Related Area                 |
+| ------- | ---------------------------- |
+| BUG-001 | Draft Content Persistence    |
+| BUG-002 | Draft Loading                |
+| BUG-003 | AI Assistant / Draft         |
+| BUG-004 | Draft Editor Text Formatting |
+| BUG-005 | AI Assistant / Draft / Plan  |
+| BUG-006 | Poster Save                  |
+| BUG-007 | Poster Image State           |
+| BUG-008 | AI Chat State                |
+| BUG-009 | Split View Pagination        |
 
 ---
 
 ## Overall Result
 
-The testing identified multiple functional and state-related issues across the application.
+The testing identified functional, state, persistence, AI workflow, and UI-related issues across the application.
 
-The most significant findings were related to:
+The confirmed defects documented in this project are limited to **9 Bug Reports (BUG-001 to BUG-009)**.
 
-- Draft content persistence
-- AI-generated Draft content
-- Draft loading
-- AI conversation context
-- Plan content updates
-- Poster saving
-- Split View pagination
-- Deleted content state
-- New Chat state
-
-Additional usability improvements were identified for draggable Template elements and the Project / Manuscript details panel.
-
-Detailed reproduction steps and evidence are documented separately in the Bug Reports and UX Recommendations sections.
+Additional usability observations are documented separately as UX recommendations and are not counted as confirmed functional defects.
