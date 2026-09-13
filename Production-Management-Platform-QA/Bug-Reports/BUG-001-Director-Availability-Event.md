@@ -33,4 +33,5 @@ Users cannot add availability events for a Director, which prevents accurate man
 
 ## Retest
 
-The issue was later fixed and successfully retested in the test environment.
+The issue was fixed and successfully retested in the test environment.
+
