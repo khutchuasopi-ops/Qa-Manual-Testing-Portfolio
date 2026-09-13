@@ -12,6 +12,8 @@
 * [ ] Project information remains available after refresh
 * [ ] Project data is not mixed between records
 
+---
+
 ## Director Availability
 
 * [ ] Director can be selected
@@ -28,6 +30,8 @@
 * [ ] Created Event appears in Availability
 * [ ] Previously reported Event creation issue is retested after fix
 
+---
+
 ## Production Budget
 
 * [ ] Production Budget opens
@@ -41,6 +45,8 @@
 * [ ] Expense is included in budget totals
 * [ ] Saved budget values remain correct after refresh
 * [ ] Previously reported calculation issue is retested after fix
+
+---
 
 ## Invoice Management
 
@@ -56,6 +62,8 @@
 * [ ] Validation does not expose internal object representations
 * [ ] Invoice data is saved correctly
 
+---
+
 ## Sales Activities
 
 * [ ] Sales Activity area opens
@@ -69,6 +77,8 @@
 * [ ] Different activity types are correctly filtered
 * [ ] Activity views do not display unrelated activity types
 
+---
+
 ## Files / Cloud Import
 
 * [ ] Files section opens
@@ -81,6 +91,8 @@
 * [ ] Hover state maintains sufficient contrast
 * [ ] Action button remains visually identifiable during interaction
 
+---
+
 ## Validation & Error Handling
 
 * [ ] Invalid input is rejected
@@ -91,6 +103,8 @@
 * [ ] Invalid data does not create unintended records
 * [ ] Validation behavior is consistent across tested forms
 
+---
+
 ## Data Consistency
 
 * [ ] Saved values remain correct after refresh
@@ -99,6 +113,8 @@
 * [ ] Budget values remain consistent after saving
 * [ ] Activity type and displayed records remain consistent
 * [ ] No unrelated records appear in filtered views
+
+---
 
 ## Exploratory Testing
 
@@ -113,6 +129,8 @@
 * [ ] Suspicious behavior was investigated before reporting
 * [ ] False positives were excluded from Bug Reports
 
+---
+
 ## Regression / Retesting
 
 * [ ] BUG-001 — Director Availability Event creation retested
@@ -123,6 +141,8 @@
 * [ ] Previously reported defects are tracked separately
 * [ ] Confirmed defects are documented with reproducible steps
 
+---
+
 ## QA Documentation
 
 * [ ] Test Cases are documented
@@ -132,4 +152,4 @@
 * [ ] Confirmed defects have Bug Reports
 * [ ] Retest results are documented where applicable
 * [ ] Project documentation is anonymized
-* [ ] Project status is marked as ongoing
+* [ ] Project status is marked as completed
