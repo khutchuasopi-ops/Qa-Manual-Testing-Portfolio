@@ -20,7 +20,7 @@ A project has an active Production Budget with an expense category available.
 
 ## Actual Result
 
-The added expense was not correctly reflected in the Budget Sub-total and Total Budget calculations.
+The added expense is not correctly reflected in the Budget Sub-total and Total Budget calculations.
 
 ## Expected Result
 
@@ -32,4 +32,5 @@ Incorrect budget totals can lead to inaccurate financial information and incorre
 
 ## Retest
 
-The issue was fixed and successfully retested. After the fix, entering valid budget values resulted in the expected calculation and the expense was reflected correctly in the total.
+The issue was fixed and successfully retested. After the fix, the expense was correctly reflected in the expected budget calculation.
+
