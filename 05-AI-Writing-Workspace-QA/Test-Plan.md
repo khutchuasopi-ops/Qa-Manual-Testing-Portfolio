@@ -1,383 +1,296 @@
-# Test Plan
+# Test Plan — AI Writing Workspace QA
 
-## 1. Test Plan Overview
+## 1. Document Overview
 
-This test plan defines the manual QA approach used to evaluate the AI Writing Workspace in a staging/preview environment.
-
-The testing focuses on the application's main user workflows, including writing, planning, AI-assisted features, project management, and document interaction.
-
-The goal is to identify functional defects, state and persistence issues, AI workflow problems, and usability improvements.
-
----
-
-## 2. Test Objectives
-
-The main testing objectives are:
-
-- Verify that core application features work as expected.
-- Verify complete user workflows from start to finish.
-- Identify reproducible functional defects.
-- Verify data persistence after page refresh.
-- Verify application state after navigation.
-- Test AI Assistant workflows.
-- Verify Draft Editor behavior.
-- Verify Board interactions.
-- Verify Plan functionality.
-- Verify Project and Manuscript management.
-- Verify Poster upload and save behavior.
-- Verify Template interactions.
-- Verify Split View behavior.
-- Test conversation and context isolation.
-- Identify usability and UX issues.
-- Collect evidence for reproducible issues.
+**Project:** AI Writing Workspace
+**Testing Type:** Manual QA Testing
+**Tester Level:** Junior Manual QA Tester
+**Environment:** Staging / Preview
+**Production Testing:** Not included
 
 ---
 
-## 3. Test Scope
+## 2. Objective
 
-### In Scope
+The objective of this testing is to verify the main functionality of the AI Writing Workspace and identify functional, usability, persistence, navigation, and AI workflow issues.
 
-The following areas are included in testing:
-
-- Board
-- Draft
-- Draft Editor
-- Plan
-- AI Chat
-- Library
-- Projects / Manuscripts
-- Templates
-- Poster / Cover management
-- Split View
-- Navigation
-- Data persistence
-- Page refresh behavior
-- Conversation state
-- AI Assistant workflows
-- UI and UX behavior
-
-### Out of Scope
-
-The following areas are outside the scope of this testing:
-
-- Production environment
-- Performance testing
-- Load testing
-- Security testing
-- API testing
-- Automated testing
-- Backend infrastructure testing
-- Database-level testing
+The testing focuses on how the application behaves during normal user workflows, as well as selected negative and exploratory scenarios.
 
 ---
 
-## 4. Test Environment
+## 3. Scope
 
-### Environment
+The following areas are included in the testing scope:
 
-Staging / Preview
-
-### Testing Type
-
-Manual QA
-
-### Testing Methods
-
-- Functional Testing
-- Exploratory Testing
-- Regression Testing
-- End-to-End Testing
-- UI/UX Testing
-- State Testing
-- Persistence Testing
-- AI Feature Testing
-
-### Production
-
-Production was not tested.
+* Board
+* Draft creation and editing
+* Draft persistence
+* Draft Editor text input
+* AI Assistant
+* AI Chat
+* Plan
+* Library
+* Templates
+* Poster / Cover
+* Split View
+* Project / Manuscript details
+* Navigation
+* UI / UX
+* Data persistence
+* AI workflows
+* AI context and conversation state
 
 ---
 
-## 5. Testing Strategy
+## 4. Testing Approach
 
-Testing was performed using realistic end-user workflows.
-
-Instead of testing only individual elements, the application was tested across multiple states and interactions.
-
-The testing strategy included:
+The following manual testing approaches were used:
 
 ### Functional Testing
 
-Verify that application features behave according to their intended functionality.
+Verify that the main features work according to their expected behavior.
+
+Examples include:
+
+* Creating and opening Drafts
+* Editing Draft content
+* Creating Plan content
+* Using AI Assistant functionality
+* Working with Posters / Covers
+* Navigating between workspace areas
 
 ### Exploratory Testing
 
-Explore the application using realistic user actions to identify unexpected behavior.
+Explore the application beyond predefined test steps to identify unexpected behavior, inconsistent states, and usability problems.
 
-### End-to-End Testing
+### Smoke Testing
 
-Verify complete workflows across multiple application sections.
+Perform basic checks of the main workspace areas to confirm that the application is usable before deeper testing.
 
 ### Regression Testing
 
-Repeat previously tested workflows after encountering issues to verify whether behavior was consistent.
+Recheck relevant functionality after changes or fixes where applicable.
+
+### Negative Testing
+
+Test invalid, unexpected, or problematic user actions and observe how the application responds.
+
+### User-Flow Testing
+
+Test complete workflows from the user's perspective, including navigation between related workspace areas.
+
+### UI / UX Testing
+
+Check interface behavior, visibility, usability, and interaction feedback.
 
 ### Persistence Testing
 
-Refresh pages and reopen content to verify whether user data and changes were preserved.
+Check whether created or edited content remains available after actions such as refreshing or navigating between pages.
 
-### State Testing
+### AI Workflow Testing
 
-Check whether the application maintained the correct state after navigation, refresh, deletion, and switching between views.
+Check AI-related workflows, including:
 
-### AI Feature Testing
+* AI-generated content
+* AI Assistant interaction
+* AI Chat
+* Writing AI-generated content into Drafts
+* Plan generation and synchronization
 
-Test AI Assistant interactions, generated content, Draft creation, planning, and conversation context.
+### Context / State Testing
 
-### UI/UX Testing
-
-Evaluate whether interactive elements provide clear feedback and whether the interface behaves intuitively.
-
----
-
-## 6. Test Areas
-
-### 6.1 Board
-
-Test the following:
-
-- Item drag and drop
-- Moving items between sections
-- Item position persistence
-- Item deletion
-- Deleted item behavior after refresh
-
-### 6.2 Draft
-
-Test the following:
-
-- Draft opening
-- Initial Draft loading
-- AI Assistant interaction
-- Draft Editor text entry
-- Text behavior
-- Draft content persistence
-- Refresh behavior
-- AI-generated Draft content
-- New Draft behavior
-- Conversation context
-
-### 6.3 Plan
-
-Test the following:
-
-- Opening Plan
-- Assistant planning request
-- AI-generated planning options
-- Plan content update
-- Plan persistence after refresh
-
-### 6.4 AI Chat
-
-Test the following:
-
-- Sending messages
-- AI responses
-- New Chat behavior
-- Conversation state
-- Context isolation
-- Project-related conversations
-- Deleted Project conversation behavior
-
-### 6.5 Library
-
-Test the following:
-
-- Opening Projects / Manuscripts
-- Project details
-- Navigation
-- Details panel behavior
-
-### 6.6 Templates
-
-Test the following:
-
-- Template interaction
-- Draggable elements
-- Cursor behavior
-- Horizontal content behavior
-
-### 6.7 Poster / Cover
-
-Test the following:
-
-- Uploading images
-- Saving poster changes
-- Poster update behavior
-- Upload dialog behavior
-- Previously uploaded image behavior
-
-### 6.8 Split View
-
-Test the following:
-
-- Opening the same Draft in Split View
-- Multiple Draft panes
-- Pagination behavior
-- Page break behavior
-- Consistency between panes
+Check whether the application maintains the correct state and conversation context when switching between Drafts, Projects, Chats, and other workspace areas.
 
 ---
 
-## 7. Data Persistence Checks
+## 5. Test Environment
 
-Persistence testing is an important part of this project.
+Testing was performed in the **staging / preview environment**.
 
-The following actions were checked:
+Production was not included in the testing scope.
 
-- Enter content
-- Save content
-- Refresh the page
-- Reopen the content
-- Navigate away and return
-- Delete an item
-- Refresh after deletion
-- Change a poster
-- Reopen the upload dialog
-- Create a new conversation
-- Switch between different application sections
-
-The expected behavior was that saved changes should remain available and deleted content should no longer appear where applicable.
+Testing was performed through a web browser using the available AI Writing Workspace interface.
 
 ---
 
-## 8. AI Assistant Testing
+## 6. Test Data
 
-AI-related functionality was tested using realistic prompts and follow-up responses.
+Test data included:
 
-The testing included:
+* New and existing Drafts
+* Project / Manuscript content
+* AI-generated content
+* AI Chat conversations
+* Plan content
+* Template elements
+* Poster / Cover images
+* Workspace navigation states
 
-- Starting an AI interaction
-- Providing a writing topic
-- Providing additional information
-- Asking the AI to generate content
-- Asking the AI to create or update Draft content
-- Asking the AI to create planning content
-- Starting a new Draft
-- Starting a new Chat
-- Checking whether previous conversation context remained
-- Verifying whether AI-generated content appeared in the expected application area
-
-Special attention was given to cases where the AI indicated that content had been created or updated but the corresponding UI did not reflect the change.
+Where applicable, existing test data was reused to verify persistence and context behavior.
 
 ---
 
-## 9. Navigation and State Testing
+## 7. Entry Criteria
 
-Navigation was tested between major application areas.
+Testing can begin when:
 
-Examples included:
-
-- Library → Project / Manuscript
-- Project → Draft
-- Draft → Plan
-- Plan → Draft
-- Project → AI Chat
-- Opening the same Draft in Split View
-- Returning to previously opened content
-
-The application was also checked after navigation to determine whether the expected state was preserved.
+* The staging / preview environment is accessible.
+* The main workspace can be opened.
+* Required test areas are available.
+* Test data can be created or accessed.
+* The application is sufficiently stable for manual testing.
 
 ---
 
-## 10. Refresh Testing
+## 8. Exit Criteria
 
-Page refreshes were intentionally performed after important actions.
+Testing can be considered complete when:
 
-Examples included:
-
-- Entering Draft content
-- Deleting Board items
-- Creating Plan content
-- Changing poster images
-- Navigating between Draft and Plan
-- Starting new conversations
-
-The purpose was to identify issues that might not be visible during the initial interaction.
+* The planned test cases have been executed.
+* Observed failures have been documented.
+* Confirmed defects have been recorded as bug reports.
+* Behaviors requiring product clarification have been identified separately.
+* UX recommendations have been documented where appropriate.
+* The final test documentation reflects the actual testing results.
 
 ---
 
-## 11. Expected Quality Criteria
+## 9. Test Case Coverage
 
-The application should:
+A total of **28 test cases** are included in the project test suite.
 
-- Respond correctly to user actions.
-- Save user changes successfully.
-- Preserve saved content after refresh.
-- Remove deleted content where deletion is expected.
-- Maintain consistent application state.
-- Display generated content in the correct location.
-- Keep independent conversations isolated.
-- Provide clear feedback after user actions.
-- Maintain consistent behavior between different views.
-- Avoid unexpected data or context from unrelated workflows.
-
----
-
-## 12. Defect Documentation
-
-Each confirmed defect will be documented separately.
-
-Bug reports will contain:
-
-- Bug ID
-- Title
-- Preconditions
-- Steps to Reproduce
-- Expected Result
-- Actual Result
-- Priority
-- Environment
-- Evidence
-
-UX recommendations will be documented separately when the current functionality works but the user experience could be improved.
+| Area                    | Covered Test Cases |
+| ----------------------- | ------------------ |
+| Board                   | TC-001 – TC-004    |
+| Draft                   | TC-005 – TC-011    |
+| Plan                    | TC-012 – TC-015    |
+| Library                 | TC-016 – TC-017    |
+| Templates               | TC-018, TC-025     |
+| Poster / Cover          | TC-019 – TC-021    |
+| AI Chat                 | TC-022             |
+| Project / Manuscript    | TC-023 – TC-024    |
+| Split View              | TC-026             |
+| Navigation / General UI | TC-027 – TC-028    |
 
 ---
 
-## 13. Evidence
+## 10. Test Results Summary
 
-Supporting screenshots and screen recordings will be organized by application area.
+The current test execution contains:
 
-Evidence categories include:
+| Result                        |  Count |
+| ----------------------------- | -----: |
+| PASS                          |     12 |
+| FAIL                          |     11 |
+| Requires Product Confirmation |      4 |
+| UX Recommendation Only        |      1 |
+| **Total**                     | **28** |
 
-- Board
-- Draft
-- Plan
-- AI Chat
-- Library
-- Poster
-- Split View
+The test results identified **9 confirmed bugs** and **2 UX recommendations**.
 
-Evidence will be referenced from the relevant bug report or UX recommendation.
-
----
-
-## 14. Test Completion Criteria
-
-Testing for this project is considered complete when:
-
-- Core workflows have been tested.
-- Important application areas have been covered.
-- Reproducible defects have been documented.
-- Regression checks have been performed where appropriate.
-- UX recommendations have been identified.
-- Supporting evidence has been collected where available.
-- Test documentation has been organized in the portfolio.
+Four observations were separated from confirmed defects because the expected product behavior requires clarification.
 
 ---
 
-## 15. Test Result
+## 11. Defect Categories
 
-Overall testing identified multiple functional, state, persistence, AI workflow, and usability issues.
+The identified issues cover several areas:
 
-The detailed results are documented in the Test Scenarios, Test Cases, Checklists, Bug Reports, and UX Recommendations sections of this project.
+* Data persistence
+* Draft editing
+* AI-generated content
+* AI conversation context
+* Plan synchronization
+* Poster saving
+* Image upload state
+* Chat state
+* Split View pagination
+* UI / UX
+
+---
+
+## 12. Product Confirmation Items
+
+The following behaviors require product clarification before being classified as confirmed defects:
+
+* **TC-004** — Board item deletion behavior
+* **TC-005** — Draft initial loading behavior
+* **TC-023** — Conversation availability after Project deletion
+* **TC-025** — Horizontal Template content behavior
+
+These observations are intentionally kept separate from the confirmed bug count.
+
+---
+
+## 13. Confirmed Defects
+
+The project contains the following confirmed defects:
+
+| Bug ID  | Description                                                 | Related Test Case(s) |
+| ------- | ----------------------------------------------------------- | -------------------- |
+| BUG-001 | Draft content lost after refresh                            | TC-009               |
+| BUG-002 | Draft Editor lowercase automatically uppercase              | TC-008               |
+| BUG-003 | AI Assistant fails to write into editable Draft             | TC-010               |
+| BUG-004 | New Draft retains previous independent conversation context | TC-011               |
+| BUG-005 | AI-generated Plan content not reflected on Plan page        | TC-014, TC-015       |
+| BUG-006 | Save Poster action delayed/unresponsive                     | TC-020               |
+| BUG-007 | Upload dialog shows previous image                          | TC-021               |
+| BUG-008 | New Chat temporarily shows previous conversation            | TC-022               |
+| BUG-009 | Split View pagination/page breaks duplicated/reset          | TC-026               |
+
+---
+
+## 14. UX Recommendations
+
+Two UX recommendations were identified:
+
+### UX-001 — Grab Cursor for Draggable Template Elements
+
+A grab cursor would provide clearer visual feedback that Template elements can be dragged.
+
+### UX-002 — Close Button for Project / Manuscript Details
+
+A visible Close (X) button would make closing the details panel clearer and more convenient.
+
+---
+
+## 15. Risks and Limitations
+
+The following limitations apply to this test cycle:
+
+* Testing was performed in the staging / preview environment.
+* Production behavior was not tested.
+* Some observed behaviors require product clarification before they can be considered defects.
+* AI-generated results can vary depending on context and input.
+* Not every observed issue has a corresponding confirmed bug report.
+* No assumptions are made about undocumented product behavior.
+
+---
+
+## 16. Deliverables
+
+The project testing documentation includes:
+
+* Project Overview
+* Test Plan
+* Test Scenarios
+* Test Cases
+* Checklists
+* Bug Reports
+* UX Recommendations
+
+---
+
+## 17. Final Status
+
+**Testing Status:** Completed
+
+**Total Test Cases:** 28
+**PASS:** 12
+**FAIL:** 11
+**Requires Product Confirmation:** 4
+**UX Recommendation Only:** 1
+**Confirmed Bugs:** 9
+**UX Recommendations:** 2
+
+The test documentation records the observed application behavior and separates confirmed defects from behaviors that require product clarification.
