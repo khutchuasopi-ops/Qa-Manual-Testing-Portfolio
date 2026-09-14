@@ -1,149 +1,252 @@
-# Case Study — Legal Platform QA
+# Case Study – Legal Platform Manual Testing
 
 ## 1. Project Overview
 
-The Legal Platform is a web-based application designed to support legal professionals and users in managing legal-related workflows.
+This case study covers manual QA testing of a confidential legal technology platform.
 
-This project focused on manually testing the main user flows, validating functional requirements, checking different user interactions, and identifying defects that could affect the expected behavior of the platform.
+The main goal was to verify the functionality, input validation, search behavior, file handling, and data consistency of the platform from a user's perspective.
 
-**Role:** Junior Manual QA Tester  
-**Testing Type:** Manual Testing  
-**Environment:** Test Environment
+Testing focused on identifying functional issues, validating expected behavior, and documenting confirmed defects.
 
 ---
 
 ## 2. Testing Scope
 
-The testing covered the main functional areas of the Legal Platform, including:
+The following areas were included in the testing scope:
 
-- User authentication and access
-- Navigation
-- Legal case and document-related workflows
-- Forms and data entry
-- Search and filtering
-- User interactions
-- Validation messages
-- Positive and negative scenarios
-- UI behavior
-- Error handling
-
-The goal was to verify that the application behaved according to the expected requirements and that users could complete the main workflows successfully.
+- Dashboard
+- Repository
+- Documents
+- File Upload
+- File Replacement
+- Templates
+- Events
+- Workflows
+- AI Assistant
+- Search
+- Recycle Bin
+- General Input Validation
+- Playbook Generation
 
 ---
 
 ## 3. Testing Approach
 
-The project included:
+The testing was performed manually using documented test scenarios, test cases, checklists, and exploratory testing.
 
-- Functional testing
-- Exploratory testing
-- Smoke testing
-- Regression testing
-- Positive testing
-- Negative testing
-- User-flow testing
-- UI checks
-- Form validation testing
-- Error handling checks
+The following testing techniques were used:
 
-Test scenarios and test cases were used to verify expected behavior, while exploratory testing was used to identify additional issues outside the predefined steps.
+- Functional Testing
+- Positive Testing
+- Negative Testing
+- Boundary Value Testing
+- Input Validation
+- UI Testing
+- Exploratory Testing
+- Regression Testing
+- Error Handling
+- Data Consistency Testing
+- Search and Filtering Testing
 
----
-
-## 4. Test Execution
-
-The project included **75 test scenarios** and **60 test cases**.
-
-The test cases covered the main functional areas of the platform and included both positive and negative scenarios.
-
-During execution, defects were documented when the actual result did not match the expected result.
+The main focus was on verifying expected user behavior and identifying issues that could affect functionality, data consistency, usability, or validation.
 
 ---
 
-## 5. Key Findings
+## 4. Test Environment
 
-Testing identified several functional issues across the platform.
+| Item | Details |
+|---|---|
+| Environment | Staging |
+| Browser | Google Chrome |
+| Testing Type | Manual QA |
+| Documentation | Markdown |
+| Repository | GitHub |
+
+---
+
+## 5. Test Documentation
+
+The project contains:
+
+- Test Plan
+- Test Scenarios
+- Test Cases
+- Checklists
+- Exploratory Testing Notes
+- Test Execution
+- Bug Reports
+- Case Study
+- Project Overview
+
+A total of **60 test cases** were documented and executed.
+
+---
+
+## 6. Test Execution Summary
+
+All 60 documented test cases were executed.
+
+| Result | Count |
+|---|---:|
+| PASS | 55 |
+| FAIL | 5 |
+| BLOCKED | 0 |
+| Total | 60 |
+
+### Execution Result
+
+- **55 test cases passed**
+- **5 test cases failed**
+- **0 test cases were blocked**
+- **60 test cases were executed in total**
+
+The five failed test cases were associated with the five confirmed defects documented in the project.
+
+---
+
+## 7. Failed Test Cases and Defect Traceability
+
+| Test Case | Result | Related Bug | Area |
+|---|---|---|---|
+| TC-REP-003 | FAIL | BUG-001 | File Replacement |
+| TC-SEARCH-003 | FAIL | BUG-002 | Search |
+| TC-EVENT-003 | FAIL | BUG-003 | Events |
+| TC-EVENT-005 | FAIL | BUG-004 | Events |
+| TC-TEMP-004 | FAIL | BUG-005 | Templates |
+
+---
+
+## 8. Confirmed Defects
+
+During execution, five confirmed defects were documented.
+
+### BUG-001 — File Replacement
+
+After replacing an existing file, the old file name remained visible instead of being updated to the new file name.
+
+**Severity:** Medium  
+**Priority:** Medium
+
+This issue can create confusion about which file is currently stored in the system.
+
+---
+
+### BUG-002 — Search
+
+Search cursor and clear behavior were inconsistent during search interaction.
+
+**Severity:** Low  
+**Priority:** Medium
+
+The issue affects the usability of the search functionality.
+
+---
+
+### BUG-003 — Events
+
+The Events form accepted a whitespace-only name.
+
+**Severity:** Medium  
+**Priority:** High
+
+A whitespace-only value should not be accepted as a valid event name.
+
+---
+
+### BUG-004 — Events
+
+The Events form accepted an excessively long event name.
+
+**Severity:** Medium  
+**Priority:** Medium
+
+The input should have an appropriate validation rule or maximum length.
+
+---
+
+### BUG-005 — Templates
+
+The Templates form accepted an excessively long template name.
+
+**Severity:** Medium  
+**Priority:** Medium
+
+The input should have an appropriate validation rule or maximum length.
+
+---
+
+## 9. Defect Summary
+
+| Severity | Number of Defects |
+|---|---:|
+| Critical | 0 |
+| High | 0 |
+| Medium | 4 |
+| Low | 1 |
+| **Total** | **5** |
+
+### Priority Summary
+
+| Priority | Number of Defects |
+|---|---:|
+| High | 1 |
+| Medium | 4 |
+| Low | 0 |
+| **Total** | **5** |
+
+All five documented defects remained open at the time of this test documentation.
+
+---
+
+## 10. Key Testing Findings
+
+The testing identified issues in several different areas of the platform.
 
 The main findings were related to:
 
-- Form behavior and validation
-- Data handling
-- User interactions
-- Navigation and workflow behavior
-- Error handling
-- UI behavior
-- Legal case and document-related functionality
+- Data consistency after file replacement
+- Search interaction and usability
+- Input validation
+- Boundary value handling
+- Event name validation
+- Template name validation
 
-Each confirmed issue was documented as a separate bug report with reproduction steps, actual result, expected result, severity, and environment.
-
----
-
-## 6. Confirmed Bug Reports
-
-A total of **5 bug reports** were documented during the project.
-
-The bugs were reviewed and linked to the relevant test scenarios where applicable.
-
-The bug reports were documented using a simple structure suitable for common issue-tracking tools such as Jira, YouTrack, or ClickUp.
-
-Each report included:
-
-- Steps
-- Actual Result
-- Expected Result
-- Severity
-- Environment
+The findings show the importance of validating both normal user input and invalid or boundary-value input.
 
 ---
 
-## 7. Defect Documentation
+## 11. QA Activities Demonstrated
 
-The identified defects were documented with clear and reproducible steps.
+This project demonstrates practical experience with:
 
-The main goal was to make each issue easy to understand and reproduce by another tester or developer.
-
-The bug reports were kept separate from general observations so that confirmed functional defects were not mixed with issues that required additional clarification.
-
----
-
-## 8. Test Coverage
-
-The test coverage included the main user flows and functional areas available in the Legal Platform.
-
-Both expected and unexpected user behavior was considered during testing.
-
-Negative scenarios were also included to verify how the application handled invalid input, incorrect actions, and other error conditions.
-
----
-
-## 9. What I Learned
-
-This project helped me improve my practical understanding of manual QA testing in a legal-platform environment.
-
-During the project, I practiced:
-
-- Creating structured test scenarios
-- Writing detailed test cases
+- Reviewing application functionality
+- Creating test scenarios
+- Designing detailed test cases
 - Executing manual tests
+- Performing positive and negative testing
+- Performing boundary value testing
 - Performing exploratory testing
-- Performing smoke and regression testing
-- Testing positive and negative scenarios
-- Checking form validation and error handling
-- Identifying reproducible defects
-- Writing clear bug reports
-- Linking defects with related test scenarios
-- Verifying expected versus actual results
-
-The project also helped me understand the importance of accurate documentation when testing workflows that involve user data and legal-related information.
+- Performing regression testing
+- Identifying functional defects
+- Documenting bugs with clear reproduction information
+- Assigning severity and priority
+- Maintaining defect traceability
+- Summarizing test execution results
 
 ---
 
-## 10. Conclusion
+## 12. Conclusion
 
-The Legal Platform QA project provided practical experience in testing a web-based application through structured and exploratory manual testing.
+The Legal Platform testing cycle covered **60 documented and executed test cases**.
 
-The project included **75 test scenarios**, **60 test cases**, and **5 documented bug reports**.
+The final execution result was:
 
-Through this project, I practiced the complete basic manual testing workflow: understanding requirements, creating test scenarios and test cases, executing tests, identifying defects, documenting bugs, and maintaining traceability between testing and reported issues.
+- **55 PASS**
+- **5 FAIL**
+- **0 BLOCKED**
 
-This project demonstrates my ability as a **Junior Manual QA Tester** to test functional workflows systematically, identify unexpected behavior, and document findings clearly and accurately.
+Five confirmed defects were identified and documented.
+
+The testing provided coverage across core platform functionality, file handling, search, events, templates, validation, and data consistency.
+
+This project demonstrates a practical manual QA workflow from test planning and test case design through execution, defect reporting, and final test summary.
