@@ -2,132 +2,148 @@
 
 ## Project Overview
 
-This project presents a manual QA testing case study for an AI-powered writing and planning workspace.
+This project covers manual QA testing of an anonymized AI Writing Workspace application.
 
-The product name has been anonymized for portfolio purposes.
-
-Testing was performed only in the **Staging / Preview environment**. Production was not tested.
-
----
+The testing focused on core writing workflows, AI-assisted features, data persistence, project and library management, poster functionality, chat behavior, templates, split view, and general UI behavior.
 
 ## Testing Scope
 
-The testing covered the following areas:
+The following areas were tested:
 
 - Board
-- Draft Editor
+- Draft
 - Plan
 - AI Assistant
-- AI Chat
-- Library
+- Library / Project Management
 - Templates
-- Poster / Cover
 - Split View
-- Project / Manuscript management
-- Navigation
-- UI / UX
-- Data persistence
-- AI workflows and context handling
-
----
+- Poster / Cover
+- Navigation and UI
+- Data Persistence and State
+- AI-assisted writing workflows
 
 ## Testing Approach
 
-The main testing approaches used were:
+The application was tested manually using:
 
-- Functional testing
-- Exploratory testing
-- Smoke testing
-- Regression testing
-- Negative testing
-- User-flow testing
-- UI testing
-- Data persistence testing
-- AI workflow testing
-- Context and state validation
+- Functional Testing
+- Exploratory Testing
+- End-to-End User Flow Testing
+- Data Persistence and State Testing
+- AI Feature Testing
+- Negative Testing
+- UI and Usability Testing
 
----
+The testing included normal user flows as well as scenarios involving data persistence, navigation, state changes, AI-generated content, and invalid or unexpected behavior.
 
-## Key QA Findings
+## Test Execution Summary
 
-The testing identified issues related to:
+A total of **28 test cases** were executed.
 
-- Draft content persistence
-- Draft Editor text formatting
-- AI-generated Draft content
-- AI context isolation
-- AI-generated Plan persistence
-- Poster saving and image state
-- AI Chat state handling
-- Split View pagination
+| Result | Count |
+|---|---:|
+| PASS | 12 |
+| FAIL | 11 |
+| Requires Product Confirmation | 4 |
+| UX Recommendation Only | 1 |
+| **Total** | **28** |
 
-The project contains documented bug reports for confirmed issues and separate UX recommendations for usability improvements.
+In addition to the test case results, **2 UX recommendations** were documented. One of them was associated with a test case that otherwise passed.
 
----
+## Confirmed Defects
 
-## Confirmed Bug Reports
+Nine confirmed defects were identified and documented.
 
-| ID | Area | Issue |
+| Bug ID | Area | Issue |
 |---|---|---|
 | BUG-001 | Draft | Draft content is lost after refresh |
-| BUG-002 | Draft Editor | Lowercase text is automatically entered in uppercase |
-| BUG-003 | AI Assistant / Draft | AI Assistant fails to write content into an editable Draft |
-| BUG-004 | AI Assistant / Draft | New Draft retains context from a previous independent conversation |
+| BUG-002 | Draft Editor | Lowercase text is automatically displayed as uppercase |
+| BUG-003 | AI Assistant / Draft | AI Assistant fails to write content into the editable Draft |
+| BUG-004 | AI Assistant / Draft | New Draft retains the previous independent conversation context |
 | BUG-005 | Plan / AI Assistant | AI-generated Plan content is not reflected on the Plan page |
-| BUG-006 | Poster | Save Poster action is delayed or unresponsive |
-| BUG-007 | Poster | Upload dialog shows the previous image instead of the current poster |
+| BUG-006 | Poster | Saving Poster changes is delayed or unresponsive |
+| BUG-007 | Poster | Upload dialog shows a previous image instead of the current poster |
 | BUG-008 | AI Chat | New Chat temporarily displays the previous conversation |
-| BUG-009 | Split View | Pagination/page breaks are duplicated or reset in the second pane |
+| BUG-009 | Split View | Pagination and page controls are duplicated or reset in the second pane |
 
----
+## Bug Traceability
+
+| Bug ID | Related Test Case(s) |
+|---|---|
+| BUG-001 | TC-009 |
+| BUG-002 | TC-008 |
+| BUG-003 | TC-010 |
+| BUG-004 | TC-011 |
+| BUG-005 | TC-014, TC-015 |
+| BUG-006 | TC-020 |
+| BUG-007 | TC-021 |
+| BUG-008 | TC-022 |
+| BUG-009 | TC-026 |
+
+## Product Confirmation Items
+
+Four test cases required product confirmation rather than being recorded as confirmed defects:
+
+- **TC-004** — Draft initial loading behavior
+- **TC-005** — Initial Draft loading behavior
+- **TC-023** — Deleted project conversation behavior
+- **TC-025** — Horizontal Template content behavior
+
+These items were kept separate from confirmed bugs because the observed behavior required confirmation of the intended product behavior.
 
 ## UX Recommendations
 
-The project also includes separate UX recommendations for usability improvements, including:
+Two UX recommendations were identified during testing:
 
-- Adding a grab cursor for draggable Template elements
-- Adding a Close (X) button to the Project / Manuscript details panel
+- **UX-001** — Grab cursor behavior
+- **UX-002** — Close button usability
 
-These recommendations are documented separately from confirmed functional bugs.
+These recommendations are separate from confirmed functional defects.
 
----
+## Key Findings
 
-## Environment
+The main issues identified during testing were related to:
 
-**Environment:** Staging / Preview
+- Data persistence after page refresh
+- Text input behavior
+- AI-generated content integration
+- Conversation and application state
+- Plan synchronization
+- Poster saving and image handling
+- New chat state
+- Split View pagination and page controls
 
-**Production:** Out of scope
+The testing showed that several issues could affect the reliability of user data, consistency between related application areas, and the overall user experience.
 
----
+## QA Activities Demonstrated
 
-## QA Deliverables
+This project demonstrates practical experience with:
 
-This project includes:
+- Manual test case execution
+- Functional testing
+- Exploratory testing
+- End-to-end user flow testing
+- Data persistence testing
+- State behavior testing from a user perspective
+- AI feature testing
+- Negative testing
+- UI and usability testing
+- Defect identification
+- Bug reporting
+- Test result documentation
+- Defect traceability
 
-- Project Overview
-- Test Plan
-- Test Scenarios
-- Test Cases
-- Checklists
-- Bug Reports
-- UX Recommendations
+## Conclusion
 
----
+The AI Writing Workspace testing covered **28 executed test cases** across the main writing, AI, project management, poster, chat, template, and split-view workflows.
 
-## QA Skills Demonstrated
+The final test execution results were:
 
-- Manual Testing
-- Functional Testing
-- Exploratory Testing
-- Regression Testing
-- Smoke Testing
-- Negative Testing
-- UI / UX Testing
-- User Flow Testing
-- Data Persistence Testing
-- AI Workflow Testing
-- Bug Reporting
-- Test Case Design
-- Test Scenario Design
-- Test Documentation
-- GitHub-based QA Documentation
+- **12 PASS**
+- **11 FAIL**
+- **4 Requires Product Confirmation**
+- **1 UX Recommendation Only**
+
+A total of **9 confirmed bugs** and **2 UX recommendations** were documented.
+
+The project demonstrates a practical manual QA approach to testing an application that combines traditional workspace functionality with AI-assisted features.
