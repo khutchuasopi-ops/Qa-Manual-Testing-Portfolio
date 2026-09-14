@@ -1,199 +1,261 @@
-# QA Checklists
+# Checklists — AI Writing Workspace QA
 
-## 1. Purpose
+## 1. Board
 
-This checklist was used to support manual testing of the AI Writing Workspace.
-
-It covers the main application areas, common user flows, AI features, data persistence, UI behavior, and state-related checks.
-
-**Environment:** Staging / Preview
-**Testing Type:** Manual Testing
-**Production:** Not Tested
-
----
-
-# 2. Board Checklist
-
-* [x] Board opens successfully
-* [x] Board items are visible
-* [x] Board items can be moved
-* [x] Board items can be moved between sections
-* [x] Item position remains after navigation
-* [ ] Board item deletion behavior requires product confirmation
+* [ ] Board opens successfully.
+* [ ] Existing items are displayed correctly.
+* [ ] User can open an existing item.
+* [ ] User can create a new item.
+* [ ] User can edit an existing item.
+* [ ] Changes are saved correctly.
+* [ ] Delete action is available for applicable items.
+* [ ] Deletion behavior matches the intended product behavior.
+* [ ] Deleted items are removed from the expected location.
+* [ ] No unexpected errors are displayed during Board operations.
 
 ---
 
-# 3. Draft Checklist
+## 2. Draft Creation and Loading
 
-* [ ] Draft loads correctly on the initial attempt
-* [x] Draft can be opened
-* [x] AI Assistant is available from Draft
-* [ ] AI Assistant request can be submitted without unexpected errors
-* [ ] AI Assistant-generated content can be written into an editable Draft
-* [ ] Lowercase text remains in the expected case
-* [ ] Draft content remains after page refresh
-* [ ] New Draft starts with an independent AI conversation context
-* [x] Draft and AI Chat inputs remain separate
-* [x] Draft → Plan → Draft navigation works
+* [ ] Draft area opens successfully.
+* [ ] User can create a new Draft.
+* [ ] User can open an existing Draft.
+* [ ] Draft content loads correctly.
+* [ ] Initial Draft loading behavior is consistent.
+* [ ] Loading does not display unexpected application errors.
+* [ ] Draft remains accessible after navigating to another workspace area.
+* [ ] Draft can be reopened successfully.
 
 ---
 
-# 4. Plan Checklist
+## 3. Draft Editor
 
-* [x] Plan page opens successfully
-* [x] AI Assistant is available on the Plan page
-* [x] Plan Assistant accepts user input
-* [ ] AI-generated Plan is correctly reflected on the Plan page
-* [ ] Plan content remains correctly available after refresh
-
----
-
-# 5. Library and Project Details Checklist
-
-* [x] Library opens
-* [x] Project can be opened from Library
-* [x] Project Details information is displayed
-* [ ] Project Details close control could be clearer
-* [ ] Project deletion and related conversation behavior requires product confirmation
+* [ ] Draft Editor opens correctly.
+* [ ] User can enter text.
+* [ ] Lowercase characters remain lowercase when entered.
+* [ ] Uppercase characters remain uppercase when entered.
+* [ ] Mixed-case text is preserved.
+* [ ] Text can be edited.
+* [ ] Edited content remains visible before leaving the page.
+* [ ] Editor does not unexpectedly modify user input.
+* [ ] No unexpected errors are displayed while editing.
 
 ---
 
-# 6. Poster Checklist
+## 4. Draft Persistence
 
-* [x] Poster area opens
-* [x] Image can be uploaded
-* [ ] Save action responds without an unnecessary delay
-* [ ] Current poster/image is displayed correctly in the upload dialog
-* [ ] Poster state remains consistent after saving
-
----
-
-# 7. AI Chat Checklist
-
-* [x] AI Chat opens
-* [x] User can start a conversation
-* [ ] New Chat starts without temporarily displaying the previous conversation
-* [ ] Conversation behavior after project deletion requires product confirmation
+* [ ] New Draft content can be created.
+* [ ] Draft changes can be saved.
+* [ ] Saved content remains available after navigation.
+* [ ] Saved content remains available after reopening the Draft.
+* [ ] Saved content remains available after page refresh.
+* [ ] Refresh does not unexpectedly remove Draft content.
+* [ ] Draft state remains consistent when moving between workspace areas.
 
 ---
 
-# 8. Templates Checklist
+## 5. AI Assistant
 
-* [x] Templates area opens
-* [x] Template elements can be selected
-* [x] Template elements can be dragged
-* [ ] Dragging could provide a clearer grab/grabbing cursor
-* [ ] Horizontal Template content behavior requires product confirmation
-
----
-
-# 9. Split View Checklist
-
-* [x] Split View can be opened
-* [x] Content is displayed in the available panes
-* [ ] Pagination works consistently between panes
-* [ ] Page numbers or controls do not duplicate unexpectedly
-* [ ] Pagination does not reset unexpectedly in the second pane
+* [ ] AI Assistant opens successfully.
+* [ ] User can enter a request.
+* [ ] AI Assistant responds to the request.
+* [ ] Generated content is displayed correctly.
+* [ ] Generated content can be used in the Draft workflow.
+* [ ] AI-generated content can be inserted into the editable Draft.
+* [ ] Generated content does not replace unrelated Draft content.
+* [ ] AI Assistant maintains the correct Draft context.
+* [ ] Unexpected errors are not displayed during normal AI interaction.
 
 ---
 
-# 10. Data Persistence Checklist
+## 6. AI Conversation Context
 
-* [ ] Draft content remains after refresh
-* [ ] Plan content remains correctly available after refresh
-* [x] Board item position remains after navigation
-* [ ] Poster saved state remains consistent
-* [ ] Application state remains consistent after navigation between related areas
-
----
-
-# 11. AI Workflow Checklist
-
-* [x] AI Assistant is available in the relevant areas
-* [x] User can enter AI requests
-* [ ] AI-generated content is correctly transferred to an editable Draft
-* [ ] New Draft does not incorrectly reuse previous independent conversation context
-* [ ] AI-generated Plan is correctly reflected on the Plan page
-* [ ] New AI Chat does not temporarily display the previous conversation
+* [ ] Existing conversations can be opened.
+* [ ] New conversations can be started.
+* [ ] A new Draft starts with the correct conversation context.
+* [ ] Previous independent conversations are not incorrectly reused.
+* [ ] Switching between Drafts does not mix unrelated conversations.
+* [ ] New Chat does not temporarily display a previous conversation.
+* [ ] Conversation state remains consistent after entering a new message.
+* [ ] Deleted Project conversation behavior matches the intended product behavior.
 
 ---
 
-# 12. Navigation and State Checklist
+## 7. Plan
 
-* [x] Main application areas can be opened
-* [x] Library → Project navigation works
-* [x] Draft → Plan → Draft navigation works
-* [ ] Draft initial loading behavior requires further confirmation
-* [ ] AI Chat state is cleared correctly when starting a new chat
-* [ ] Application state remains consistent after refresh
-* [ ] Split View state remains consistent between panes
-
----
-
-# 13. UI and Usability Checklist
-
-* [x] Main UI elements are visible
-* [x] Project information is readable
-* [x] Template elements can be interacted with
-* [ ] Project Details close control could be clearer
-* [ ] Draggable Template elements could provide a clearer grab/grabbing cursor
-* [ ] Text formatting behavior matches expected user input
+* [ ] Plan page opens successfully.
+* [ ] User can access Plan functionality from a Draft.
+* [ ] Plan content can be created.
+* [ ] Plan content is displayed correctly.
+* [ ] AI-generated Plan content is reflected on the Plan page.
+* [ ] Plan content remains available after navigation.
+* [ ] Plan content remains available after page refresh.
+* [ ] Plan state is synchronized with the related Draft.
+* [ ] Empty Plan states are handled correctly.
+* [ ] No unexpected errors are displayed.
 
 ---
 
-# 14. Defect-Related Checks
+## 8. Library
 
-The following confirmed defects were identified during testing:
-
-* [ ] BUG-001 — Draft content lost after refresh
-* [ ] BUG-002 — Lowercase text automatically entered/displayed as uppercase
-* [ ] BUG-003 — AI Assistant fails to write content into an editable Draft
-* [ ] BUG-004 — New Draft retains previous independent conversation context
-* [ ] BUG-005 — AI-generated Plan not correctly reflected on Plan page
-* [ ] BUG-006 — Save Poster delayed/unresponsive
-* [ ] BUG-007 — Upload dialog shows previous image instead of current poster
-* [ ] BUG-008 — New Chat temporarily displays previous conversation
-* [ ] BUG-009 — Split View pagination/page controls duplicated or reset in second pane
-
-**Total Confirmed Bugs:** 9
+* [ ] Library opens successfully.
+* [ ] Available Library content is displayed.
+* [ ] User can select an existing item.
+* [ ] Selected content opens correctly.
+* [ ] Library content remains accessible after navigation.
+* [ ] No unexpected errors occur when opening Library items.
 
 ---
 
-# 15. Product Confirmation Items
+## 9. Templates
 
-The following findings were observed but were not classified as confirmed defects:
-
-* [ ] Board item deletion behavior
-* [ ] Initial Draft loading behavior
-* [ ] Conversation state after project deletion
-* [ ] Horizontal Template content behavior
-
-These items require confirmation of the intended product behavior before being classified as defects.
-
----
-
-# 16. UX Recommendations
-
-The following usability improvements were identified:
-
-* [ ] Make the Project Details Close/X control clearer
-* [ ] Provide a grab/grabbing cursor for draggable Template elements
-
-These recommendations are not counted as confirmed bugs.
+* [ ] Templates area opens successfully.
+* [ ] Available Templates are displayed.
+* [ ] Template content is visible.
+* [ ] Template elements can be interacted with as intended.
+* [ ] Draggable elements provide clear visual feedback.
+* [ ] Drag-and-drop behavior works as expected.
+* [ ] Horizontal Template content follows the intended product behavior.
+* [ ] Template layout remains usable at the supported screen size.
+* [ ] No unexpected content is missing or duplicated.
 
 ---
 
-# 17. Checklist Result
+## 10. Poster / Cover
 
-The checklist supported manual testing across the main areas of the AI Writing Workspace.
+* [ ] Poster/Cover area opens successfully.
+* [ ] Existing Poster/Cover content is displayed.
+* [ ] User can make changes.
+* [ ] Save Poster action is available.
+* [ ] Save Poster responds within a reasonable time.
+* [ ] Clear feedback is provided after saving.
+* [ ] Saved changes remain visible after reopening.
+* [ ] Image upload functionality opens correctly.
+* [ ] Upload dialog shows the correct current state.
+* [ ] Previous images are not incorrectly displayed in a new upload operation.
+* [ ] Uploaded images are displayed correctly.
 
-Testing identified:
+---
 
-* **28 detailed Test Cases**
-* **9 confirmed Bug Reports**
-* **4 findings requiring Product Confirmation**
-* **2 UX recommendations**
+## 11. Project / Manuscript Details
 
-Testing was performed in the **Staging / Preview environment**.
+* [ ] Project/Manuscript details can be opened.
+* [ ] Details content is displayed correctly.
+* [ ] Details panel does not hide important information.
+* [ ] Panel can be closed successfully.
+* [ ] Closing the panel is clear to the user.
+* [ ] A visible Close (X) control is available or recommended where appropriate.
+* [ ] Opening and closing the panel does not affect unrelated content.
 
-The **Production environment was not tested**.
+---
+
+## 12. Split View
+
+* [ ] Split View opens successfully.
+* [ ] Document content is displayed correctly.
+* [ ] Page navigation works.
+* [ ] Page numbers correspond to the displayed content.
+* [ ] Moving between pages does not duplicate content.
+* [ ] Pages do not unexpectedly reset.
+* [ ] Pagination remains consistent during repeated navigation.
+* [ ] Split View remains usable after several page changes.
+
+---
+
+## 13. Navigation
+
+* [ ] Main workspace areas can be opened.
+* [ ] Navigation between areas works correctly.
+* [ ] Navigation does not cause unexpected page errors.
+* [ ] Returning to a previous area preserves the expected state.
+* [ ] Navigation does not incorrectly reuse unrelated content.
+* [ ] Browser refresh does not unexpectedly break the current workflow.
+* [ ] Main navigation remains usable throughout the workflow.
+
+---
+
+## 14. Data Persistence
+
+* [ ] Newly created content is retained.
+* [ ] Edited content is retained.
+* [ ] Saved Draft content remains after refresh.
+* [ ] Plan content remains after refresh.
+* [ ] Changes remain after reopening the relevant area.
+* [ ] Data does not unexpectedly disappear after navigation.
+* [ ] Data from one Draft does not incorrectly appear in another Draft.
+* [ ] Previous conversation data does not incorrectly appear in a new Chat.
+
+---
+
+## 15. UI / UX
+
+* [ ] Buttons are readable in their normal state.
+* [ ] Button text remains readable on hover.
+* [ ] Interactive elements provide clear visual feedback.
+* [ ] Draggable elements indicate that they can be dragged.
+* [ ] Close controls are easy to identify.
+* [ ] Loading states are understandable.
+* [ ] Save actions provide appropriate feedback.
+* [ ] Dialogs display the correct current state.
+* [ ] No unexpected duplicated content is visible.
+* [ ] Layout remains usable during normal interaction.
+
+---
+
+## 16. Error Handling
+
+* [ ] Unexpected application errors are not displayed during normal workflows.
+* [ ] Error messages are understandable.
+* [ ] Invalid or unsupported actions are handled appropriately.
+* [ ] The application does not expose raw technical error messages unnecessarily.
+* [ ] Failed actions do not silently remove user data.
+* [ ] Failed actions provide appropriate feedback where applicable.
+* [ ] The user can continue using the application after a recoverable error.
+
+---
+
+## 17. Smoke Checklist
+
+* [ ] Workspace opens successfully.
+* [ ] Board opens.
+* [ ] Draft opens.
+* [ ] New Draft can be created.
+* [ ] Draft Editor is usable.
+* [ ] AI Assistant opens.
+* [ ] AI Chat opens.
+* [ ] Plan opens.
+* [ ] Library opens.
+* [ ] Templates open.
+* [ ] Poster/Cover opens.
+* [ ] Project/Manuscript details open.
+* [ ] Split View opens.
+* [ ] Main navigation works.
+* [ ] No blocking error prevents basic workspace usage.
+
+---
+
+## 18. Regression Checklist
+
+After a relevant fix or application update, recheck:
+
+* [ ] Draft content persistence.
+* [ ] Draft Editor text case.
+* [ ] AI Assistant → Draft content insertion.
+* [ ] New Draft conversation context.
+* [ ] Plan synchronization.
+* [ ] Poster save behavior.
+* [ ] Poster image upload state.
+* [ ] New Chat conversation state.
+* [ ] Split View pagination.
+* [ ] Related navigation and persistence behavior.
+
+---
+
+## 19. Testing Notes
+
+* Testing is performed in the staging / preview environment.
+* Production is outside the current testing scope.
+* Confirmed defects are documented separately in the Bug Reports folder.
+* Behaviors that require product clarification are not automatically classified as bugs.
+* UX observations are documented separately from functional defects.
+* The checklist is intended to support repeatable manual testing and regression checks.
