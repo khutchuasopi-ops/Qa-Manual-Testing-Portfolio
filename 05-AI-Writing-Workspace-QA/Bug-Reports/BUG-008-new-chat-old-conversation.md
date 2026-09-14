@@ -1,41 +1,57 @@
-# BUG-008 — New Chat Temporarily Displays the Previous Conversation
+# BUG-008 — New Chat Temporarily Shows Previous Conversation
 
-## Title
-New Chat temporarily displays the previous conversation
+## Summary
+
+When the user starts a **New Chat**, the previous conversation is temporarily displayed before the new conversation state is initialized.
 
 ## Preconditions
-- User is logged in.
-- An existing AI Chat conversation contains messages.
+
+* User has access to AI Chat.
+* An existing conversation contains previous messages.
 
 ## Steps to Reproduce
-1. Open AI Chat.
-2. Open an existing conversation containing messages.
-3. Click `New Chat`.
-4. Observe the conversation area before entering any new text.
-5. Enter a new message.
-6. Observe the conversation area again.
 
-## Expected Result
-Clicking `New Chat` should immediately open a clean conversation with no messages from the previous chat.
+1. Open **AI Chat**.
+2. Open an existing conversation containing messages.
+3. Select **New Chat**.
+4. Immediately observe the conversation area before entering a new message.
+5. Enter a new message.
+6. Observe the conversation again.
 
 ## Actual Result
-After clicking `New Chat`, the previous conversation remains visible temporarily.
 
-After entering a new message, the chat refreshes and the previous conversation disappears.
+After selecting **New Chat**, messages from the previous conversation are temporarily displayed.
 
-## Priority
-Medium
+The previous conversation remains visible until the user enters a new message, after which the new conversation state is displayed.
+
+## Expected Result
+
+After selecting **New Chat**, the previous conversation should be cleared immediately.
+
+The user should see a clean new conversation state before entering the first message.
 
 ## Severity
-Minor
+
+**Medium**
 
 ## Environment
-- Environment: Staging / Preview
-- Testing type: Manual QA
-- Area: AI Chat
 
-## Evidence
-Screen recording showing the previous conversation remaining visible immediately after clicking New Chat, followed by the state after entering a new message.
+**Staging / Preview**
+
+## Related Test Case
+
+**TC-022 — AI Chat: Start New Chat**
 
 ## Status
-Open
+
+**Open**
+
+## Reproduction
+
+**Reproduced during manual testing.**
+
+## Notes
+
+Displaying messages from a previous conversation when starting a new Chat can cause confusion and may make the user believe that the previous conversation is still active.
+
+The new Chat state should be initialized before the conversation area is displayed to the user.
