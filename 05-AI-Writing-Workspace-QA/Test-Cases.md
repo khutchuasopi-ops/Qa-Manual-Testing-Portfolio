@@ -1,827 +1,697 @@
-# Test Cases
+# Test Cases — AI Writing Workspace QA
 
-## 1. Purpose
+## 1. Test Case Summary
 
-This document contains the detailed manual test cases used for testing the AI Writing Workspace.
-
-The test cases cover the main user flows, AI-assisted writing features, data persistence, navigation, UI behavior, and state handling.
-
-Testing was performed in the Staging/Preview environment.
-
----
-
-## 2. Test Case Statuses
-
-| Status                        | Meaning                                                                |
-| ----------------------------- | ---------------------------------------------------------------------- |
-| PASS                          | Expected behavior was observed                                         |
-| FAIL                          | Actual behavior did not match the expected result                      |
-| Requires Product Confirmation | The behavior needs clarification or confirmation from the product team |
-| UX Recommendation             | The functionality works, but a usability improvement was identified    |
+| Status                        |  Count |
+| ----------------------------- | -----: |
+| PASS                          |     12 |
+| FAIL                          |     11 |
+| Requires Product Confirmation |      4 |
+| UX Recommendation Only        |      1 |
+| **Total**                     | **28** |
 
 ---
 
-# 3. Board
+## 2. Test Cases
 
-## TC-001 — Move a Board Item
+### TC-001 — Board: Open Existing Item
 
-**Scenario:** Board item positioning
+**Priority:** Medium
+**Status:** PASS
 
-**Preconditions:**
+**Precondition:** Existing items are available on the Board.
 
-* User is on the Board page.
-* At least one movable item is available.
+**Steps:**
+
+1. Open the AI Writing Workspace.
+2. Navigate to the Board.
+3. Select an existing item.
+4. Open the item.
+
+**Expected Result:**
+The selected item opens successfully and displays its available content and controls.
+
+**Actual Result:**
+The item opened successfully.
+
+---
+
+### TC-002 — Board: Create New Item
+
+**Priority:** Medium
+**Status:** PASS
 
 **Steps:**
 
 1. Open the Board.
-2. Select a board item.
-3. Drag the item to another position.
-4. Release the item.
+2. Click the option to create a new item.
+3. Enter the required information.
+4. Save the item.
 
 **Expected Result:**
-
-* The item moves to the selected position.
-* No unrelated board items are affected.
+A new item is created and appears on the Board.
 
 **Actual Result:**
-
-* The item was moved successfully.
-
-**Status:** PASS
+The new item was created successfully and appeared on the Board.
 
 ---
 
-## TC-002 — Move a Board Item to Another Section
+### TC-003 — Board: Edit Existing Item
 
-**Scenario:** Board section management
+**Priority:** Medium
+**Status:** PASS
 
-**Preconditions:**
-
-* Board contains multiple sections.
-* A movable item is available.
+**Precondition:** An existing Board item is available.
 
 **Steps:**
 
 1. Open the Board.
-2. Select an item.
-3. Drag the item to another section.
-4. Release the item.
+2. Select an existing item.
+3. Edit the available information.
+4. Save the changes.
 
 **Expected Result:**
-
-* The item is moved to the selected section.
+The changes are saved and remain visible after reopening the item.
 
 **Actual Result:**
-
-* The item was moved successfully.
-
-**Status:** PASS
+The changes were saved successfully.
 
 ---
 
-## TC-003 — Verify Board Position Persistence
+### TC-004 — Board: Delete Item
 
-**Scenario:** Board data persistence
-
-**Preconditions:**
-
-* A board item has been moved.
-
-**Steps:**
-
-1. Move a board item to a different position.
-2. Leave the Board.
-3. Return to the Board.
-4. Check the item's position.
-
-**Expected Result:**
-
-* The item's position remains unchanged after returning to the Board.
-
-**Actual Result:**
-
-* The item position was retained.
-
-**Status:** PASS
-
----
-
-## TC-004 — Delete a Board Item
-
-**Scenario:** Board item deletion
-
-**Preconditions:**
-
-* A deletable board item is available.
-
-**Steps:**
-
-1. Open the Board.
-2. Select a board item.
-3. Use the available delete action.
-4. Confirm the action if confirmation is displayed.
-5. Check the Board.
-
-**Expected Result:**
-
-* The selected item is removed from the Board.
-* The behavior is consistent with the expected product behavior.
-
-**Actual Result:**
-
-* The deletion behavior requires product confirmation.
-
+**Priority:** High
 **Status:** Requires Product Confirmation
 
-**Related Bug:** None
+**Steps:**
+
+1. Open the Board.
+2. Select an existing item.
+3. Choose the delete option.
+4. Confirm the deletion if prompted.
+
+**Expected Result:**
+The item should be removed from the Board according to the product's intended deletion behavior.
+
+**Actual Result:**
+The observed deletion behavior requires confirmation of the intended product behavior.
+
+**Note:**
+Product confirmation is required before classifying this behavior as a confirmed defect.
 
 ---
 
-# 4. Draft
+### TC-005 — Draft: Initial Loading
 
-## TC-005 — Open Draft Page
+**Priority:** Medium
+**Status:** Requires Product Confirmation
 
-**Scenario:** Draft loading
+**Steps:**
+
+1. Open the AI Writing Workspace.
+2. Create or open a Draft.
+3. Observe the Draft page while it is loading.
+4. Navigate to another relevant page, such as Plan.
+5. Return to the Draft.
+
+**Expected Result:**
+The Draft should load correctly when opened.
+
+**Actual Result:**
+The Draft did not initially load as expected. After navigating from Draft to Plan and returning to Draft, the content loaded.
+
+**Note:**
+The expected initial-loading behavior should be confirmed with the product team before treating this as a confirmed defect.
+
+---
+
+### TC-006 — Draft: Create New Draft
+
+**Priority:** Medium
+**Status:** PASS
 
 **Steps:**
 
 1. Open the Draft area.
-2. Observe the page during initial loading.
-3. Wait for the Draft content to load.
-4. Navigate to another relevant area and return to Draft if needed.
+2. Select the option to create a new Draft.
+3. Enter the required information.
+4. Create the Draft.
 
 **Expected Result:**
-
-* The Draft page loads normally.
-* Existing Draft content is available.
+A new Draft is created successfully.
 
 **Actual Result:**
-
-* The Draft did not load correctly on the initial attempt.
-* After navigating through the Plan flow and returning to Draft, the content became available.
-
-**Status:** Requires Product Confirmation
-
-**Related Bug:** None
+The new Draft was created successfully.
 
 ---
 
-## TC-006 — Interact with AI Assistant from Draft
+### TC-007 — Draft: Load Content Without Errors
 
-**Scenario:** AI Assistant interaction
+**Priority:** High
+**Status:** FAIL
+
+**Steps:**
+
+1. Open the Draft area.
+2. Open an available Draft.
+3. Observe the page while the Draft content loads.
+
+**Expected Result:**
+The Draft should load without displaying application errors.
+
+**Actual Result:**
+An `fs_entries` error was displayed while loading the Draft.
+
+**Related Bug Report:**
+No confirmed bug report was created for this observation.
+
+**Note:**
+This is recorded as an observed failure, but it is not included in the confirmed 9-bug set.
+
+---
+
+### TC-008 — Draft Editor: Preserve Text Case
+
+**Priority:** Medium
+**Status:** FAIL
 
 **Steps:**
 
 1. Open a Draft.
-2. Open the AI Assistant.
-3. Enter a valid request.
-4. Submit the request.
+2. Click inside the Draft Editor.
+3. Enter text using lowercase letters.
+4. Observe the entered text.
 
 **Expected Result:**
-
-* The request is accepted.
-* The AI Assistant processes the request and provides a response.
+The entered text should remain in the same letter case used by the user.
 
 **Actual Result:**
+Lowercase text was automatically converted to uppercase.
 
-* The basic interaction flow was available.
-
-**Status:** PASS
+**Related Bug Report:**
+BUG-002 — Draft Editor lowercase automatically uppercase
 
 ---
 
-## TC-007 — Enter a Request in AI Assistant
+### TC-009 — Draft: Preserve Content After Refresh
 
-**Scenario:** AI Assistant text input
-
-**Steps:**
-
-1. Open the Draft.
-2. Open the AI Assistant.
-3. Enter a request in the input field.
-4. Submit the request.
-
-**Expected Result:**
-
-* The entered request is accepted and processed normally.
-
-**Actual Result:**
-
-* An error related to `fs_entries` was observed during the interaction.
-
+**Priority:** High
 **Status:** FAIL
 
-**Related Bug:** None directly assigned
-
-**Note:** The observed behavior was recorded during testing. The confirmed defect related to AI-generated editable Draft creation is documented separately as BUG-003.
-
----
-
-## TC-008 — Verify Draft Editor Text Case
-
-**Scenario:** Draft Editor text formatting
-
 **Steps:**
 
-1. Open the Draft Editor.
-2. Enter text using lowercase characters.
-3. Observe the entered text.
-
-**Expected Result:**
-
-* The entered text remains in the same case used by the user.
-
-**Actual Result:**
-
-* Lowercase text was automatically entered/displayed as uppercase.
-
-**Status:** FAIL
-
-**Related Bug:** BUG-002
-
----
-
-## TC-009 — Verify Draft Content Persistence After Refresh
-
-**Scenario:** Draft persistence
-
-**Steps:**
-
-1. Open a Draft.
-2. Enter or modify Draft content.
-3. Save the content if a save action is available.
+1. Open an existing Draft.
+2. Add or edit content.
+3. Save the Draft if a save action is available.
 4. Refresh the page.
 5. Check the Draft content.
 
 **Expected Result:**
-
-* Previously saved Draft content remains available after refresh.
+Previously saved Draft content should remain available after refreshing the page.
 
 **Actual Result:**
+Draft content was lost after refreshing the page.
 
-* Draft content was lost after refresh.
-
-**Status:** FAIL
-
-**Related Bug:** BUG-001
+**Related Bug Report:**
+BUG-001 — Draft content lost after refresh
 
 ---
 
-## TC-010 — Create an Editable Draft Using AI Assistant
+### TC-010 — AI Assistant: Insert Generated Content Into Draft
 
-**Scenario:** AI-generated Draft creation
+**Priority:** High
+**Status:** FAIL
 
 **Steps:**
 
-1. Open the AI Assistant.
-2. Submit a request to generate Draft content.
-3. Wait for the AI response.
-4. Check whether the generated content is placed into an editable Draft.
+1. Open a Draft.
+2. Open the AI Assistant.
+3. Enter a request for content.
+4. Generate the content.
+5. Use the available action to add or write the generated content into the Draft.
 
 **Expected Result:**
-
-* AI-generated content is written into a Draft that the user can edit.
+The generated content should be inserted into the editable Draft.
 
 **Actual Result:**
+The AI Assistant failed to write the generated content into the editable Draft.
 
-* The AI Assistant failed to write the generated content into an editable Draft.
-
-**Status:** FAIL
-
-**Related Bug:** BUG-003
+**Related Bug Report:**
+BUG-003 — AI Assistant fails to write into editable Draft
 
 ---
 
-## TC-011 — Verify New Draft Conversation Context
+### TC-011 — New Draft: Conversation Context
 
-**Scenario:** AI context isolation
+**Priority:** High
+**Status:** FAIL
 
 **Steps:**
 
-1. Open an existing Draft and interact with the AI Assistant.
+1. Open an existing Draft and use an independent AI conversation.
 2. Create a new Draft.
-3. Start a new AI Assistant interaction in the new Draft.
-4. Check whether information from the previous independent conversation is used.
+3. Open the AI conversation for the new Draft.
+4. Observe the conversation context.
 
 **Expected Result:**
-
-* The new Draft starts with an independent AI conversation context.
+A new Draft should start with its own conversation context and should not use unrelated context from a previous independent conversation.
 
 **Actual Result:**
+The new Draft retained the previous independent conversation context.
 
-* The new Draft retained context from the previous independent conversation.
-
-**Status:** FAIL
-
-**Related Bug:** BUG-004
+**Related Bug Report:**
+BUG-004 — New Draft retains previous independent conversation context
 
 ---
 
-# 5. Plan
+### TC-012 — Plan: Open Plan Page
 
-## TC-012 — Open Plan Page
-
-**Scenario:** Plan page access
+**Priority:** Medium
+**Status:** PASS
 
 **Steps:**
 
-1. Open the project.
+1. Open a Draft.
 2. Navigate to the Plan page.
 3. Observe the page.
 
 **Expected Result:**
-
-* The Plan page opens successfully.
-* Existing Plan information is displayed.
+The Plan page opens successfully.
 
 **Actual Result:**
-
-* The Plan page opened successfully.
-
-**Status:** PASS
+The Plan page opened successfully.
 
 ---
 
-## TC-013 — Enter a Request in Plan Assistant
+### TC-013 — Plan: Create Plan Content
 
-**Scenario:** Plan AI Assistant
+**Priority:** Medium
+**Status:** PASS
 
 **Steps:**
 
 1. Open the Plan page.
-2. Open the AI Assistant.
-3. Enter a valid request.
-4. Submit the request.
+2. Create or generate Plan content.
+3. Save the content.
 
 **Expected Result:**
-
-* The request is accepted.
-* The AI Assistant provides a response.
+The Plan content is created and saved successfully.
 
 **Actual Result:**
-
-* The request was accepted and the assistant interaction was available.
-
-**Status:** PASS
+Plan content was created successfully.
 
 ---
 
-## TC-014 — Verify AI-Generated Plan Appears on Plan Page
+### TC-014 — Plan: Display AI-Generated Content
 
-**Scenario:** AI-generated Plan
-
-**Steps:**
-
-1. Open the Plan page.
-2. Use the AI Assistant to generate a Plan.
-3. Wait for the generation to complete.
-4. Return to the Plan page content.
-
-**Expected Result:**
-
-* The generated Plan is reflected on the Plan page.
-
-**Actual Result:**
-
-* The AI-generated Plan was not correctly reflected on the Plan page.
-
+**Priority:** High
 **Status:** FAIL
 
-**Related Bug:** BUG-005
+**Steps:**
+
+1. Open a Draft.
+2. Generate Plan content using the available AI functionality.
+3. Open the Plan page.
+4. Observe the generated content.
+
+**Expected Result:**
+AI-generated Plan content should be reflected on the Plan page.
+
+**Actual Result:**
+The AI-generated Plan content was not reflected on the Plan page.
+
+**Related Bug Report:**
+BUG-005 — AI-generated Plan content not reflected on Plan page
 
 ---
 
-## TC-015 — Verify Plan Content After Refresh
+### TC-015 — Plan: Preserve Generated Content After Refresh
 
-**Scenario:** Plan persistence
+**Priority:** High
+**Status:** FAIL
 
 **Steps:**
 
-1. Generate or update Plan content.
-2. Confirm the Plan content is displayed.
+1. Generate Plan content.
+2. Open the Plan page.
 3. Refresh the page.
-4. Check the Plan content again.
+4. Check the Plan content.
 
 **Expected Result:**
-
-* The generated Plan content remains available after refresh.
+Previously generated or saved Plan content should remain visible after refreshing the page.
 
 **Actual Result:**
+The Plan page was empty after the refresh.
 
-* The Plan content was not correctly retained/reflected after refresh.
-
-**Status:** FAIL
-
-**Related Bug:** BUG-005
+**Related Bug Report:**
+BUG-005 — AI-generated Plan content not reflected on Plan page
 
 ---
 
-# 6. Library and Project Details
+### TC-016 — Library: Open Library
 
-## TC-016 — Open a Project from Library
-
-**Scenario:** Library project access
-
-**Steps:**
-
-1. Open the Library.
-2. Select an available project.
-3. Open the project.
-
-**Expected Result:**
-
-* The selected project opens successfully.
-
-**Actual Result:**
-
-* The project opened successfully.
-
+**Priority:** Medium
 **Status:** PASS
 
----
-
-## TC-017 — Verify Project Details Information
-
-**Scenario:** Project details
-
 **Steps:**
 
-1. Open a project.
-2. Open the Project Details panel.
-3. Review the displayed project information.
+1. Open the AI Writing Workspace.
+2. Navigate to Library.
+3. Observe the available content.
 
 **Expected Result:**
-
-* The Project Details panel displays the relevant project information correctly.
+The Library opens and available content is displayed.
 
 **Actual Result:**
+The Library opened successfully.
 
-* The expected project information was displayed.
+---
 
+### TC-017 — Library: Open Existing Content
+
+**Priority:** Medium
 **Status:** PASS
 
----
-
-## TC-018 — Close Project Details Panel
-
-**Scenario:** Project Details usability
-
 **Steps:**
 
-1. Open a project.
-2. Open the Project Details panel.
-3. Review the available controls for closing the panel.
+1. Open Library.
+2. Select an existing item.
+3. Open the item.
 
 **Expected Result:**
-
-* The panel can be closed easily using a clear and visible control.
+The selected Library item opens successfully.
 
 **Actual Result:**
-
-* The panel can be closed, but a clearer Close/X control would improve usability.
-
-**Status:** UX Recommendation
-
-**Related Bug:** None
+The item opened successfully.
 
 ---
 
-# 7. Poster
+### TC-018 — Templates: Drag-and-Drop Element
 
-## TC-019 — Upload an Image for Poster
-
-**Scenario:** Poster image upload
-
-**Steps:**
-
-1. Open the Poster area.
-2. Select the image upload option.
-3. Choose a valid image.
-4. Confirm the upload.
-
-**Expected Result:**
-
-* The selected image is uploaded and displayed correctly.
-
-**Actual Result:**
-
-* The image upload completed successfully.
-
-**Status:** PASS
-
----
-
-## TC-020 — Save Poster
-
-**Scenario:** Poster saving
-
-**Steps:**
-
-1. Open the Poster area.
-2. Create or update a poster.
-3. Select the Save action.
-4. Observe the result.
-
-**Expected Result:**
-
-* The poster is saved without an unnecessary delay.
-* The saved state is reflected immediately or within the expected time.
-
-**Actual Result:**
-
-* The Save action was delayed/unresponsive before the updated state appeared.
-
-**Status:** FAIL
-
-**Related Bug:** BUG-006
-
----
-
-## TC-021 — Verify Current Poster in Upload Dialog
-
-**Scenario:** Poster image state
-
-**Steps:**
-
-1. Open the Poster area.
-2. Create or update the current poster.
-3. Open the upload dialog.
-4. Observe the displayed image.
-
-**Expected Result:**
-
-* The upload dialog displays the current poster/image state.
-
-**Actual Result:**
-
-* The dialog displayed the previous image instead of the current poster.
-
-**Status:** FAIL
-
-**Related Bug:** BUG-007
-
----
-
-# 8. AI Chat
-
-## TC-022 — Verify New Chat Starts Without Previous Conversation
-
-**Scenario:** New AI Chat
-
-**Steps:**
-
-1. Open AI Chat.
-2. Start a conversation.
-3. Create a New Chat.
-4. Observe the conversation displayed in the new chat.
-
-**Expected Result:**
-
-* The new chat starts without displaying the previous conversation.
-
-**Actual Result:**
-
-* The previous conversation was temporarily displayed in the new chat.
-
-**Status:** FAIL
-
-**Related Bug:** BUG-008
-
----
-
-## TC-023 — Verify Conversation State After Project Deletion
-
-**Scenario:** Deleted project conversation
-
-**Steps:**
-
-1. Open a project with an AI conversation.
-2. Delete the project or perform the relevant deletion action.
-3. Open AI Chat.
-4. Check whether the deleted project's conversation is still available.
-
-**Expected Result:**
-
-* Conversation availability after project deletion should follow the defined product behavior.
-
-**Actual Result:**
-
-* The observed behavior requires product confirmation.
-
-**Status:** Requires Product Confirmation
-
-**Related Bug:** None
-
----
-
-# 9. Templates
-
-## TC-024 — Drag Template Element
-
-**Scenario:** Template element positioning
+**Priority:** Low
+**Status:** UX Recommendation Only
 
 **Steps:**
 
 1. Open the Templates area.
-2. Select a draggable template element.
-3. Drag the element to another position.
-4. Release it.
+2. Select a Template containing draggable elements.
+3. Attempt to drag an element to another position.
 
 **Expected Result:**
-
-* The element can be moved as expected.
-* The interaction is clear to the user.
+The interface should clearly indicate which elements can be dragged.
 
 **Actual Result:**
+The draggable behavior was available, but the cursor did not clearly communicate that the element could be dragged.
 
-* The element could be dragged successfully.
+**UX Recommendation:**
+Use a grab cursor for draggable Template elements to make the interaction more understandable.
 
+**Related UX Recommendation:**
+UX-001 — Grab cursor for draggable Template elements
+
+---
+
+### TC-019 — Poster: Open Poster/Cover
+
+**Priority:** Medium
 **Status:** PASS
 
-**Related Bug:** None
+**Steps:**
 
-**UX Recommendation:** A grab/grabbing cursor could make the draggable behavior clearer.
+1. Open a relevant Project or Draft.
+2. Navigate to Poster/Cover.
+3. Open the Poster/Cover area.
+
+**Expected Result:**
+The Poster/Cover area opens successfully.
+
+**Actual Result:**
+The Poster/Cover area opened successfully.
 
 ---
 
-## TC-025 — Verify Horizontal Template Content
+### TC-020 — Poster: Save Changes
 
-**Scenario:** Template content layout
-
-**Steps:**
-
-1. Open a template containing horizontal content.
-2. Review the content and its layout.
-3. Check whether all relevant content is accessible.
-
-**Expected Result:**
-
-* The content is displayed and accessible according to the intended design.
-
-**Actual Result:**
-
-* The behavior requires confirmation of the intended product design.
-
-**Status:** Requires Product Confirmation
-
-**Related Bug:** None
-
----
-
-# 10. Split View
-
-## TC-026 — Verify Split View Pagination
-
-**Scenario:** Split View pagination
-
-**Steps:**
-
-1. Open Split View.
-2. Display content in both panes.
-3. Navigate between pages.
-4. Observe the pagination controls and page content.
-5. Repeat the navigation to confirm the behavior.
-
-**Expected Result:**
-
-* Pagination works independently and consistently in the relevant pane.
-* Page numbers and controls do not duplicate or reset unexpectedly.
-
-**Actual Result:**
-
-* Pagination/page controls were duplicated or reset in the second pane.
-* The behavior was reproduced during testing.
-
+**Priority:** High
 **Status:** FAIL
 
-**Related Bug:** BUG-009
+**Steps:**
+
+1. Open Poster/Cover.
+2. Make a change.
+3. Click the Save Poster action.
+4. Observe the response.
+
+**Expected Result:**
+The changes should be saved immediately or within a reasonable response time, with clear feedback that the save was completed.
+
+**Actual Result:**
+The Save Poster action was delayed or appeared unresponsive.
+
+**Related Bug Report:**
+BUG-006 — Save Poster action delayed/unresponsive
 
 ---
 
-# 11. Cross-Flow
+### TC-021 — Poster: Upload Image
 
-## TC-027 — Navigate from Draft to Plan and Back to Draft
-
-**Scenario:** Draft → Plan → Draft workflow
+**Priority:** Medium
+**Status:** FAIL
 
 **Steps:**
 
-1. Open a Draft.
-2. Navigate to Plan.
-3. Perform the available Plan interaction.
-4. Navigate back to Draft.
-5. Check the Draft state.
+1. Open Poster/Cover.
+2. Select the option to upload an image.
+3. Open the upload dialog.
+4. Observe the image displayed in the dialog.
 
 **Expected Result:**
-
-* Navigation between Draft and Plan works normally.
-* The user can return to Draft without losing the expected state.
+The upload dialog should display the current upload state and should not show an unrelated image from a previous operation.
 
 **Actual Result:**
+The upload dialog displayed the previous image.
 
-* The Draft → Plan → Draft flow completed successfully.
-
-**Status:** PASS
+**Related Bug Report:**
+BUG-007 — Upload dialog shows previous image
 
 ---
 
-## TC-028 — Verify Draft Editor and AI Chat Inputs Are Separate
+### TC-022 — AI Chat: Start New Chat
 
-**Scenario:** Input separation
+**Priority:** High
+**Status:** FAIL
 
 **Steps:**
 
-1. Open a Draft.
-2. Enter text in the Draft Editor.
-3. Open AI Chat.
-4. Enter a separate message in the AI Chat input.
-5. Compare the two inputs.
+1. Open AI Chat.
+2. Start a new chat.
+3. Observe the conversation before entering new text.
+4. Enter a new message.
 
 **Expected Result:**
-
-* Draft Editor content and AI Chat input remain separate.
-* Text entered in one input does not unexpectedly appear in the other.
+A new chat should start with a clean conversation state and should not temporarily display messages from a previous conversation.
 
 **Actual Result:**
+The previous conversation was temporarily displayed until new text was entered.
 
-* The Draft Editor and AI Chat inputs remained separate.
+**Related Bug Report:**
+BUG-008 — New Chat temporarily shows previous conversation
 
+---
+
+### TC-023 — Deleted Project: Conversation Availability
+
+**Priority:** High
+**Status:** Requires Product Confirmation
+
+**Steps:**
+
+1. Open a Project with an existing conversation.
+2. Delete the Project.
+3. Navigate to the relevant conversation or AI Chat area.
+4. Check whether the deleted Project's conversation is still accessible.
+
+**Expected Result:**
+The conversation availability after Project deletion should follow the product's intended behavior.
+
+**Actual Result:**
+The observed behavior requires confirmation of the expected product behavior.
+
+**Note:**
+Product confirmation is required before classifying this as a confirmed defect.
+
+---
+
+### TC-024 — Project/Manuscript Details: Close Panel
+
+**Priority:** Low
 **Status:** PASS
 
----
+**Steps:**
 
-# 12. Confirmed Bug Traceability
+1. Open a Project or Manuscript.
+2. Open the details panel.
+3. Observe the available controls for closing the panel.
 
-Only confirmed defects documented in the project's Bug Reports are included in this table.
+**Expected Result:**
+The details panel should provide a clear and convenient way to close it.
 
-| Bug ID  | Related Test Case(s) | Area                          |
-| ------- | -------------------- | ----------------------------- |
-| BUG-001 | TC-009               | Draft persistence             |
-| BUG-002 | TC-008               | Draft Editor text case        |
-| BUG-003 | TC-010               | AI Assistant / Draft creation |
-| BUG-004 | TC-011               | New Draft / AI context        |
-| BUG-005 | TC-014, TC-015       | Plan / AI-generated content   |
-| BUG-006 | TC-020               | Poster saving                 |
-| BUG-007 | TC-021               | Poster image state            |
-| BUG-008 | TC-022               | AI Chat state                 |
-| BUG-009 | TC-026               | Split View pagination         |
+**Actual Result:**
+The panel could be closed, but the interface would be clearer with a dedicated Close (X) button.
 
----
+**UX Recommendation:**
+Add a visible Close (X) button to the Project/Manuscript details panel.
 
-# 13. Findings Requiring Product Confirmation
-
-The following observations were recorded during testing but are **not counted as confirmed defects** until the expected product behavior is confirmed.
-
-| Test Case | Finding                                                             |
-| --------- | ------------------------------------------------------------------- |
-| TC-004    | Board item deletion behavior requires product confirmation          |
-| TC-005    | Draft initial loading behavior requires product confirmation        |
-| TC-023    | Deleted project conversation behavior requires product confirmation |
-| TC-025    | Horizontal Template content behavior requires product confirmation  |
+**Related UX Recommendation:**
+UX-002 — Close X for Project/Manuscript details panel
 
 ---
 
-# 14. UX Recommendations
+### TC-025 — Templates: Horizontal Content
 
-The following observations are usability recommendations and are not counted as defects.
+**Priority:** Medium
+**Status:** Requires Product Confirmation
 
-| Test Case | Recommendation                                             |
-| --------- | ---------------------------------------------------------- |
-| TC-018    | Add or make the Project Details Close/X control clearer    |
-| TC-024    | Use a grab/grabbing cursor for draggable Template elements |
+**Steps:**
 
----
+1. Open the Templates area.
+2. Open a Template containing the observed horizontal content.
+3. Review the content layout.
+4. Check whether the content can be accessed or displayed as intended.
 
-# 15. Test Case Summary
+**Expected Result:**
+Template content should follow the intended product layout and interaction behavior.
 
-| Area                      | Test Cases |
-| ------------------------- | ---------: |
-| Board                     |          4 |
-| Draft                     |          7 |
-| Plan                      |          4 |
-| Library / Project Details |          3 |
-| Poster                    |          3 |
-| AI Chat                   |          2 |
-| Templates                 |          2 |
-| Split View                |          1 |
-| Cross-Flow                |          2 |
-| **Total**                 |     **28** |
+**Actual Result:**
+Horizontal Template content was observed, but the expected product behavior is not sufficiently clear to classify it as a confirmed defect.
+
+**Note:**
+Product confirmation is required.
 
 ---
 
-## 16. Confirmed Defect Summary
+### TC-026 — Split View: Pagination
 
-| Bug ID  | Related Test Case(s) |
-| ------- | -------------------- |
-| BUG-001 | TC-009               |
-| BUG-002 | TC-008               |
-| BUG-003 | TC-010               |
-| BUG-004 | TC-011               |
-| BUG-005 | TC-014, TC-015       |
-| BUG-006 | TC-020               |
-| BUG-007 | TC-021               |
-| BUG-008 | TC-022               |
-| BUG-009 | TC-026               |
+**Priority:** High
+**Status:** FAIL
+
+**Steps:**
+
+1. Open a document in Split View.
+2. Navigate between pages.
+3. Observe the page numbers and displayed content.
+4. Continue navigating through the available pages.
+
+**Expected Result:**
+Pagination should remain consistent, with the correct page number and corresponding content displayed.
+
+**Actual Result:**
+Split View pagination broke and pages were duplicated or reset during navigation.
+
+**Related Bug Report:**
+BUG-009 — Split View pagination/page breaks duplicated/reset
+
+---
+
+### TC-027 — Navigation: Move Between Main Areas
+
+**Priority:** Medium
+**Status:** PASS
+
+**Steps:**
+
+1. Open the AI Writing Workspace.
+2. Navigate between the main available areas.
+3. Open each selected area.
+
+**Expected Result:**
+Navigation between the main areas should work without unexpected errors.
+
+**Actual Result:**
+Navigation worked successfully.
+
+---
+
+### TC-028 — UI: General Workspace Interaction
+
+**Priority:** Medium
+**Status:** PASS
+
+**Steps:**
+
+1. Open the AI Writing Workspace.
+2. Navigate through the main interface.
+3. Interact with available controls.
+4. Observe the general UI behavior.
+
+**Expected Result:**
+The interface should remain usable and responsive during normal interaction.
+
+**Actual Result:**
+The general interface was usable during normal interaction.
+
+---
+
+# 3. Confirmed Bug Traceability
+
+| Bug ID  | Bug                                                         | Related Test Case(s) |
+| ------- | ----------------------------------------------------------- | -------------------- |
+| BUG-001 | Draft content lost after refresh                            | TC-009               |
+| BUG-002 | Draft Editor lowercase automatically uppercase              | TC-008               |
+| BUG-003 | AI Assistant fails to write into editable Draft             | TC-010               |
+| BUG-004 | New Draft retains previous independent conversation context | TC-011               |
+| BUG-005 | AI-generated Plan content not reflected on Plan page        | TC-014, TC-015       |
+| BUG-006 | Save Poster action delayed/unresponsive                     | TC-020               |
+| BUG-007 | Upload dialog shows previous image                          | TC-021               |
+| BUG-008 | New Chat temporarily shows previous conversation            | TC-022               |
+| BUG-009 | Split View pagination/page breaks duplicated/reset          | TC-026               |
 
 **Total Confirmed Bugs:** 9
+
+---
+
+# 4. Product Confirmation Items
+
+The following observations were recorded during testing but should not be counted as confirmed defects until the intended product behavior is confirmed:
+
+| Test Case | Observation                                      |
+| --------- | ------------------------------------------------ |
+| TC-004    | Board item deletion behavior                     |
+| TC-005    | Draft initial loading behavior                   |
+| TC-023    | Conversation availability after Project deletion |
+| TC-025    | Horizontal Template content behavior             |
+
+**Total:** 4
+
+---
+
+# 5. UX Recommendations
+
+| ID     | Recommendation                                                         | Related Test Case |
+| ------ | ---------------------------------------------------------------------- | ----------------- |
+| UX-001 | Add a grab cursor for draggable Template elements                      | TC-018            |
+| UX-002 | Add a visible Close (X) button to the Project/Manuscript details panel | TC-024            |
+
+**Total UX Recommendations:** 2
+
+---
+
+# 6. Final Execution Summary
+
+| Category                      |  Count |
+| ----------------------------- | -----: |
+| PASS                          |     12 |
+| FAIL                          |     11 |
+| Requires Product Confirmation |      4 |
+| UX Recommendation Only        |      1 |
+| **Total Test Cases**          | **28** |
+| Confirmed Bugs                |  **9** |
+| UX Recommendations            |  **2** |
+
+## Notes
+
+* TC-007 is recorded as a failed test because the `fs_entries` error was observed, but no separate confirmed bug report is included for it.
+* TC-004, TC-005, TC-023 and TC-025 require product confirmation and are therefore not counted as confirmed defects.
+* TC-018 is recorded as a UX Recommendation Only because the observed behavior did not prevent the workflow from being completed.
+* TC-024 passed functionally but resulted in a UX recommendation for a clearer close control.
+* The project was tested in the staging/preview environment. Production was not included in the testing scope.
