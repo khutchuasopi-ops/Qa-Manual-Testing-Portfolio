@@ -1,40 +1,60 @@
-# BUG-007 — Poster Upload Dialog Shows the Previous Image
+# BUG-007 — Upload Dialog Shows Previous Image
 
-## Title
-Poster upload dialog shows the previous image instead of the current poster
+## Summary
+
+The image upload dialog displays the previously selected image when the user starts a new image upload operation.
 
 ## Preconditions
-- User is logged in.
-- A project/manuscript has a poster image.
-- The poster image has previously been changed and saved successfully.
+
+* User has access to a Project / Manuscript.
+* A Poster / Cover can be edited.
+* An image has previously been selected or uploaded.
 
 ## Steps to Reproduce
-1. Open the project/manuscript.
-2. Open Poster editing.
-3. Change the poster image.
-4. Save the new poster.
-5. Open the poster upload dialog again.
-6. Observe the image displayed in the upload dialog.
 
-## Expected Result
-The upload dialog should display the current poster image.
+1. Open a Project / Manuscript.
+2. Open the **Poster / Cover** section.
+3. Select **Edit**.
+4. Open the image **Upload** option.
+5. Select an image and complete or cancel the upload flow.
+6. Open the **Upload** option again.
+7. Observe the image displayed in the upload dialog.
 
 ## Actual Result
-The upload dialog displays the previously uploaded image instead of the current poster.
 
-## Priority
-Medium
+The upload dialog displays the image from the previous upload operation.
+
+The previous image remains visible when starting a new upload operation, instead of showing a clean upload state.
+
+## Expected Result
+
+When the user opens the upload dialog for a new upload operation, it should display the current upload state only.
+
+A previously selected image should not remain visible unless it is intentionally associated with the current Poster / Cover.
 
 ## Severity
-Major
+
+**Medium**
 
 ## Environment
-- Environment: Staging / Preview
-- Testing type: Manual QA
-- Area: Poster / Image Upload
 
-## Evidence
-Screenshot or screen recording showing the current poster and the different image displayed in the upload dialog.
+**Staging / Preview**
+
+## Related Test Case
+
+**TC-021 — Poster: Upload Image**
 
 ## Status
-Open
+
+**Open**
+
+## Reproduction
+
+**Reproduced during manual testing.**
+
+## Notes
+
+The issue can cause confusion because the user may believe that the previously displayed image is still selected for the current upload operation.
+
+The upload dialog should reset its temporary state when a new upload operation is started.
+
