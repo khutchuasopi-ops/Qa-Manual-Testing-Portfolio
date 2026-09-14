@@ -1,289 +1,211 @@
-# Case Study — Legal Platform Manual QA Testing
+1. Project Overview
 
-## 1. Project Overview
+The AI Writing Workspace is a web-based platform designed to support AI-assisted writing and content creation workflows.
 
-This project focused on manual testing of a confidential web-based legal technology platform.
+This project focused on manually testing the main user flows and identifying functional issues, state and data persistence problems, AI workflow issues, and usability concerns.
 
-The platform includes functionality for managing documents, templates, events, workflows, repositories, search, and AI-assisted features.
+Role: Junior Manual QA Tester
+Environment: Staging / Preview
+Testing Type: Manual Testing
+Production Environment: Not tested
 
-The project has been anonymized for portfolio purposes.
+2. Testing Scope
 
-### QA Role
+The testing covered the following areas:
 
-**Junior Manual QA Tester**
+Board
+Draft Editor
+AI Assistant
+Plan
+Library
+Project Details
+Poster
+AI Chat
+Templates
+Split View
+Navigation and UI state
+Data persistence
+AI-generated content workflows
+Conversation and context handling
 
-The main focus was on functional testing, negative testing, boundary values, input validation, exploratory testing, defect reporting, and data consistency.
+The main focus was on verifying that user actions produced the expected results and that data, content, and application state remained consistent during normal and negative user flows.
 
----
+3. Testing Approach
 
-## 2. Testing Objectives
+The project included several types of manual testing:
 
-The main objectives were to:
+Functional testing
+Exploratory testing
+Smoke testing
+Regression testing
+Negative testing
+User-flow testing
+UI and usability checks
+Data persistence checks
+AI workflow and context checks
 
-* Verify that the main user flows work as expected.
-* Check form fields and user input validation.
-* Test document upload and replacement.
-* Test Templates and Events.
-* Check Search functionality.
-* Check basic UI and usability.
-* Test invalid and unexpected input.
-* Perform exploratory testing.
-* Identify reproducible defects.
-* Document defects with clear reproduction steps.
-* Support retesting and regression checks.
+Testing was performed by following documented test scenarios and test cases, while also exploring related flows to identify unexpected behavior.
 
----
+4. Test Execution
 
-## 3. Testing Approach
+A total of 28 test cases were executed.
 
-Both structured and exploratory manual testing were used.
+Results
+Result	Count
+PASS	12
+FAIL	11
+Requires Product Confirmation	4
+UX Recommendation only	1
+Total Test Cases	28
 
-### Structured Testing
+In addition to the test execution results, 9 confirmed bugs were documented.
 
-Test scenarios and test cases were created to cover the main application functionality.
+There were also 2 UX recommendations identified during testing.
 
-The testing included:
+One of the UX recommendations was related to a test case that otherwise passed, so UX recommendations are not counted as a separate execution result in addition to the 28 test cases.
 
-* Positive testing
-* Negative testing
-* Boundary Value Testing
-* Input Validation
-* Functional Testing
-* UI and Usability Testing
-* File Upload Testing
-* Search and Filtering Testing
-* Data Consistency Testing
+5. Key Findings
 
-### Exploratory Testing
+Several issues were identified during testing of the AI Writing Workspace.
 
-Exploratory testing was used to investigate areas beyond the predefined test cases.
+Draft and Editor
 
-The testing focused on:
+Testing identified problems with draft persistence and editor behavior.
 
-* Unexpected input
-* Empty values
-* Whitespace-only values
-* Very long input
-* File replacement
-* UI behavior
-* Error handling
-* Unexpected application behavior
+Draft content could be lost after refreshing the page.
+Lowercase text could automatically appear as uppercase.
+The AI Assistant could fail to write generated content into an editable Draft.
+A new Draft could retain context from a previous independent AI conversation.
 
-When an unexpected result was found, it was investigated and reproduced where possible before being treated as a confirmed defect.
+These issues could affect the reliability of the writing workflow and the user's confidence that their work and conversation context are being handled correctly.
 
----
+Plan
 
-## 4. Areas Tested
+The AI-generated Plan could be created successfully through the AI workflow, but the generated information was not correctly reflected on the Plan page.
 
-| Area                | Testing Focus                                        |
-| ------------------- | ---------------------------------------------------- |
-| Dashboard           | Navigation and basic functionality                   |
-| Repository          | Documents, upload, replacement, and file information |
-| Documents           | Document actions and data consistency                |
-| Templates           | Creation, editing, deletion, and validation          |
-| Events              | Creation, editing, and name validation               |
-| Workflows           | Workflow-related controls and validation             |
-| Search              | Search input, results, and clear behavior            |
-| Recycle Bin         | Deleted and restored items                           |
-| AI Assistant        | Basic interaction and response behavior              |
-| Playbook Generation | Generation flow and error handling                   |
-| UI                  | Buttons, controls, cursor behavior, and usability    |
+This was documented as a confirmed issue because the expected result was not achieved.
 
----
+Poster
 
-## 5. Test Data
+Issues were identified in the Poster workflow:
 
-Different types of input were used during testing.
+Saving a Poster could be delayed or appear unresponsive.
+The upload dialog could display a previous image instead of the current poster.
 
-Examples included:
+These behaviors could make it unclear whether the user's latest changes or selected image were successfully processed.
 
-* Valid names
-* Empty input
-* Whitespace-only input
-* Single-character input
-* Very long input
-* Special characters
-* Different document files
-* Replacement files
-* Search keywords
-* Invalid or unexpected values
+AI Chat
 
-The purpose was to check how the application handles both normal and invalid user input.
+Testing identified an issue where creating a new chat could temporarily display the previous conversation.
 
----
+This was documented as a confirmed bug because a new conversation should not display content from a previous independent conversation.
 
-## 6. Defects Identified
+Split View
 
-Five confirmed defects were documented during testing.
+Testing of Split View identified duplicated or reset pagination controls in the second pane.
 
-| Bug ID  | Area             | Defect                                                 | Severity | Priority | Status |
-| ------- | ---------------- | ------------------------------------------------------ | -------- | -------- | ------ |
-| BUG-001 | File Replacement | Old file name remains after document replacement       | Medium   | Medium   | Open   |
-| BUG-002 | Search           | Clear Search interaction has incorrect cursor behavior | Low      | Medium   | Open   |
-| BUG-003 | Events           | Event accepts whitespace-only name                     | Medium   | High     | Open   |
-| BUG-004 | Events           | Event accepts an excessively long name                 | Medium   | Medium   | Open   |
-| BUG-005 | Templates        | Template accepts an excessively long name              | Medium   | Medium   | Open   |
+This could make navigation confusing when working with content in multiple panes.
 
-Detailed reproduction steps, actual results, expected results, severity, priority, environment, and status are documented separately in the `Bug-Reports` folder.
+6. Confirmed Bug Reports
 
----
+The testing resulted in 9 confirmed bug reports:
 
-## 7. Example Defect Investigation
+Bug ID	Area	Issue
+BUG-001	Draft	Draft content is lost after refresh
+BUG-002	Draft Editor	Lowercase text is automatically displayed as uppercase
+BUG-003	AI Assistant / Draft	AI Assistant fails to write content into an editable Draft
+BUG-004	AI Assistant / Draft	New Draft retains previous independent conversation context
+BUG-005	Plan / AI Assistant	AI-generated Plan is not reflected on the Plan page
+BUG-006	Poster	Save Poster action is delayed or unresponsive
+BUG-007	Poster	Upload dialog shows a previous image instead of the current poster
+BUG-008	AI Chat	New Chat temporarily displays the previous conversation
+BUG-009	Split View	Pagination/page controls are duplicated or reset in the second pane
+7. Product Confirmation Items
 
-### BUG-001 — Old File Name Remains After Document Replacement
+Not every unexpected behavior was classified as a confirmed defect.
 
-During exploratory testing of the Repository, an existing document was replaced with another document.
+Some observations required clarification or confirmation of the intended product behavior, including:
 
-The replacement action completed, but the displayed file name remained unchanged.
+Board deletion behavior
+Initial Draft loading behavior
+Deleted Project conversation behavior
+Horizontal content behavior in Templates
 
-The behavior was reproduced and documented as a data consistency defect.
+These items were kept separate from confirmed bugs to avoid reporting expected product behavior as a defect without sufficient confirmation.
 
-### Expected Result
+8. UX Recommendations
 
-The newly uploaded document and its corresponding file name should be displayed.
+Two usability recommendations were documented during testing.
 
-### Actual Result
+UX-001 — Grab Cursor
 
-The new document was uploaded, but the previous file name remained visible.
+Template elements that can be dragged could benefit from a clearer grab/grabbing cursor.
 
-### Why It Matters
+This would make the draggable interaction more obvious to the user.
 
-The displayed file information does not match the current document and may confuse the user.
+UX-002 — Close Button
 
----
+The Project Details panel could benefit from a clearer and more visible Close/X control.
 
-## 8. Exploratory Testing Findings
+This would make it easier for users to understand how to close the panel.
 
-Exploratory testing also produced findings that were reviewed separately from confirmed defects.
+9. Traceability
 
-One example was an error observed during Playbook generation.
+The documented bugs were linked to the relevant test cases to maintain traceability between testing and reported defects.
 
-This was recorded as a finding requiring further verification rather than being added to the confirmed bug count.
+Examples include:
 
-This distinction was important because an unexpected result should not automatically be treated as a confirmed defect without enough evidence.
+BUG-001 → TC-009
+BUG-002 → TC-008
+BUG-003 → TC-010
+BUG-004 → TC-011
+BUG-005 → TC-014, TC-015
+BUG-006 → TC-020
+BUG-007 → TC-021
+BUG-008 → TC-022
+BUG-009 → TC-026
 
----
+This helped connect the observed behavior, expected result, test execution, and final defect report.
 
-## 9. Testing Challenges
+10. Outcome
 
-One of the main challenges was distinguishing between:
+The testing identified 9 confirmed functional issues across important parts of the AI Writing Workspace.
 
-* A confirmed defect
-* A validation issue
-* A usability concern
-* An unexpected but potentially intentional behavior
-* A finding that needs more verification
+The most significant findings were related to:
 
-For each potential issue, the following questions were considered:
+Data persistence
+Draft creation and editing
+AI-generated content
+AI conversation context
+Plan synchronization
+Poster state and saving
+Chat state
+Split View navigation
 
-* Can the behavior be reproduced?
-* What is the expected result?
-* Is there a clear validation rule?
-* Does the behavior affect the user?
-* Could the behavior be intentional?
-* Is there enough evidence to report it as a defect?
+The testing also identified usability improvements and several behaviors that require product confirmation before being classified as defects.
 
-This helped keep the bug reports focused on reproducible issues.
+11. What I Learned
 
----
+This project helped me improve my understanding of testing AI-assisted applications and the importance of checking not only the visible result, but also application state and data consistency.
 
-## 10. QA Techniques Used
+I practiced:
 
-The following manual QA techniques were used:
+Creating and executing manual test cases
+Testing positive and negative scenarios
+Performing exploratory testing
+Checking data persistence after navigation and refresh
+Testing independent AI conversations and context
+Identifying and documenting reproducible defects
+Linking bugs back to test cases
+Separating confirmed bugs from product behavior that requires clarification
+Identifying usability improvements separately from functional defects
 
-* Functional Testing
-* Positive Testing
-* Negative Testing
-* Exploratory Testing
-* Boundary Value Testing
-* Input Validation Testing
-* UI and Usability Testing
-* Data Consistency Testing
-* Search Testing
-* Defect Reproduction
-* Defect Documentation
-* Retesting
-* Regression Checks
+This project also reinforced the importance of clear reproduction steps and expected results when documenting issues for developers and product teams.
 
----
+12. Conclusion
 
-## 11. Test Results
+The AI Writing Workspace QA project provided practical experience in testing a modern AI-assisted web application through manual testing.
 
-The testing identified **5 confirmed defects**.
+I was able to execute 28 test cases, identify 9 confirmed bugs, document 2 UX recommendations, and separate uncertain behaviors that required product confirmation from confirmed defects.
 
-All five documented defects currently have an **Open** status.
-
-| Metric                             | Result |
-| ---------------------------------- | -----: |
-| Confirmed Defects                  |      5 |
-| Open Defects                       |      5 |
-| Resolved Defects                   |      0 |
-| Confirmed Defects Requiring Retest |      0 |
-
-Detailed test execution information is maintained in `Test-Execution.md`.
-
-Test case Pass/Fail statistics are not included here because this case study focuses on the overall testing process and findings rather than duplicating the execution report.
-
----
-
-## 12. Key Findings
-
-The main findings were related to:
-
-* Data consistency after document replacement
-* Event name validation
-* Template name validation
-* Whitespace-only input
-* Search interaction behavior
-* Error handling during Playbook generation
-
-These findings showed the importance of testing not only the normal user flow but also invalid, boundary, and unexpected input.
-
----
-
-## 13. QA Workflow
-
-The project followed a practical manual QA workflow:
-
-**Feature Understanding → Test Planning → Test Scenarios → Test Cases → Manual Execution → Exploratory Testing → Defect Reporting → Retesting → Regression Checks**
-
----
-
-## 14. Conclusion
-
-This project provided practical experience in testing a web application with multiple connected features.
-
-The testing process included:
-
-* Planning test coverage
-* Creating test scenarios
-* Writing test cases
-* Performing manual functional testing
-* Performing negative and boundary testing
-* Performing exploratory testing
-* Investigating unexpected behavior
-* Reproducing defects
-* Writing bug reports
-* Planning retesting and regression checks
-
-The project also reinforced the importance of separating confirmed defects from findings that require additional verification.
-
-The final project documentation includes:
-
-* Project Overview
-* Test Plan
-* Test Scenarios
-* Test Cases
-* Checklists
-* Exploratory Testing
-* Test Execution
-* Bug Reports
-* Case Study
-
----
-
-## 15. Confidentiality
-
-The project has been anonymized for portfolio purposes.
-
-No confidential application URLs, credentials, personal information, or sensitive business data are included.
+The project demonstrates my ability as a Junior Manual QA Tester to follow structured test cases, explore application behavior, identify issues, document defects clearly, and maintain traceability between test execution and bug reports.
