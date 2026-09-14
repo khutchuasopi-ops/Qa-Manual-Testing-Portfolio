@@ -1,32 +1,42 @@
-# README — QA Manual Testing Portfolio
+# QA Manual Testing Portfolio
 
-## About This Portfolio
+Welcome to my **Junior Manual QA Testing Portfolio**.
 
-This repository contains my **Junior Manual QA Testing Portfolio**.
+This repository contains five practical manual testing projects covering different types of web applications, including e-commerce, AI chatbots, legal technology, production management, and AI-assisted writing.
 
-The projects demonstrate my practical approach to manual software testing, including test planning, test scenario and test case design, test execution, exploratory testing, regression testing, defect identification, and bug reporting.
-
-The projects are based on different types of applications and workflows to demonstrate testing across multiple functional areas.
+The portfolio demonstrates my approach to understanding application behavior, designing test cases, executing tests, identifying defects, and documenting QA findings clearly.
 
 ---
 
-## Projects
+## Portfolio Projects
 
-### Project 01 — E-commerce Web Application
+| # | Project | Main Focus |
+|---|---|---|
+| 01 | [E-commerce Web Application](./01-Ecommerce-Web-Application) | E-commerce workflows and functional testing |
+| 02 | [Manual QA Chatbot Testing](./02-Manual-QA-Chatbot-Testing) | AI chatbot and conversational flows |
+| 03 | [Legal Platform QA](./Legal-Platform-QA) | Documents, validation, search, and data consistency |
+| 04 | [Production Management Platform QA](./Production-Management-Platform-QA) | Production workflows, business logic, and UI |
+| 05 | [AI Writing Workspace QA](./05-AI-Writing-Workspace-QA) | AI features, state, persistence, and writing workflows |
 
-Manual QA testing of an e-commerce application.
+---
 
-**Main testing areas:**
+## Project 01 — E-commerce Web Application
+
+A manual QA project focused on testing an e-commerce web application and its main user flows.
+
+### Main Areas
+
 - Product browsing
 - Product details
 - Shopping cart
 - Checkout
 - User flows
-- Functional testing
-- Negative testing
-- UI testing
+- Functional behavior
+- Negative scenarios
+- UI behavior
 
-**Documentation includes:**
+### QA Documentation
+
 - Project Overview
 - Test Scenarios
 - Test Cases
@@ -38,11 +48,12 @@ Manual QA testing of an e-commerce application.
 
 ---
 
-### Project 02 — Manual QA Chatbot Testing
+## Project 02 — Manual QA Chatbot Testing
 
-Manual testing of an AI-powered e-commerce chatbot.
+A manual testing project focused on an AI-powered e-commerce chatbot.
 
-**Main testing areas:**
+### Main Areas
+
 - Product search
 - Product information
 - Prices and specifications
@@ -52,11 +63,12 @@ Manual testing of an AI-powered e-commerce chatbot.
 - Operator handoff
 - Conversation state
 - Error handling
-- Negative testing
+- Negative scenarios
 - Multilingual behavior
 - Desktop and mobile behavior
 
-**Documentation includes:**
+### QA Documentation
+
 - Project Overview
 - Test Plan
 - Test Scenarios
@@ -68,11 +80,12 @@ Manual testing of an AI-powered e-commerce chatbot.
 
 ---
 
-### Project 03 — 03-Legal-Platform-QA
+## Project 03 — Legal Platform QA
 
-Manual QA testing of a confidential legal technology platform.
+A manual QA project for a confidential legal technology platform.
 
-**Main testing areas:**
+### Main Areas
+
 - Documents
 - File Upload
 - File Replacement
@@ -86,7 +99,8 @@ Manual QA testing of a confidential legal technology platform.
 - Input Validation
 - Data Consistency
 
-**Testing techniques include:**
+### Testing Techniques
+
 - Functional Testing
 - Positive Testing
 - Negative Testing
@@ -98,13 +112,16 @@ Manual QA testing of a confidential legal technology platform.
 - Error Handling
 - Search and Filtering Testing
 
-**Test execution:**
-- 60 test cases executed
-- 55 PASS
-- 5 FAIL
-- 5 confirmed defects
+### Test Execution
 
-**Documentation includes:**
+- **60 test cases executed**
+- **55 PASS**
+- **5 FAIL**
+- **0 BLOCKED**
+- **5 confirmed defects**
+
+### QA Documentation
+
 - Project Overview
 - Test Plan
 - Test Scenarios
@@ -117,11 +134,12 @@ Manual QA testing of a confidential legal technology platform.
 
 ---
 
-### Project 04 — 04-Production-Management-Platform-QA
+## Project 04 — Production Management Platform QA
 
-Manual QA testing of an anonymized production management platform.
+A manual QA project for an anonymized production management platform.
 
-**Main testing areas:**
+### Main Areas
+
 - Project Management
 - Director Availability
 - Production Budget
@@ -131,7 +149,8 @@ Manual QA testing of an anonymized production management platform.
 - Cloud Integrations
 - UI and Usability
 
-**Testing techniques include:**
+### Testing Techniques
+
 - Functional Testing
 - Exploratory Testing
 - Regression Testing
@@ -142,10 +161,12 @@ Manual QA testing of an anonymized production management platform.
 - Business Logic Validation
 - UI and Usability Testing
 
-**Documented defects:**
-- 6 confirmed bugs
+### Documented Findings
 
-**Documentation includes:**
+- **6 confirmed defects**
+
+### QA Documentation
+
 - Project Overview
 - Test Scenarios
 - Test Cases
@@ -156,11 +177,12 @@ Manual QA testing of an anonymized production management platform.
 
 ---
 
-### Project 05 — AI Writing Workspace QA
+## Project 05 — AI Writing Workspace QA
 
-Manual QA testing of an anonymized AI Writing Workspace application.
+A manual QA project for an anonymized AI Writing Workspace application.
 
-**Main testing areas:**
+### Main Areas
+
 - Board
 - Draft
 - Plan
@@ -172,7 +194,8 @@ Manual QA testing of an anonymized AI Writing Workspace application.
 - Navigation and UI
 - Data Persistence and State
 
-**Testing techniques include:**
+### Testing Techniques
+
 - Functional Testing
 - Exploratory Testing
 - End-to-End User Flow Testing
@@ -181,19 +204,22 @@ Manual QA testing of an anonymized AI Writing Workspace application.
 - Negative Testing
 - UI and Usability Testing
 
-**Test execution:**
-- 28 test cases executed
-- 12 PASS
-- 11 FAIL
-- 4 Requires Product Confirmation
-- 1 UX Recommendation Only
+### Test Execution
 
-**Documented findings:**
-- 9 confirmed bugs
-- 2 UX recommendations
-- 4 items requiring product confirmation
+- **28 test cases executed**
+- **12 PASS**
+- **11 FAIL**
+- **4 Require Product Confirmation**
+- **1 UX Recommendation Only**
 
-**Documentation includes:**
+### Documented Findings
+
+- **9 confirmed bugs**
+- **2 UX recommendations**
+- **4 items requiring product confirmation**
+
+### QA Documentation
+
 - Project Overview
 - Test Scenarios
 - Test Cases
@@ -205,9 +231,9 @@ Manual QA testing of an anonymized AI Writing Workspace application.
 
 ---
 
-## Skills Demonstrated
+# Skills Demonstrated
 
-### Manual Testing
+## Manual Testing
 
 - Functional Testing
 - Positive Testing
@@ -225,9 +251,9 @@ Manual QA testing of an anonymized AI Writing Workspace application.
 - Search and Filtering Testing
 - AI Feature Testing
 
-### Test Design and Execution
+## Test Design and Execution
 
-- Requirement understanding
+- Understanding expected application behavior
 - Test scenario design
 - Test case design
 - Test data preparation
@@ -236,9 +262,9 @@ Manual QA testing of an anonymized AI Writing Workspace application.
 - Defect traceability
 - Test summary reporting
 
-### Defect Reporting
+## Defect Reporting
 
-- Bug identification
+- Defect identification
 - Reproduction steps
 - Actual Result
 - Expected Result
@@ -247,7 +273,7 @@ Manual QA testing of an anonymized AI Writing Workspace application.
 - Environment
 - Defect documentation
 
-### Documentation
+## QA Documentation
 
 - Test Plans
 - Test Scenarios
@@ -262,50 +288,49 @@ Manual QA testing of an anonymized AI Writing Workspace application.
 
 ---
 
-## Testing Approach
+# Testing Workflow
 
-For each project, I focus on understanding the expected behavior first and then testing the application through realistic user flows.
+My general manual QA workflow is:
 
-My general workflow is:
-
-1. Review the available requirements and project scope.
+1. Review the available requirements and application scope.
 2. Identify important user flows and test scenarios.
-3. Create detailed test cases.
-4. Execute positive and negative scenarios.
-5. Perform exploratory testing where appropriate.
-6. Record actual results and compare them with expected behavior.
-7. Reproduce and document confirmed defects.
-8. Assign severity and priority based on the observed impact.
-9. Maintain traceability between test cases and defects.
-10. Summarize the testing results.
+3. Design detailed test cases.
+4. Prepare relevant test data.
+5. Execute positive and negative scenarios.
+6. Perform exploratory testing where appropriate.
+7. Compare actual results with expected results.
+8. Reproduce and document confirmed defects.
+9. Assign severity and priority based on the observed impact.
+10. Maintain traceability between test cases and defects.
+11. Summarize the testing results.
 
 ---
 
-## Tools and Technologies
+# Tools
 
 - GitHub
 - Markdown
-- Web Applications
 - Google Chrome
+- Web Applications
 - Manual QA Testing
 
 ---
 
-## About Me
+# About Me
 
 I am a **Junior Manual QA Tester** building practical experience through hands-on testing projects.
 
-My focus is on developing strong fundamentals in manual testing, including test case design, test execution, exploratory testing, regression testing, defect reporting, and clear QA documentation.
+My focus is on developing strong fundamentals in manual software testing, including test case design, test execution, exploratory testing, regression testing, defect reporting, and clear QA documentation.
 
-This portfolio represents my practical learning and testing work and is intended to demonstrate how I approach software quality from a user's perspective.
+This portfolio represents my practical testing work and learning progress.
 
 ---
 
-## Portfolio Goals
+# Portfolio Goals
 
 Through these projects, I aim to demonstrate my ability to:
 
-- Understand application requirements and expected behavior
+- Understand expected application behavior
 - Identify important test scenarios
 - Design clear and structured test cases
 - Execute manual tests systematically
@@ -315,11 +340,11 @@ Through these projects, I aim to demonstrate my ability to:
 - Understand severity and priority
 - Maintain test and defect traceability
 - Document testing results clearly
-- Communicate QA findings in a professional way
+- Communicate QA findings professionally
 
 ---
 
-## Confidentiality
+# Confidentiality
 
 Some projects in this portfolio are based on anonymized or confidential applications.
 
@@ -329,6 +354,6 @@ The documentation focuses on the QA process, testing approach, observed behavior
 
 ---
 
-## Note
+# Note
 
 This portfolio reflects my current level as a **Junior Manual QA Tester** and focuses on practical manual testing skills and continuous learning.
