@@ -68,7 +68,7 @@ Manual testing of an AI-powered e-commerce chatbot.
 
 ---
 
-### Project 03 — Legal Platform QA
+### Project 03 — 03-Legal-Platform-QA
 
 Manual QA testing of a confidential legal technology platform.
 
@@ -117,7 +117,7 @@ Manual QA testing of a confidential legal technology platform.
 
 ---
 
-### Project 04 — Production Management Platform QA
+### Project 04 — 04-Production-Management-Platform-QA
 
 Manual QA testing of an anonymized production management platform.
 
