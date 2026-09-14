@@ -1,4 +1,4 @@
-# Legal Platform — Manual QA Testing
+# 03-Legal-Platform-QA — Manual QA Testing
 
 ## Project Overview
 
