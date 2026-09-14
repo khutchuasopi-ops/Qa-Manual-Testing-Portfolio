@@ -1,47 +1,65 @@
-# BUG-006 — Poster Save Is Delayed or Unresponsive
+# BUG-006 — Save Poster Action Delayed / Unresponsive
 
-## Title
-Save Poster action is delayed and does not update the poster immediately
+## Summary
+
+The **Save Poster** action does not respond immediately after a new poster image is selected. The user can click the button multiple times without receiving a visible response, while the poster is updated only after a noticeable delay.
 
 ## Preconditions
-- User is logged in.
-- A project/manuscript exists.
-- The user has access to Poster editing.
-- A new poster image has been selected.
 
-## Steps to Reproduce
-1. Open a project/manuscript.
-2. Navigate to Poster editing.
-3. Select or upload a new poster image.
-4. Click `Save Poster`.
-5. Observe the poster immediately after clicking the button.
-6. Wait for some time and observe the poster again.
+* User has access to an existing Project / Manuscript.
+* The Project has an existing Poster / Cover.
+* User is able to edit the Poster.
 
-## Expected Result
-The selected poster image should be saved immediately after clicking `Save Poster`.
+## Steps
 
-The updated poster should be displayed without a significant delay.
+1. Open a Project / Manuscript.
+2. Select **Edit**.
+3. Open the **Upload** option.
+4. Select a new poster image.
+5. Click **Save Poster**.
+6. Observe the result immediately after clicking.
+7. Wait and observe the Poster again.
 
 ## Actual Result
-The `Save Poster` action appears unresponsive after clicking.
 
-The selected image is not applied immediately.
+After clicking **Save Poster**, the action does not respond immediately.
 
-After some time, the poster is eventually updated.
+The Poster does not update immediately, and clicking the **Save Poster** button multiple times does not provide clear feedback that the save operation is being processed.
 
-## Priority
-Medium
+After some time, the Poster is eventually updated with the new image.
+
+## Expected Result
+
+After clicking **Save Poster**:
+
+* The save operation should start immediately.
+* The user should receive clear feedback that the save is in progress or has completed.
+* The new Poster should be displayed after the save is completed.
+* The user should not need to click the **Save Poster** button multiple times to trigger the operation.
 
 ## Severity
-Major
+
+**Medium**
 
 ## Environment
-- Environment: Staging / Preview
-- Testing type: Manual QA
-- Area: Poster
 
-## Evidence
-Screen recording showing the selected image, the Save Poster action, delayed update, and final poster state.
+**Staging / Preview**
+
+## Related Test Case
+
+**TC-020 — Verify Save Poster Action**
 
 ## Status
-Open
+
+**Open**
+
+## Reproduction
+
+**Reproduced during manual testing.**
+
+## Notes
+
+The issue is related to delayed save behavior rather than a complete failure of the Save Poster functionality.
+
+The new Poster was eventually updated, but the lack of immediate response or clear save feedback can make the user believe that the action was not registered and may lead to repeated clicks.
+
