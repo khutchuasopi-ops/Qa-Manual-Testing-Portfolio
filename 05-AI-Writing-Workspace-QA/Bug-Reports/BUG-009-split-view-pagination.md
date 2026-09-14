@@ -1,44 +1,60 @@
-# BUG-009 — Split View Duplicates or Resets Pagination
+# BUG-009 — Split View Pagination / Page State Breaks
 
-## Title
-Split View duplicates or resets pagination/page breaks in the second pane
+## Summary
+
+Pagination in **Split View** becomes inconsistent when navigating between pages. Pages can be duplicated or the displayed page state can reset unexpectedly.
 
 ## Preconditions
-- User is logged in.
-- A project/manuscript contains a Draft with enough content to span multiple pages.
-- Pagination or page breaks are visible in the Draft.
+
+* User has access to a document or manuscript with multiple pages.
+* Split View is available for the document.
 
 ## Steps to Reproduce
-1. Open a project/manuscript.
-2. Open the Draft.
-3. Add or use enough content to create multiple pages.
-4. Open the same Draft in Split View.
-5. Compare the pagination/page breaks between the two panes.
-6. Observe the pagination behavior in the second pane.
 
-## Expected Result
-Both Split View panes should display consistent pagination and page-break positions for the same Draft content.
-
-Pagination should not be duplicated, reset, or repositioned unexpectedly.
+1. Open a document or manuscript.
+2. Open **Split View**.
+3. Navigate between the available pages using the pagination controls.
+4. Continue moving between different pages.
+5. Observe the displayed page content and page number.
 
 ## Actual Result
-Pagination/page breaks in the second Split View pane are duplicated or appear to restart from the beginning instead of remaining consistent with the original Draft view.
 
-The issue was reproduced during testing.
+During navigation, Split View pagination becomes inconsistent.
 
-## Priority
-High
+Pages may be duplicated, and the displayed page state can reset unexpectedly instead of remaining on the selected page.
+
+## Expected Result
+
+When navigating between pages in Split View:
+
+* The selected page should be displayed correctly.
+* The page number should correspond to the displayed content.
+* Pages should not be duplicated.
+* The current page should not unexpectedly reset.
+* Pagination should remain consistent during repeated navigation.
 
 ## Severity
-Major
+
+**Medium**
 
 ## Environment
-- Environment: Staging / Preview
-- Testing type: Manual QA
-- Area: Split View / Draft
 
-## Evidence
-Screen recording showing the same Draft opened in Split View and the inconsistent pagination/page-break behavior between the two panes.
+**Staging / Preview**
+
+## Related Test Case
+
+**TC-026 — Split View: Pagination**
 
 ## Status
-Reproduced
+
+**Open**
+
+## Reproduction
+
+**Reproduced during manual testing.**
+
+## Notes
+
+The issue affects navigation within Split View and can make it difficult for the user to determine which page is currently being viewed.
+
+The pagination state should remain synchronized with the displayed document content during navigation.
